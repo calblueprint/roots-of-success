@@ -9,6 +9,8 @@ gem 'jquery-rails', '~> 3.1.0'
 gem 'turbolinks', '~> 2.2.1'
 gem 'jbuilder', '~> 1.2'
 
+gem 'newrelic_rpm'
+
 group :doc do
   gem 'sdoc', require: false
 end
@@ -22,4 +24,5 @@ end
 
 group :production do
   gem 'pg', '~> 0.17.1'
+  gem 'rails_12factor'
 end
