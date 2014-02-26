@@ -3,13 +3,8 @@ class User < ActiveRecord::Base
   #        :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :first_name, :last_name, :email, :password,
-                  :password_confirmation, :remember_me, :type,
-                  :approved, :profile_attributes
-
-  has_many dependent: :destroy
-  has_one :profile
-  accepts_nested_attributes_for :profile
-
+                  :password_confirmation, :remember_me, :type
+                  
   def name
     return "#{first_name} #{last_name}"
   end

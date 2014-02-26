@@ -10,8 +10,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_confirmation
       t.string :remember_me
       t.string :type
-      t.string :approved
-      t.string :profile_attributes
 
       t.timestamps
     end
