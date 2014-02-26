@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
                   :approved, :profile_attributes
 
   has_many dependent: :destroy
-  has_one :profile, class_name: 'UserProfile'
+  has_one :profile
   accepts_nested_attributes_for :profile
 
   def name
