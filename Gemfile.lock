@@ -167,7 +167,7 @@ DEPENDENCIES
   bullet (~> 4.8.0)
   cancan (~> 1.6.10)
   coffee-rails (~> 4.0.0)
-  commands
+  commands (~> 0.2.1)
   devise (~> 3.2.3)
   factory_girl (~> 4.4.0)
   jbuilder (~> 1.2)
