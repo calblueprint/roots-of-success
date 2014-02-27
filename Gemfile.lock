@@ -49,6 +49,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    commands (0.2.1)
+      rails (>= 3.2.0)
     devise (3.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -165,6 +167,7 @@ DEPENDENCIES
   bullet (~> 4.8.0)
   cancan (~> 1.6.10)
   coffee-rails (~> 4.0.0)
+  commands
   devise (~> 3.2.3)
   factory_girl (~> 4.4.0)
   jbuilder (~> 1.2)
