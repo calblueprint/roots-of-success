@@ -25,6 +25,7 @@ group :development, :test do
   gem 'bullet', '~> 4.8.0'
   gem 'annotate', '~> 2.6.1'
   gem 'commands', '~> 0.2.1'
+  gem 'dotenv', '~> 0.10.0'
   gem 'factory_girl', '~> 4.4.0'
   gem 'rspec-rails', '~> 2.14.1'
 end
