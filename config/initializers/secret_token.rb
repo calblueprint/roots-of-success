@@ -9,4 +9,8 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RootsOfSuccess::Application.config.secret_key_base = '15604d5040bf227f5fe5f81b89c943841dee9db0b4f77512eed0699d913033d2e7797dc123b55fd1f61020aeae00661df3bf78caf5ee5fde01567c6607e2cf58'
+RootsOfSuccess::Application.config.secret_key_base = if Rails.env.development? or Rails.env.test?
+  ('x' * 30)
+else
+  ENV['SECRET_TOKEN']
+end
