@@ -14,7 +14,8 @@ gem 'cancan', '~> 1.6.10'
 gem 'simple_form', '~> 3.0.1'
 gem 'slim', '~> 2.0.2'
 gem 'devise', '~> 3.2.3'
-gem 'newrelic_rpm'
+gem 'newrelic_rpm', '~> 3.7.2.195'
+gem 'google-analytics-rails', '~> 0.0.4' 
 
 group :doc do
   gem 'sdoc', require: false
