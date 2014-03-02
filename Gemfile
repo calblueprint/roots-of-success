@@ -12,7 +12,7 @@ gem 'dotenv-rails', '~> 0.10.0', groups: [:development, :test]
 gem 'pg', '~> 0.17.1'
 gem 'cancan', '~> 1.6.10'
 gem 'simple_form', '~> 3.0.1'
-gem 'slim', '~> 2.0.2'
+gem 'slim-rails', '~> 2.1.0'
 gem 'devise', '~> 3.2.3'
 gem 'newrelic_rpm'
 gem 'google-analytics-rails', '~> 0.0.4' 
