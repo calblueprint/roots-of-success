@@ -1,4 +1,6 @@
 RootsOfSuccess::Application.routes.draw do
+  get "learning_modules/new"
+  get "modules/new"
   devise_for :users
   get "static_pages/home"
   # The priority is based upon order of creation: first created -> highest priority.
