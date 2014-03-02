@@ -1,4 +1,6 @@
 RootsOfSuccess::Application.routes.draw do
+  get "learning_modules/new"
+  get "modules/new"
   devise_for :users
   get "teacher_dashboard/index", as: :teacher_dashboard_index
   get "admin_dashboard/index", as: :admin_dashboard_index
