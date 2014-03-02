@@ -185,7 +185,7 @@ DEPENDENCIES
   google-analytics-rails (~> 0.0.4)
   jbuilder (~> 1.2)
   jquery-rails (~> 3.1.0)
-  newrelic_rpm (~> 3.7.2.195)
+  newrelic_rpm
   pg (~> 0.17.1)
   rails (= 4.0.3)
   rails_12factor
