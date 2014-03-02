@@ -32,4 +32,7 @@ RootsOfSuccess::Application.configure do
     Bullet.enable = true
     Bullet.add_footer = true
   end
+
+  # Google Analytics tracker code
+  GA.tracker = "UA-xxxxxx-x"
 end
