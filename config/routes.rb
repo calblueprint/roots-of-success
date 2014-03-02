@@ -1,6 +1,8 @@
 RootsOfSuccess::Application.routes.draw do
   devise_for :users
-  get "static_pages/home"
+  get "teacher_dashboard/index", as: :teacher_dashboard_index
+  get "admin_dashboard/index", as: :admin_dashboard_index
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
