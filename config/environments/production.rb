@@ -79,5 +79,5 @@ RootsOfSuccess::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Google Analytics tracker code
-  GA.tracker = "UA-xxxxxx-x"
+  GA.tracker = "UA-48547882-1"
 end
