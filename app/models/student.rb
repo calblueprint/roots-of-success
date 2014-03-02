@@ -21,5 +21,6 @@
 #  last_sign_in_ip        :string(255)
 #
 
-class Admin < User
+class Student < User
+  belongs_to :classroom
 end
