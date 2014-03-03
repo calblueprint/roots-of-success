@@ -2,12 +2,5 @@ AdminDashboard#new_teacher
 p Find me in app/views/admin_dashboard/new.html.slim
 
 =simple_form_for :teacher do |f|
-  - if @teacher.errors.any?
-    div id="error explanation"
-      div class="alert alert-error"
-        ' The form has
-        =pluralize @teacher.errors.count, "error"
-      ul =@teacher.errors.full_messages.each do |msg|
-        li =msg
   =f.input :email
   =f.button :submit
