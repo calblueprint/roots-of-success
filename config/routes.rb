@@ -8,8 +8,8 @@ RootsOfSuccess::Application.routes.draw do
   get "teacher_dashboard/index", as: :teacher_dashboard_index
 
   get 'admin_dashboard/index', to: 'admin_dashboard#index'
-  get 'admin_dashboard/new', to: 'admin_dashboard#new'
-  post 'admin_dashboard/new', to: 'admin_dashboard#create' 
+  get 'admin_dashboard/new_teacher', to: 'admin_dashboard#new_teacher'
+  post 'admin_dashboard/new_teacher', to: 'admin_dashboard#create_teacher' 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

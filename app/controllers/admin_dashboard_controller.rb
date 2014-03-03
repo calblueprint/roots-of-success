@@ -1,18 +1,16 @@
 class AdminDashboardController < ApplicationController
   def index
   end
-  def new
+  def new_teacher
     @teacher = Teacher.new
   end
-  def create
-    @teacher = Teacher.new(teacher_params)
-    @teacher.password = SecureRandom.hex(10)
+  def create_teacher
+    @teacher = Teacher.new teacher_params
+    @teacher.password = SecureRandom.hex 10
     if @teacher.save
-      flash[:notice] = "Successfully created account"
-      render 'new'
+      render 'new_teacher' #should redirect to @teacher once teacher url is created
     else
-      flash[:notice] = "Email is invalid"
-      render 'new'
+      render 'new_teacher'
     end
   end
   
