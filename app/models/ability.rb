@@ -5,7 +5,7 @@ class Ability
     user ||= User.new
     if user.type == 'admin'
       can :manage, :all
-    else if user.type == 'teacher'
+    elsif user.type == 'teacher'
       can :create, :feedback
       can :manage, :classroom
     end
