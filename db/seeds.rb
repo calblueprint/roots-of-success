@@ -60,4 +60,19 @@ def create_users_1
                 email: 'test6@test.com'
 end
 
+def create_classroom_1
+  Teacher.create! first_name: 'Teacher1', 
+                  last_name: 'Teacher1', 
+                  password: 'password',
+                  email: 'teacher@teacher.com'
+  1.upto(10) do |n|
+    Student.create! first_name: "Student #{n}",
+                    last_name: "Student",
+                    password: 'password',
+                    email: "Student#{n}@gmail.com"
+  end
+end
+
+
 create_users_1
+create_classroom_1
