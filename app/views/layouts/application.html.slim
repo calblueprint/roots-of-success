@@ -1,11 +1,11 @@
 doctype html
 
 /! paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
-/![if lt IE 7 ] class="ie6" lang="en"
-/![if IE 7 ] class="ie7" lang="en"
-/![if IE 8 ] class="ie8" lang="en"
-/![if IE 9 ] class="ie9" lang="en"
-/! [if (gt IE 9)|!(IE)] lang="en"
+/![if lt IE 7 ] html class="ie6" lang="en"
+/![if IE 7 ] html class="ie7" lang="en"
+/![if IE 8 ] html class="ie8" lang="en"
+/![if IE 9 ] html class="ie9" lang="en"
+/![if (gt IE 9)|!(IE)] html lang="en"
 
 html
   head
@@ -24,4 +24,3 @@ html
 
   body
     = yield
-    = javascript_include_tag "application"
