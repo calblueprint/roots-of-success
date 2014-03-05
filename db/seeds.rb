@@ -65,6 +65,7 @@ def create_classroom
                   last_name: 'Teacher1', 
                   password: 'password',
                   email: 'teacher@teacher.com'
+  c = t.classrooms.create
   student_list = []
   1.upto(10) do |n|
     s = Student.create! first_name: "Student #{n}",
@@ -73,8 +74,7 @@ def create_classroom
                     email: "Student#{n}@gmail.com"
     student_list.append(s)
   end
-  Classroom.create! teacher: t,
-                    students: student_list
+  c.students = student_list
 end
 
 
