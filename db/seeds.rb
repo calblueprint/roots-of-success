@@ -33,7 +33,7 @@ def create_dev_team
                 email: 'sam@sam.com'
 end
 
-def create_users_1  
+def create_users
   Admin.create! first_name: 'Admin1', 
                 last_name: 'Admin1', 
                 password: 'password',
@@ -60,19 +60,23 @@ def create_users_1
                 email: 'test6@test.com'
 end
 
-def create_classroom_1
-  Teacher.create! first_name: 'Teacher1', 
+def create_classroom
+  t = Teacher.create! first_name: 'Teacher1', 
                   last_name: 'Teacher1', 
                   password: 'password',
                   email: 'teacher@teacher.com'
+  student_list = []
   1.upto(10) do |n|
-    Student.create! first_name: "Student #{n}",
+    s = Student.create! first_name: "Student #{n}",
                     last_name: "Student",
                     password: 'password',
                     email: "Student#{n}@gmail.com"
+    student_list.append(s)
   end
+  Classroom.create! teacher: t,
+                    students: student_list
 end
 
 
-create_users_1
-create_classroom_1
+create_users
+create_classroom
