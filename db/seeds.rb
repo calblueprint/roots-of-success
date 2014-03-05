@@ -60,4 +60,26 @@ def create_users_1
                 email: 'test6@test.com'
 end
 
+def create_classroom_1
+  Teacher.create! first_name: 'Teacher1', 
+                  last_name: 'Teacher1', 
+                  password: 'password',
+                  email: 'test@test.com'
+  student_list = [
+    ["Student1", "Student1@gmail.com"]
+    ["Student2", "Student2@gmail.com"]
+    ["Student3", "Student3@gmail.com"]
+    ["Student4", "Student4@gmail.com"]
+    ["Student5", "Student5@gmail.com"]
+    ["Student6", "Student6@gmail.com"]
+    ["Student7", "Student7@gmail.com"]
+    ["Student8", "Student8@gmail.com"]
+    ["Student9", "Student9@gmail.com"]
+    ["Student10", "Student10@gmail.com"]
+  ] 
+  student_list.each do | name, email|
+    Student.create(first_name: name, last_name: name, password: "password", email: email)
+  end
+
 create_users_1
+create_classroom_1
