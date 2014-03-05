@@ -43,35 +43,35 @@ def create_users
                 password: 'password',
                 email: 'test2@test.com'
   Teacher.create! first_name: 'Teacher1', 
-                last_name: 'Teacher1', 
-                password: 'password',
-                email: 'test3@test.com'
+                  last_name: 'Teacher1', 
+                  password: 'password',
+                  email: 'test3@test.com'
   Teacher.create! first_name: 'Teacher2', 
-                last_name: 'Teacher2', 
-                password: 'password',
-                email: 'test4@test.com'
+                  last_name: 'Teacher2', 
+                  password: 'password',
+                  email: 'test4@test.com'
   Student.create! first_name: 'User1', 
-                last_name: 'User1', 
-                password: 'password',
-                email: 'test5@test.com'
+                  last_name: 'User1', 
+                  password: 'password',
+                  email: 'test5@test.com'
   Student.create! first_name: 'User2', 
-                last_name: 'User2', 
-                password: 'password',
-                email: 'test6@test.com'
+                  last_name: 'User2', 
+                  password: 'password',
+                  email: 'test6@test.com'
 end
 
 def create_classroom
   t = Teacher.create! first_name: 'Teacher1', 
-                  last_name: 'Teacher1', 
-                  password: 'password',
-                  email: 'teacher@teacher.com'
+                      last_name: 'Teacher1', 
+                      password: 'password',
+                      email: 'teacher@teacher.com'
   c = t.classrooms.create
   student_list = []
   1.upto(10) do |n|
     s = Student.create! first_name: "Student #{n}",
-                    last_name: "Student",
-                    password: 'password',
-                    email: "Student#{n}@gmail.com"
+                        last_name: "Student",
+                        password: 'password',
+                        email: "Student#{n}@gmail.com"
     student_list.append(s)
   end
   c.students = student_list
