@@ -4,6 +4,7 @@ RootsOfSuccess::Application.routes.draw do
   devise_for :users
 
   resources :learning_modules
+  
 
   get "teacher_dashboard/index", as: :teacher_dashboard_index
 
