@@ -2,4 +2,6 @@ h1 TeacherDashboard#index
 p Find me in app/views/teacher_dashboard/index.html.slim
 = link_to "Home", root_path
 
-= link_to "Learning Modules", learning_modules_path
+ul class="learning_modules"
+- for mod in @learning_modules
+	li = link_to "Module #{mod.module_number}: #{mod.name}", mod
