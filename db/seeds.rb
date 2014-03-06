@@ -51,26 +51,26 @@ def create_classroom
 end
 
 def create_modules
-  LearningModule.create! name: "Fundamentals",
-                        module_number: 1
-  LearningModule.create! name: "Water",
-                        module_number: 2
-  LearningModule.create! name: "Waste",
-                        module_number: 3
-  LearningModule.create! name: "Transportation",
-                        module_number: 4
-  LearningModule.create! name: "Energy",
-                        module_number: 5
-  LearningModule.create! name: "Building",
-                        module_number: 6
-  LearningModule.create! name: "Health, Food, and Agriculture",
-                        module_number: 7
-  LearningModule.create! name: "Community Organizing and Leadership",
-                        module_number: 8
-  LearningModule.create! name: "Application and Practice",
-                        module_number: 9
-  LearningModule.create! name: "Financial Literacy and Social Entrepreneurship",
-                        module_number: 10
+  LearningModule.create!  name: "Fundamentals",
+                          number: 1
+  LearningModule.create!  name: "Water",
+                          number: 2
+  LearningModule.create!  name: "Waste",
+                          number: 3
+  LearningModule.create!  name: "Transportation",
+                          number: 4
+  LearningModule.create!  name: "Energy",
+                          number: 5
+  LearningModule.create!  name: "Building",
+                          number: 6
+  LearningModule.create!  name: "Health, Food, and Agriculture",
+                          number: 7
+  LearningModule.create!  name: "Community Organizing and Leadership",
+                          number: 8
+  LearningModule.create!  name: "Application and Practice",
+                          number: 9
+  LearningModule.create!  name: "Financial Literacy and Social Entrepreneurship",
+                          number: 10
 end
 
 

@@ -12,7 +12,7 @@ class LearningModulesController < ApplicationController
   end
 
   def show
-    @module = LearningModule.find(params[:id])
+    @module = LearningModule.find params[:id]
   end
 
   def update
