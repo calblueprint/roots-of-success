@@ -1,2 +1,13 @@
-= link_to "Teacher Dashboard", teacher_dashboard_index_path
-= link_to "Admin Dashboard", admin_dashboard_index_path 
+div class="row height-100"
+  div class="small-12 small-centered columns text-center height-100"
+    = link_to "Teacher Dashboard", teacher_dashboard_index_path
+    = link_to "Admin Dashboard", admin_dashboard_index_path
+    div id="login-floater"
+    div id="login-module" class="center"
+      div id="logo" class="center"
+        = image_tag("RoSLogo.svg", height: '150', width: '150', class: "bot-margin-small")
+        = image_tag("RoSLogoType.svg", width: '150', class: "bot-margin-large")
+      form data-abide="" id="login-forms" class="center"
+        input type="text" placeholder="Username" class="bot-margin-small text-center"
+        input type="password" placeholder="Password" class="password-field bot-margin-small text-center"
+        button type="submit" Submit
