@@ -50,6 +50,34 @@ def create_classroom
   c.students = student_list
 end
 
+def create_modules
+  LearningModule.create!  name: "Fundamentals",
+                          number: 1
+  LearningModule.create!  name: "Water",
+                          number: 2
+  LearningModule.create!  name: "Waste",
+                          number: 3
+  LearningModule.create!  name: "Transportation",
+                          number: 4
+  LearningModule.create!  name: "Energy",
+                          number: 5
+  LearningModule.create!  name: "Building",
+                          number: 6
+  LearningModule.create!  name: "Health, Food, and Agriculture",
+                          number: 7
+  LearningModule.create!  name: "Community Organizing and Leadership",
+                          number: 8
+  LearningModule.create!  name: "Application and Practice",
+                          number: 9
+  LearningModule.create!  name: "Financial Literacy and Social Entrepreneurship",
+                          number: 10
+end
+
+
+
+
+
 
 create_users
 create_classroom
+create_modules
