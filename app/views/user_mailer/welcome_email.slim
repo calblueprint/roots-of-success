@@ -4,8 +4,6 @@ body
     p
       | You have successfully signed up to (app_name).herokuapp.com,
       | and your login email is: #{@user.email}.
-    p
-      / | To login to the site, just follow this link: #{@url}.
     p Thanks for joining and have a great day!
 
     = link_to "Home", root_path
