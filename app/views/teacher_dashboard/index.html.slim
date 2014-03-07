@@ -3,5 +3,5 @@ p Find me in app/views/teacher_dashboard/index.html.slim
 = link_to "Home", root_path
 
 ul.learning_modules
-	- @learning_modules.each do |mod|
-  		li = link_to "Module #{mod.number}: #{mod.name}", mod
+  - @learning_modules.each do |mod|
+    li = link_to "Module #{mod.number}: #{mod.name}", mod
