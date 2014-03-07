@@ -11,6 +11,7 @@ class AdminDashboardController < ApplicationController
     @teacher.password = SecureRandom.hex 10
     if @teacher.save
       flash[:success] = "Created teacher with password #{@teacher.password}!"
+      UserMailer.welcome_email(@teacher).deliver
       redirect_to admin_dashboard_index_path
     else
       render 'new_teacher'

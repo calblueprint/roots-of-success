@@ -1,0 +1,9 @@
+body
+    h1
+      | Welcome to Roots of Success, #{@user.first_name}!
+    p
+      | You have successfully signed up to (app_name).herokuapp.com,
+      | and your login email is: #{@user.email}.
+    p Thanks for joining and have a great day!
+
+    = link_to "Home", root_path
