@@ -15,6 +15,11 @@ RootsOfSuccess::Application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  
+  # Test Mailer
+  # Stop emails from breaking app on development
+  ActionMailer::Base.perform_deliveries = true
+  config.action_mailer.delivery_method = :test
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

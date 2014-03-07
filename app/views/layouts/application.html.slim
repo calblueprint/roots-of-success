@@ -19,7 +19,7 @@ html
     title = content_for?(:title) ? yield(:title) : "Roots of Success"
     / Google Analytics for dev and production environments
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track", "vendor/custom.modernizr" => true
+    = javascript_include_tag "application", "vendor/custom.modernizr", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   body

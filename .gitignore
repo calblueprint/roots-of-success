@@ -20,3 +20,6 @@ config/database.yml
 
 # Ignore .env file
 .env
+
+# Ignore setup_mail
+/config/setup_mail.rb
