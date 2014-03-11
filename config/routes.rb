@@ -1,9 +1,7 @@
 RootsOfSuccess::Application.routes.draw do
+  root to: 'static_pages#home'
 
   devise_for :users
-  devise_scope :user do
-    root 'devise/sessions#new'
-  end
 
   get "teacher_dashboard/index", as: :teacher_dashboard_index
 
