@@ -3,15 +3,16 @@ class AdminDashboardController < ApplicationController
   end
 
   def new_teacher
+    @bad_addrs = Array.new
     @teacher = Teacher.new
   end
 
   def create_teacher
-    @teacher = Teacher.new teacher_params
-    @teacher.password = SecureRandom.hex 10
-    if @teacher.save
-      flash[:success] = "Created teacher with password #{@teacher.password}!"
-      UserMailer.welcome_email(@teacher).deliver
+    addrs = teacher_params[:email]
+    @addr_list = addrs.gsub(/\r?\n|\s/,'').split(",")
+    @bad_addrs = @addr_list.select{ |e| (@t = Teacher.create(email: e, password: (SecureRandom.hex 10))).new_record? || !UserMailer.welcome_email(@t).deliver }
+    if @bad_addrs.empty?
+      flash[:success] = "Created all teachers!"
       redirect_to admin_dashboard_index_path
     else
       render 'new_teacher'
