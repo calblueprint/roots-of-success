@@ -1,8 +1,8 @@
 class TeacherDashboardController < ApplicationController
   def index
     @learning_modules = LearningModule.all
+    @classrooms = Classroom.all
   end
-
 
   def new_student
     @student = Student.new
