@@ -8,8 +8,8 @@ class AdminDashboardController < ApplicationController
   end
 
   def create_teacher
-    addrs = teacher_params[:email]
-    @addr_list = addrs.gsub(/\r?\n|\s/,'').split(",")
+    addrs = teacher_params[:emails]
+    @addr_list = addrs.gsub(/\r?\n|\s+/,'').split(',')
     @bad_addrs = @addr_list.select{ |e| (@t = Teacher.create(email: e, password: (SecureRandom.hex 10))).new_record? || !UserMailer.welcome_email(@t).deliver }
     if @bad_addrs.empty?
       flash[:success] = "Created all teachers!"
@@ -22,6 +22,6 @@ class AdminDashboardController < ApplicationController
   private
 
   def teacher_params
-    params.require(:teacher).permit(:email)
+    params.require(:teachers).permit(:emails)
   end
 end
