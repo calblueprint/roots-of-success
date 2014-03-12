@@ -1,6 +1,5 @@
-class ClassroomsController < ApplicationController
+class StudentsController < ApplicationController
   def index
-    @students = Student.all
   end 
 
   def create
@@ -13,7 +12,7 @@ class ClassroomsController < ApplicationController
   end
 
   def show
-    @classroom = Classroom.find params[:id]
+    @student = Student.find params[:id]
   end
 
   def update

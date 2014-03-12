@@ -8,6 +8,6 @@ ul.learning_modules
 
 ul.classrooms
   - @classrooms.each do |cl|
-    li = link_to "#{cl.id}: ", cl 
+    li = link_to "Classroom number: #{cl.id} ", cl 
 
 = link_to "Create Student Account", new_student_path

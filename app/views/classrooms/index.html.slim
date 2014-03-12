@@ -2,4 +2,8 @@ h1 Classrooms#index
 p Find me in app/views/classrooms/index.html.slim
 = link_to "Home", root_path
 
+ul.students
+  - @students.each do |st|
+    li = link_to "Student name: #{@st.first_name} #{@st.last_name}", st
+
 = link_to "Teacher Dashboard", teacher_dashboard_index_path
