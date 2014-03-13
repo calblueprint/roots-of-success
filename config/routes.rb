@@ -13,6 +13,6 @@ RootsOfSuccess::Application.routes.draw do
   get '/new_student', to: 'teacher_dashboard#new_student', as: 'new_student'
   post '/new_student', to: 'teacher_dashboard#create_student', as: 'create_student'
 
-
   resources :learning_modules
+  resources :classrooms
 end
