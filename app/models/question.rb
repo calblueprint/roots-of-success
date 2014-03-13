@@ -12,4 +12,5 @@
 
 class Question < ActiveRecord::Base
   belongs_to :feedback
+  has_many :responses
 end
