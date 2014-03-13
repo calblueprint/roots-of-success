@@ -10,7 +10,7 @@ def create_admins_and_teachers
   1.upto(2) do |n|
     Admin.create! first_name: 'Admin',
                   last_name: "#{n}",
-                  email: "admin#{n}@ros.org"
+                  email: "admin#{n}@ros.org",
                   password: 'password'
     Teacher.create! first_name: 'Teacher', 
                     last_name: "#{n}", 
