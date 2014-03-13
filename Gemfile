@@ -19,6 +19,7 @@ gem 'google-analytics-rails', '~> 0.0.4'
 gem 'd3-rails', '~> 3.3.7'
 gem 'compass', '~> 0.12.2'
 gem 'zurb-foundation', '~> 4.3.2'
+gem "nokogiri", "~> 1.6.1"
 
 group :doc do
   gem 'sdoc', require: false
