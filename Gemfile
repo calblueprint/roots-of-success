@@ -19,7 +19,7 @@ gem 'google-analytics-rails', '~> 0.0.4'
 gem 'd3-rails', '~> 3.3.7'
 gem 'compass', '~> 0.12.2'
 gem 'zurb-foundation', '~> 4.3.2'
-gem "nokogiri", "~> 1.6.1"
+gem 'nokogiri', '~> 1.6.1'
 
 group :doc do
   gem 'sdoc', require: false
@@ -28,6 +28,7 @@ end
 group :development, :test do
   gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller', '~> 0.7.2'
+  gem 'awesome_print', '~> 1.2.0'
   gem 'bullet', '~> 4.8.0'
   gem 'annotate', '~> 2.6.1'
   gem 'commands', '~> 0.2.1'

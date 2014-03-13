@@ -28,12 +28,13 @@
         error: error,
         getContainer: getContainer,
         info: info,
+        notice: info,
         options: {},
         subscribe: subscribe,
         success: success,
         version: version,
         warning: warning,
-        notice: info
+        alert: warning
       };
 
       return toastr;

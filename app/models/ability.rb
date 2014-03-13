@@ -5,6 +5,7 @@ class Ability
 
     alias_action :create, :read, :update, :destroy, :to => :crud
     user ||= User.new
+    
     if user.type == 'Admin'
       can :manage, :all
     elsif user.type == 'Teacher'
@@ -15,7 +16,6 @@ class Ability
       can :read, Response { |res| res.can_be_read_by? user }
       can :read, LearningModule
       can :crud, Student
-
     elsif user.type == 'Student'
       can :read, :classroom
       can :read, Response, :id => user.id

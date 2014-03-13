@@ -6,48 +6,28 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-def create_users
-  Admin.create! first_name: 'Admin1', 
-                last_name: 'Admin1', 
-                password: 'password',
-                email: 'test1@test.com'
-  Admin.create! first_name: 'Admin2', 
-                last_name: 'Admin2', 
-                password: 'password',
-                email: 'test2@test.com'
-  Teacher.create! first_name: 'Teacher1', 
-                last_name: 'Teacher1', 
-                password: 'password',
-                email: 'test3@test.com'
-  Teacher.create! first_name: 'Teacher2', 
-                last_name: 'Teacher2', 
-                password: 'password',
-                email: 'test4@test.com'
-  Student.create! first_name: 'User1', 
-                last_name: 'User1', 
-                password: 'password',
-                email: 'test5@test.com'
-  Student.create! first_name: 'User2', 
-                last_name: 'User2', 
-                password: 'password',
-                email: 'test6@test.com'
+def create_admins_and_teachers
+  1.upto(2) do |n|
+    Admin.create! first_name: 'Admin',
+                  last_name: "#{n}",
+                  email: "admin#{n}@ros.org",
+                  password: 'password'
+    Teacher.create! first_name: 'Teacher', 
+                    last_name: "#{n}", 
+                    password: 'password',
+                    email: "teacher#{n}@ros.org"
+  end
 end
 
 def create_classroom
-  t = Teacher.create! first_name: 'Teacher1', 
-                      last_name: 'Teacher1', 
-                      password: 'password',
-                      email: 'teacher@teacher.com'
-  c = t.classrooms.create! name: 'test classroom name'
-  student_list = []
-  1.upto(10) do |n|
-    s = Student.create! first_name: "Student #{n}",
-                        last_name: "Student",
-                        password: 'password',
-                        email: "Student#{n}@gmail.com"
-    student_list << s
+  t = Teacher.first
+  c = t.classrooms.create! name: 'Classroom 1'
+  c.students = 1.upto(10).map do |n|
+    Student.create! first_name: "Student",
+                    last_name: "#{n}",
+                    password: 'password',
+                    email: "student#{n}@ros.org"
   end
-  c.students = student_list
 end
 
 def create_modules
@@ -73,11 +53,6 @@ def create_modules
                           number: 10
 end
 
-
-
-
-
-
-create_users
+create_admins_and_teachers
 create_classroom
 create_modules
