@@ -23,4 +23,9 @@
 
 class Student < User
   belongs_to :classroom
+  has_many :responses
+
+  def teacher
+    classroom.teacher 
+  end
 end
