@@ -1,11 +1,6 @@
 AdminDashboard#new_teacher
 p Find me in app/views/admin_dashboard/new_teacher.html.slim
 
-/-if !@bad_addrs.empty?
-/  div The following emails failed to validate
-/  - @bad_addrs.each do|a|
-/    ul
-/      li = a
 = render 'dashboard/bad_emails', bad_addrs: @bad_addrs
 
 = simple_form_for :teachers do |f|
