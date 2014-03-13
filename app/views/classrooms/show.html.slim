@@ -1,0 +1,5 @@
+h1 Welcome to Classroom #{@classroom.name}
+
+ul.students
+  - @students.each do |st|
+    li = link_to "Student name: #{st.first_name} #{st.last_name}", st
