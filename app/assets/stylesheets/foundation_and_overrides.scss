@@ -356,7 +356,7 @@ $body-bg: #d9d9d9;
 
 // We use these to build padding for buttons.
 
-// $button-med: em-calc(12);
+$button-med: em-calc(6);
 // $button-tny: em-calc(7);
 $button-sml: em-calc(8);
 // $button-lrg: em-calc(16);
@@ -371,7 +371,7 @@ $button-margin-bottom: em-calc(0);
 // $button-font-family: inherit;
 $button-font-color: #000000;
 // $button-font-color-alt: #333;
-// $button-font-med: em-calc(16); 
+$button-font-med: em-calc(20); 
 // $button-font-tny: em-calc(11);
 $button-font-sml: em-calc(16);
 // $button-font-lrg: em-calc(20);
