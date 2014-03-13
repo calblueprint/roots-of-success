@@ -28,6 +28,7 @@ end
 group :development, :test do
   gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller', '~> 0.7.2'
+  gem 'awesome_print', '~> 1.2.0'
   gem 'bullet', '~> 4.8.0'
   gem 'annotate', '~> 2.6.1'
   gem 'commands', '~> 0.2.1'
