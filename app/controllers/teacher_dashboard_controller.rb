@@ -10,9 +10,9 @@ class TeacherDashboardController < ApplicationController
   end
 
   def create_student
-    addr_list = teacher_params[:emails].strip.split(/,\s*/)
+    addr_list = student_params[:emails].strip.split(/,\s*/)
     @bad_addrs = addr_list.select do |e|
-      (Teacher.create email: e,
+      (Student.create email: e,
                       password: (SecureRandom.hex 10)).new_record?
     end
     if @bad_addrs.empty?
