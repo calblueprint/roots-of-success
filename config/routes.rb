@@ -15,4 +15,5 @@ RootsOfSuccess::Application.routes.draw do
 
   resources :learning_modules
   resources :classrooms
+  resources :students
 end

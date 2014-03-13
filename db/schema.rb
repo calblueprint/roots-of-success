@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140307052814) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "teacher_id"
+    t.text     "name"
   end
 
   add_index "classrooms", ["teacher_id"], name: "index_classrooms_on_teacher_id", using: :btree

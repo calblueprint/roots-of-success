@@ -1,4 +1,4 @@
-class ClassroomsController < ApplicationController
+class StudentsController < ApplicationController
   def index
   end 
 
@@ -12,8 +12,7 @@ class ClassroomsController < ApplicationController
   end
 
   def show
-    @classroom = Classroom.find params[:id]
-    @students = @classroom.students
+    @student = Student.find params[:id]
   end
 
   def update
