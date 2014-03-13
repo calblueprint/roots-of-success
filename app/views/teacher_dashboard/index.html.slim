@@ -1,10 +1,24 @@
-h1 TeacherDashboard#index
-p Find me in app/views/teacher_dashboard/index.html.slim
+div.row.height-100
+  div.small-12.small-centered.columns.text-center.height-100
+    div.center#logo
+      = image_tag("RoSLogo.svg", height: '75', width: '75', class: "top-margin-small")
+    h1 Community of Practice
+    div.small-12.large-3.columns
+      a.med.button.expand.grey-button.selected href="#"  Curriculum
+    div.small-12.large-3.columns
+      a.med.button.expand.grey-button href="#"  Using Content
+    div.small-12.large-3.columns
+      a.med.button.expand.grey-button href="#"  Surveys & Quizzes
+    div.small-12.large-3.columns
+      a.med.button.expand.grey-button href="#"  Message Board
+
+
+
 = link_to "Home", root_path
 
 ul.learning_modules
   - @learning_modules.each do |mod|
-    li = link_to "Module #{mod.number}: #{mod.name}", mod
+    li = link_to "Module #{mod.number}: #{mod.name}", mod, id: "module-#{mod.number}"
 
 ul.classrooms
   - @classrooms.each do |cl|
