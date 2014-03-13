@@ -1,0 +1,9 @@
+AdminDashboard#new_teacher
+p Find me in app/views/admin_dashboard/new_teacher.html.slim
+
+= render 'dashboard/bad_emails', bad_addrs: @bad_addrs
+
+= simple_form_for :teachers do |f|
+  = f.input :emails, :as => :text, :label => 'Enter email addresses here, seperated by a comma', :input_html => { :cols => 50, :rows => 5 }
+  = f.button :submit
+
