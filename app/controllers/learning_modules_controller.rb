@@ -16,7 +16,7 @@ class LearningModulesController < ApplicationController
     @module = LearningModule.find params[:id]
 
     @presentation_url = nil
-    if not @module.presentation_embed_code.nil?
+    if @module.presentation_embed_code
       h = Nokogiri::HTML(@module.presentation_embed_code).xpath('//iframe/@src')
       if h.length >= 1
         @presentation_url = h[0].value
