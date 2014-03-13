@@ -1,0 +1,14 @@
+AdminDashboard#new_teacher
+p Find me in app/views/admin_dashboard/new_teacher.html.slim
+
+/-if !@bad_addrs.empty?
+/  div The following emails failed to validate
+/  - @bad_addrs.each do|a|
+/    ul
+/      li = a
+= render 'dashboard/bad_emails', bad_addrs: @bad_addrs
+
+= simple_form_for :teachers do |f|
+  = f.input :emails, :as => :text, :label => 'Enter email addresses here, seperated by a comma', :input_html => { :cols => 50, :rows => 5 }
+  = f.button :submit
+
