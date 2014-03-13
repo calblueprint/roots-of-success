@@ -5,3 +5,5 @@ p Find me in app/views/teacher_dashboard/index.html.slim
 ul.learning_modules
   - @learning_modules.each do |mod|
     li = link_to "Module #{mod.number}: #{mod.name}", mod
+
+= link_to "Create Student Account", new_student_path

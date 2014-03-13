@@ -22,4 +22,4 @@ config/database.yml
 .env
 
 # Ignore setup_mail
-/config/setup_mail.rb
+/config/initializers/setup_mail.rb
