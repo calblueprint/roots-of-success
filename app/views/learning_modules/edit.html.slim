@@ -3,5 +3,9 @@
     == f.label :presentation_embed_code
     == f.text_field :presentation_embed_code
 
+  = f.label :learning_module_file, "Upload local file:"
+  br/
+  = f.file_field :learning_module_file
+
   .actions
     == f.submit

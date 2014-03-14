@@ -1,3 +1,7 @@
 h1 Welcome to Module #{@module.number}: #{@module.name}
+
 - if @presentation_url
   iframe src="#{sanitize @presentation_url}" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+
+= link_to "Learning Module File", @module.learning_module_file_url
+

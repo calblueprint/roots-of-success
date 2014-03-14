@@ -6,6 +6,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  teacher_id :integer
+#  name       :text
 #
 
 class Classroom < ActiveRecord::Base
