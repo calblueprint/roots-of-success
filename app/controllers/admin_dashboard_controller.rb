@@ -15,7 +15,7 @@ class AdminDashboardController < ApplicationController
     end 
     if @bad_addrs.empty?
       flash[:success] = "Created all teachers!"
-      redirect_to admin_dashboard_index_path
+      redirect_to admin_dashboard_path
     else
       render 'new_teacher'
     end
