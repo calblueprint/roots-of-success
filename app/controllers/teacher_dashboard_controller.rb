@@ -12,8 +12,8 @@ class TeacherDashboardController < ApplicationController
   def create_student
     addr_list = student_params[:emails].strip.split(/,\s*/)
     @bad_addrs = addr_list.select do |e|
-      (Student.create email: e,
-                      password: (SecureRandom.hex 10)).new_record?
+      CreateUser.execute(Student, password: (SecureRandom.hex 10), 
+                                  email: e)
     end
     if @bad_addrs.empty?
       flash[:success] = "Created all students!"
@@ -26,7 +26,7 @@ class TeacherDashboardController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:email)
+    params.require(:students).permit(:emails)
   end
 
 end

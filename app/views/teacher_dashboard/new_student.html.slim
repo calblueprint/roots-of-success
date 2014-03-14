@@ -3,7 +3,7 @@ p Find me in app/views/teacher_dashboard/new_student.html.slim
 
 = render "dashboard/bad_emails", bad_addrs: @bad_addrs
 
-= simple_form_for :student do |f|
-  = f.input :email, :as => :text, :label => 'Enter email addresses here, seperated by a comma', :input_html => { :cols => 50, :rows => 5 }
+= simple_form_for :students do |f|
+  = f.input :emails, :as => :text, :label => 'Enter email addresses here, seperated by a comma', :input_html => { :cols => 50, :rows => 5 }
 
   = f.button :submit
