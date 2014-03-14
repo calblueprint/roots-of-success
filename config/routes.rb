@@ -1,4 +1,7 @@
 RootsOfSuccess::Application.routes.draw do
+  get "profile/show"
+  get "profile/edit"
+  get "profile/update"
   root to: 'static_pages#home'
 
   devise_for :users
@@ -14,6 +17,8 @@ RootsOfSuccess::Application.routes.draw do
     get '/new_teacher', to: 'admin_dashboard#new_teacher', as: :new_teacher
     post '/new_teacher', to: 'admin_dashboard#create_teacher', as: :create_teacher
   end
+
+  resources :profiles, only: [:show, :edit, :update]
 
   resources :learning_modules
   resources :classrooms

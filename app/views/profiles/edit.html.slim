@@ -1,0 +1,8 @@
+h1 Profile#edit
+p Find me in app/views/profile/edit.html.slim
+
+= simple_form_for @profile do |f|
+  = f.input :description
+  = f.input :phone_number
+  = f.input :address
+  = f.button :submit
