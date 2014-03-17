@@ -1,6 +1,8 @@
 Roots of Success Teacher Portal
 ====
 
+[![Code Climate](https://codeclimate.com/github/calblueprint/roots-of-success.png)](https://codeclimate.com/github/calblueprint/roots-of-success)
+
 What is Roots of Success?
 ----
 ![roots](http://d3ocz68jldv92l.cloudfront.net/content/77/67/00/00/00005b58.jpg "Roots Banner")
