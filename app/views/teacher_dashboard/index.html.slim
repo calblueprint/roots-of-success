@@ -14,7 +14,7 @@ div.row.height-100
 
 
 
-= link_to "Home", root_path
+p = link_to "Home", root_path
 
 ul.learning_modules
   - @learning_modules.each do |mod|
@@ -24,4 +24,5 @@ ul.classrooms
   - @classrooms.each do |cl|
     li = link_to "Classroom Name: #{cl.name} ", cl 
 
-= link_to "Create Student Account", new_student_path
+p = link_to "Create Student Account", new_student_path
+p = link_to "Logout", destroy_user_session_path, method: 'delete'
