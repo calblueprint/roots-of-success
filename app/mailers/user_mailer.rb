@@ -3,8 +3,8 @@ class UserMailer < ActionMailer::Base
 
   def welcome_email(user,password)
     @user = user
-    mail(to: @user.email, subject: 'Welcome to Roots of Success!',
-         body: "Your password is" + password)
+    @password = password
+    mail(to: @user.email, subject: 'Welcome to Roots of Success!')
   end
 
 end
