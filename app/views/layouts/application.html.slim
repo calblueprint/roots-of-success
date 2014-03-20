@@ -12,6 +12,10 @@ html
     = csrf_meta_tags
 
   body
-    = yield
+    .row.height-100
+      .small-12.small-centered.columns.text-center.height-100.nopad
+        = render 'layouts/header' if current_user
+
+        = yield
 
     = render 'shared/flash', flash: flash

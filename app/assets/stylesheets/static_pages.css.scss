@@ -38,7 +38,7 @@ html, body{
 
 .columns, .column{
   background: white;
-  padding: 0px;
+  padding: 20px;
 }
 
 .height-100{
@@ -48,6 +48,10 @@ html, body{
 .center{
   margin-right: auto;
   margin-left: auto;
+}
+
+.text-center{
+  text-align: center;
 }
 
 .bot-margin-small{
@@ -60,6 +64,10 @@ html, body{
 
 .top-margin-small{
   margin-top: 10px !important;
+}
+
+.top-margin-large{
+  margin-top: 20px !important;
 }
 
 // home/login page
@@ -96,7 +104,11 @@ label{
   background: #b3b3b3 !important;
 }
 
-.selected{
+.grey{
+    background: #d9d9d9 !important;
+}
+
+.dark-grey{
   background: #b3b3b3 !important;
 }
 
@@ -112,6 +124,31 @@ h1{
 .header-buttons{
   margin-bottom: 0px;
 }
-.blah{
-  background-color: red;
+.nopad{
+  padding: 0px !important;
+}
+
+//Curriculum
+.square-container{
+  position: relative;
+  width: 100%;
+}
+.square-container:before{
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.square-mod{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+h2{
+  font-family: 'klavikamedium', sans-serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin-top: 0px;
+  font-size: 2.4em;
 }

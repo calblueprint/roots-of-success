@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20140313042830) do
   enable_extension "plpgsql"
 
   create_table "classrooms", force: true do |t|
+    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "teacher_id"
     t.text     "name"
   end
 
@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20140313042830) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "classroom_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -73,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140313042830) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "classroom_id"
   end
 
   add_index "users", ["classroom_id"], name: "index_users_on_classroom_id", using: :btree
