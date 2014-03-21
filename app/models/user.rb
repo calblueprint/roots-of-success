@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def profile_filled_in?
-    !(profile.description == nil || profile.address == nil || profile.phone_number == nil)
+    !(profile.description.nil? || profile.address.nil? || profile.phone_number.nil?)
   end
 
 end
