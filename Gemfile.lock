@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: 788a7b24caf8fe58a5493aa3f6a065879a9f752a
+  specs:
+    jquery-datatables-rails (1.12.2)
+      jquery-rails
+      sass-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -260,6 +268,7 @@ DEPENDENCIES
   guard-livereload
   heroku-deflater
   jbuilder (~> 1.2)
+  jquery-datatables-rails!
   jquery-rails (~> 3.1.0)
   newrelic_rpm
   nokogiri (~> 1.6.1)

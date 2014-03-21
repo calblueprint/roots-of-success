@@ -14,6 +14,7 @@ gem 'cancan', '~> 1.6.10'
 gem 'devise', '~> 3.2.3'
 gem 'nokogiri', '~> 1.6.1'
 gem 'newrelic_rpm'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 
 gem 'slim-rails', '~> 2.1.0'
 gem 'simple_form', '~> 3.0.1'
