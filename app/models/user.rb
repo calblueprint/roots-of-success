@@ -30,15 +30,11 @@ class User < ActiveRecord::Base
   has_one :profile
 
   def name
-    return "#{first_name} #{last_name}"
+    "#{first_name} #{last_name}"
   end
 
-  def filled_in?
-    if profile.description == nil or profile.address == nil or profile.phone_number == nil
-      return false 
-    else
-      return true
-    end
+  def profile_filled_in?
+    !(profile.description == nil || profile.address == nil || profile.phone_number == nil)
   end
 
 end
