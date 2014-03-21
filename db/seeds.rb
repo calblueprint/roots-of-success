@@ -53,6 +53,16 @@ def create_modules
                           number: 10
 end
 
+def create_profiles
+  User.all.each do |u|
+    u.create_profile description: nil,
+                     phone_number: nil,
+                     address: nil
+  end
+end
+
 create_admins_and_teachers
 create_classroom
 create_modules
+create_profiles
+
