@@ -1,6 +1,10 @@
 class AdminDashboardController < ApplicationController
   def index
   end
+ 
+  def show_teachers
+    @teachers = Teacher.all
+  end
 
   def new_teacher
     @bad_addrs = Array.new

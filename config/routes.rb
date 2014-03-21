@@ -15,6 +15,7 @@ RootsOfSuccess::Application.routes.draw do
   scope '/admin_dashboard' do
     get 'index', to: 'admin_dashboard#index', as: :admin_dashboard
     get '/new_teacher', to: 'admin_dashboard#new_teacher', as: :new_teacher
+    get '/show_teachers', to: 'admin_dashboard#show_teachers', as: :show_teachers
     post '/new_teacher', to: 'admin_dashboard#create_teacher', as: :create_teacher
   end
 
