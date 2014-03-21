@@ -1,20 +1,12 @@
-.small-12.columns.nopad
-  .small-12.large-3.columns.nopad
-    a.med.button.expand.grey-button.dark-grey href="#"  Curriculum
-  .small-12.large-3.columns.nopad
-    a.med.button.expand.grey-button href="#"  Using Content
-  .small-12.large-3.columns.nopad
-    a.med.button.expand.grey-button hreif="#"  Surveys & Quizzes
-  .small-12.large-3.columns.nopad
-    a.med.button.expand.grey-button href="#"  Message Board
-
 .small-12.column
   ul.learning_modules.small-block-grid-2.large-block-grid-5
     - @learning_modules.each do |mod|
       li 
         .square-container
           .square-mod.grey
-            = link_to "Module #{mod.number}: #{mod.name}", mod, id: "module-#{mod.number}"
+            = link_to mod, id: "module-#{mod.number}" do
+              = image_tag mod.image_url, class: "square-img"
+        p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod.name}
 
 
 
