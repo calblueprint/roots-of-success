@@ -1,3 +1,19 @@
-h1 Welcome to Module #{@module.number}: #{@module.name}
-- if @presentation_url
-  iframe src="#{sanitize @presentation_url}" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+.small-12.columns.nopad
+  .small-12.large-3.columns.nopad
+    a.med.button.expand.grey-button.dark-grey href="#"  Curriculum
+  .small-12.large-3.columns.nopad
+    a.med.button.expand.grey-button href="#"  Using Content
+  .small-12.large-3.columns.nopad
+    a.med.button.expand.grey-button hreif="#"  Surveys & Quizzes
+  .small-12.large-3.columns.nopad
+    a.med.button.expand.grey-button href="#"  Message Board
+
+.small-12.column.text-center
+  h2 Module #{@module.number}: #{@module.name}
+
+  h1 Presentation
+  - if @presentation_url
+    .flex-video
+      iframe src="#{sanitize @presentation_url}" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+
+  h1 Quiz

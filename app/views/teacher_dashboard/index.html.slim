@@ -1,24 +1,24 @@
-div.row.height-100
-  div.small-12.small-centered.columns.text-center.height-100
-    div.center#logo
-      = image_tag("RoSLogo.svg", height: '75', width: '75', class: "top-margin-small")
-    h1 Community of Practice
-    div.small-12.large-3.columns
-      a.med.button.expand.grey-button.selected href="#"  Curriculum
-    div.small-12.large-3.columns
-      a.med.button.expand.grey-button href="#"  Using Content
-    div.small-12.large-3.columns
-      a.med.button.expand.grey-button href="#"  Surveys & Quizzes
-    div.small-12.large-3.columns
-      a.med.button.expand.grey-button href="#"  Message Board
+.small-12.columns.nopad
+  .small-12.large-3.columns.nopad
+    a.med.button.expand.grey-button.dark-grey href="#"  Curriculum
+  .small-12.large-3.columns.nopad
+    a.med.button.expand.grey-button href="#"  Using Content
+  .small-12.large-3.columns.nopad
+    a.med.button.expand.grey-button hreif="#"  Surveys & Quizzes
+  .small-12.large-3.columns.nopad
+    a.med.button.expand.grey-button href="#"  Message Board
+
+.small-12.column
+  ul.learning_modules.small-block-grid-2.large-block-grid-5
+    - @learning_modules.each do |mod|
+      li 
+        .square-container
+          .square-mod.grey
+            = link_to "Module #{mod.number}: #{mod.name}", mod, id: "module-#{mod.number}"
 
 
 
-p = link_to "Home", root_path
-
-ul.learning_modules
-  - @learning_modules.each do |mod|
-    li = link_to "Module #{mod.number}: #{mod.name}", mod, id: "module-#{mod.number}"
+= link_to "Home", root_path
 
 ul.classrooms
   - @classrooms.each do |cl|
