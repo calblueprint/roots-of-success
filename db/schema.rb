@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313042830) do
+ActiveRecord::Schema.define(version: 20140321032034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20140313042830) do
     t.text     "presentation_embed_code"
   end
 
+  create_table "profiles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+    t.text     "phone_number"
+    t.text     "address"
+    t.integer  "user_id"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
   create_table "questions", force: true do |t|
     t.integer  "feedback_id"
     t.integer  "order_index"
@@ -51,10 +62,14 @@ ActiveRecord::Schema.define(version: 20140313042830) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "text"
-    t.integer  "user_id"
+    t.integer  "feedback_id"
+    t.integer  "teacher_id_id"
+    t.integer  "student_id_id"
   end
 
-  add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
+  add_index "responses", ["feedback_id"], name: "index_responses_on_feedback_id", using: :btree
+  add_index "responses", ["student_id_id"], name: "index_responses_on_student_id_id", using: :btree
+  add_index "responses", ["teacher_id_id"], name: "index_responses_on_teacher_id_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
