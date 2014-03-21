@@ -54,6 +54,10 @@ html, body{
   text-align: center;
 }
 
+.bot-margin-none{
+  margin-bottom: 0px !important;
+}
+
 .bot-margin-small{
   margin-bottom: 10px !important;
 }
@@ -144,6 +148,12 @@ h1{
   left: 0;
   bottom: 0;
   right: 0;
+}
+.square-img{
+  height: 100%;
+  position: absolute; 
+  left: 0px;
+  top: 0px;
 }
 h2{
   font-family: 'klavikamedium', sans-serif;

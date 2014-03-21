@@ -11,4 +11,9 @@
 #
 
 class LearningModule < ActiveRecord::Base
+
+  def image_url
+    "Modules/Mod#{number}.png"
+  end
+
 end
