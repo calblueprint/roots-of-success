@@ -3,9 +3,10 @@
 # Table name: classrooms
 #
 #  id         :integer          not null, primary key
+#  teacher_id :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  teacher_id :integer
+#  name       :text
 #
 
 class Classroom < ActiveRecord::Base
