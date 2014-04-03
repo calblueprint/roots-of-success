@@ -16,4 +16,7 @@
     .flex-video
       iframe src="#{sanitize @presentation_url}" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 
+  - if admin?
+    = link_to 'Edit Module', edit_learning_module_path(@module)
+
   h1 Quiz

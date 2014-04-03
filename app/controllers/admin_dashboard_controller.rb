@@ -1,5 +1,7 @@
 class AdminDashboardController < ApplicationController
   def index
+    @learning_modules = LearningModule.all.order(:number)
+    @classrooms = Classroom.all
   end
  
   def show_teachers
