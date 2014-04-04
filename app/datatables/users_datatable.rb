@@ -1,15 +1,16 @@
-class TeachersDatatable
+class UsersDatatable
   delegate :params, :h, :link_to, to: :@view
 
-  def initialize(view)
+  def initialize(klass, view)
     @view = view
+    @klass = klass
   end
 
   def as_json(options = {})
     {
       sEcho: params[:sEcho].to_i,
-      iTotalRecords: Teacher.count,
-      iTotalDisplayRecords: teachers.count,
+      iTotalRecords: @klass.count,
+      iTotalDisplayRecords: users.count,
       aaData: data
     }
   end
@@ -17,26 +18,26 @@ class TeachersDatatable
   private
 
   def data
-    teachers.map do |teacher|
+    users.map do |user|
       [
-        link_to(teacher.email, '#'),
-        ERB::Util.h(teacher.first_name),
-        ERB::Util.h(teacher.last_name)
+        link_to(user.email, '#'),
+        ERB::Util.h(user.first_name),
+        ERB::Util.h(user.last_name)
       ]
     end
   end
 
-  def teachers
-    @teachers ||= get_teachers 
+  def users
+    @users ||= get_users
   end
 
-  def get_teachers
-    teachers = Teacher.order("#{sort_column} #{sort_direction}")
-    teachers = teachers.page(page).per_page(per_page)
+  def get_users
+    users = @klass.order("#{sort_column} #{sort_direction}")
+    users = users.page(page).per_page(per_page)
     if params[:sSearch].present?
-      teachers = teachers.where("first_name like :search or last_name like :search", search: "%#{params[:sSearch]}%")
+      users = users.where("first_name like :search or last_name like :search", search: "%#{params[:sSearch]}%")
     end
-    teachers
+    users
   end
 
   def page
@@ -57,4 +58,3 @@ class TeachersDatatable
   end
 
 end
-
