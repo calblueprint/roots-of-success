@@ -3,7 +3,10 @@ class AdminDashboardController < ApplicationController
   end
  
   def show_teachers
-    @teachers = Teacher.all
+    respond_to do |format|
+      format.html
+      format.json { render json: TeachersDatatable.new(view_context) }
+    end
   end
 
   def new_teacher

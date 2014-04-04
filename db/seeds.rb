@@ -12,6 +12,8 @@ def create_admins_and_teachers
                   last_name: "#{n}",
                   email: "admin#{n}@ros.org",
                   password: 'password'
+  end
+  1.upto(500) do |n|
     Teacher.create! first_name: 'Teacher', 
                     last_name: "#{n}", 
                     password: 'password',
