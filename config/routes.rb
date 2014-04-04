@@ -2,6 +2,7 @@ RootsOfSuccess::Application.routes.draw do
   get "profile/show"
   get "profile/edit"
   get "profile/update"
+  get "classroom/edit"
   root to: 'static_pages#home'
 
   devise_for :users
