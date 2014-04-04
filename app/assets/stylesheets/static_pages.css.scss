@@ -36,13 +36,16 @@ html, body{
   font-family: 'klavikamedium';
 }
 
-.columns, .column{
+.white-back{
   background: white;
+}
+
+.columns, .column{
   padding: 20px;
 }
 
 .height-100{
-  height: 100%;
+  min-height: 100%;
 }
 
 .center{
@@ -161,4 +164,7 @@ h2{
   font-weight: normal;
   margin-top: 0px;
   font-size: 2.4em;
+}
+.blah{
+  height: 150px;
 }
