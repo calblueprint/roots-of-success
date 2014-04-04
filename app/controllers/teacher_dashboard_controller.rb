@@ -1,7 +1,7 @@
 class TeacherDashboardController < ApplicationController
   def index
     @learning_modules = LearningModule.all.order(:number)
-    @classrooms = Classroom.all
+    @classrooms = current_user.classrooms
   end
 
   def new_student
