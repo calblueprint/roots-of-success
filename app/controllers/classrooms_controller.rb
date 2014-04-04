@@ -23,6 +23,7 @@ class ClassroomsController < ApplicationController
     @id = params[:classroom][:teacher_id]
     @classroom.teacher_id = @id
     @classroom.save
+    flash[:success] = "Classroom teacher updated"
     redirect_to teacher_dashboard_path
   end
 
