@@ -5,7 +5,19 @@ class AdminDashboardController < ApplicationController
   end
  
   def show_teachers
-    @teachers = Teacher.all
+    t = UsersDatatable.new(Teacher, view_context)
+    respond_to do |format|
+      format.html
+      format.json { render json: t }
+    end
+  end
+
+  def show_students
+    t = UsersDatatable.new(Student, view_context)
+    respond_to do |format|
+      format.html
+      format.json { render json: t }
+    end
   end
 
   def new_teacher

@@ -1,12 +1,10 @@
 ready = ->
-  $('#teachers').dataTable
+  $('#students').dataTable
     sPaginationType: "full_numbers"
     bJQueryUI: true
     bProcessing: true
     bServerSide: true
-    sAjaxSource: $('#teachers').data('source')
+    sAjaxSource: $('#students').data('source')
 
 $(document).ready(ready)
 $(document).on('page:load',ready)
-   
-  

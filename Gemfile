@@ -15,6 +15,8 @@ gem 'devise', '~> 3.2.3'
 gem 'nokogiri', '~> 1.6.1'
 gem 'newrelic_rpm'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+gem 'jquery-ui-rails', '~> 4.2.0'
+gem 'will_paginate', '~> 3.0.5'
 
 gem 'slim-rails', '~> 2.1.0'
 gem 'simple_form', '~> 3.0.1'
