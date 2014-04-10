@@ -1,0 +1,2 @@
+web: rails s
+guard: guard -i --no-bundler-warning

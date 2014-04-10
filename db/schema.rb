@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314034555) do
+ActiveRecord::Schema.define(version: 20140321034830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "classrooms", force: true do |t|
+    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "teacher_id"
     t.text     "name"
   end
 
@@ -36,8 +36,18 @@ ActiveRecord::Schema.define(version: 20140314034555) do
     t.string   "name"
     t.integer  "number"
     t.text     "presentation_embed_code"
-    t.string   "learning_module_file"
   end
+
+  create_table "profiles", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+    t.text     "phone_number"
+    t.text     "address"
+    t.integer  "user_id"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.integer  "feedback_id"
@@ -52,10 +62,14 @@ ActiveRecord::Schema.define(version: 20140314034555) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "text"
-    t.integer  "user_id"
+    t.integer  "feedback_id"
+    t.integer  "teacher_id"
+    t.integer  "student_id"
   end
 
-  add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
+  add_index "responses", ["feedback_id"], name: "index_responses_on_feedback_id", using: :btree
+  add_index "responses", ["student_id"], name: "index_responses_on_student_id", using: :btree
+  add_index "responses", ["teacher_id"], name: "index_responses_on_teacher_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -63,7 +77,6 @@ ActiveRecord::Schema.define(version: 20140314034555) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "classroom_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -74,6 +87,7 @@ ActiveRecord::Schema.define(version: 20140314034555) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "classroom_id"
   end
 
   add_index "users", ["classroom_id"], name: "index_users_on_classroom_id", using: :btree

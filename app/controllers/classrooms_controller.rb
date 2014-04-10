@@ -9,6 +9,8 @@ class ClassroomsController < ApplicationController
   end
 
   def edit
+    @classroom = Classroom.find params[:id]
+    @teachers = Teacher.all
   end
 
   def show
@@ -17,6 +19,12 @@ class ClassroomsController < ApplicationController
   end
 
   def update
+    @classroom = Classroom.find params[:id]
+    @id = params[:classroom][:teacher_id]
+    @classroom.teacher_id = @id
+    @classroom.save
+    flash[:success] = "Classroom teacher updated"
+    redirect_to teacher_dashboard_path
   end
 
   def destroy

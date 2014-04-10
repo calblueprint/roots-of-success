@@ -1,5 +1,18 @@
+.small-12.column
+  ul.learning_modules.small-block-grid-2.large-block-grid-5
+    - @learning_modules.each do |mod|
+      li 
+        .square-container
+          .square-mod.grey
+            = link_to mod, id: "module-#{mod.number}" do
+              = image_tag mod.image_url, class: "square-img"
+        p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod.name}
+
+
 h1 AdminDashboard#index
 p Find me in app/views/admin_dashboard/index.html.slim
-= link_to "Home", root_path
-= link_to "Create Teacher Account", new_teacher_path
-= link_to "Logout", destroy_user_session_path, method: 'delete'
+p = link_to "Home", root_path
+p = link_to "Create Teacher Accounts", new_teacher_path
+p = link_to "View Teachers", show_teachers_path
+p = link_to "View Students", show_students_path
+p = link_to "Logout", destroy_user_session_path, method: 'delete'

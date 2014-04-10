@@ -27,8 +27,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_one :profile
+
   def name
-    return "#{first_name} #{last_name}"
+    "#{first_name} #{last_name}"
+  end
+
+  def profile_filled_in?
+    !(profile.description.nil? || profile.address.nil? || profile.phone_number.nil?)
   end
 
 end

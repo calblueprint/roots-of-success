@@ -1,17 +1,15 @@
-div.row.height-100
-  div.small-12.small-centered.columns.text-center.height-100
-    div#login-floater
-    div.center#login-module
-      div.center#logo
-        = image_tag("RoSLogo.svg", height: '150', width: '150', class: "bot-margin-small")
-        = image_tag("RoSLogoType.svg", width: '150', class: "bot-margin-large")
-      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .form-inputs
-          = f.email_field :email, required: false, autofocus: true, label: false, placeholder: "Username"
-          = f.password_field :password, required: false, label: false, placeholder: "Password"
-          = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
-          span
-          | &nbsp; Remember me
-        .form-actions
-          = f.button :submit, "Continue", class: "small expand grey-button"
-      = render "devise/shared/links"
+div#login-floater
+div.center#login-module
+  div.center#logo
+    = image_tag("RoSLogo.svg", height: '150', width: '150', class: "bot-margin-small")
+    = image_tag("RoSLogoType.svg", width: '150', class: "bot-margin-large")
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-inputs
+      = f.email_field :email, required: false, autofocus: true, label: false, placeholder: "Username"
+      = f.password_field :password, required: false, label: false, placeholder: "Password"
+      = f.check_box :remember_me, as: :boolean if devise_mapping.rememberable?
+      span
+      | &nbsp; Remember me
+    .form-actions
+      = f.button :submit, "Continue", class: "small expand grey-button"
+  = render "devise/shared/links"

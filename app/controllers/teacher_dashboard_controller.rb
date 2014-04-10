@@ -1,7 +1,7 @@
 class TeacherDashboardController < ApplicationController
   def index
-    @learning_modules = LearningModule.all
-    @classrooms = Classroom.all
+    @learning_modules = LearningModule.all.order(:number)
+    @classrooms = current_user.classrooms
   end
 
   def new_student
@@ -12,12 +12,12 @@ class TeacherDashboardController < ApplicationController
   def create_student
     addr_list = student_params[:emails].strip.split(/,\s*/)
     @bad_addrs = addr_list.select do |e|
-      (Student.create email: e,
-                      password: (SecureRandom.hex 10)).new_record?
+      CreateUser.execute(Student, password: (SecureRandom.hex 10), 
+                                  email: e)
     end
     if @bad_addrs.empty?
       flash[:success] = "Created all students!"
-      redirect_to teacher_dashboard_index_path
+      redirect_to teacher_dashboard_path
     else
       render 'new_student'
     end
@@ -26,7 +26,7 @@ class TeacherDashboardController < ApplicationController
   private
 
   def student_params
-    params.require(:student).permit(:email)
+    params.require(:students).permit(:emails)
   end
 
 end
