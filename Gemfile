@@ -37,13 +37,15 @@ group :development do
   gem 'rubocop', '>= 0.19.0'
   gem 'annotate', '~> 2.6.1'
   gem 'commands', '~> 0.2.1'
-  gem 'guard-livereload', require: false
 end
 
 group :development, :test do
   gem 'awesome_print', '~> 1.2.0'
-  gem 'factory_girl', '~> 4.4.0'
   gem 'rspec-rails', '~> 2.14.1'
+  gem 'factory_girl', '~> 4.4.0'
+  gem 'guard-livereload'
+  gem 'guard-rspec'
+  gem 'zeus', '~> 0.13.3'
 end
 
 # Use unicorn as the app server
