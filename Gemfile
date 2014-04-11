@@ -24,6 +24,7 @@ gem 'google-analytics-rails', '~> 0.0.4'
 gem 'd3-rails', '~> 3.3.7'
 gem 'compass', '~> 0.12.2'
 gem 'zurb-foundation', '~> 4.3.2'
+gem 'forem', :github => 'radar/forem', :branch => 'rails4'
 
 group :doc do
   gem 'sdoc', require: false
