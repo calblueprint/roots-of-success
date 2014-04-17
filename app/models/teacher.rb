@@ -8,7 +8,6 @@
 #  type                   :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
-#  classroom_id           :integer
 #  email                  :string(255)      default(""), not null
 #  encrypted_password     :string(255)      default(""), not null
 #  reset_password_token   :string(255)
@@ -19,6 +18,7 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
+#  classroom_id           :integer
 #
 
 class Teacher < User
