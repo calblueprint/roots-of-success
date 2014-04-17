@@ -2,7 +2,10 @@ h1 Teacher Profile Show
 
 p = link_to "Edit Teacher Profile", edit_profile_path(@profile)
 
-- if @user.type == 'Admin'
+- @profile.to_check.each do |attribute|
+  = @profile.send attribute
+
+- if admin?
   p = link_to "Admin Dashboard", admin_dashboard_path
-- elsif @user.type == 'Teacher'
+- elsif teacher?
   p = link_to "Teacher Dashboard", teacher_dashboard_path

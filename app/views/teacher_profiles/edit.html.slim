@@ -1,7 +1,8 @@
 h1 Teacher Edit Profile
 
-/ = simple_form_for @profile do |f|
-/   = f.input :description
-/   = f.input :phone_number
-/   = f.input :address
-/   = f.button :submit
+/ = to_check = @profile.attribute_names - %w[id teacher_id created_at updated_at]
+
+= simple_form_for @profile, url: profile_path do |f|
+  - @profile.to_check.each do |attribute|
+    = f.input attribute
+  = f.button :submit
