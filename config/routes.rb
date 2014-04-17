@@ -8,7 +8,6 @@ RootsOfSuccess::Application.routes.draw do
   mount Forem::Engine, :at => '/forums'
 
   get "classroom/edit"
-  #root to: 'devise/sessions#new'
 
   devise_scope :user do
     get '/logout' => 'devise/sessions#destroy'
