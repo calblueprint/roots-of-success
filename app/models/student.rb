@@ -25,8 +25,13 @@
 #
 
 class Student < User
+  has_one :profile, class_name: 'StudentProfile'
+
   belongs_to :classroom
   has_many :responses
+
+  after_create :create_profile
+
 
   def teacher
     classroom.teacher 
