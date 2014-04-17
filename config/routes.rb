@@ -8,8 +8,12 @@ RootsOfSuccess::Application.routes.draw do
   mount Forem::Engine, :at => '/forums'
 
   get "classroom/edit"
-  root to: 'static_pages#home'
+  #root to: 'devise/sessions#new'
 
+  devise_scope :user do
+    get '/logout' => 'devise/sessions#destroy'
+    root to: 'devise/sessions#new'
+  end
   devise_for :users
 
   scope '/teacher_dashboard' do
