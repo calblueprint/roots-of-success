@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
     if @profile.update_attributes profile_params
       # Handle a successful update.
       flash[:success] = "Profile updated"
-      redirect_to @profile
+      redirect_to profile_path @profile
     else
       render "#{profile_view(@profile)}/edit"
     end
@@ -24,10 +24,11 @@ class ProfilesController < ApplicationController
 
   private
     def profile_params
-      params.require(:profile).permit(:description, :address, :phone_number)
+      @profile = current_user.profile
+      params.require(@profile.class_name.to_sym).permit(@profile.to_check)
     end
 
     def profile_view(profile)
-      profile.class.name.underscore.pluralize
+      profile.class_name.pluralize
     end
 end

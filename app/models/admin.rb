@@ -27,4 +27,8 @@
 class Admin < User
   has_one :profile, class_name: 'AdminProfile'
   after_create :create_profile
+
+  def profile_filled_in?
+    profile.filled_in?
+  end
 end

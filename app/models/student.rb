@@ -36,4 +36,9 @@ class Student < User
   def teacher
     classroom.teacher 
   end
+
+  def profile_filled_in?
+    profile.filled_in?
+  end
+
 end

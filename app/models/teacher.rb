@@ -31,4 +31,8 @@ class Teacher < User
   has_many :responses
 
   after_create :create_profile
+
+  def profile_filled_in?
+    profile.filled_in?
+  end
 end
