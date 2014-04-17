@@ -19,7 +19,16 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  classroom_id           :integer
+#  forem_admin            :boolean          default(FALSE)
+#  forem_state            :string(255)      default("pending_review")
+#  forem_auto_subscribe   :boolean          default(FALSE)
 #
 
 class Admin < User
+  has_one :profile, class_name: 'AdminProfile'
+  after_create :create_profile
+
+  def profile_filled_in?
+    profile.filled_in?
+  end
 end

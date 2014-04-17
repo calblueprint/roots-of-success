@@ -19,6 +19,9 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  classroom_id           :integer
+#  forem_admin            :boolean          default(FALSE)
+#  forem_state            :string(255)      default("pending_review")
+#  forem_auto_subscribe   :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -27,16 +30,16 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :profile
-
-  after_create :create_profile
-
   def name
     "#{first_name} #{last_name}"
   end
 
+  def profile
+    false
+  end
+
   def profile_filled_in?
-    !(profile.description.nil? || profile.address.nil? || profile.phone_number.nil?)
+    profile
   end
 
 end
