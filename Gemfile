@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.1.1'
 
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.0'
 gem 'foreman', '~> 0.63.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -24,6 +24,7 @@ gem 'google-analytics-rails', '~> 0.0.4'
 gem 'd3-rails', '~> 3.3.7'
 gem 'compass', '~> 0.12.2'
 gem 'zurb-foundation', '~> 4.3.2'
+gem 'forem', :github => 'radar/forem', :branch => 'rails4'
 
 group :doc do
   gem 'sdoc', require: false
@@ -36,13 +37,15 @@ group :development do
   gem 'rubocop', '>= 0.19.0'
   gem 'annotate', '~> 2.6.1'
   gem 'commands', '~> 0.2.1'
-  gem 'guard-livereload', require: false
 end
 
 group :development, :test do
   gem 'awesome_print', '~> 1.2.0'
-  gem 'factory_girl', '~> 4.4.0'
   gem 'rspec-rails', '~> 2.14.1'
+  gem 'factory_girl', '~> 4.4.0'
+  gem 'guard-livereload'
+  gem 'guard-rspec'
+  gem 'zeus', '~> 0.13.3'
 end
 
 # Use unicorn as the app server
