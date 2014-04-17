@@ -34,8 +34,12 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def profile
+    false
+  end
+
   def profile_filled_in?
-    !(profile.description.nil? || profile.address.nil? || profile.phone_number.nil?)
+    profile
   end
 
 end
