@@ -1,0 +1,8 @@
+h1 Teacher Profile Show
+
+p = link_to "Edit Teacher Profile", edit_profile_path(@profile)
+
+- if @user.type == 'Admin'
+  p = link_to "Admin Dashboard", admin_dashboard_path
+- elsif @user.type == 'Teacher'
+  p = link_to "Teacher Dashboard", teacher_dashboard_path
