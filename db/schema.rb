@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411033285) do
+ActiveRecord::Schema.define(version: 20140417033312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_profiles", force: true do |t|
+    t.text     "position"
+    t.integer  "admin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "classrooms", force: true do |t|
     t.integer  "teacher_id"
@@ -165,6 +172,20 @@ ActiveRecord::Schema.define(version: 20140411033285) do
   add_index "responses", ["feedback_id"], name: "index_responses_on_feedback_id", using: :btree
   add_index "responses", ["student_id"], name: "index_responses_on_student_id", using: :btree
   add_index "responses", ["teacher_id"], name: "index_responses_on_teacher_id", using: :btree
+
+  create_table "student_profiles", force: true do |t|
+    t.integer  "age"
+    t.integer  "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teacher_profiles", force: true do |t|
+    t.text     "institution"
+    t.integer  "teacher_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"

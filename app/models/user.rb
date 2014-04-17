@@ -19,6 +19,9 @@
 #  current_sign_in_ip     :string(255)
 #  last_sign_in_ip        :string(255)
 #  classroom_id           :integer
+#  forem_admin            :boolean          default(FALSE)
+#  forem_state            :string(255)      default("pending_review")
+#  forem_auto_subscribe   :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
