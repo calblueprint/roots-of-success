@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 
   has_one :profile
 
-  after_create :create_profile 
+  after_create :create_profile
 
   def name
     "#{first_name} #{last_name}"
