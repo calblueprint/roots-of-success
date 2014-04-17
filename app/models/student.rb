@@ -31,8 +31,6 @@ class Student < User
   has_many :responses
 
   after_create :create_profile
-
-
   def teacher
     classroom.teacher 
   end
