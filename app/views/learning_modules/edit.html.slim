@@ -1,7 +1,6 @@
-= form_for @module do |f|
-  .field
-    == f.label :presentation_embed_code
-    == f.text_field :presentation_embed_code
+.small-12.large-9.center
 
-  .actions
-    == f.submit
+	= simple_form_for @module do |f|
+    	= f.input :presentation_embed_code, :as => :text, :label => 'Enter presentation embed code', :input_html => { :cols => 50, :rows => 5, :class => "smallform"}
+
+    	= f.button :submit, "Update Module", class: "small expand grey-button"
