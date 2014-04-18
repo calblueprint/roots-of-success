@@ -14,6 +14,7 @@ RootsOfSuccess::Application.routes.draw do
     root to: 'devise/sessions#new'
   end
   devise_for :users
+  devise_for :students, controllers: { sessions: 'students/sessions' }
 
   scope '/teacher_dashboard' do
     get 'index', to: 'teacher_dashboard#index', as: :teacher_dashboard

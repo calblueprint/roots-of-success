@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417041930) do
+ActiveRecord::Schema.define(version: 20140418052603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20140417041930) do
   end
 
   create_table "classrooms", force: true do |t|
-    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "teacher_id"
     t.text     "name"
   end
 
@@ -163,6 +163,16 @@ ActiveRecord::Schema.define(version: 20140417041930) do
   add_index "responses", ["student_id"], name: "index_responses_on_student_id", using: :btree
   add_index "responses", ["teacher_id"], name: "index_responses_on_teacher_id", using: :btree
 
+  create_table "sessions", force: true do |t|
+    t.string   "session_id", null: false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
+  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+
   create_table "student_profiles", force: true do |t|
     t.integer  "age"
     t.integer  "student_id"
@@ -183,6 +193,7 @@ ActiveRecord::Schema.define(version: 20140417041930) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "classroom_id"
     t.string   "email",                  default: "",               null: false
     t.string   "encrypted_password",     default: "",               null: false
     t.string   "reset_password_token"
@@ -193,7 +204,6 @@ ActiveRecord::Schema.define(version: 20140417041930) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "classroom_id"
     t.boolean  "forem_admin",            default: false
     t.string   "forem_state",            default: "pending_review"
     t.boolean  "forem_auto_subscribe",   default: false
