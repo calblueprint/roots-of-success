@@ -85,7 +85,6 @@ ActiveRecord::Schema.define(version: 20140417041930) do
     t.integer  "reply_to_id"
     t.string   "state",       default: "pending_review"
     t.boolean  "notified",    default: false
->>>>>>> master
   end
 
   add_index "forem_posts", ["reply_to_id"], name: "index_forem_posts_on_reply_to_id", using: :btree
@@ -139,6 +138,7 @@ ActiveRecord::Schema.define(version: 20140417041930) do
     t.string   "name"
     t.integer  "number"
     t.text     "presentation_embed_code"
+    t.string   "learning_module_file"
   end
 
   create_table "questions", force: true do |t|
@@ -183,14 +183,9 @@ ActiveRecord::Schema.define(version: 20140417041930) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-<<<<<<< HEAD
     t.integer  "classroom_id"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-=======
     t.string   "email",                  default: "",               null: false
     t.string   "encrypted_password",     default: "",               null: false
->>>>>>> master
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -199,13 +194,9 @@ ActiveRecord::Schema.define(version: 20140417041930) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-<<<<<<< HEAD
-=======
-    t.integer  "classroom_id"
     t.boolean  "forem_admin",            default: false
     t.string   "forem_state",            default: "pending_review"
     t.boolean  "forem_auto_subscribe",   default: false
->>>>>>> master
   end
 
   add_index "users", ["classroom_id"], name: "index_users_on_classroom_id", using: :btree
