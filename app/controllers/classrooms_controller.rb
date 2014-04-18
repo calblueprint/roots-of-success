@@ -1,11 +1,21 @@
+# Classrooms Controller
 class ClassroomsController < ApplicationController
   def index
-  end 
+    @classrooms = current_user.classrooms
+  end
 
   def create
+    @classroom = Classroom.new classroom_params
+    if @classroom.save
+      flash[:success] = 'Successfully created classroom!'
+      redirect_to teacher_dashboard_path
+    else
+      render 'new'
+    end
   end
 
   def new
+    @classroom = Classroom.new
   end
 
   def edit
@@ -20,14 +30,22 @@ class ClassroomsController < ApplicationController
 
   def update
     @classroom = Classroom.find params[:id]
-    @id = params[:classroom][:teacher_id]
-    @classroom.teacher_id = @id
-    @classroom.save
-    flash[:success] = "Classroom teacher updated"
-    redirect_to teacher_dashboard_path
+    teacher = Teacher.find_by_email params[:classroom][:teacher_email]
+    @classroom.teacher = teacher
+    if @classroom.save
+      flash[:success] = 'Classroom teacher updated'
+      redirect_to teacher_dashboard_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
   end
-  
+
+  private
+
+  def classroom_params
+    params.require(:classroom).permit(:name, :teacher_id)
+  end
 end
