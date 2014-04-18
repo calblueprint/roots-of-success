@@ -55,7 +55,15 @@ def create_modules
                           number: 10
 end
 
+def create_surveys
+  1.upto(5) do |n|
+    Survey.create! name: "teacher_survey#{n}",
+                   link: "https://docs.google.com/forms/d/19gKLLu50bf1U3mZ_rEKNXeGiamRVprJhWwdCSL8xq0Q/viewform?usp=send_form"
+  end
+end 
+
 create_admins_and_teachers
 create_classroom
 create_modules
+create_surveys
 
