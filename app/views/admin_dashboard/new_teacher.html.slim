@@ -4,5 +4,5 @@ p Find me in app/views/admin_dashboard/new_teacher.html.slim
 = render 'dashboard/bad_emails', bad_addrs: @bad_addrs
 .small-12.large-9.center
   = simple_form_for :teachers do |f|
-    = f.input :emails, :as => :text, :label => 'Enter email addresses here, seperated by a comma', :input_html => { :cols => 50, :rows => 5, :class => "blah"}
+    = f.input :emails, :as => :text, :label => 'Enter email addresses here, seperated by a comma', :input_html => { :cols => 50, :rows => 5, :class => "tallform"}
     = f.button :submit, class: "small expand grey-button"

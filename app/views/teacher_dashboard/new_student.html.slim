@@ -5,6 +5,6 @@ p Find me in app/views/teacher_dashboard/new_student.html.slim
 
 .small-12.large-9.center
   = simple_form_for :students do |f|
-    = f.input :emails, :as => :text, :label => 'Enter email addresses here, seperated by a comma', :input_html => { :cols => 50, :rows => 5, :class => "blah"}
+    = f.input :emails, :as => :text, :label => 'Enter email addresses here, seperated by a comma', :input_html => { :cols => 50, :rows => 5, :class => "tallform"}
 
     = f.button :submit, "Save Students", class: "small expand grey-button"
