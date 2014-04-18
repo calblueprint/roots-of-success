@@ -7,7 +7,9 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  text        :string(255)
-#  user_id     :integer
+#  feedback_id :integer
+#  teacher_id  :integer
+#  student_id  :integer
 #
 
 class Response < ActiveRecord::Base

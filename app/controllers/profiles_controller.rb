@@ -1,26 +1,33 @@
 class ProfilesController < ApplicationController
   def show
-    @profile = Profile.find params[:id]
-    @user = @profile.user
+    @profile = current_user.profile
+    @user = current_user
+    render "#{profile_view(@profile)}/show"
   end
 
   def edit
-    @profile = Profile.find params[:id]
+    @profile = current_user.profile
+    render "#{profile_view(@profile)}/edit"
   end
 
   def update
-    @profile = Profile.find params[:id]
+    @profile = current_user.profile
     if @profile.update_attributes profile_params
       # Handle a successful update.
       flash[:success] = "Profile updated"
-      redirect_to @profile
+      redirect_to profile_path @profile
     else
-      render 'edit'
+      render "#{profile_view(@profile)}/edit"
     end
   end
 
   private
     def profile_params
-      params.require(:profile).permit(:description, :address, :phone_number)
+      @profile = current_user.profile
+      params.require(@profile.class_name.to_sym).permit(@profile.to_check)
+    end
+
+    def profile_view(profile)
+      profile.class_name.pluralize
     end
 end
