@@ -10,5 +10,5 @@
 #  type       :string(255)
 #
 
-class Survey < ActiveRecord::Base
+class AllTeachersSurvey < Survey
 end

@@ -21,7 +21,9 @@ class AdminDashboardController < ApplicationController
   end
 
   def surveys
-    @surveys = Survey.all
+    @all_teachers_surveys = Survey.where(type: 'AllTeachersSurvey')
+    @correctional_teachers_surveys = Survey.where(type: 'CorrectionalFacilityTeachersSurvey')
+    @highschool_teachers_surveys = Survey.where(type: 'HighschoolTeachersSurvey')
   end
 
   def new_teacher
