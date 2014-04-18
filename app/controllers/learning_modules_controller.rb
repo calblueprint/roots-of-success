@@ -27,13 +27,19 @@ class LearningModulesController < ApplicationController
   def update
     @module = LearningModule.find params[:id]
 
-    @module.presentation_embed_code = params[:learning_module][:presentation_embed_code]
-    @module.save
+    @module.update_attributes module_attributes
+    flash[:success] = 'Module updated!'
 
     redirect_to @module
   end
 
   def destroy
   end
+
+  private
+    def module_attributes
+      params.require(:learning_module).
+            permit(:presentation_embed_code, :learning_module_file)
+    end
   
 end

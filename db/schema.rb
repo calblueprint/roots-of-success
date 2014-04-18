@@ -11,15 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411033285) do
+ActiveRecord::Schema.define(version: 20140417041930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "classrooms", force: true do |t|
-    t.integer  "teacher_id"
+  create_table "admin_profiles", force: true do |t|
+    t.text     "position"
+    t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "classrooms", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "teacher_id"
     t.text     "name"
   end
 
@@ -131,18 +138,8 @@ ActiveRecord::Schema.define(version: 20140411033285) do
     t.string   "name"
     t.integer  "number"
     t.text     "presentation_embed_code"
+    t.string   "learning_module_file"
   end
-
-  create_table "profiles", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "description"
-    t.text     "phone_number"
-    t.text     "address"
-    t.integer  "user_id"
-  end
-
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.integer  "feedback_id"
@@ -166,12 +163,27 @@ ActiveRecord::Schema.define(version: 20140411033285) do
   add_index "responses", ["student_id"], name: "index_responses_on_student_id", using: :btree
   add_index "responses", ["teacher_id"], name: "index_responses_on_teacher_id", using: :btree
 
+  create_table "student_profiles", force: true do |t|
+    t.integer  "age"
+    t.integer  "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teacher_profiles", force: true do |t|
+    t.text     "institution"
+    t.integer  "teacher_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "classroom_id"
     t.string   "email",                  default: "",               null: false
     t.string   "encrypted_password",     default: "",               null: false
     t.string   "reset_password_token"
@@ -182,7 +194,6 @@ ActiveRecord::Schema.define(version: 20140411033285) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "classroom_id"
     t.boolean  "forem_admin",            default: false
     t.string   "forem_state",            default: "pending_review"
     t.boolean  "forem_auto_subscribe",   default: false

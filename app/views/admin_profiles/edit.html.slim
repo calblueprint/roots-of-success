@@ -1,0 +1,6 @@
+h1 Admin Edit Profile
+
+= simple_form_for @profile, url: profile_path do |f|
+  - @profile.to_check.each do |attribute|
+    = f.input attribute
+  = f.button :submit

@@ -4,3 +4,10 @@
     	= f.input :presentation_embed_code, :as => :text, :label => 'Enter presentation embed code', :input_html => { :cols => 50, :rows => 5, :class => "smallform"}
 
     	= f.button :submit, "Update Module", class: "small expand grey-button"
+  p  = link_to 'Download Module Files', @module.learning_module_file_url.to_s
+  = f.label :learning_module_file, "Upload local file:"
+  br/
+  = f.file_field :learning_module_file
+  
+  .actions
+    == f.submit

@@ -7,12 +7,12 @@ RootsOfSuccess::Application.routes.draw do
   # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
   mount Forem::Engine, :at => '/forums'
 
-  get "profile/show"
-  get "profile/edit"
-  get "profile/update"
   get "classroom/edit"
-  root to: 'static_pages#home'
 
+  devise_scope :user do
+    get '/logout' => 'devise/sessions#destroy'
+    root to: 'devise/sessions#new'
+  end
   devise_for :users
 
   scope '/teacher_dashboard' do
