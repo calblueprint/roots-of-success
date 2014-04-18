@@ -11,7 +11,8 @@ def create_admins_and_teachers
     Admin.create! first_name: 'Admin',
                   last_name: "#{n}",
                   email: "admin#{n}@ros.org",
-                  password: 'password'
+                  password: 'password',
+                  forem_admin: true
   end
   1.upto(50) do |n|
     Teacher.create! first_name: 'Teacher', 
@@ -58,4 +59,4 @@ end
 create_admins_and_teachers
 create_classroom
 create_modules
-
+Forem::Engine.load_seed
