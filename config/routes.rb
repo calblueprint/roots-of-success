@@ -26,6 +26,7 @@ RootsOfSuccess::Application.routes.draw do
     get '/new_teacher', to: 'admin_dashboard#new_teacher', as: :new_teacher
     get '/show_teachers', to: 'admin_dashboard#show_teachers', as: :show_teachers
     get '/show_students', to: 'admin_dashboard#show_students', as: :show_students
+    get '/surveys', to: 'admin_dashboard#surveys', as: :surveys
     post '/new_teacher', to: 'admin_dashboard#create_teacher', as: :create_teacher
   end
 

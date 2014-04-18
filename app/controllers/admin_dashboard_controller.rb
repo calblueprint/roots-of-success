@@ -20,6 +20,10 @@ class AdminDashboardController < ApplicationController
     end
   end
 
+  def surveys
+    @surveys = Survey.all
+  end
+
   def new_teacher
     @bad_addrs = Array.new
     @teacher = Teacher.new
