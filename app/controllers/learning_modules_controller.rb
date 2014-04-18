@@ -38,7 +38,8 @@ class LearningModulesController < ApplicationController
 
   private
     def module_attributes
-      params.require(:learning_module).permit(:presentation_embed_code, :learning_module_file)
+      params.require(:learning_module).
+            permit(:presentation_embed_code, :learning_module_file)
     end
   
 end
