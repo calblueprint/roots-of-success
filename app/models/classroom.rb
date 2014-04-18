@@ -8,8 +8,14 @@
 #  updated_at :datetime
 #  name       :text
 #
-
+# Classroom keeps track of students
 class Classroom < ActiveRecord::Base
   belongs_to :teacher
   has_many :students
+
+  delegate :email, to: :teacher, prefix: true
+
+  def to_s
+    name
+  end
 end

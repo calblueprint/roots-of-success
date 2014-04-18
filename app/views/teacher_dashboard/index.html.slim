@@ -8,14 +8,6 @@
               = image_tag mod.image_url, class: "square-img"
         p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod.name}
 
-
-
 = link_to "Home", root_path
-
-ul.classrooms
-  - @classrooms.each do |cl|
-    li = link_to "Classroom Name: #{cl.name} ", cl 
-
 p = link_to "Teacher Profile", profile_path(current_user.profile)
-p = link_to "Create Student Accounts", new_student_path
 p = link_to "Logout", destroy_user_session_path, method: 'delete'
