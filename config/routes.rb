@@ -7,14 +7,11 @@ RootsOfSuccess::Application.routes.draw do
   # We ask that you don't use the :as option here, as Forem relies on it being the default of "forem"
   mount Forem::Engine, :at => '/forums'
 
-  get "classroom/edit"
-
   devise_scope :user do
     get '/logout' => 'devise/sessions#destroy'
     root to: 'devise/sessions#new'
   end
-  devise_for :users
-  devise_for :students, controllers: { sessions: 'students/sessions' }
+  devise_for :users, controllers: { registrations: 'students/sessions' }
 
   scope '/teacher_dashboard' do
     get 'index', to: 'teacher_dashboard#index', as: :teacher_dashboard
@@ -33,6 +30,12 @@ RootsOfSuccess::Application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
 
   resources :learning_modules
+
   resources :classrooms
+  scope '/classrooms' do
+    get '/:id/add_students', to: 'classrooms#add_students_form', as: :add_students_form
+    post '/:id/add_students', to: 'classrooms#add_students_to_classroom', as: :add_students
+  end
+
   resources :students
 end
