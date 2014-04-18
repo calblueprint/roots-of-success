@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
     false
   end
 
+  def forem_name
+    name
+  end
+
   def profile_filled_in?
     profile
   end

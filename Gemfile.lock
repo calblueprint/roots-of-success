@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/radar/forem-bootstrap.git
+  revision: 10be50afc1d0a22af1306076e41624c55fc585be
+  specs:
+    forem-bootstrap (0.0.1)
+      bootstrap-sass (~> 3.1)
+
+GIT
   remote: git://github.com/radar/forem.git
   revision: ff1fb2f815d11e1272ee9e83d1ea8b81c7cd87b3
   branch: rails4
@@ -63,6 +70,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
     builder (3.2.2)
     bullet (4.8.0)
       activesupport
@@ -311,6 +320,7 @@ DEPENDENCIES
   devise (~> 3.2.3)
   factory_girl (~> 4.4.0)
   forem!
+  forem-bootstrap!
   foreman (~> 0.63.0)
   google-analytics-rails (~> 0.0.4)
   guard-livereload
@@ -329,6 +339,7 @@ DEPENDENCIES
   rubocop (>= 0.19.0)
   sass-rails (~> 4.0.0)
   sdoc
+  select2-rails (~> 3.5.4)
   simple_form (~> 3.0.1)
   slim-rails (~> 2.1.0)
   turbolinks (~> 2.2.1)
