@@ -6,9 +6,8 @@
     .flex-video
       iframe src="#{sanitize @presentation_url}" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 
-  p  = link_to 'Download Module Files', @module.learning_module_file_url.to_s
-
   - if admin?
     = link_to 'Edit Module', edit_learning_module_path(@module)
 
-  h1 Quiz
+  h1.top-margin-large Quiz
+  p  = link_to 'Download Module Files', @module.learning_module_file_url.to_s

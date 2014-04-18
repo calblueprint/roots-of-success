@@ -1,11 +1,10 @@
-h1 Teachers
-p = link_to "Create Teacher Accounts", new_teacher_path
-table#teachers.display data-source=(show_teachers_url(format: "json")) 
-  thead
-    tr
-      th Teacher Email
-      th First Name
-      th Last Name
-  tbody
-
-
+small-12.columns
+  h1 Teachers
+  p = link_to "Create Teacher Accounts", new_teacher_path
+  table#teachers.display data-source=(show_teachers_url(format: "json")) 
+    thead
+      tr
+        th Teacher Email
+        th First Name
+        th Last Name
+    tbody
