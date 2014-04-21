@@ -11,7 +11,7 @@ RootsOfSuccess::Application.routes.draw do
     get '/logout' => 'devise/sessions#destroy'
     root to: 'devise/sessions#new'
   end
-  devise_for :users, controllers: { registrations: 'students/sessions' }
+  devise_for :users, controllers: { registrations: 'students/registrations' }
 
   scope '/teacher_dashboard' do
     get 'index', to: 'teacher_dashboard#index', as: :teacher_dashboard
