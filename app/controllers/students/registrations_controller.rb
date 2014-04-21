@@ -1,7 +1,6 @@
 # Only let students register
 class Students::RegistrationsController < Devise::RegistrationsController
-  def create
-    1 / 0
-    super
+  def build_resource(hash = nil)
+    self.resource = Student.new_with_session(hash || {}, session)
   end
 end
