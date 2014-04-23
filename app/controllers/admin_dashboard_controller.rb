@@ -20,6 +20,13 @@ class AdminDashboardController < ApplicationController
     end
   end
 
+  def surveys
+    @all_teachers_surveys = AllTeachersSurvey.first
+    @correctional_teachers_surveys = 
+      Survey.where(type: 'CorrectionalFacilityTeachersSurvey')
+    @highschool_teachers_surveys = Survey.where(type: 'HighschoolTeachersSurvey')
+  end
+
   def new_teacher
     @bad_addrs = Array.new
     @teacher = Teacher.new
