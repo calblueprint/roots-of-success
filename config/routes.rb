@@ -37,8 +37,6 @@ RootsOfSuccess::Application.routes.draw do
   end
 
   resources :profiles, only: [:show, :edit, :update]
-  resources :users
-
   resources :learning_modules
 
   resources :classrooms
