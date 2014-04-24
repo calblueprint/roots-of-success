@@ -20,7 +20,7 @@ class UsersDatatable
   def data
     users.map do |user|
       [
-        link_to(user.email, '#'),
+        link_to(user.email, Rails.application.routes.url_helpers.profile_path(user)),
         ERB::Util.h(user.first_name),
         ERB::Util.h(user.last_name)
       ]
