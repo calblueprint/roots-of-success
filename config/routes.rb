@@ -52,4 +52,8 @@ RootsOfSuccess::Application.routes.draw do
   end
 
   resources :students
+
+  match "*path", to: 'static_pages#error', as: 'error_page', via: :get
+
+
 end
