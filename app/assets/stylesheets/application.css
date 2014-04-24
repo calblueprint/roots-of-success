@@ -13,5 +13,6 @@
  *= require dataTables/jquery.dataTables.css
  *= require jquery.ui.core
  *= require jquery.ui.theme
- *= require_tree .
+ *= require_tree ./vendor
+ *= require static_pages
  */
