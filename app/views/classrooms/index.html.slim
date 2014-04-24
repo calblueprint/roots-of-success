@@ -1,5 +1,10 @@
-h1 Classrooms#index
-p Find me in app/views/classrooms/index.html.slim
-= link_to "Home", root_path
+h1 Manage Classrooms
 
-= link_to "Teacher Dashboard", teacher_dashboard_path
+ul
+  - @classrooms.each do |classroom|
+    li = link_to "Classroom Name: #{classroom}", classroom
+
+p = link_to "Create New Classroom", new_classroom_path
+p = link_to "Logout", destroy_user_session_path, method: 'delete'
+p = link_to "Home", root_path
+

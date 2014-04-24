@@ -1,2 +1,8 @@
-h1 LearningModules#new
-p Find me in app/views/classrooms/new.html.slim
+h1 Create a New Classroom
+
+= simple_form_for @classroom do |f|
+  = f.hidden_field :teacher_id, value: current_user.id
+  = f.input :name
+  = f.button :submit
+
+

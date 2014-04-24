@@ -15,6 +15,15 @@ GIT
       workflow (= 1.0.0)
 
 GIT
+  remote: git://github.com/rails/activerecord-session_store.git
+  revision: e879bf087eb684452aaddb734efa20b95588b141
+  specs:
+    activerecord-session_store (0.1.0)
+      actionpack (>= 4.0.0, < 5)
+      activerecord (>= 4.0.0, < 5)
+      railties (>= 4.0.0, < 5)
+
+GIT
   remote: git://github.com/rweng/jquery-datatables-rails.git
   revision: 788a7b24caf8fe58a5493aa3f6a065879a9f752a
   specs:
@@ -299,6 +308,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-session_store!
   annotate (~> 2.6.1)
   awesome_print (~> 1.2.0)
   better_errors (~> 1.1.0)

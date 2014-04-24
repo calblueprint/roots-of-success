@@ -4,4 +4,6 @@ ul.students
   - @students.each do |st|
     li = link_to "Student name: #{st.name}", st
 
-= link_to "Change Classroom Ownership", edit_classroom_path
+p = link_to "Add Students to Classroom", add_students_form_path
+p = link_to "Change Classroom Ownership", edit_classroom_path
+= link_to "Home", root_path
