@@ -3,6 +3,7 @@ h1 Student Profile Show
 p = link_to "Edit Student Profile", edit_profile_path(@user)
 
 - @profile.to_check.each do |attribute|
+  = attribute
   = @profile.send attribute
 
 - if admin?
@@ -10,7 +11,7 @@ p = link_to "Edit Student Profile", edit_profile_path(@user)
 - elsif teacher?
   p = link_to "Teacher Dashboard", teacher_dashboard_path
 - else
-  p = link_to "Take Student Survey", @survey_link
+  h1 Student Surveys
+  p = link_to @survey_link.name, @survey_link.link
 
 p = link_to "Logout", destroy_user_session_path, method: 'delete' 
-
