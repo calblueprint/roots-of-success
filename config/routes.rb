@@ -19,6 +19,7 @@ RootsOfSuccess::Application.routes.draw do
   scope '/teacher_dashboard' do
     get 'index',         to: 'teacher_dashboard#index', as: :teacher_dashboard
     get '/new_student',  to: 'teacher_dashboard#new_student', as: :new_student
+    get '/surveys',      to: 'teacher_dashboard#surveys', as: :teacher_surveys
     post '/new_student', to: 'teacher_dashboard#create_student',
                          as: :create_student
   end

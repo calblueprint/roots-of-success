@@ -2,11 +2,7 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find params[:id]
     @profile = @user.profile
-    if @user.type == 'Teacher'
-      @all_teachers = AllTeachersSurvey.first
-      @correctional_teacher = CorrectionalFacilityTeachersSurvey.first
-      @highschool_teacher = HighschoolTeachersSurvey.first
-    elsif @user.type == 'Student'
+    if @user.type == 'Student'
       @survey_link = HighschoolStudentsSurvey.first
     end
     render "#{profile_view(@profile)}/show"
