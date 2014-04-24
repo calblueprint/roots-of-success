@@ -1,18 +1,21 @@
 h1 All Surveys
 
 h2 Surveys for all Teachers
-= link_to @all_teachers_surveys.name, @all_teachers_surveys.link
-br 
+= link_to @all_teachers_surveys, @all_teachers_surveys.link
+br
 br
 
 h2 Surveys for only Correctional Facility Teachers
-- @correctional_teachers_surveys.each do |survey|
-  = link_to survey.name, survey.link
-  br 
-  br
+= link_to @correctional_teachers_survey, @correctional_teachers_survey.link
+br
+br
 
 h2 Surveys for only High School Teachers
-- @highschool_teachers_surveys.each do |survey|
-  = link_to survey.name, survey.link
-  br 
-  br
+= link_to @highschool_teachers_survey, @highschool_teachers_survey.link
+br
+br
+
+h2 Surveys for only High School Students
+= link_to @highschool_students_survey, @highschool_students_survey.link
+br
+br
