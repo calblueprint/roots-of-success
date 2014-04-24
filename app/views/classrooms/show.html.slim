@@ -1,9 +1,9 @@
-h1 Welcome to Classroom #{@classroom.name}
+h1 Welcome to Classroom #{@classroom}
 
 ul.students
   - @students.each do |st|
     li
-      = link_to "Student name: #{st.name} ", profile_path(st)
+      = link_to "#{st} ", profile_path(st)
       | | 
       = link_to 'remove', remove_student_path(@classroom, st), method: :post
 

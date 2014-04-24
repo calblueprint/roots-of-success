@@ -6,7 +6,7 @@
           .square-mod.grey
             = link_to mod, id: "module-#{mod.number}" do
               = image_tag mod.image_url, class: "square-img"
-        p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod.name}
+        p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod}
 
 
 p = link_to "Admin Profile", profile_path(current_user)
