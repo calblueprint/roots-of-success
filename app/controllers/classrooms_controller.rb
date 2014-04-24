@@ -21,6 +21,12 @@ class ClassroomsController < ApplicationController
     end
   end
 
+  def remove_student_from_classroom
+    @classroom = Classroom.find params[:id]
+    @classroom.students.delete params[:student_id]
+    redirect_to classroom_path @classroom
+  end
+
   def new
     @classroom = Classroom.new
   end
