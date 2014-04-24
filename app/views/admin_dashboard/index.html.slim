@@ -12,7 +12,7 @@
 h1 AdminDashboard#index
 p Find me in app/views/admin_dashboard/index.html.slim
 
-p = link_to "Admin Profile", profile_path(current_user.profile)
+p = link_to "Admin Profile", profile_path(current_user)
 
 p = link_to "Home", root_path
 p = link_to "View Students", show_students_path

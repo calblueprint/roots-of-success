@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def after_sign_in_path_for(user)
-    return edit_profile_path user.profile unless user.profile_filled_in?
+    return edit_profile_path user unless user.profile_filled_in?
     return admin_dashboard_path if user.type == 'Admin'
     return teacher_dashboard_path if user.type == 'Teacher'
   end

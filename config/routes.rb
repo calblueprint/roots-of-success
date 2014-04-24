@@ -37,7 +37,6 @@ RootsOfSuccess::Application.routes.draw do
   end
 
   resources :profiles, only: [:show, :edit, :update]
-
   resources :learning_modules
 
   resources :classrooms
@@ -46,6 +45,9 @@ RootsOfSuccess::Application.routes.draw do
                              as: :add_students_form
     post '/:id/add_students', to: 'classrooms#add_students_to_classroom',
                               as: :add_students
+    post '/:id/remove_student/:student_id',
+         to: 'classrooms#remove_student_from_classroom',
+         as: :remove_student
   end
 
   resources :students

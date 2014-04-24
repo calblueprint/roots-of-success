@@ -2,7 +2,10 @@ h1 Welcome to Classroom #{@classroom.name}
 
 ul.students
   - @students.each do |st|
-    li = link_to "Student name: #{st.name}", st
+    li
+      = link_to "Student name: #{st.name} ", profile_path(st)
+      | | 
+      = link_to 'remove', remove_student_path(@classroom, st), method: :post
 
 p = link_to "Add Students to Classroom", add_students_form_path
 p = link_to "Change Classroom Ownership", edit_classroom_path
