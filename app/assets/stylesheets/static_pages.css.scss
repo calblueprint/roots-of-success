@@ -48,6 +48,10 @@ html, body{
   min-height: 100%;
 }
 
+.width-100{
+  width: 100%;
+}
+
 .center{
   margin-right: auto;
   margin-left: auto;
@@ -105,10 +109,12 @@ label{
 
 .grey-button{
   background: #d9d9d9 !important;
+  text-decoration: none !important;
 }
 
 .grey-button:hover{
   background: #b3b3b3 !important;
+  text-decoration: none !important;
 }
 
 .grey{

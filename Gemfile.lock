@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/radar/forem-bootstrap.git
-  revision: 10be50afc1d0a22af1306076e41624c55fc585be
-  specs:
-    forem-bootstrap (0.0.1)
-      bootstrap-sass (~> 3.1)
-
-GIT
   remote: git://github.com/radar/forem.git
   revision: ff1fb2f815d11e1272ee9e83d1ea8b81c7cd87b3
   branch: rails4
@@ -310,6 +303,7 @@ DEPENDENCIES
   awesome_print (~> 1.2.0)
   better_errors (~> 1.1.0)
   binding_of_caller (~> 0.7.2)
+  bootstrap-sass (~> 3.1)
   bullet (~> 4.8.0)
   cancan (~> 1.6.10)
   carrierwave (~> 0.10.0)
@@ -320,7 +314,6 @@ DEPENDENCIES
   devise (~> 3.2.3)
   factory_girl (~> 4.4.0)
   forem!
-  forem-bootstrap!
   foreman (~> 0.63.0)
   google-analytics-rails (~> 0.0.4)
   guard-livereload
