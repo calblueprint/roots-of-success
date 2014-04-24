@@ -3,6 +3,8 @@ h1 Admin Profile Show
 p = link_to "Edit Admin Profile", edit_profile_path(@profile)
 
 - @profile.to_check.each do |attribute|
+  = attribute.titleize
+  br
   = @profile.send attribute
 
 - if admin?

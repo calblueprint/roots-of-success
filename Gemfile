@@ -27,8 +27,8 @@ gem 'compass', '~> 0.12.2'
 gem 'zurb-foundation', '~> 4.3.2'
 gem 'carrierwave', '~> 0.10.0'
 gem 'forem', :github => 'radar/forem', :branch => 'rails4'
-gem 'forem-bootstrap', :github => 'radar/forem-bootstrap'
 gem 'select2-rails', '~> 3.5.4'
+gem 'bootstrap-sass', '~> 3.1'
 
 
 group :doc do
