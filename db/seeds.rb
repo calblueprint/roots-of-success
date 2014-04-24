@@ -64,6 +64,11 @@ def create_surveys
     HighschoolTeachersSurvey.create! name: "highschool_teacher_survey#{n}",
       link: "https://docs.google.com/forms/d/1CWoe0o43J_KCvbfkE3JHKT1-tJud5rwxhnJUC4IfbtQ/viewform?usp=send_form"
   end
+  1.upto(5) do |n|
+    HighschoolStudentsSurvey.create! name: "highschool_student_survey#{n}",
+      link: "https://docs.google.com/forms/d/1QlTArPBO7ZS29ygU85AOr82klmQCPpeWlRGrBL9M-7Q/viewform?usp=send_form"
+      end
+
 end 
 
 create_admins_and_teachers

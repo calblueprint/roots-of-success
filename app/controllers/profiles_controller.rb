@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   def show
     @profile = current_user.profile
     @user = current_user
+    @survey_link = HighschoolStudentsSurvey.first.link
     render "#{profile_view(@profile)}/show"
   end
 

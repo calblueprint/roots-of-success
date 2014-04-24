@@ -9,5 +9,8 @@ p = link_to "Edit Student Profile", edit_profile_path(@profile)
   p = link_to "Admin Dashboard", admin_dashboard_path
 - elsif teacher?
   p = link_to "Teacher Dashboard", teacher_dashboard_path
+- else
+  p = link_to "Take Student Survey", @survey_link
 
-p = link_to "Logout", destroy_user_session_path, method: 'delete'
+p = link_to "Logout", destroy_user_session_path, method: 'delete' 
+
