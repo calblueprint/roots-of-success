@@ -35,7 +35,7 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new classroom_params
     if @classroom.save
       flash[:success] = 'Successfully created classroom!'
-      redirect_to teacher_dashboard_path
+      redirect_to classroom_path @classroom
     else
       render 'new'
     end

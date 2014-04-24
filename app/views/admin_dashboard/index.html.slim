@@ -1,7 +1,7 @@
 .small-12.column
   ul.learning_modules.small-block-grid-2.large-block-grid-5
     - @learning_modules.each do |mod|
-      li 
+      li
         .square-container
           .square-mod.grey
             = link_to mod, id: "module-#{mod.number}" do
@@ -9,11 +9,6 @@
         p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod.name}
 
 
-h1 AdminDashboard#index
-p Find me in app/views/admin_dashboard/index.html.slim
-
 p = link_to "Admin Profile", profile_path(current_user)
-
-p = link_to "Home", root_path
 p = link_to "View Students", show_students_path
 p = link_to "Logout", destroy_user_session_path, method: 'delete'

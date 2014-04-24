@@ -141,28 +141,6 @@ ActiveRecord::Schema.define(version: 20140421094748) do
     t.string   "learning_module_file"
   end
 
-  create_table "questions", force: true do |t|
-    t.integer  "feedback_id"
-    t.integer  "order_index"
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "responses", force: true do |t|
-    t.integer  "question_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "text"
-    t.integer  "feedback_id"
-    t.integer  "teacher_id"
-    t.integer  "student_id"
-  end
-
-  add_index "responses", ["feedback_id"], name: "index_responses_on_feedback_id", using: :btree
-  add_index "responses", ["student_id"], name: "index_responses_on_student_id", using: :btree
-  add_index "responses", ["teacher_id"], name: "index_responses_on_teacher_id", using: :btree
-
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
