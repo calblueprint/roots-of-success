@@ -63,6 +63,8 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
     builder (3.2.2)
     bullet (4.8.0)
       activesupport
@@ -301,6 +303,7 @@ DEPENDENCIES
   awesome_print (~> 1.2.0)
   better_errors (~> 1.1.0)
   binding_of_caller (~> 0.7.2)
+  bootstrap-sass (~> 3.1)
   bullet (~> 4.8.0)
   cancan (~> 1.6.10)
   carrierwave (~> 0.10.0)
@@ -329,6 +332,7 @@ DEPENDENCIES
   rubocop (>= 0.19.0)
   sass-rails (~> 4.0.0)
   sdoc
+  select2-rails (~> 3.5.4)
   simple_form (~> 3.0.1)
   slim-rails (~> 2.1.0)
   turbolinks (~> 2.2.1)
