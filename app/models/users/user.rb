@@ -24,26 +24,22 @@
 #  forem_auto_subscribe   :boolean          default(FALSE)
 #
 
+# Base User class; should not be instantiated
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :confirmable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def name
+  def to_s
     "#{first_name} #{last_name}"
   end
+
+  alias_method :forum_name, :to_s
 
   def profile
     false
   end
 
-  def forem_name
-    name
-  end
-
-  def profile_filled_in?
-    profile
-  end
-
+  alias_method :profile_filled_in?, :profile
 end

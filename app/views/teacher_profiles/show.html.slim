@@ -1,6 +1,6 @@
 h1 Teacher Profile Show
 
-p = link_to "Edit Teacher Profile", edit_profile_path(@profile)
+p = link_to "Edit Teacher Profile", edit_profile_path(@user)
 
 - @profile.to_check.each do |attribute|
   = @profile.send attribute

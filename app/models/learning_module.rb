@@ -12,9 +12,14 @@
 #
 
 class LearningModule < ActiveRecord::Base
+  default_scope -> { order 'number ASC' }
   mount_uploader :learning_module_file, LearningModuleFileUploader
 
   def image_url
     "Modules/Mod#{number}.png"
+  end
+
+  def to_s
+    name
   end
 end

@@ -17,8 +17,7 @@
 //= require dataTables/jquery.dataTables
 //= require jquery
 //= require d3
-//= require_tree ./vendor
-//= require students
-//= require teachers
+//= require_tree .
+//= require forem
 
 $(function(){ $(document).foundation(); });

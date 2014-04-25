@@ -21,6 +21,12 @@ class ClassroomsController < ApplicationController
     end
   end
 
+  def remove_student_from_classroom
+    @classroom = Classroom.find params[:id]
+    @classroom.students.delete params[:student_id]
+    redirect_to classroom_path @classroom
+  end
+
   def new
     @classroom = Classroom.new
   end
@@ -29,7 +35,7 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new classroom_params
     if @classroom.save
       flash[:success] = 'Successfully created classroom!'
-      redirect_to teacher_dashboard_path
+      redirect_to classroom_path @classroom
     else
       render 'new'
     end

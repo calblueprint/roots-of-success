@@ -1,4 +1,5 @@
 class UsersDatatable
+  include Rails.application.routes.url_helpers
   delegate :params, :h, :link_to, to: :@view
 
   def initialize(klass, view)
@@ -20,7 +21,7 @@ class UsersDatatable
   def data
     users.map do |user|
       [
-        link_to(user.email, '#'),
+        link_to(user.email, profile_path(user)),
         ERB::Util.h(user.first_name),
         ERB::Util.h(user.last_name)
       ]

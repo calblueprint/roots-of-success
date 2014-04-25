@@ -54,17 +54,19 @@ def create_modules
 end
 
 def create_surveys
-  AllTeachersSurvey.create! name: "all_teacher_survey",
-      link: "https://docs.google.com/forms/d/19gKLLu50bf1U3mZ_rEKNXeGiamRVprJhWwdCSL8xq0Q/viewform?usp=send_form"
-  1.upto(5) do |n|
-    CorrectionalFacilityTeachersSurvey.create! name: "correctional_teacher_survey#{n}",
-      link: "https://docs.google.com/forms/d/1SRBPD-C3ijlrX7jturb6I5UGqcA1bwEU715S4m0n0rk/viewform?usp=send_form"
-  end
-  1.upto(5) do |n|
-    HighschoolTeachersSurvey.create! name: "highschool_teacher_survey#{n}",
-      link: "https://docs.google.com/forms/d/1CWoe0o43J_KCvbfkE3JHKT1-tJud5rwxhnJUC4IfbtQ/viewform?usp=send_form"
-  end
-end 
+  AllTeachersSurvey.create!(
+    name: 'Survey For All Teachers',
+    link: 'https://docs.google.com/forms/d/19gKLLu50bf1U3mZ_rEKNXeGiamRVprJhWwdCSL8xq0Q/viewform?usp=send_form')
+  CorrectionalFacilityTeachersSurvey.create!(
+    name: 'Survey for Correctional Facility Teachers',
+    link: 'https://docs.google.com/forms/d/1SRBPD-C3ijlrX7jturb6I5UGqcA1bwEU715S4m0n0rk/viewform?usp=send_form')
+  HighschoolTeachersSurvey.create!(
+    name: 'Survey for High School Teachers',
+    link: 'https://docs.google.com/forms/d/1CWoe0o43J_KCvbfkE3JHKT1-tJud5rwxhnJUC4IfbtQ/viewform?usp=send_form')
+  HighschoolStudentsSurvey.create!(
+    name: 'Survey for High School Students',
+    link: 'https://docs.google.com/forms/d/1QlTArPBO7ZS29ygU85AOr82klmQCPpeWlRGrBL9M-7Q/viewform?usp=send_form')
+end
 
 create_admins_and_teachers
 create_classroom

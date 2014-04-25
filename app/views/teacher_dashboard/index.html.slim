@@ -6,8 +6,7 @@
           .square-mod.grey
             = link_to mod, id: "module-#{mod.number}" do
               = image_tag mod.image_url, class: "square-img"
-        p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod.name}
+        p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod}
 
-= link_to "Home", root_path
-p = link_to "Teacher Profile", profile_path(current_user.profile)
+p = link_to "Teacher Profile", profile_path(current_user)
 p = link_to "Logout", destroy_user_session_path, method: 'delete'

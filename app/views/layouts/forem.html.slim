@@ -7,9 +7,8 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
 
     title = content_for?(:title) ? yield(:title) : "Roots of Success"
-    = stylesheet_link_tag "forem", "data-turbolinks-track" => true
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "vendor/custom.modernizr", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "forem_app", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "forem_app", "vendor/custom.modernizr", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   body
