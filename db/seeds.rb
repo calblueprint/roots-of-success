@@ -46,7 +46,7 @@ $module_names = [
 def create_modules
   $module_names.each_with_index do |name, i|
     LearningModule.create! name: name,
-                           number: i+1
+                           number: i + 1
   end
 end
 
@@ -71,7 +71,8 @@ def create_forums
 
   user = Forem.user_class.first
 
-  category_names = ['High School Teachers', 'Correctional Facility Teachers', 'Adult Teachers']
+  category_names = ['High School Teachers', 'Correctional Facility Teachers',
+    'Adult Teachers']
   category_names.each do |category_name|
     category = Forem::Category.create name: category_name
 
@@ -82,11 +83,11 @@ def create_forums
     $module_names.each do |module_name|
       Forem::Forum.create category_id: category.id,
                           name: 'Module: ' + module_name,
-                          description: module_name + ' module discussion for ' + category_name.downcase
+                          description: module_name + \
+                            ' module discussion for ' + category_name.downcase
     end
   end
 end
-
 
 create_admins_and_teachers
 create_classroom
