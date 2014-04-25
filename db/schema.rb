@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421094748) do
+ActiveRecord::Schema.define(version: 20140424042227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,18 +24,13 @@ ActiveRecord::Schema.define(version: 20140421094748) do
   end
 
   create_table "classrooms", force: true do |t|
+    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "teacher_id"
     t.text     "name"
   end
 
   add_index "classrooms", ["teacher_id"], name: "index_classrooms_on_teacher_id", using: :btree
-
-  create_table "feedbacks", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -179,7 +174,6 @@ ActiveRecord::Schema.define(version: 20140421094748) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "classroom_id"
     t.string   "email",                  default: "",               null: false
     t.string   "encrypted_password",     default: "",               null: false
     t.string   "reset_password_token"
@@ -190,6 +184,7 @@ ActiveRecord::Schema.define(version: 20140421094748) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "classroom_id"
     t.boolean  "forem_admin",            default: false
     t.string   "forem_state",            default: "pending_review"
     t.boolean  "forem_auto_subscribe",   default: false
