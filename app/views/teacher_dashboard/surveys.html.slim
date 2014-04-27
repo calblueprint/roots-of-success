@@ -1,13 +1,7 @@
-.small-12.column
-  ul.learning_modules.small-block-grid-2.large-block-grid-5
-    - @learning_modules.each do |mod|
-      li 
-        .square-container
-          .square-mod.grey
-            = link_to mod, id: "module-#{mod.number}" do
-              = image_tag mod.image_url, class: "square-img"
-        p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod}
-
-
-
+h1 Survey for All Teachers
+p = link_to @all_teachers.name, @all_teachers.link
+h1 Surveys for only Correctional Facility Teachers
+p = link_to @correctional_teacher.name, @correctional_teacher.link
+h1 Surveys for only High School Teachers
+p = link_to @highschool_teacher.name, @highschool_teacher.link
 p = link_to "Logout", destroy_user_session_path, method: 'delete'

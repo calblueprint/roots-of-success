@@ -70,10 +70,10 @@ class ClassroomsController < ApplicationController
   end
 
   def toggle_module
-   @classroom = Classroom.find params[:id]
-   @classroom.toggle_module(params[:module_name])
-   @classroom.save
-   redirect_to classroom_path @classroom
+    @classroom = Classroom.find params[:id]
+    @classroom.toggle_module(params[:module_name])
+    @classroom.save
+    redirect_to classroom_path @classroom
   end
 
   private
