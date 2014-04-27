@@ -50,7 +50,7 @@ RootsOfSuccess::Application.routes.draw do
          to: 'classrooms#remove_student_from_classroom',
          as: :remove_student
 
-    post '/:id/toggle_module/:module_name', 
+    post '/:id/toggle_module/:module_name',
          to: 'classrooms#toggle_module', 
          as: :toggle_module
   end

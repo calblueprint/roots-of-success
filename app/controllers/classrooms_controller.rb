@@ -50,7 +50,7 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.find params[:id]
     @students = @classroom.students
     teacher = @classroom.teacher
-    @module_progress = @classroom.module_progress 
+    @module_progress = @classroom.module_progress
     @module_names = LearningModule.names
   end
 
