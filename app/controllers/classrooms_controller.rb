@@ -69,13 +69,6 @@ class ClassroomsController < ApplicationController
   def destroy
   end
 
-  def mark_module_complete
-   @classroom = Classroom.find params[:id]
-   @classroom.module_progress[params[:module_name]] = [:set] 
-   @classroom.save
-   redirect_to classroom_path @classroom
-  end
-
   def toggle_module
    @classroom = Classroom.find params[:id]
    @classroom.toggle_module(params[:module_name])
