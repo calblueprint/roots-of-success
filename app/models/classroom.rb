@@ -24,10 +24,10 @@ class Classroom < ActiveRecord::Base
   end
 
   def toggle_module(module_name)
-    self.module_progress[module_name] = !module_progress[module_name]
+    module_progress[module_name] = !module_progress[module_name]
   end
 
   def set_module_progress
-    self.module_progress = Hash[LearningModule.names.map{ |l| [l, false] }]
+    self.module_progress = Hash[LearningModule.names.map { |l| [l, false] }]
   end
 end
