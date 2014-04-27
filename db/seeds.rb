@@ -68,10 +68,10 @@ def create_surveys
     link: 'https://docs.google.com/forms/d/1QlTArPBO7ZS29ygU85AOr82klmQCPpeWlRGrBL9M-7Q/viewform?usp=send_form')
 end
 
+create_modules
 create_admins_and_teachers
 create_classroom
 confirm_users
-create_modules
 create_surveys
 
 Forem::Engine.load_seed
