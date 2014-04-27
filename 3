@@ -22,8 +22,4 @@ class Classroom < ActiveRecord::Base
   def to_s
     name
   end
-  
-  def set_module_progress
-    self.module_progress = Hash[ LearningModule.names.map{ |l| [l,false]} ]
-  end
 end
