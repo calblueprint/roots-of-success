@@ -2,9 +2,7 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find params[:id]
     @profile = @user.profile
-    if @user.type == 'Student'
-      @survey_link = HighschoolStudentsSurvey.first
-    end
+    @survey_link = HighschoolStudentsSurvey.first if current_user.student?
     render "#{profile_view(@profile)}/show"
   end
 
@@ -19,7 +17,7 @@ class ProfilesController < ApplicationController
     @profile = @user.profile
     if @profile.update_attributes profile_params(@user)
       # Handle a successful update.
-      flash[:success] = "Profile updated"
+      flash[:success] = 'Profile updated'
       redirect_to profile_path @user
     else
       render "#{profile_view(@profile)}/edit"
@@ -27,12 +25,13 @@ class ProfilesController < ApplicationController
   end
 
   private
-    def profile_params(user)
-      @profile = @user.profile
-      params.require(@profile.class_name.to_sym).permit(@profile.to_check)
-    end
 
-    def profile_view(profile)
-      profile.class_name.pluralize
-    end
+  def profile_params(user)
+    @profile = @user.profile
+    params.require(@profile.class_name.to_sym).permit(@profile.to_check)
+  end
+
+  def profile_view(profile)
+    profile.class_name.pluralize
+  end
 end

@@ -39,8 +39,8 @@ RootsOfSuccess::Application.routes.draw do
 
   resources :profiles, only: [:show, :edit, :update]
   resources :learning_modules
-
   resources :classrooms
+
   scope '/classrooms' do
     get '/:id/add_students', to: 'classrooms#add_students_form',
                              as: :add_students_form
@@ -52,8 +52,6 @@ RootsOfSuccess::Application.routes.draw do
   end
 
   resources :students
-
-  match "*path", to: 'static_pages#error', as: 'error_page', via: :get
-
+  match '*path', to: 'static_pages#error', as: 'error_page', via: :get
 
 end

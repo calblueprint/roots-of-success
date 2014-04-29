@@ -42,4 +42,16 @@ class User < ActiveRecord::Base
   end
 
   alias_method :profile_filled_in?, :profile
+
+  def admin?
+    type == 'Admin'
+  end
+
+  def teacher?
+    type == 'Teacher'
+  end
+
+  def student?
+    type == 'Student'
+  end
 end
