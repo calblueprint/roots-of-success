@@ -2,11 +2,15 @@
 #
 # Table name: teacher_profiles
 #
-#  id          :integer          not null, primary key
-#  institution :text
-#  teacher_id  :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id                 :integer          not null, primary key
+#  teacher_id         :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  phone              :string(255)
+#  program            :string(255)
+#  position           :string(255)
+#  location           :string(255)
+#  curriculum_version :string(255)
 #
 
 class TeacherProfile < ActiveRecord::Base

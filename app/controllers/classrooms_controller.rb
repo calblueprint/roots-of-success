@@ -57,7 +57,8 @@ class ClassroomsController < ApplicationController
   def update
     @classroom = Classroom.find params[:id]
     teacher = Teacher.find_by_email params[:classroom][:teacher_email]
-    @classroom.teacher = teacher
+    # TODO: Use a validation
+    @classroom.teacher = teacher if teacher
     if @classroom.save
       flash[:success] = 'Classroom teacher updated'
       redirect_to teacher_dashboard_path

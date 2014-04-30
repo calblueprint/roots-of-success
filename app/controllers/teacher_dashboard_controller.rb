@@ -7,6 +7,7 @@ class TeacherDashboardController < ApplicationController
 
   def surveys
     @user = current_user
+    @profile = @user.profile
     @all_teachers = AllTeachersSurvey.first
     @correctional_teacher = CorrectionalFacilityTeachersSurvey.first
     @highschool_teacher = HighschoolTeachersSurvey.first

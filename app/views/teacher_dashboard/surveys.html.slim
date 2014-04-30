@@ -1,7 +1,9 @@
 h1 Survey for All Teachers
 p = link_to @all_teachers.name, @all_teachers.link
-h1 Surveys for only Correctional Facility Teachers
-p = link_to @correctional_teacher.name, @correctional_teacher.link
-h1 Surveys for only High School Teachers
-p = link_to @highschool_teacher.name, @highschool_teacher.link
+- if @profile.program == 'CorrectionalFacility'
+  h1 Surveys for only Correctional Facility Teachers
+  p = link_to @correctional_teacher.name, @correctional_teacher.link
+- if @profile.program == 'HighSchool'
+  h1 Surveys for only High School Teachers
+  p = link_to @highschool_teacher.name, @highschool_teacher.link
 p = link_to "Logout", destroy_user_session_path, method: 'delete'
