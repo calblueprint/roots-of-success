@@ -3,12 +3,9 @@
 # Table name: student_profiles
 #
 #  id         :integer          not null, primary key
-#  age        :integer
 #  student_id :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  name       :string(255)
-#  email      :string(255)
 #  phone      :string(255)
 #
 

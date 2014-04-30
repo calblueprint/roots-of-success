@@ -11,18 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429172826) do
+ActiveRecord::Schema.define(version: 20140430011434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admin_profiles", force: true do |t|
-    t.text     "position"
     t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "email"
   end
 
   create_table "classrooms", force: true do |t|
@@ -212,12 +209,9 @@ ActiveRecord::Schema.define(version: 20140429172826) do
   end
 
   create_table "student_profiles", force: true do |t|
-    t.integer  "age"
     t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "email"
     t.string   "phone"
   end
 
@@ -230,12 +224,9 @@ ActiveRecord::Schema.define(version: 20140429172826) do
   end
 
   create_table "teacher_profiles", force: true do |t|
-    t.text     "institution"
     t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "email"
     t.string   "phone"
     t.string   "program"
     t.string   "position"

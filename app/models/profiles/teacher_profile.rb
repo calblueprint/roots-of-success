@@ -3,12 +3,9 @@
 # Table name: teacher_profiles
 #
 #  id                 :integer          not null, primary key
-#  institution        :text
 #  teacher_id         :integer
 #  created_at         :datetime
 #  updated_at         :datetime
-#  name               :string(255)
-#  email              :string(255)
 #  phone              :string(255)
 #  program            :string(255)
 #  position           :string(255)

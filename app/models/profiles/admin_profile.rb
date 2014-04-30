@@ -3,12 +3,9 @@
 # Table name: admin_profiles
 #
 #  id         :integer          not null, primary key
-#  position   :text
 #  admin_id   :integer
 #  created_at :datetime
 #  updated_at :datetime
-#  name       :string(255)
-#  email      :string(255)
 #
 
 class AdminProfile < ActiveRecord::Base
