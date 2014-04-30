@@ -43,7 +43,11 @@ class ClassroomsController < ApplicationController
 
   def edit
     @classroom = Classroom.find params[:id]
-    @teachers = Teacher.all
+    # @teachers = Teacher.all.email
+    @teacher_emails = []
+    # for @teachers.each do |t|
+    #   @teacher_emails.add(t.email)
+    # end
   end
 
   def show
