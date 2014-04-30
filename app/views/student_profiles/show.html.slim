@@ -3,8 +3,10 @@ h1 Student Profile Show
 p = link_to "Edit Student Profile", edit_profile_path(@user)
 
 - @profile.to_check.each do |attribute|
-  = attribute
+  = attribute.titleize
+  = ": "
   = @profile.send attribute
+  br
 
 - if admin?
   p = link_to "Admin Dashboard", admin_dashboard_path
