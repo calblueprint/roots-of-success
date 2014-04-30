@@ -22,6 +22,9 @@
 #  forem_admin            :boolean          default(FALSE)
 #  forem_state            :string(255)      default("pending_review")
 #  forem_auto_subscribe   :boolean          default(FALSE)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
 #
 
 class Admin < User
