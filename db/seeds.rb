@@ -89,9 +89,9 @@ def create_forums
   end
 end
 
+create_modules
 create_admins_and_teachers
 create_classroom
 confirm_users
-create_modules
 create_surveys
 create_forums

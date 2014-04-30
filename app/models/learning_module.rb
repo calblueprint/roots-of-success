@@ -22,4 +22,8 @@ class LearningModule < ActiveRecord::Base
   def to_s
     name
   end
+
+  def self.names
+    all.map &:name
+  end
 end
