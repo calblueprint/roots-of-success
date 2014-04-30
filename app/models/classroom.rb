@@ -23,7 +23,7 @@ class Classroom < ActiveRecord::Base
     name
   end
 
-  def toggle_module(module_name)
+  def toggle_module!(module_name)
     module_progress[module_name] = !module_progress[module_name]
   end
 
