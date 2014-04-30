@@ -53,6 +53,9 @@ class ClassroomsController < ApplicationController
   def show
     @classroom = Classroom.find params[:id]
     @students = @classroom.students
+    @teacher = @classroom.teacher
+    @module_progress = @classroom.module_progress
+    @module_names = LearningModule.names
   end
 
   def update
@@ -68,6 +71,12 @@ class ClassroomsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def toggle_module
+    @classroom = Classroom.find params[:id]
+    @classroom.toggle_module!(params[:module_name])
+    redirect_to classroom_path @classroom
   end
 
   private

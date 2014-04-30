@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140430011434) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "name"
+    t.text     "module_progress"
   end
 
   add_index "classrooms", ["teacher_id"], name: "index_classrooms_on_teacher_id", using: :btree
