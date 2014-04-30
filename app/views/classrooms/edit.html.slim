@@ -2,5 +2,4 @@ h1 #{@classroom}
 
 = simple_form_for @classroom do |c|
   = c.input :teacher_email
-  /   = c.input :teacher_email, collection: [@teachers]
   = c.button :submit

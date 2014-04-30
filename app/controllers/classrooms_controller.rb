@@ -43,11 +43,7 @@ class ClassroomsController < ApplicationController
 
   def edit
     @classroom = Classroom.find params[:id]
-    # @teachers = Teacher.all.email
-    @teacher_emails = []
-    # for @teachers.each do |t|
-    #   @teacher_emails.add(t.email)
-    # end
+    @teachers = Teacher.all
   end
 
   def show
@@ -61,7 +57,7 @@ class ClassroomsController < ApplicationController
   def update
     @classroom = Classroom.find params[:id]
     teacher = Teacher.find_by_email params[:classroom][:teacher_email]
-    @classroom.teacher = teacher
+    @classroom.teacher = teacher if teacher    
     if @classroom.save
       flash[:success] = 'Classroom teacher updated'
       redirect_to teacher_dashboard_path
