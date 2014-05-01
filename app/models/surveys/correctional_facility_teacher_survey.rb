@@ -10,5 +10,13 @@
 #  type       :string(255)
 #
 
-class HighschoolTeachersSurvey < Survey
+class CorrectionalFacilityTeacherSurvey < Survey
+
+  def self.title
+    'Correctional Facility'
+  end
+
+  def self.for?(klass, classroom)
+    klass == Teacher && classroom.program == 'Correctional Facility'
+  end
 end

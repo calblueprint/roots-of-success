@@ -10,20 +10,14 @@
 #  type       :string(255)
 #
 
-class Survey < ActiveRecord::Base
-  def to_s
-    name
-  end
-
+class HighSchoolTeacherSurvey < Survey
+ 
   def self.title
-    raise NotImplementedError
-  end
-  
-  def self.for?(klass,classroom)
-    self.subclasses.select { |c| c.for? } 
+    'High School'
   end
 
-  def self.instance
-    first
+  def self.for?(klass, classroom)
+    klass == Teacher && classroom.program == 'High School'
   end
+
 end

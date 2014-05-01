@@ -11,4 +11,12 @@
 #
 
 class AllTeachersSurvey < Survey
+
+  def self.title
+    'All Teachers' 
+  end
+
+  def self.for?(klass, classroom)
+    klass == Teacher
+  end
 end
