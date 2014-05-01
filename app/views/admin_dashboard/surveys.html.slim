@@ -1,21 +1,12 @@
-h1 All Surveys
+.small-12.columns.center
+  h1 All Surveys
 
-h1 Surveys for all Teachers
-= link_to @all_teachers_surveys, @all_teachers_surveys.link
-br
-br
-
-h1 Surveys for only Correctional Facility Teachers
-= link_to @correctional_teachers_survey, @correctional_teachers_survey.link
-br
-br
-
-h1 Surveys for only High School Teachers
-= link_to @highschool_teachers_survey, @highschool_teachers_survey.link
-br
-br
-
-h1 Surveys for only High School Students
-= link_to @highschool_students_survey, @highschool_students_survey.link
-br
-br
+  .small-12.large-8.large-offset-2.columns.center.nopad
+    button.grey-button.expand
+      = link_to @all_teachers_surveys, @all_teachers_surveys.link
+    button.grey-button.expand
+      = link_to @correctional_teachers_survey, @correctional_teachers_survey.link
+    button.grey-button.expand
+      = link_to @highschool_teachers_survey, @highschool_teachers_survey.link
+    button.grey-button.expand
+      = link_to @highschool_students_survey, @highschool_students_survey.link

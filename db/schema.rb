@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421094748) do
+ActiveRecord::Schema.define(version: 20140424042227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,11 +31,6 @@ ActiveRecord::Schema.define(version: 20140421094748) do
   end
 
   add_index "classrooms", ["teacher_id"], name: "index_classrooms_on_teacher_id", using: :btree
-
-  create_table "feedbacks", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "forem_categories", force: true do |t|
     t.string   "name",       null: false
@@ -140,28 +135,6 @@ ActiveRecord::Schema.define(version: 20140421094748) do
     t.text     "presentation_embed_code"
     t.string   "learning_module_file"
   end
-
-  create_table "questions", force: true do |t|
-    t.integer  "feedback_id"
-    t.integer  "order_index"
-    t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "responses", force: true do |t|
-    t.integer  "question_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "text"
-    t.integer  "feedback_id"
-    t.integer  "teacher_id"
-    t.integer  "student_id"
-  end
-
-  add_index "responses", ["feedback_id"], name: "index_responses_on_feedback_id", using: :btree
-  add_index "responses", ["student_id"], name: "index_responses_on_student_id", using: :btree
-  add_index "responses", ["teacher_id"], name: "index_responses_on_teacher_id", using: :btree
 
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
