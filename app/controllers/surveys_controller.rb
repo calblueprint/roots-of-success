@@ -14,7 +14,7 @@ class SurveysController < ApplicationController
       flash[:success] = 'Survey updated'
       redirect_to survey_path @survey
     else
-      render "edit_survey_path @survey"
+      render 'edit_survey_path @survey'
     end
   end
 end
