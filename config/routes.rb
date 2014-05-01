@@ -19,6 +19,7 @@ RootsOfSuccess::Application.routes.draw do
   scope '/teacher_dashboard' do
     get 'index',         to: 'teacher_dashboard#index', as: :teacher_dashboard
     get '/new_student',  to: 'teacher_dashboard#new_student', as: :new_student
+    get '/surveys',      to: 'teacher_dashboard#surveys', as: :teacher_surveys
     post '/new_student', to: 'teacher_dashboard#create_student',
                          as: :create_student
   end
@@ -38,8 +39,8 @@ RootsOfSuccess::Application.routes.draw do
 
   resources :profiles, only: [:show, :edit, :update]
   resources :learning_modules
-
   resources :classrooms
+
   scope '/classrooms' do
     get '/:id/add_students', to: 'classrooms#add_students_form',
                              as: :add_students_form
@@ -48,7 +49,13 @@ RootsOfSuccess::Application.routes.draw do
     post '/:id/remove_student/:student_id',
          to: 'classrooms#remove_student_from_classroom',
          as: :remove_student
+
+    post '/:id/toggle_module/:module_name',
+         to: 'classrooms#toggle_module', 
+         as: :toggle_module
   end
 
   resources :students
+  match '*path', to: 'static_pages#error', as: 'error_page', via: :get
+
 end

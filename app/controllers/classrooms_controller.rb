@@ -49,12 +49,16 @@ class ClassroomsController < ApplicationController
   def show
     @classroom = Classroom.find params[:id]
     @students = @classroom.students
+    @teacher = @classroom.teacher
+    @module_progress = @classroom.module_progress
+    @module_names = LearningModule.names
   end
 
   def update
     @classroom = Classroom.find params[:id]
     teacher = Teacher.find_by_email params[:classroom][:teacher_email]
-    @classroom.teacher = teacher
+    # TODO: Use a validation
+    @classroom.teacher = teacher if teacher
     if @classroom.save
       flash[:success] = 'Classroom teacher updated'
       redirect_to teacher_dashboard_path
@@ -64,6 +68,12 @@ class ClassroomsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def toggle_module
+    @classroom = Classroom.find params[:id]
+    @classroom.toggle_module!(params[:module_name])
+    redirect_to classroom_path @classroom
   end
 
   private

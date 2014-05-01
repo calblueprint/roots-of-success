@@ -30,27 +30,24 @@ def confirm_users
   User.update_all confirmed_at: Time.now
 end
 
+$module_names = [
+  'Fundamentals',
+  'Water',
+  'Waste',
+  'Transportation',
+  'Energy',
+  'Building',
+  'Health, Food, and Agriculture',
+  'Community Organizing and Leadership',
+  'Application and Practice',
+  'Financial Literacy and Social Entrepreneurship'
+]
+
 def create_modules
-  LearningModule.create! name: 'Fundamentals',
-                         number: 1
-  LearningModule.create! name: 'Water',
-                         number: 2
-  LearningModule.create! name: 'Waste',
-                         number: 3
-  LearningModule.create! name: 'Transportation',
-                         number: 4
-  LearningModule.create! name: 'Energy',
-                         number: 5
-  LearningModule.create! name: 'Building',
-                         number: 6
-  LearningModule.create! name: 'Health, Food, and Agriculture',
-                         number: 7
-  LearningModule.create! name: 'Community Organizing and Leadership',
-                         number: 8
-  LearningModule.create! name: 'Application and Practice',
-                         number: 9
-  LearningModule.create! name: 'Financial Literacy and Social Entrepreneurship',
-                         number: 10
+  $module_names.each_with_index do |name, i|
+    LearningModule.create! name: name,
+                           number: i + 1
+  end
 end
 
 def create_surveys
@@ -68,10 +65,33 @@ def create_surveys
     link: 'https://docs.google.com/forms/d/1QlTArPBO7ZS29ygU85AOr82klmQCPpeWlRGrBL9M-7Q/viewform?usp=send_form')
 end
 
+def create_forums
+  # Force-decorate the User class in case it hasn't been yet. Fixes #495.
+  Forem.decorate_user_class!
+
+  user = Forem.user_class.first
+
+  category_names = ['High School Teachers', 'Correctional Facility Teachers',
+    'Adult Teachers']
+  category_names.each do |category_name|
+    category = Forem::Category.create name: category_name
+
+    Forem::Forum.create category_id: category.id,
+                        name: 'General',
+                        description: 'General discussion'
+
+    $module_names.each do |module_name|
+      Forem::Forum.create category_id: category.id,
+                          name: 'Module: ' + module_name,
+                          description: module_name + \
+                            ' module discussion for ' + category_name.downcase
+    end
+  end
+end
+
+create_modules
 create_admins_and_teachers
 create_classroom
 confirm_users
-create_modules
 create_surveys
-
-Forem::Engine.load_seed
+create_forums

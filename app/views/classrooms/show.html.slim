@@ -6,6 +6,19 @@ ul.students
       = link_to "#{st} ", profile_path(st)
       | | 
       = link_to 'remove', remove_student_path(@classroom, st), method: :post
+ul.modules
+  - @module_names.each do |m|
+    li 
+      = m
+      | |
+      - if @module_progress[m]
+        = 'complete' 
+        | |
+        = link_to "Mark incomplete", toggle_module_path(@classroom,module_name: m), method: :post
+      - else
+        = 'incomplete'
+        | |
+        = link_to "Mark complete", toggle_module_path(@classroom,module_name: m), method: :post
 
 p = link_to "Add Students to Classroom", add_students_form_path
 p = link_to "Change Classroom Ownership", edit_classroom_path
