@@ -14,6 +14,9 @@ p = link_to "Edit Student Profile", edit_profile_path(@user)
   p = link_to "Teacher Dashboard", teacher_dashboard_path
 - else
   h1 Student Surveys
-  p = link_to @survey_link, @survey_link.link
+  = @survey_link
+  iframe src="#{sanitize @survey_link.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+  br
+
 
 p = link_to "Logout", destroy_user_session_path, method: 'delete' 

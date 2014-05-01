@@ -1,9 +1,23 @@
 h1 Survey for All Teachers
-p = link_to @all_teachers.name, @all_teachers.link
+= @all_teachers.name
+iframe src="#{sanitize @all_teachers.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+br
+br
+
 - if @profile.program == 'CorrectionalFacility'
-  h1 Surveys for only Correctional Facility Teachers
-  p = link_to @correctional_teacher.name, @correctional_teacher.link
+  h1 Survey for Correctional Facility Tecahers
+  = @correctional_teacher.name
+iframe src="#{sanitize @correctional_teacher.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+br
+br
+
 - if @profile.program == 'HighSchool'
-  h1 Surveys for only High School Teachers
-  p = link_to @highschool_teacher.name, @highschool_teacher.link
+  h1 Survey for High School Tecahers
+  = @highschool_teacher.name
+iframe src="#{sanitize @highschool_teacher.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+br
+br
+
 p = link_to "Logout", destroy_user_session_path, method: 'delete'
+
+
