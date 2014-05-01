@@ -52,16 +52,16 @@ end
 
 def create_surveys
   AllTeachersSurvey.create!(
-    name: 'Survey For All Teachers',
+    name: 'All Teachers',
     link: 'https://docs.google.com/forms/d/19gKLLu50bf1U3mZ_rEKNXeGiamRVprJhWwdCSL8xq0Q/viewform?usp=send_form')
   CorrectionalFacilityTeachersSurvey.create!(
-    name: 'Survey for Correctional Facility Teachers',
+    name: 'Correctional Facility Teachers',
     link: 'https://docs.google.com/forms/d/1SRBPD-C3ijlrX7jturb6I5UGqcA1bwEU715S4m0n0rk/viewform?usp=send_form')
   HighschoolTeachersSurvey.create!(
-    name: 'Survey for High School Teachers',
+    name: 'High School Teachers',
     link: 'https://docs.google.com/forms/d/1CWoe0o43J_KCvbfkE3JHKT1-tJud5rwxhnJUC4IfbtQ/viewform?usp=send_form')
   HighschoolStudentsSurvey.create!(
-    name: 'Survey for High School Students',
+    name: 'High School Students',
     link: 'https://docs.google.com/forms/d/1QlTArPBO7ZS29ygU85AOr82klmQCPpeWlRGrBL9M-7Q/viewform?usp=send_form')
 end
 
