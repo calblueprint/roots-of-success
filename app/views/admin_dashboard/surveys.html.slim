@@ -1,29 +1,30 @@
 h1 All Surveys
 
 h1 Surveys for all Teachers
-= @all_teachers_surveys
+p = link_to @all_teachers_surveys, survey_path(@all_teachers_surveys)
 iframe src="#{sanitize @all_teachers_surveys.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 br
 br
 br
 
 h1 Surveys for only Correctional Facility Teachers
-= @correctional_teachers_survey
+p = link_to @correctional_teachers_survey, survey_path(@correctional_teachers_survey)
 iframe src="#{sanitize @correctional_teachers_survey.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 br
 br
 br
 
 h1 Surveys for only High School Teachers
-= @highschool_teachers_survey
+p = link_to @highschool_teachers_survey, survey_path(@highschool_teachers_survey)
 iframe src="#{sanitize @highschool_teachers_survey.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 br
 br
 br
 
 h1 Surveys for only High School Students
-= @highschool_students_survey
+p = link_to @highschool_students_survey, survey_path(@highschool_students_survey)
 iframe src="#{sanitize @highschool_students_survey.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 br
 br
 br
+

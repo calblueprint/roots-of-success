@@ -1,5 +1,11 @@
 RootsOfSuccess::Application.routes.draw do
 
+  get 'survey/show'
+
+  get 'survey/edit'
+
+  get 'survey/update'
+
   # This line mounts Forem's routes at /forums by default.
   # This means, any requests to the /forums URL of your application will go
   # to Forem::ForumsController#index.
@@ -38,6 +44,7 @@ RootsOfSuccess::Application.routes.draw do
   end
 
   resources :profiles, only: [:show, :edit, :update]
+  resources :surveys, only: [:show, :edit, :update]
   resources :learning_modules
   resources :classrooms
 
