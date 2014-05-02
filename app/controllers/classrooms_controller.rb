@@ -57,6 +57,7 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.find params[:id]
     @classroom.program = params[:classroom][:program]
     if @classroom.save
+      @classroom.set_student_surveys
       flash[:success] = 'Classroom program type updated!'
       redirect_to @classroom
     else
@@ -89,7 +90,7 @@ class ClassroomsController < ApplicationController
   private
 
   def classroom_params
-    params.require(:classroom).permit(:name, :teacher_id)
+    params.require(:classroom).permit(:name, :teacher_id, :program)
   end
 
   def student_params

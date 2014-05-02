@@ -19,8 +19,8 @@ class Survey < ActiveRecord::Base
     raise NotImplementedError
   end
   
-  def self.for?(klass,classroom)
-    self.subclasses.select { |c| c.for? } 
+  def self.for(klass,classroom)
+    self.subclasses.select { |c| c.for?(klass, classroom) } 
   end
 
   def self.instance

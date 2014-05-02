@@ -32,4 +32,11 @@ class Classroom < ActiveRecord::Base
   def set_module_progress
     self.module_progress = Hash[LearningModule.names.map { |l| [l, false] }]
   end
+
+  def set_student_surveys
+    students.each do |student|
+      student.profile.surveys_completed = Hash[Survey.for(Student, self).map { |s| [s.title, false] } ]
+      s.profile.save!
+    end
+  end
 end

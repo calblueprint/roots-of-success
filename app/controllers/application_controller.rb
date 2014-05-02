@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  [HighSchoolTeacherSurvey, HighSchoolStudentSurvey, CorrectionalFacilityTeacherSurvey, AllTeachersSurvey] if Rails.env.development?
+
   def forem_user
     current_user
   end
