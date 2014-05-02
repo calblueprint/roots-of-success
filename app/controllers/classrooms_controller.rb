@@ -51,6 +51,7 @@ class ClassroomsController < ApplicationController
     @teacher = @classroom.teacher
     @module_progress = @classroom.module_progress
     @module_names = LearningModule.names
+    @surveys = @classroom.survey_titles
   end
 
   def update

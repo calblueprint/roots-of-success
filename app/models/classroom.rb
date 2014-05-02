@@ -34,9 +34,13 @@ class Classroom < ActiveRecord::Base
   end
 
   def set_student_surveys
-    students.each do |student|
-      student.profile.surveys_completed = Hash[Survey.for(Student, self).map { |s| [s.title, false] } ]
-      s.profile.save!
+    self.students.each do |st|
+      st.profile.surveys_completed = Hash[Survey.for(Student, self).map { |s| [s.title, false] } ]
+      st.profile.save!
     end
+  end
+
+  def survey_titles
+    Survey.for(Student,self).map { |s| s.title }
   end
 end
