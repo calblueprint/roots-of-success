@@ -8,11 +8,12 @@
 #  teacher_id      :integer
 #  name            :text
 #  module_progress :text
+#  program         :string(255)
 #
 
 class Classroom < ActiveRecord::Base
   serialize :module_progress, Hash
-  before_create :set_module_progress
+  before_create :set_module_progress, :set_student_surveys
 
   belongs_to :teacher
   has_many :students
