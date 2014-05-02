@@ -11,9 +11,8 @@
 #
 
 class AllTeachersSurvey < Survey
-
   def self.title
-    'All Teachers' 
+    'All Teachers'
   end
 
   def self.for?(klass, classroom)

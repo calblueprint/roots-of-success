@@ -55,8 +55,8 @@ RootsOfSuccess::Application.routes.draw do
          as: :toggle_module
 
     patch '/:id/update_teacher/',
-         to: 'classrooms#update_teacher', 
-         as: :update_teacher
+          to: 'classrooms#update_teacher',
+          as: :update_teacher
   end
 
   resources :students

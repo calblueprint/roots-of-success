@@ -16,11 +16,11 @@ class Survey < ActiveRecord::Base
   end
 
   def self.title
-    raise NotImplementedError
+    fail NotImplementedError
   end
-  
-  def self.for(klass,classroom)
-    self.subclasses.select { |c| c.for?(klass, classroom) } 
+ 
+  def self.for(klass, classroom)
+    subclasses.select { |c| c.for?(klass, classroom) }
   end
 
   def self.instance

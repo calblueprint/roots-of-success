@@ -21,4 +21,3 @@ class HighSchoolStudentSurvey < Survey
   end
 
 end
- 

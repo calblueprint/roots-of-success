@@ -11,7 +11,6 @@
 #
 
 class HighSchoolTeacherSurvey < Survey
- 
   def self.title
     'High School'
   end
@@ -19,5 +18,4 @@ class HighSchoolTeacherSurvey < Survey
   def self.for?(klass, classroom)
     klass == Teacher && classroom.program == 'High School'
   end
-
 end
