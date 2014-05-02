@@ -2,8 +2,5 @@ h1 Teacher Edit Profile
 
 = simple_form_for @profile, url: profile_path(@user) do |f|
   - @profile.to_check.each do |attribute|
-    - if attribute == 'program'
-      = f.input attribute, collection: [:CorrectionalFacility, :HighSchool]
-    - else
-      = f.input attribute
+    = f.input attribute
   = f.button :submit

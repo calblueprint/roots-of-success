@@ -43,7 +43,6 @@ class ClassroomsController < ApplicationController
 
   def edit
     @classroom = Classroom.find params[:id]
-    @teachers = Teacher.all
   end
 
   def show
@@ -56,11 +55,22 @@ class ClassroomsController < ApplicationController
 
   def update
     @classroom = Classroom.find params[:id]
+    @classroom.program = params[:classroom][:program]
+    if @classroom.save
+      flash[:success] = 'Classroom program type updated!'
+      redirect_to @classroom
+    else
+      render 'show'
+    end
+  end
+
+  def update_teacher
+    @classroom = Classroom.find params[:id]
     teacher = Teacher.find_by_email params[:classroom][:teacher_email]
     # TODO: Use a validation
     @classroom.teacher = teacher if teacher
     if @classroom.save
-      flash[:success] = 'Classroom teacher updated'
+      flash[:success] = 'Classroom teacher updated!'
       redirect_to teacher_dashboard_path
     else
       render 'edit'
