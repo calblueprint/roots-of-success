@@ -1,4 +1,6 @@
-h1 Teacher Edit Profile
+.small-12.columns.text-center
+  .small-8.small-offset-2.column
+    h1 Teacher Edit Profile
 
 = simple_form_for @profile, url: profile_path(@user) do |f|
   - @profile.to_check.each do |attribute|

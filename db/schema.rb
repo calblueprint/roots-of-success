@@ -137,37 +137,6 @@ ActiveRecord::Schema.define(version: 20140502024855) do
     t.string   "learning_module_file"
   end
 
-  create_table "lectures", force: true do |t|
-    t.integer  "number"
-    t.string   "title"
-    t.string   "partial"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "semester_id"
-  end
-
-  create_table "positions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-  end
-
-  create_table "roles", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "semester_id"
-    t.integer  "position_id"
-  end
-
-  create_table "semesters", force: true do |t|
-    t.string   "semester"
-    t.integer  "year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
@@ -178,6 +147,7 @@ ActiveRecord::Schema.define(version: 20140502024855) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
+<<<<<<< HEAD
   create_table "student_applications", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -196,6 +166,8 @@ ActiveRecord::Schema.define(version: 20140502024855) do
     t.datetime "updated_at"
   end
 
+=======
+>>>>>>> 4c5de9b5a37fc64243407066ac8663dad85fcf0d
   create_table "student_profiles", force: true do |t|
     t.integer  "student_id"
     t.datetime "created_at"
