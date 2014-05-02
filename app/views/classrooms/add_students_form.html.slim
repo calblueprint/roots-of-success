@@ -1,10 +1,11 @@
-h1 Add students to #{@classroom}
+.small-12.columns.text-center  
+  h1 Add students to #{@classroom}
 
-= render 'dashboard/bad_emails', bad_addrs: @bad_emails
+  = render 'dashboard/bad_emails', bad_addrs: @bad_emails
 
-.small-12.large-9.center
-  = simple_form_for :students, url: add_students_path do |f|
-    = f.input :emails, as: :text, label: 'Enter email addresses here, seperated by a comma',
-              input_html: { cols: 50, rows: 5, class: "tallform"}
+  .small-12.large-9.center
+    = simple_form_for :students, url: add_students_path do |f|
+      = f.input :emails, as: :text, label: 'Enter email addresses here, seperated by a comma',
+                input_html: { cols: 50, rows: 5, class: "tallform"}
 
-    = f.button :submit, "Save Students", class: "small expand grey-button"
+      = f.button :submit, "Save Students", class: "small expand grey-button"

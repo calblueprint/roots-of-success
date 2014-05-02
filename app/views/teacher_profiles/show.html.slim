@@ -1,14 +1,15 @@
-h1 Teacher Profile Show
+.small-12.columns.text-center
+  h1 Teacher Profile Show
 
-p = link_to "Edit Teacher Profile", edit_profile_path(@user)
+  p = link_to "Edit Teacher Profile", edit_profile_path(@user)
 
-- @profile.to_check.each do |attribute|
-  = attribute.titleize
-  = ": " 
-  = @profile.send attribute
-  br
+  - @profile.to_check.each do |attribute|
+    = attribute.titleize
+    = ": " 
+    = @profile.send attribute
+    br
 
-- if admin?
-  p = link_to "Admin Dashboard", admin_dashboard_path
-- elsif teacher?
-  p = link_to "Teacher Dashboard", teacher_dashboard_path
+  - if admin?
+    p = link_to "Admin Dashboard", admin_dashboard_path
+  - elsif teacher?
+    p = link_to "Teacher Dashboard", teacher_dashboard_path

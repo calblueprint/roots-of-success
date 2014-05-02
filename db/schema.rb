@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424042227) do
+ActiveRecord::Schema.define(version: 20140430011434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admin_profiles", force: true do |t|
-    t.text     "position"
     t.integer  "admin_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -28,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140424042227) do
     t.datetime "updated_at"
     t.integer  "teacher_id"
     t.text     "name"
+    t.text     "module_progress"
   end
 
   add_index "classrooms", ["teacher_id"], name: "index_classrooms_on_teacher_id", using: :btree
@@ -147,10 +147,10 @@ ActiveRecord::Schema.define(version: 20140424042227) do
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "student_profiles", force: true do |t|
-    t.integer  "age"
     t.integer  "student_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
   end
 
   create_table "surveys", force: true do |t|
@@ -162,10 +162,14 @@ ActiveRecord::Schema.define(version: 20140424042227) do
   end
 
   create_table "teacher_profiles", force: true do |t|
-    t.text     "institution"
     t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "phone"
+    t.string   "program"
+    t.string   "position"
+    t.string   "location"
+    t.string   "curriculum_version"
   end
 
   create_table "users", force: true do |t|

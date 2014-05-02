@@ -1,9 +1,19 @@
-h1 Survey for All Teachers
-p = link_to @all_teachers.name, @all_teachers.link
-- if @profile.program == 'CorrectionalFacility'
-  h1 Surveys for only Correctional Facility Teachers
-  p = link_to @correctional_teacher.name, @correctional_teacher.link
-- if @profile.program == 'HighSchool'
-  h1 Surveys for only High School Teachers
-  p = link_to @highschool_teacher.name, @highschool_teacher.link
-p = link_to "Logout", destroy_user_session_path, method: 'delete'
+.small-12.columns.center
+  h1 Survey for Teachers
+
+  .small-12.large-8.large-offset-2.columns.center.nopad.bot-margin-large
+    button.grey-button.expand
+      = link_to @all_teachers.name, @all_teachers.link
+  - if @profile.program == 'CorrectionalFacility'
+    .small-12.large-8.large-offset-2.columns.center.nopad.bot-margin-large
+      h1 Surveys for only Correctional Facility Teachers
+      button.grey-button.expand  
+        = link_to @correctional_teacher.name, @correctional_teacher.link
+  - if @profile.program == 'HighSchool'
+    .small-12.large-8.large-offset-2.columns.center.nopad.bot-margin-large
+      h1 Surveys for only High School Teachers
+      button.grey-button.expand  
+        = link_to @highschool_teacher.name, @highschool_teacher.link
+
+  .small-12.column.center.nopad
+    p = link_to "Logout", destroy_user_session_path, method: 'delete'
