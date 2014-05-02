@@ -1,4 +1,4 @@
-.small-12.column
+.small-12.column.nobotpad
   ul.learning_modules.small-block-grid-2.large-block-grid-5
     - @learning_modules.each do |mod|
       li
@@ -9,6 +9,6 @@
         p.bot-margin-none.top-margin-small Module #{mod.number}: #{mod}
 
 
-p = link_to "Admin Profile", profile_path(current_user)
-p = link_to "View Students", show_students_path
+p.nomar = link_to "Admin Profile", profile_path(current_user)
+p.nomar = link_to "View Students", show_students_path
 p = link_to "Logout", destroy_user_session_path, method: 'delete'
