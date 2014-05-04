@@ -1,6 +1,6 @@
 class LearningModuleTopicsController < ApplicationController
   def index
-  end 
+  end
 
   def create
   end
@@ -21,4 +21,5 @@ class LearningModuleTopicsController < ApplicationController
 
   def destroy
   end
+
 end

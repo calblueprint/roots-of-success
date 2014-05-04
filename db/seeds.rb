@@ -67,12 +67,10 @@ $module_names = [
 
 
 def create_modules
-  
   $modules.each { |module_attributes| LearningModule.create! module_attributes }
-  
   $module_names.each_with_index do |name, i|
     t = LearningModuleTopic.create! topic: name,
-                                    number: i + 1  
+                                    number: i + 1
     t.learning_modules = 1.upto(6).map do |n|
       LearningModule.create! name: "#{name}#{n}",
                              number: n
