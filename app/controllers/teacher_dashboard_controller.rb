@@ -8,8 +8,8 @@ class TeacherDashboardController < ApplicationController
   def surveys
     @user = current_user
     @profile = @user.profile
-    @all_teachers = AllTeachersSurvey.first
-    @correctional_teacher = CorrectionalFacilityTeacherSurvey.first
-    @highschool_teacher = HighSchoolTeacherSurvey.first
+    @all_teachers = AllTeachersSurvey.instance
+    @correctional_teacher = CorrectionalFacilityTeacherSurvey.instance
+    @highschool_teacher = HighSchoolTeacherSurvey.instance
   end
 end

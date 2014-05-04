@@ -22,10 +22,10 @@ class AdminDashboardController < ApplicationController
   end
 
   def surveys
-    @all_teachers_surveys = AllTeachersSurvey.first
-    @correctional_teachers_survey = CorrectionalFacilityTeachersSurvey.first
-    @highschool_teachers_survey = HighschoolTeachersSurvey.first
-    @highschool_students_survey = HighschoolStudentsSurvey.first
+    @all_teachers_surveys = AllTeachersSurvey.instance
+    @correctional_teachers_survey = CorrectionalFacilityTeacherSurvey.instance
+    @highschool_teachers_survey = HighSchoolTeacherSurvey.instance
+    @highschool_students_survey = HighSchoolStudentSurvey.instance
   end
 
   def new_teacher
