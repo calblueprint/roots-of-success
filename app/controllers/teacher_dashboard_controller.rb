@@ -9,7 +9,7 @@ class TeacherDashboardController < ApplicationController
     @user = current_user
     @profile = @user.profile
     @all_teachers = AllTeachersSurvey.first
-    @correctional_teacher = CorrectionalFacilityTeachersSurvey.first
-    @highschool_teacher = HighschoolTeachersSurvey.first
+    @correctional_teacher = CorrectionalFacilityTeacherSurvey.first
+    @highschool_teacher = HighSchoolTeacherSurvey.first
   end
 end
