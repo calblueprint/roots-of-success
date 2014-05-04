@@ -9,12 +9,13 @@ class SurveysController < ApplicationController
 
   def update
     @survey = Survey.find params[:id]
-    if @survey # how do i grab the value from the form?
-      # Handle a successful update.
-      flash[:success] = 'Survey updated'
-      redirect_to survey_path @survey
-    else
-      render 'edit_survey_path @survey'
-    end
+    @survey.update_attributes survey_attributes
+    flash[:success] = 'survey updated!'
+    redirect_to survey_path @survey
   end
+
+  private
+    def survey_attributes
+      params.require(:survey).permit(:link, :name)
+    end
 end
