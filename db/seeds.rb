@@ -30,38 +30,45 @@ def confirm_users
   User.update_all confirmed_at: Time.now
 end
 
-$module_names = [
-  'Fundamentals',
-  'Water',
-  'Waste',
-  'Transportation',
-  'Energy',
-  'Building',
-  'Health, Food, and Agriculture',
-  'Community Organizing and Leadership',
-  'Application and Practice',
-  'Financial Literacy and Social Entrepreneurship'
+modules = [
+  { name: 'Fundamentals',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1_Rd5staS5d1wjYwEEYGKVyGxUVc0rDXMD2--ES0P-wg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+  { name: 'Water',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1FrMPvBfuIPRq7tbzhRZQh9HypGiq4fh4Unc8xozP40I/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+  { name: 'Waste',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1riTorMt7KLZwIhKICVIGB9ofFpF1uB3YnaGmVmrE0_4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+  { name: 'Transportation',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1IsrMf29hOPk3FnbkXLxppA6cMRSAjl5di8uf4XbLEWQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+  { name: 'Energy',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1J-9s6qCDjilAXUi_DjGnXvObokUwc5zYXKCy8UiZ1OE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+  { name: 'Building',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1VMprYLZGVPEz8hrV2VDaNxP4jBpVr33pZrrqIDUmmbA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+  { name: 'Health, Food, and Agriculture',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1zdsoBgwmX76Ira8iA_-vq7G3S5-dnq4z_TgAllBPkHE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+  { name: 'Community Organizing and Leadership',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1Op3oF2gtiK4U8cpZfTwiX_ZqiMZwyyLUshgrhOrsEpE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+  { name: 'Application and Practice',
+    presentation_embed_code: '' },
+  { name: 'Financial Literacy and Social Entrepreneurship',
+    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1rx5CZMjP8X2TasI9Fc8Lb1dUoHYjXGnx53E4rLoBmrA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }
 ]
 
 def create_modules
-  $module_names.each_with_index do |name, i|
-    LearningModule.create! name: name,
-                           number: i + 1
-  end
+  modules.each { |module_attributes| LearningModule.create! module_attributes }
 end
 
 def create_surveys
   AllTeachersSurvey.create!(
     name: 'All Teachers',
     link: 'https://docs.google.com/forms/d/19gKLLu50bf1U3mZ_rEKNXeGiamRVprJhWwdCSL8xq0Q/viewform?usp=send_form')
-  CorrectionalFacilityTeachersSurvey.create!(
-    name: 'Correctional Facility Teachers',
+  CorrectionalFacilityTeacherSurvey.create!(
+    name: 'Survey for Correctional Facility Teachers',
     link: 'https://docs.google.com/forms/d/1SRBPD-C3ijlrX7jturb6I5UGqcA1bwEU715S4m0n0rk/viewform?usp=send_form')
-  HighschoolTeachersSurvey.create!(
-    name: 'High School Teachers',
+  HighSchoolTeacherSurvey.create!(
+    name: 'Survey for High School Teachers',
     link: 'https://docs.google.com/forms/d/1CWoe0o43J_KCvbfkE3JHKT1-tJud5rwxhnJUC4IfbtQ/viewform?usp=send_form')
-  HighschoolStudentsSurvey.create!(
-    name: 'High School Students',
+  HighSchoolStudentSurvey.create!(
+    name: 'Survey for High School Students',
     link: 'https://docs.google.com/forms/d/1QlTArPBO7ZS29ygU85AOr82klmQCPpeWlRGrBL9M-7Q/viewform?usp=send_form')
 end
 

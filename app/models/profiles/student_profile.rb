@@ -2,14 +2,16 @@
 #
 # Table name: student_profiles
 #
-#  id         :integer          not null, primary key
-#  student_id :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  phone      :string(255)
+#  id                :integer          not null, primary key
+#  student_id        :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#  phone             :string(255)
+#  surveys_completed :text
 #
 
 class StudentProfile < ActiveRecord::Base
+  serialize :surveys_completed
   def filled_in?
     to_check.all? { |attribute| !send(attribute).nil? }
   end
@@ -20,5 +22,10 @@ class StudentProfile < ActiveRecord::Base
 
   def class_name
     self.class.name.underscore
+  end
+
+  def toggle_survey_complete!(name)
+    surveys_completed[name] = !surveys_completed[name]
+    save!
   end
 end

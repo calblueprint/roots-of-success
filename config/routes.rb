@@ -53,6 +53,10 @@ RootsOfSuccess::Application.routes.draw do
     post '/:id/toggle_module/:module_name',
          to: 'classrooms#toggle_module', 
          as: :toggle_module
+
+    patch '/:id/update_teacher/',
+          to: 'classrooms#update_teacher',
+          as: :update_teacher
   end
 
   resources :students

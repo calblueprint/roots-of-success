@@ -34,6 +34,9 @@ class Student < User
   has_many :responses
 
   after_create :create_profile
+
+  delegate :surveys_completed, to: :profile
+
   def teacher
     classroom.teacher 
   end

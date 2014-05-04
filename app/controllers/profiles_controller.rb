@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   def show
     @user = User.find params[:id]
     @profile = @user.profile
-    @survey_link = HighschoolStudentsSurvey.first if current_user.student?
+    @survey_link = HighschoolStudentsSurvey.instance if current_user.student?
     render "#{profile_view(@profile)}/show"
   end
 

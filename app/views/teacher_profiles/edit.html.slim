@@ -2,10 +2,7 @@
   .small-8.small-offset-2.column
     h1 Teacher Edit Profile
 
-    = simple_form_for @profile, url: profile_path(@user) do |f|
-      - @profile.to_check.each do |attribute|
-        - if attribute == 'program'
-          = f.input attribute, collection: [:CorrectionalFacility, :HighSchool]
-        - else
-          = f.input attribute
-      = f.button :submit
+= simple_form_for @profile, url: profile_path(@user) do |f|
+  - @profile.to_check.each do |attribute|
+    = f.input attribute
+  = f.button :submit

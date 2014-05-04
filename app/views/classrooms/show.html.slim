@@ -1,26 +1,40 @@
 .small-12.columns.text-center  
   h1 Welcome to Classroom #{@classroom}
 
-  ul.students
+table
+  thead
+    tr
+      th Name
+      - @surveys.each do |s|
+        th #{s} Survey Complete?
+      th Remove?
+  tbody
     - @students.each do |st|
-      li
-        = link_to "#{st} ", profile_path(st)
-        | | 
-        = link_to 'remove', remove_student_path(@classroom, st), method: :post
-  ul.modules
-    - @module_names.each do |m|
-      li 
-        = m
+      tr
+        td = link_to "#{st} ", profile_path(st)
+        - @surveys.each do |s|
+          td = st.surveys_completed[s] 
+        td = link_to 'remove', remove_student_path(@classroom, st), method: :post
+ 
+ul.modules
+  - @module_names.each do |m|
+    li 
+      = m
+      | |
+      - if @module_progress[m]
+        = 'complete' 
         | |
-        - if @module_progress[m]
-          = 'complete' 
-          | |
-          = link_to "Mark incomplete", toggle_module_path(@classroom,module_name: m), method: :post
-        - else
-          = 'incomplete'
-          | |
-          = link_to "Mark complete", toggle_module_path(@classroom,module_name: m), method: :post
+        = link_to "Mark incomplete", toggle_module_path(@classroom,module_name: m), method: :post
+      - else
+        = 'incomplete'
+        | |
+        = link_to "Mark complete", toggle_module_path(@classroom,module_name: m), method: :post
 
-  p = link_to "Add Students to Classroom", add_students_form_path
-  p = link_to "Change Classroom Ownership", edit_classroom_path
-  = link_to "Home", root_path
+p = link_to "Add Students to Classroom", add_students_form_path
+p = link_to "Change Classroom Ownership", edit_classroom_path(@classroom)
+= simple_form_for @classroom do |f|
+  = f.input :program, collection: [:'Correctional Facility', :'High School']
+  = f.button :submit
+p The current program for this classroom is: #{@classroom.program}
+
+= link_to "Home", root_path
