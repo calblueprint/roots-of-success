@@ -13,6 +13,7 @@ class LearningModuleTopicsController < ApplicationController
 
   def show
     @module = LearningModuleTopic.find params[:id]
+    @module_versions = @module.learning_modules
   end
 
   def update

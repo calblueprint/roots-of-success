@@ -30,7 +30,7 @@ def confirm_users
   User.update_all confirmed_at: Time.now
 end
 
-modules = [
+$modules = [
   { name: 'Fundamentals',
     presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1_Rd5staS5d1wjYwEEYGKVyGxUVc0rDXMD2--ES0P-wg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
   { name: 'Water',
@@ -51,10 +51,33 @@ modules = [
     presentation_embed_code: '' },
   { name: 'Financial Literacy and Social Entrepreneurship',
     presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1rx5CZMjP8X2TasI9Fc8Lb1dUoHYjXGnx53E4rLoBmrA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }
-]
+  ]
+
+$module_names = [
+  'Fundamentals',
+  'Water',
+  'Waste',
+  'Transportation',
+  'Energy',
+  'Building',
+  'Health, Food, and Agriculture',
+  'Community Organizing and Leadership',
+  'Application and Practice',
+  'Financial Literacy and Social Entrepreneurship']
+
 
 def create_modules
-  modules.each { |module_attributes| LearningModule.create! module_attributes }
+  
+  $modules.each { |module_attributes| LearningModule.create! module_attributes }
+  
+  $module_names.each_with_index do |name, i|
+    t = LearningModuleTopic.create! topic: name,
+                                    number: i + 1  
+    t.learning_modules = 1.upto(6).map do |n|
+      LearningModule.create! name: "#{name}#{n}",
+                             number: n
+    end
+  end
 end
 
 def create_surveys

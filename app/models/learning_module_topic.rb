@@ -10,6 +10,7 @@
 
 class LearningModuleTopic < ActiveRecord::Base
   has_many :learning_modules
+
   def image_url
     "Modules/Mod#{number}.png"
   end
