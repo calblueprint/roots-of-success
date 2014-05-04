@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140502024855) do
+ActiveRecord::Schema.define(version: 20140502040956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,13 @@ ActiveRecord::Schema.define(version: 20140502024855) do
   add_index "forem_views", ["updated_at"], name: "index_forem_views_on_updated_at", using: :btree
   add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id", using: :btree
   add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id", using: :btree
+
+  create_table "learning_module_topics", force: true do |t|
+    t.string   "topic"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "number"
+  end
 
   create_table "learning_modules", force: true do |t|
     t.datetime "created_at"
