@@ -147,27 +147,6 @@ ActiveRecord::Schema.define(version: 20140502024855) do
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
-<<<<<<< HEAD
-  create_table "student_applications", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "year"
-    t.string   "major"
-    t.string   "gpa"
-    t.text     "why_join"
-    t.text     "cs_classes_taken"
-    t.text     "current_courseload"
-    t.text     "other_commitments"
-    t.text     "how_did_you_hear_about_us"
-    t.text     "how_many_hours_willing"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-=======
->>>>>>> 4c5de9b5a37fc64243407066ac8663dad85fcf0d
   create_table "student_profiles", force: true do |t|
     t.integer  "student_id"
     t.datetime "created_at"
