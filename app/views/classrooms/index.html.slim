@@ -1,8 +1,10 @@
-h1 Manage Classrooms
+.small-12.columns.text-center  
+  h1 Manage Classrooms
 
-ul
-  - @classrooms.each do |classroom|
-    li = link_to "Classroom Name: #{classroom}", classroom
+  .small-12.large-8.large-offset-2.columns.center.nopad
+    ul.nomar
+      - @classrooms.each do |classroom|
+        li.button.grey-button.expand = link_to "Classroom Name: #{classroom}", classroom
 
-p = link_to "Create New Classroom", new_classroom_path
-p = link_to "Logout", destroy_user_session_path, method: 'delete'
+    p = link_to "Create New Classroom", new_classroom_path
+    p = link_to "Logout", destroy_user_session_path, method: 'delete'

@@ -1,5 +1,6 @@
-h1 #{@classroom}
+.small-12.columns.text-center  
+  h1 #{@classroom}
 
-= simple_form_for @classroom do |c|
+= simple_form_for @classroom, url: update_teacher_path(@classroom) do |c|
   = c.input :teacher_email
   = c.button :submit

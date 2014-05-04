@@ -1,12 +1,13 @@
-h1 Student Profile Show
+.small-12.columns.text-center
+	h1 Student Profile Show
 
-p = link_to "Edit Student Profile", edit_profile_path(@user)
+	p = link_to "Edit Student Profile", edit_profile_path(@user)
 
-- @profile.to_check.each do |attribute|
-  = attribute.titleize
-  = ": "
-  = @profile.send attribute
-  br
+	- @profile.to_check.each do |attribute|
+	  = attribute.titleize
+	  = ": "
+	  = @profile.send attribute
+	  br
 
 - if admin?
   p = link_to "Admin Dashboard", admin_dashboard_path
@@ -18,5 +19,4 @@ p = link_to "Edit Student Profile", edit_profile_path(@user)
   iframe src="#{sanitize @survey_link.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
   br
 
-
-p = link_to "Logout", destroy_user_session_path, method: 'delete' 
+	p = link_to "Logout", destroy_user_session_path, method: 'delete' 

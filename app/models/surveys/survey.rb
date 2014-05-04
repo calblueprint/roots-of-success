@@ -14,4 +14,16 @@ class Survey < ActiveRecord::Base
   def to_s
     name
   end
+
+  def self.title
+    fail NotImplementedError
+  end
+
+  def self.for(klass, classroom)
+    subclasses.select { |c| c.for?(klass, classroom) }
+  end
+
+  def self.instance
+    first
+  end
 end
