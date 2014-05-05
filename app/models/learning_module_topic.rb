@@ -6,6 +6,7 @@
 #  topic      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  number     :integer
 #
 
 class LearningModuleTopic < ActiveRecord::Base
