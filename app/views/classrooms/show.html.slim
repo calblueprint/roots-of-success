@@ -1,6 +1,7 @@
 .small-12.columns.text-center  
   h1 Welcome to Classroom #{@classroom}
 
+  h1 Students
   table.center
     thead
       tr
@@ -15,26 +16,35 @@
           - @surveys.each do |s|
             td = st.surveys_completed[s] 
           td = link_to 'remove', remove_student_path(@classroom, st), method: :post
-   
-  ul.modules
-    - @module_names.each do |m|
-      li 
-        = m
-        | |
-        - if @module_progress[m]
-          = 'complete' 
-          | |
-          = link_to "Mark incomplete", toggle_module_path(@classroom,module_name: m), method: :post
-        - else
-          = 'incomplete'
-          | |
-          = link_to "Mark complete", toggle_module_path(@classroom,module_name: m), method: :post
 
   p = link_to "Add Students to Classroom", add_students_form_path
-  p = link_to "Change Classroom Ownership", edit_classroom_path(@classroom)
-  = simple_form_for @classroom do |f|
-    = f.input :program, collection: [:'Correctional Facility', :'High School']
-    = f.button :submit
-  p The current program for this classroom is: #{@classroom.program}
 
-  = link_to "Home", root_path
+  h1 Module Progress
+  table.center
+    thead
+      tr
+        th Module Name
+        th Progress
+        th Complete?
+    tbody
+      - @module_names.each do |m|
+        tr
+          td = m
+          - if @module_progress[m]
+            td = 'complete' 
+            td   = link_to "Mark incomplete", toggle_module_path(@classroom,module_name: m), method: :post
+          - else
+            td   = 'incomplete'
+            td   = link_to "Mark complete", toggle_module_path(@classroom,module_name: m), method: :post
+
+  .row
+    .small-12.large-8.large-offset-2.column.center
+      = simple_form_for @classroom do |f|
+        = f.input :program, collection: [:'Correctional Facility', :'High School']
+        = f.button :submit
+      p.nomar The current program for this classroom is: #{@classroom.program}
+      p.nomar = link_to "Change Classroom Ownership", edit_classroom_path(@classroom)
+
+  p.nomar = link_to "Home", root_path
+  p = link_to "Logout", destroy_user_session_path, method: 'delete'
+

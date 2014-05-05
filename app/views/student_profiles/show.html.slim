@@ -19,4 +19,5 @@
   iframe src="#{sanitize @survey_link.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
   br
 
-	p = link_to "Logout", destroy_user_session_path, method: 'delete' 
+  p.nomar = link_to "Home", root_path
+  p = link_to "Logout", destroy_user_session_path, method: 'delete' 
