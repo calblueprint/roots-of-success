@@ -12,6 +12,7 @@
 #
 
 class LearningModule < ActiveRecord::Base
+  belongs_to :learning_module_topic
   default_scope -> { order 'number ASC' }
   mount_uploader :learning_module_file, LearningModuleFileUploader
 
