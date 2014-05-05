@@ -9,10 +9,8 @@
 #  updated_at :datetime
 #  type       :string(255)
 #
-
-class Survey < ActiveRecord::
+class Survey < ActiveRecord::Base
   validates :name, :link, :type, presence: true
-  
   def to_s
     name
   end

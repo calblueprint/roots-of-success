@@ -11,7 +11,6 @@
 #
 
 class AllTeachersSurvey < Survey
-
   def self.title
     'All Teachers'
   end
