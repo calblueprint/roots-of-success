@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 h1 Survey for All Teachers
 = @all_teachers.name
 iframe src="#{sanitize @all_teachers.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
@@ -20,24 +19,3 @@ br
 br
 
 p = link_to "Logout", destroy_user_session_path, method: 'delete'
-
-
-=======
-.small-12.columns.center
-  h1 Survey for Teachers
-
-  .small-12.large-8.large-offset-2.columns.center.nopad.bot-margin-large
-    button.grey-button.expand
-      = link_to @all_teachers.name, @all_teachers.link
-  .small-12.large-8.large-offset-2.columns.center.nopad.bot-margin-large
-    h1 Surveys for only Correctional Facility Teachers
-    button.grey-button.expand
-      = link_to @correctional_teacher.name, @correctional_teacher.link
-  .small-12.large-8.large-offset-2.columns.center.nopad.bot-margin-large
-    h1 Surveys for only High School Teachers
-    button.grey-button.expand
-      = link_to @highschool_teacher.name, @highschool_teacher.link
-
-  .small-12.column.center.nopad
-    p = link_to "Logout", destroy_user_session_path, method: 'delete'
->>>>>>> 724b78ae3b55dea2312fcf765d6224dab2b64c4f
