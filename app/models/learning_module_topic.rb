@@ -10,6 +10,7 @@
 #
 
 class LearningModuleTopic < ActiveRecord::Base
+  validates :topic, :number, presence: true
   has_many :learning_modules
 
   def image_url

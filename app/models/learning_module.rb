@@ -13,6 +13,7 @@
 #
 
 class LearningModule < ActiveRecord::Base
+  validates :name, :number, presence: true
   belongs_to :learning_module_topic
   default_scope -> { order 'number ASC' }
   mount_uploader :learning_module_file, LearningModuleFileUploader
