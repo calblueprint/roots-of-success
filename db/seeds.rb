@@ -17,7 +17,7 @@ end
 
 def create_classroom
   t = Teacher.first
-  c = t.classrooms.create! name: 'Classroom 1'
+  c = t.classrooms.create! name: 'Classroom 1', program: 'High School'
   c.students = 1.upto(10).map do |n|
     Student.create! first_name: 'Student',
                     last_name: "#{n}",
