@@ -1,6 +1,6 @@
 h1 Edit Profile
 
-.small-12.large-8.large-push-2.center.nopad
+.small-12.large-8	.large-push-2.center.nopad
   = simple_form_for @profile, url: profile_path(@user) do |f|
     - @profile.to_check.each do |attribute|
       = f.input attribute
