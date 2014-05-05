@@ -13,12 +13,19 @@
 #
 
 class LearningModule < ActiveRecord::Base
-  validates :name, :number, presence: true
-  belongs_to :learning_module_topic
   default_scope -> { order 'number ASC' }
+
+  belongs_to :learning_module_topic
+
+  validates :name, :number, presence: true
+
   mount_uploader :learning_module_file, LearningModuleFileUploader
 
   def self.names
     all.map &:name
+  end
+
+  def to_s
+    name
   end
 end
