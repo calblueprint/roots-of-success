@@ -15,6 +15,8 @@
 class TeacherProfile < ActiveRecord::Base
   validates :location, presence: true, allow_nil: true
   validates :curriculum_version, presence: true, allow_nil: true
+  validates :teacher_id, presence: true
+
   def filled_in?
     to_check.all? { |attribute| !send(attribute).nil? }
   end
