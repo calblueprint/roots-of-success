@@ -1,4 +1,6 @@
 class LearningModulesController < ApplicationController
+  load_and_authorize_resource
+
   def index
   end 
 
@@ -9,15 +11,12 @@ class LearningModulesController < ApplicationController
   end
 
   def edit
-    @module = LearningModule.find params[:id]
   end
 
   def show
-    @module = LearningModule.find params[:id]
-
     @presentation_url = nil
-    if @module.presentation_embed_code
-      h = Nokogiri::HTML(@module.presentation_embed_code).xpath('//iframe/@src')
+    if @learning_module.presentation_embed_code
+      h = Nokogiri::HTML(@learning_module.presentation_embed_code).xpath('//iframe/@src')
       if h.length >= 1
         @presentation_url = h[0].value
       end
@@ -25,12 +24,10 @@ class LearningModulesController < ApplicationController
   end
 
   def update
-    @module = LearningModule.find params[:id]
-
-    @module.update_attributes module_attributes
+    @learning_module.update_attributes module_attributes
     flash[:success] = 'Module updated!'
 
-    redirect_to @module
+    redirect_to @learning_module
   end
 
   def destroy

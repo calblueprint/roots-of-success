@@ -1,16 +1,15 @@
 # Classrooms Controller
 class ClassroomsController < ApplicationController
+  load_and_authorize_resource
+
   def index
-    @classrooms = current_user.classrooms
   end
 
   def add_students_form
-    @classroom = Classroom.find params[:id]
     @bad_emails = []
   end
 
   def add_students_to_classroom
-    @classroom = Classroom.find params[:id]
     emails = student_params[:emails].strip.split(/,\s*/)
     @bad_emails = filter_students_into_classroom @classroom, emails
     if @bad_emails.empty?
@@ -22,17 +21,14 @@ class ClassroomsController < ApplicationController
   end
 
   def remove_student_from_classroom
-    @classroom = Classroom.find params[:id]
     @classroom.students.delete params[:student_id]
     redirect_to classroom_path @classroom
   end
 
   def new
-    @classroom = Classroom.new
   end
 
   def create
-    @classroom = Classroom.new classroom_params
     if @classroom.save
       flash[:success] = 'Successfully created classroom!'
       redirect_to classroom_path @classroom
@@ -42,11 +38,9 @@ class ClassroomsController < ApplicationController
   end
 
   def edit
-    @classroom = Classroom.find params[:id]
   end
 
   def show
-    @classroom = Classroom.find params[:id]
     @students = @classroom.students
     @teacher = @classroom.teacher
     @module_progress = @classroom.module_progress
@@ -55,7 +49,6 @@ class ClassroomsController < ApplicationController
   end
 
   def update
-    @classroom = Classroom.find params[:id]
     @classroom.program = params[:classroom][:program]
     if @classroom.save
       @classroom.set_student_surveys
@@ -67,7 +60,6 @@ class ClassroomsController < ApplicationController
   end
 
   def update_teacher
-    @classroom = Classroom.find params[:id]
     teacher = Teacher.find_by_email params[:classroom][:teacher_email]
     # TODO: Use a validation
     @classroom.teacher = teacher if teacher
@@ -83,7 +75,6 @@ class ClassroomsController < ApplicationController
   end
 
   def toggle_module
-    @classroom = Classroom.find params[:id]
     @classroom.toggle_module!(params[:module_name])
     redirect_to classroom_path @classroom
   end

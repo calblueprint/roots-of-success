@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
     return teacher_dashboard_path if user.type == 'Teacher'
     return profile_path user if user.type == 'Student'
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
 end
