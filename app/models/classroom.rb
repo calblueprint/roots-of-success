@@ -14,6 +14,8 @@
 class Classroom < ActiveRecord::Base
   serialize :module_progress, Hash
   before_create :set_module_progress, :set_student_surveys
+  validates :program, presence: true
+  validates :name, presence: true
 
   belongs_to :teacher
   has_many :students
