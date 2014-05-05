@@ -38,6 +38,7 @@ RootsOfSuccess::Application.routes.draw do
   end
 
   resources :profiles, only: [:show, :edit, :update]
+  resources :surveys, only: [:show, :edit, :update]
   resources :learning_module_topics
   resources :learning_modules
   resources :classrooms

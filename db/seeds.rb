@@ -67,13 +67,13 @@ $module_names = [
 
 
 def create_modules
-  $modules.each { |module_attributes| LearningModule.create! module_attributes }
   $module_names.each_with_index do |name, i|
     t = LearningModuleTopic.create! topic: name,
                                     number: i + 1
     t.learning_modules = 1.upto(6).map do |n|
       LearningModule.create! name: "#{name}#{n}",
-                             number: n
+                             number: n,
+                             presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1Op3oF2gtiK4U8cpZfTwiX_ZqiMZwyyLUshgrhOrsEpE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>'
     end
   end
 end
@@ -108,10 +108,10 @@ def create_forums
                         name: 'General',
                         description: 'General discussion'
 
-    $module_names.each do |module_name|
+    $modules.each do |mod|
       Forem::Forum.create category_id: category.id,
-                          name: 'Module: ' + module_name,
-                          description: module_name + \
+                          name: 'Module: ' + mod[:name],
+                          description: mod[:name] + \
                             ' module discussion for ' + category_name.downcase
     end
   end

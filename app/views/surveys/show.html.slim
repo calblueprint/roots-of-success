@@ -1,0 +1,8 @@
+h1 Survey#show
+p Find me in app/views/survey/show.html.slim
+
+p = @survey.name
+br
+p = @survey.link
+iframe src="#{sanitize @survey.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
+p = link_to 'Edit Survey', edit_survey_path(@survey)
