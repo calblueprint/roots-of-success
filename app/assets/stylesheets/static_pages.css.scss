@@ -87,17 +87,20 @@ ul
 }
 
 // home/login page
-#login-floater{
-  float:left;
-  height:50%;
-  margin-bottom:-211.875px;
-}
 
 #login-module{
+  display: block;
   clear:both;
   width: 300px;
   height:423.75px;
   position: relative;
+  top: 150px;
+}
+
+@media all and (max-width: 568px) { 
+  #login-module {
+    top: 50px !important;
+  }
 }
 
 #logo{
