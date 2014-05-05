@@ -11,13 +11,15 @@
 #
 
 class StudentProfile < ActiveRecord::Base
+  validates :student_id, presence: true
+
   serialize :surveys_completed
   def filled_in?
     to_check.all? { |attribute| !send(attribute).nil? }
   end
 
   def to_check
-    attribute_names - %w[id student_id created_at updated_at]
+    attribute_names - %w(id student_id created_at updated_at surveys_completed)
   end
 
   def class_name
