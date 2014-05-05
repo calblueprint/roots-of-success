@@ -19,7 +19,7 @@ class StudentProfile < ActiveRecord::Base
   end
 
   def to_check
-    attribute_names - %w[id student_id created_at updated_at]
+    attribute_names - %w(id student_id created_at updated_at surveys_completed)
   end
 
   def class_name
