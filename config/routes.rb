@@ -39,6 +39,7 @@ RootsOfSuccess::Application.routes.draw do
 
   resources :profiles, only: [:show, :edit, :update]
   resources :surveys, only: [:show, :edit, :update]
+  resources :learning_module_topics
   resources :learning_modules
   resources :classrooms
 
@@ -52,7 +53,7 @@ RootsOfSuccess::Application.routes.draw do
          as: :remove_student
 
     post '/:id/toggle_module/:module_name',
-         to: 'classrooms#toggle_module', 
+         to: 'classrooms#toggle_module',
          as: :toggle_module
 
     patch '/:id/update_teacher/',

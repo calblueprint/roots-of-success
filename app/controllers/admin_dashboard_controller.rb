@@ -1,7 +1,7 @@
 # Actions for the admin dashboard
 class AdminDashboardController < ApplicationController
   def index
-    @learning_modules = LearningModule.all
+    @learning_modules = LearningModuleTopic.all
     @classrooms = Classroom.all
   end
 
