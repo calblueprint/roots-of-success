@@ -13,6 +13,8 @@
 #
 
 class TeacherProfile < ActiveRecord::Base
+  validates :teacher_id, presence: true
+
   def filled_in?
     to_check.all? { |attribute| !send(attribute).nil? }
   end

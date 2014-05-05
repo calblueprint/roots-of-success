@@ -11,6 +11,7 @@
 #
 
 class HighSchoolTeacherSurvey < Survey
+
   def self.title
     'High School'
   end

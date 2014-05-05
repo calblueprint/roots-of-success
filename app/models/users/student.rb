@@ -38,7 +38,7 @@ class Student < User
   delegate :surveys_completed, to: :profile
 
   def teacher
-    classroom.teacher 
+    classroom.teacher
   end
 
   def profile_filled_in?

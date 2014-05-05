@@ -11,6 +11,7 @@
 #
 
 class CorrectionalFacilityTeacherSurvey < Survey
+
   def self.title
     'Correctional Facility'
   end
