@@ -1,5 +1,7 @@
 # Actions for the admin dashboard
 class AdminDashboardController < ApplicationController
+  authorize_resource :class => false
+
   def index
     @learning_modules = LearningModule.all
     @classrooms = Classroom.all

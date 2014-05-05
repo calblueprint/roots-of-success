@@ -1,13 +1,13 @@
 .small-12.columns.center
   .small-12.large-9.large-push-2.center.nopad
-    h1 Edit Module #{@module.number}
+    h1 Edit Module #{@learning_module.number}
 
-    = simple_form_for @module do |f|
+    = simple_form_for @learning_module do |f|
       .field
       	= f.input :presentation_embed_code, :as => :text, :label => 'Enter presentation embed code', :input_html => { :cols => 50, :rows => 5, :class => "smallform"}
 
       	= f.button :submit, "Update Module", class: "small grey-button"
-      p  = link_to 'Download Module Files', @module.learning_module_file_url.to_s
+      p  = link_to 'Download Module Files', @learning_module.learning_module_file_url.to_s
       = f.label :learning_module_file, "Upload local file:"
       br/
       = f.file_field :learning_module_file

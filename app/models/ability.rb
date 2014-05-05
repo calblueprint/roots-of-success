@@ -10,12 +10,13 @@ class Ability
       can :manage, :all
     elsif user.type == 'Teacher'
       can :manage, Classroom, :teacher_id => user.id
-      can [:create, :read], Feedback 
-      can [:create, :read], Question
-      can :update, Project if user.admin?
-      can :read, Response { |res| res.can_be_read_by? user }
-      can :read, LearningModule
+      # can [:create, :read], Feedback 
+      # can [:create, :read], Question
+      # can :update, Project if user.admin?
+      # can :read, Response { |res| res.can_be_read_by? user }
+      can [:read, :show], LearningModule
       can :crud, Student
+      can [:index, :surveys], :teacher_dashboard
     elsif user.type == 'Student'
       can :read, :classroom
       can :read, Response, :id => user.id
