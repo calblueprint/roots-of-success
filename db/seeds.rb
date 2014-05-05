@@ -30,31 +30,31 @@ def confirm_users
   User.update_all confirmed_at: Time.now
 end
 
-modules = [
-  { name: 'Fundamentals',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1_Rd5staS5d1wjYwEEYGKVyGxUVc0rDXMD2--ES0P-wg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
-  { name: 'Water',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1FrMPvBfuIPRq7tbzhRZQh9HypGiq4fh4Unc8xozP40I/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
-  { name: 'Waste',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1riTorMt7KLZwIhKICVIGB9ofFpF1uB3YnaGmVmrE0_4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
-  { name: 'Transportation',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1IsrMf29hOPk3FnbkXLxppA6cMRSAjl5di8uf4XbLEWQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
-  { name: 'Energy',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1J-9s6qCDjilAXUi_DjGnXvObokUwc5zYXKCy8UiZ1OE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
-  { name: 'Building',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1VMprYLZGVPEz8hrV2VDaNxP4jBpVr33pZrrqIDUmmbA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
-  { name: 'Health, Food, and Agriculture',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1zdsoBgwmX76Ira8iA_-vq7G3S5-dnq4z_TgAllBPkHE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
-  { name: 'Community Organizing and Leadership',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1Op3oF2gtiK4U8cpZfTwiX_ZqiMZwyyLUshgrhOrsEpE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
-  { name: 'Application and Practice',
-    presentation_embed_code: '' },
-  { name: 'Financial Literacy and Social Entrepreneurship',
-    presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1rx5CZMjP8X2TasI9Fc8Lb1dUoHYjXGnx53E4rLoBmrA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }
-]
+$modules = [
+    { name: 'Fundamentals',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1_Rd5staS5d1wjYwEEYGKVyGxUVc0rDXMD2--ES0P-wg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+    { name: 'Water',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1FrMPvBfuIPRq7tbzhRZQh9HypGiq4fh4Unc8xozP40I/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+    { name: 'Waste',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1riTorMt7KLZwIhKICVIGB9ofFpF1uB3YnaGmVmrE0_4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+    { name: 'Transportation',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1IsrMf29hOPk3FnbkXLxppA6cMRSAjl5di8uf4XbLEWQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+    { name: 'Energy',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1J-9s6qCDjilAXUi_DjGnXvObokUwc5zYXKCy8UiZ1OE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+    { name: 'Building',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1VMprYLZGVPEz8hrV2VDaNxP4jBpVr33pZrrqIDUmmbA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+    { name: 'Health, Food, and Agriculture',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1zdsoBgwmX76Ira8iA_-vq7G3S5-dnq4z_TgAllBPkHE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+    { name: 'Community Organizing and Leadership',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1Op3oF2gtiK4U8cpZfTwiX_ZqiMZwyyLUshgrhOrsEpE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' },
+    { name: 'Application and Practice',
+      presentation_embed_code: '' },
+    { name: 'Financial Literacy and Social Entrepreneurship',
+      presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1rx5CZMjP8X2TasI9Fc8Lb1dUoHYjXGnx53E4rLoBmrA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>' }
+  ]
 
 def create_modules
-  modules.each { |module_attributes| LearningModule.create! module_attributes }
+  $modules.each { |module_attributes| LearningModule.create! module_attributes }
 end
 
 def create_surveys
@@ -87,10 +87,10 @@ def create_forums
                         name: 'General',
                         description: 'General discussion'
 
-    $module_names.each do |module_name|
+    $modules.each do |mod|
       Forem::Forum.create category_id: category.id,
-                          name: 'Module: ' + module_name,
-                          description: module_name + \
+                          name: 'Module: ' + mod[:name],
+                          description: mod[:name] + \
                             ' module discussion for ' + category_name.downcase
     end
   end
