@@ -1,8 +1,7 @@
-.small-12.columns.text-center
-  .small-8.small-offset-2.column
-    h1 Teacher Edit Profile
+h1 Edit Profile
 
-= simple_form_for @profile, url: profile_path(@user) do |f|
-  - @profile.to_check.each do |attribute|
-    = f.input attribute
-  = f.button :submit
+.small-12.large-8.large-push-2.center.nopad
+  = simple_form_for @profile, url: profile_path(@user) do |f|
+    - @profile.to_check.each do |attribute|
+      = f.input attribute
+    = f.button :submit

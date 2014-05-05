@@ -1,7 +1,7 @@
 h1 Survey#edit
 p Find me in app/views/survey/edit.html.slim
 
-= simple_form_for @survey, url: survey_path(@survey) do |f|
+= simple_form_for @survey, as: :survey, url: survey_path(@survey) do |f|
   = f.input :name
   = f.input :link
   = f.button :submit
