@@ -10,7 +10,7 @@ class SurveysController < ApplicationController
   def update
     @survey = Survey.find params[:id]
     @survey.update_attributes survey_attributes
-    flash[:success] = 'survey updated!'
+    flash[:success] = 'Survey Updated!'
     redirect_to survey_path @survey
   end
 
