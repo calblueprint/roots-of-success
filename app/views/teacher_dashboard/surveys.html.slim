@@ -4,16 +4,14 @@ iframe src="#{sanitize @all_teachers.link}" frameborder="0" width="960" height="
 br
 br
 
-- if @profile.program == 'CorrectionalFacility'
-  h1 Survey for Correctional Facility Tecahers
-  = @correctional_teacher.name
+h1 Survey for Correctional Facility Tecahers
+= @correctional_teacher.name
 iframe src="#{sanitize @correctional_teacher.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 br
 br
 
-- if @profile.program == 'HighSchool'
-  h1 Survey for High School Tecahers
-  = @highschool_teacher.name
+h1 Survey for High School Tecahers
+= @highschool_teacher.name
 iframe src="#{sanitize @highschool_teacher.link}" frameborder="0" width="960" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"
 br
 br
