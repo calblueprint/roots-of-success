@@ -45,4 +45,9 @@ class Student < User
     profile.filled_in?
   end
 
+  def set_survey_progress!
+    profile.surveys_completed = Hash[Survey.for(Student, classroom)
+                                           .map { |s| [s.title, false] }]
+    profile.save!
+  end
 end

@@ -1,7 +1,7 @@
 .small-12.columns.text-center
-	h1 Student Profile Show
+	h1 Hello, #{@user}!
 
-	p = link_to "Edit Student Profile", edit_profile_path(@user)
+	p = link_to "Edit your profile", edit_profile_path(@user)
 
 	- @profile.to_check.each do |attribute|
 	  = attribute.titleize

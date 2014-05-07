@@ -90,12 +90,13 @@ class ClassroomsController < ApplicationController
   end
 
   def filter_students_into_classroom(classroom, emails)
-    emails.reject { |email| find_and_add_into_classroom(classroom, email) }
+    emails.reject { |email| find_set_survey_and_add classroom, email }
   end
 
-  def find_and_add_into_classroom(classroom, email)
+  def find_set_survey_and_add(classroom, email)
     student = Student.find_by_email email
     if student
+      student.set_survey_progress!
       classroom.students << student
     else
       false

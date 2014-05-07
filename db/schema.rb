@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504213110) do
+ActiveRecord::Schema.define(version: 20140507085204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20140504213110) do
   end
 
   create_table "classrooms", force: true do |t|
-    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "teacher_id"
     t.text     "name"
     t.text     "module_progress"
     t.string   "program"
@@ -144,10 +144,10 @@ ActiveRecord::Schema.define(version: 20140504213110) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.integer  "number"
     t.text     "presentation_embed_code"
     t.string   "learning_module_file"
     t.integer  "learning_module_topic_id"
+    t.string   "version"
   end
 
   create_table "lectures", force: true do |t|
@@ -241,6 +241,7 @@ ActiveRecord::Schema.define(version: 20140504213110) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "classroom_id"
     t.string   "email",                  default: "",               null: false
     t.string   "encrypted_password",     default: "",               null: false
     t.string   "reset_password_token"
@@ -251,7 +252,6 @@ ActiveRecord::Schema.define(version: 20140504213110) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "classroom_id"
     t.boolean  "forem_admin",            default: false
     t.string   "forem_state",            default: "pending_review"
     t.boolean  "forem_auto_subscribe",   default: false

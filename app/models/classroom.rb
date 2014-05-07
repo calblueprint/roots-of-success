@@ -15,7 +15,7 @@ class Classroom < ActiveRecord::Base
   validates :name, :teacher_id, :program, presence: true
 
   serialize :module_progress, Hash
-  before_create :set_module_progress, :set_student_surveys
+  before_create :set_module_progress
 
   belongs_to :teacher
   has_many :students
@@ -33,13 +33,6 @@ class Classroom < ActiveRecord::Base
 
   def set_module_progress
     self.module_progress = Hash[LearningModule.names.map { |l| [l, false] }]
-  end
-
-  def set_student_surveys
-    students.each do |st|
-      st.profile.surveys_completed = Hash[Survey.for(Student, self).map { |s| [s.title, false] }]
-      st.profile.save!
-    end
   end
 
   def survey_titles
