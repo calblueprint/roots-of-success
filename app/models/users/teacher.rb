@@ -35,7 +35,18 @@ class Teacher < User
 
   after_create :create_profile
 
+  delegate :location, to: :profile
+
   def profile_filled_in?
     profile.filled_in?
+  end
+
+  # Hack to make datatables not break
+  def program
+    if classrooms.empty?
+      "None"
+    else
+      classrooms.first.program
+    end
   end
 end

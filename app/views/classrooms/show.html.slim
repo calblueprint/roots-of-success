@@ -32,10 +32,10 @@
           td = m
           - if @module_progress[m]
             td = 'complete' 
-            td   = link_to "Mark incomplete", toggle_module_path(@classroom,module_name: m), method: :post
+            td   = link_to "Mark incomplete", toggle_module_path(@classroom, module_name: m), method: :post
           - else
             td   = 'incomplete'
-            td   = link_to "Mark complete", toggle_module_path(@classroom,module_name: m), method: :post
+            td   = link_to "Mark complete", toggle_module_path(@classroom, module_name: m), method: :post
 
   .row
     .small-12.large-8.large-offset-2.column.center

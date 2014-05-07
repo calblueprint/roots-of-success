@@ -44,14 +44,13 @@ class ClassroomsController < ApplicationController
     @students = @classroom.students
     @teacher = @classroom.teacher
     @module_progress = @classroom.module_progress
-    @module_names = LearningModule.names
+    @module_names = @module_progress.keys
     @surveys = @classroom.survey_titles
   end
 
   def update
     @classroom.program = params[:classroom][:program]
     if @classroom.save
-      @classroom.set_student_surveys
       flash[:success] = 'Classroom program type updated!'
       redirect_to @classroom
     else

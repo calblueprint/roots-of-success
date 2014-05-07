@@ -1,0 +1,277 @@
+--- !map:HashWithIndifferentAccess
+
+modules:
+  - name: Fundamentals
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Fundamentals
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Fundamentals
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1_Rd5staS5d1wjYwEEYGKVyGxUVc0rDXMD2--ES0P-wg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Fundamentals
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Fundamentals
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Fundamentals
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/142iL43bsfvUsQYzztgfrPYqjUT2y21PBtVBvqteffmM/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Water
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Water
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Water
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1FrMPvBfuIPRq7tbzhRZQh9HypGiq4fh4Unc8xozP40I/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Water
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Water
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Water
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/19z0gJyGIXBOjqPiB1gDnh22CwEz22jQOQf85weAI4cg/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Waste
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Waste
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Waste
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1riTorMt7KLZwIhKICVIGB9ofFpF1uB3YnaGmVmrE0_4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Waste
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Waste
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Waste
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1Ch2AVfq5_gVG5nKWkDSGbR0MKzkQOQRYn2wrPYPR5a8/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Transportation
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Transportation
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Transportation
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1IsrMf29hOPk3FnbkXLxppA6cMRSAjl5di8uf4XbLEWQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Transportation
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Transportation
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Transportation
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1AX-ofBiQKLaqhlPGTsRRvd6vnSejpglSZq9l3Re4xAU/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Energy
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Energy
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Energy
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1J-9s6qCDjilAXUi_DjGnXvObokUwc5zYXKCy8UiZ1OE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Energy
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Energy
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Energy
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1rQXwPkpz8_J3vo-lMQU4VscSWJlYxHQREouLK3lEz3s/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Building
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Building
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Building
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1VMprYLZGVPEz8hrV2VDaNxP4jBpVr33pZrrqIDUmmbA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Building
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Building
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Building
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1YzNKSGGgkj1UdfK7tycE9_ZLUGOCCf4enQlveLdduSo/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Health, Food, and Agriculture
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Health, Food, and Agriculture
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Health, Food, and Agriculture
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1zdsoBgwmX76Ira8iA_-vq7G3S5-dnq4z_TgAllBPkHE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Health, Food, and Agriculture
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Health, Food, and Agriculture
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Health, Food, and Agriculture
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1qCU021x8WLD3NMxVkNw8uX7m0Oqi8PaGqtguu03Q9Ow/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Community Organizing and Leadership
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Community Organizing and Leadership
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Community Organizing and Leadership
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1Op3oF2gtiK4U8cpZfTwiX_ZqiMZwyyLUshgrhOrsEpE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Community Organizing and Leadership
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Community Organizing and Leadership
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Community Organizing and Leadership
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1lyO8Q9S06Pe4I17R_Mqoqfy0Mc3jzR7qea26l8wU5-I/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Application and Practice
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Application and Practice
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Application and Practice
+    version: Social Entrepreneurs
+    presentation_embed_code: ''
+
+  - name: Application and Practice
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Application and Practice
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Application and Practice
+    version: High Schools and Youth Programs
+    presentation_embed_code: ''
+
+  - name: Financial Literacy and Social Entrepreneurship
+    version: Standard Version for Adults
+    presentation_embed_code: ''
+
+  - name: Financial Literacy and Social Entrepreneurship
+    version: Prisons, Jails, and Juvenile Facilities
+    presentation_embed_code: ''
+
+  - name: Financial Literacy and Social Entrepreneurship
+    version: Social Entrepreneurs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1rx5CZMjP8X2TasI9Fc8Lb1dUoHYjXGnx53E4rLoBmrA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+  - name: Financial Literacy and Social Entrepreneurship
+    version: en Espanol
+    presentation_embed_code: ''
+
+  - name: Financial Literacy and Social Entrepreneurship
+    version: United Kingdom
+    presentation_embed_code: ''
+
+  - name: Financial Literacy and Social Entrepreneurship
+    version: High Schools and Youth Programs
+    presentation_embed_code: <iframe src="https://docs.google.com/presentation/d/1r-ZSNbTUEt9inFm_z_JApBQciZiaf0qt5Bx-Tr4cwYM/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true"mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+
+module_names:
+  - Fundamentals
+  - Water
+  - Waste
+  - Transportation
+  - Energy
+  - Building
+  - Health, Food, and Agriculture
+  - Community Organizing and Leadership
+  - Application and Practice
+  - Financial Literacy and Social Entrepreneurship
+
+versions:
+  - Standard Version for Adults
+  - Prisons, Jails, and Juvenile Facilities
+  - Social Entrepreneurs
+  - en Espanol
+  - United Kingdom
+  - High Schools and Youth Programs
+
+all_teachers_survey:
+  name: All Teachers
+  link: https://docs.google.com/forms/d/19gKLLu50bf1U3mZ_rEKNXeGiamRVprJhWwdCSL8xq0Q/viewform?usp=send_form
+correctional_facility_teacher_survey:
+  name: Correctional Facility Teachers
+  link: https://docs.google.com/forms/d/1SRBPD-C3ijlrX7jturb6I5UGqcA1bwEU715S4m0n0rk/viewform?usp=send_form
+
+high_school_teacher_survey:
+  name: High School Teachers
+  link: https://docs.google.com/forms/d/1CWoe0o43J_KCvbfkE3JHKT1-tJud5rwxhnJUC4IfbtQ/viewform?usp=send_form
+
+high_school_student_survey:
+  name: High School Students
+  link: https://docs.google.com/forms/d/1QlTArPBO7ZS29ygU85AOr82klmQCPpeWlRGrBL9M-7Q/viewform?usp=send_form

@@ -36,6 +36,8 @@ class Student < User
   after_create :create_profile
 
   delegate :surveys_completed, to: :profile
+  delegate :location, to: :teacher
+  delegate :program, to: :classroom
 
   def teacher
     classroom.teacher
