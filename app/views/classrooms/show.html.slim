@@ -14,7 +14,7 @@
         tr
           td = link_to "#{st} ", profile_path(st)
           - @surveys.each do |s|
-            td = st.surveys_completed[s] 
+            td = st.surveys_completed[s] ? 'Yes' : 'No'
           td = link_to 'remove', remove_student_path(@classroom, st), method: :post
 
   p = link_to "Add Students to Classroom", add_students_form_path
