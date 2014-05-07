@@ -18,6 +18,6 @@ class LearningModuleTopic < ActiveRecord::Base
   end
 
   def to_s
-    topic
+    "Module #{number}: #{topic}"
   end
 end

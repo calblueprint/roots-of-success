@@ -2,7 +2,6 @@
   h1 Welcome to your student profile.
 
   .small-12.large-9.large-push-2.center.nopad
-    p Please enter your age.
     = simple_form_for @profile, url: profile_path do |f|
       - @profile.to_check.each do |attribute|
         = f.input attribute

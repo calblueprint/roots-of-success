@@ -3,7 +3,7 @@ class TeacherDashboardController < ApplicationController
   authorize_resource :class => false
 
   def index
-    @learning_modules = LearningModule.all
+    @learning_modules = LearningModuleTopic.all
     @classrooms = current_user.classrooms
   end
 

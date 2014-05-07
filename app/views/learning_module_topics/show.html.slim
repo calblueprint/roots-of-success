@@ -1,6 +1,6 @@
 .small-12.column.text-center
-  h2 Module #{@module.number}: #{@module.topic}
+  h2 = @module
 
-  - @module.learning_modules.each do |v|
-    p = link_to "#{@module.topic}: Version #{v.number}", v
+  - @module.learning_modules.each do |version|
+    p = link_to version, version
   

@@ -14,8 +14,9 @@ class StudentProfile < ActiveRecord::Base
   validates :student_id, presence: true
 
   serialize :surveys_completed
+
   def filled_in?
-    to_check.all? { |attribute| !send(attribute).nil? }
+    to_check.all? { |attribute| send(attribute) }
   end
 
   def to_check

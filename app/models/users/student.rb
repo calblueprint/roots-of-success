@@ -36,6 +36,8 @@ class Student < User
   after_create :create_profile
 
   delegate :surveys_completed, to: :profile
+  delegate :location, to: :teacher
+  delegate :program, to: :classroom
 
   def teacher
     classroom.teacher
@@ -45,4 +47,9 @@ class Student < User
     profile.filled_in?
   end
 
+  def set_survey_progress!
+    profile.surveys_completed = Hash[Survey.for(Student, classroom)
+                                           .map { |s| [s.title, false] }]
+    profile.save!
+  end
 end

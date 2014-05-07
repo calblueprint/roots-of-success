@@ -1,5 +1,5 @@
 .small-12.columns.text-center
-  h1 Teacher Profile Show
+  h1 Hello, #{@user}!
 
   table.center
       tbody
@@ -8,7 +8,7 @@
             td = attribute.titleize
             td = @profile.send attribute
 
-  p = link_to "Edit Teacher Profile", edit_profile_path(@user)
+  p = link_to "Edit your profile", edit_profile_path(@user)
   - if admin?
     p = link_to "Admin Dashboard", admin_dashboard_path
   - elsif teacher?

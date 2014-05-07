@@ -44,14 +44,13 @@ class ClassroomsController < ApplicationController
     @students = @classroom.students
     @teacher = @classroom.teacher
     @module_progress = @classroom.module_progress
-    @module_names = LearningModule.names
+    @module_names = @module_progress.keys
     @surveys = @classroom.survey_titles
   end
 
   def update
     @classroom.program = params[:classroom][:program]
     if @classroom.save
-      @classroom.set_student_surveys
       flash[:success] = 'Classroom program type updated!'
       redirect_to @classroom
     else
@@ -90,12 +89,13 @@ class ClassroomsController < ApplicationController
   end
 
   def filter_students_into_classroom(classroom, emails)
-    emails.reject { |email| find_and_add_into_classroom(classroom, email) }
+    emails.reject { |email| find_set_survey_and_add classroom, email }
   end
 
-  def find_and_add_into_classroom(classroom, email)
+  def find_set_survey_and_add(classroom, email)
     student = Student.find_by_email email
     if student
+      student.set_survey_progress!
       classroom.students << student
     else
       false

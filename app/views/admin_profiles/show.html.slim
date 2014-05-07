@@ -1,6 +1,6 @@
-h1 Admin Profile Show
+h1 Hello, #{@user}!
 
-p = link_to "Edit Admin Profile", edit_profile_path(@profile)
+p = link_to "Edit your profile", edit_profile_path(@profile)
 
 - @profile.to_check.each do |attribute|
   = attribute.titleize

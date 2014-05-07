@@ -24,8 +24,8 @@ class UsersDatatable
         link_to(user.email, profile_path(user)),
         ERB::Util.h(user.first_name),
         ERB::Util.h(user.last_name),
-        ERB::Util.h(user.profile.curriculum_version),
-        ERB::Util.h(user.profile.location)
+        ERB::Util.h(user.program),
+        ERB::Util.h(user.location)
       ]
     end
   end

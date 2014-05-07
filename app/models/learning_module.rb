@@ -6,19 +6,26 @@
 #  created_at               :datetime
 #  updated_at               :datetime
 #  name                     :string(255)
-#  number                   :integer
 #  presentation_embed_code  :text
 #  learning_module_file     :string(255)
 #  learning_module_topic_id :integer
+#  version                  :string(255)
 #
 
 class LearningModule < ActiveRecord::Base
-  validates :name, :number, presence: true
+  default_scope -> { order 'version ASC' }
+
   belongs_to :learning_module_topic
-  default_scope -> { order 'number ASC' }
+
+  validates :name, :version, presence: true
+
   mount_uploader :learning_module_file, LearningModuleFileUploader
 
   def self.names
-    all.map &:name
+    all.map(&:name)
+  end
+
+  def to_s
+    "#{name}: #{version}"
   end
 end
