@@ -79,10 +79,10 @@ RootsOfSuccess::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Google Analytics tracker code
-  GA.tracker = "UA-48547882-1"
+  GA.tracker = "UA-50769810-1"
 
   # Set right mailer url
-  config.action_mailer.default_url_options = { :host => 'ros-staging.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'ros-production.heroku.com' }
 
   # Disable emailing for now
   config.action_mailer.delivery_method = :test
