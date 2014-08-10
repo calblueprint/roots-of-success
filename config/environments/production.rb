@@ -82,8 +82,16 @@ RootsOfSuccess::Application.configure do
   GA.tracker = "UA-50769810-1"
 
   # Set right mailer url
-  config.action_mailer.default_url_options = { :host => 'ros-production.heroku.com' }
+  config.action_mailer.default_url_options = { :host => 'ros-production.herokuapp.com' }
 
-  # Disable emailing for now
-  config.action_mailer.delivery_method = :test
+  # Email config
+  ActionMailer::Base.smtp_settings = {
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'ros-production.herokuapp.com',
+    :authentication => :plain,
+  }
+  ActionMailer::Base.delivery_method = :smtp
 end
