@@ -30,6 +30,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'compass'
 gem 'zurb-foundation'
+gem 'bootstrap-sass'
 
 group :development do
   gem 'annotate'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140507085204) do
+ActiveRecord::Schema.define(version: 20141203085159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20140507085204) do
   end
 
   create_table "classrooms", force: true do |t|
+    t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "teacher_id"
     t.text     "name"
     t.text     "module_progress"
     t.string   "program"
@@ -33,16 +33,12 @@ ActiveRecord::Schema.define(version: 20140507085204) do
 
   add_index "classrooms", ["teacher_id"], name: "index_classrooms_on_teacher_id", using: :btree
 
-  create_table "feedbacks", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "forem_categories", force: true do |t|
-    t.string   "name",       null: false
+    t.string   "name",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "position",   default: 0
   end
 
   add_index "forem_categories", ["slug"], name: "index_forem_categories_on_slug", unique: true, using: :btree
@@ -53,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140507085204) do
     t.integer "category_id"
     t.integer "views_count", default: 0
     t.string  "slug"
+    t.integer "position",    default: 0
   end
 
   add_index "forem_forums", ["slug"], name: "index_forem_forums_on_slug", unique: true, using: :btree
@@ -150,37 +147,6 @@ ActiveRecord::Schema.define(version: 20140507085204) do
     t.string   "version"
   end
 
-  create_table "lectures", force: true do |t|
-    t.integer  "number"
-    t.string   "title"
-    t.string   "partial"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "semester_id"
-  end
-
-  create_table "positions", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-  end
-
-  create_table "roles", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "semester_id"
-    t.integer  "position_id"
-  end
-
-  create_table "semesters", force: true do |t|
-    t.string   "semester"
-    t.integer  "year"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
@@ -190,24 +156,6 @@ ActiveRecord::Schema.define(version: 20140507085204) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
-
-  create_table "student_applications", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "year"
-    t.string   "major"
-    t.string   "gpa"
-    t.text     "why_join"
-    t.text     "cs_classes_taken"
-    t.text     "current_courseload"
-    t.text     "other_commitments"
-    t.text     "how_did_you_hear_about_us"
-    t.text     "how_many_hours_willing"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "student_profiles", force: true do |t|
     t.integer  "student_id"
@@ -241,7 +189,6 @@ ActiveRecord::Schema.define(version: 20140507085204) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "classroom_id"
     t.string   "email",                  default: "",               null: false
     t.string   "encrypted_password",     default: "",               null: false
     t.string   "reset_password_token"
@@ -252,12 +199,13 @@ ActiveRecord::Schema.define(version: 20140507085204) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.boolean  "forem_admin",            default: false
-    t.string   "forem_state",            default: "pending_review"
-    t.boolean  "forem_auto_subscribe",   default: false
+    t.integer  "classroom_id"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean  "forem_admin",            default: false
+    t.string   "forem_state",            default: "pending_review"
+    t.boolean  "forem_auto_subscribe",   default: false
   end
 
   add_index "users", ["classroom_id"], name: "index_users_on_classroom_id", using: :btree
