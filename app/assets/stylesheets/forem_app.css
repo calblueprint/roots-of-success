@@ -12,8 +12,8 @@
  *= require forem
  *= require foundation_and_overrides
  *= require dataTables/jquery.dataTables.css
- *= require jquery.ui.core
- *= require jquery.ui.theme
+ *= require jquery-ui/core
+ *= require jquery-ui/theme
  *= require_tree ./vendor
  *= require static_pages
  */
