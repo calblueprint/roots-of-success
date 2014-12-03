@@ -15,7 +15,7 @@ RootsOfSuccess::Application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-  
+
   # Test Mailer
   # Stop emails from breaking app on development
   ActionMailer::Base.perform_deliveries = true
@@ -32,15 +32,5 @@ RootsOfSuccess::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  #Bullet gem configuration code
-  config.after_initialize do
-    Bullet.enable = true
-    Bullet.add_footer = true
-  end
-
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
-
-  # Google Analytics tracker code
-  GA.tracker = "UA-xxxxxx-x"
-
 end

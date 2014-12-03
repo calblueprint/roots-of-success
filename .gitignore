@@ -14,12 +14,8 @@ config/database.yml
 /log/*.log
 /tmp
 
-# Ignore rvm config files
-.ruby-gemset
-.ruby-version
-
-# Ignore .env file
-.env
+# Ignore env variables
+config/application.yml
 
 # Ignore setup_mail
 /config/initializers/setup_mail.rb

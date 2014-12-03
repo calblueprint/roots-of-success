@@ -1,61 +1,67 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.5'
 
-gem 'rails', '4.1.0'
-gem 'foreman', '~> 0.63.0'
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails', '~> 3.1.0'
-gem 'turbolinks', '~> 2.2.1'
-gem 'jbuilder', '~> 1.2'
-gem 'pg', '~> 0.17.1'
-gem 'cancan', '~> 1.6.10'
-gem 'devise', '~> 3.2.3'
-gem 'nokogiri', '~> 1.6.1'
+# Core gems
+gem 'rails', '4.1.8'
+gem 'thin'
+gem 'pg'
+gem 'figaro'
+gem 'sucker_punch'
+
+# Components
+gem 'turbolinks'
+gem 'cancan'
+gem 'devise'
+gem 'nokogiri'
+gem 'jquery-datatables-rails'
+gem 'jquery-ui-rails'
+gem 'will_paginate'
 gem 'newrelic_rpm'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
-gem 'jquery-ui-rails', '~> 4.2.0'
-gem 'will_paginate', '~> 3.0.5'
-
-gem 'slim-rails', '~> 2.1.0'
-gem 'simple_form', '~> 3.0.1'
-gem 'google-analytics-rails', '~> 0.0.4' 
-gem 'd3-rails', '~> 3.3.7'
-gem 'compass', '~> 0.12.2'
-gem 'zurb-foundation', '~> 4.3.2'
-gem 'carrierwave', '~> 0.10.0'
+gem 'simple_form'
+gem 'carrierwave'
 gem 'forem', :github => 'radar/forem', :branch => 'rails4'
-gem 'select2-rails', '~> 3.5.4'
-gem 'bootstrap-sass', '~> 3.1'
+gem 'select2-rails'
 
-
-group :doc do
-  gem 'sdoc', require: false
-end
+# Frontend
+gem 'slim-rails'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'compass'
+gem 'zurb-foundation'
 
 group :development do
-  gem 'better_errors', '~> 1.1.0'
-  gem 'binding_of_caller', '~> 0.7.2'
-  gem 'bullet', '~> 4.8.0'
-  gem 'rubocop', '>= 0.19.0'
-  gem 'annotate', '~> 2.6.1'
-  gem 'commands', '~> 0.2.1'
+  gem 'annotate'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
+  gem 'spring'
+  gem 'spring-commands-rspec'
+  gem 'rubocop'
+  gem 'guard-rubocop'
+  gem 'guard-livereload'
 end
 
 group :development, :test do
-  gem 'awesome_print', '~> 1.2.0'
-  gem 'rspec-rails', '~> 2.14.1'
-  gem 'factory_girl', '~> 4.4.0'
-  gem 'guard-livereload'
-  gem 'guard-rspec'
-  gem 'zeus', '~> 0.13.3'
+  gem 'awesome_print'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'i18n-tasks'
+  gem 'ffaker'
 end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'database_cleaner', '~> 1.3.0'
+  gem 'capybara', '~> 2.4.4'
+  gem 'launchy'
+  gem 'guard-rspec'
+end
 
-group :production do
+group :staging, :production do
   gem 'rails_12factor'
-  gem 'heroku-deflater'
 end
