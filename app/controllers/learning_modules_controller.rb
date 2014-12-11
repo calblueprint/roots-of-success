@@ -2,7 +2,7 @@ class LearningModulesController < ApplicationController
   load_and_authorize_resource
 
   def index
-  end 
+  end
 
   def create
   end
@@ -34,9 +34,9 @@ class LearningModulesController < ApplicationController
   end
 
   private
-    def module_attributes
-      params.require(:learning_module).
-            permit(:presentation_embed_code, :learning_module_file)
-    end
-  
+
+  def module_attributes
+    params.require(:learning_module).
+          permit(:presentation_embed_code, :learning_module_file)
+  end
 end

@@ -21,5 +21,4 @@ class LearningModuleTopicsController < ApplicationController
 
   def destroy
   end
-
 end

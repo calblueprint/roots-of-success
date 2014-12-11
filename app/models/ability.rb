@@ -2,10 +2,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-
     alias_action :create, :read, :update, :destroy, :to => :crud
     user ||= User.new
-    
+
     if user.type == 'Admin'
       can :manage, :all
     elsif user.type == 'Teacher'
