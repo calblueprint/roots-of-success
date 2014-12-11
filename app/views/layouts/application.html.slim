@@ -6,12 +6,12 @@ html
     meta http-equiv="X-UA-Compatible" content="IE=edge"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
 
-    title = content_for?(:title) ? yield(:title) : "Roots of Success"
+    title = title
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "vendor/custom.modernizr", "data-turbolinks-track" => true
     = csrf_meta_tags
 
-  body
+  body class="#{body_class}"
     .row.height-100.white-back
       .small-12.small-centered.columns.text-center.height-100.nopad
         = render 'layouts/header' if current_user
