@@ -28,6 +28,13 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '~> 3.1.2'
 gem 'slim-rails', '~> 2.1.5'
 gem 'uglifier', '~> 2.5.3'
+
+gem 'flutie', '~> 2.0.0'
+gem 'title', '~> 0.0.5'
+
+gem 'bourbon', '~> 3.2.3'
+gem 'neat', '~> 1.5.1'
+gem 'bitters', '~> 0.10.1'
 gem 'bootstrap-sass', '~> 3.3.1'
 
 gem 'newrelic_rpm'
