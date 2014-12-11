@@ -18,7 +18,7 @@ gem 'jquery-ui-rails', '~> 5.0.3'
 gem 'will_paginate', '~> 3.0.7'
 gem 'simple_form', '~> 3.0.3'
 gem 'carrierwave', '~> 0.10.0'
-gem 'forem', :github => 'radar/forem', :branch => 'rails4'
+gem 'forem', github: 'radar/forem', branch: 'rails4'
 gem 'select2-rails', '~> 3.5.9'
 gem 'ffaker', '~> 1.25.0'
 
