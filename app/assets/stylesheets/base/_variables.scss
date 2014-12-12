@@ -1,8 +1,13 @@
 // Typography
-$sans-serif: $helvetica;
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+$montserrat: 'Montserrat', $helvetica;
+$varela: 'Varela Round', $helvetica;
+
+$sans-serif: $varela;
 $serif: $georgia;
 $base-font-family: $sans-serif;
-$header-font-family: $base-font-family;
+$header-font-family: $montserrat;
 
 // Font Sizes
 $base-font-size: 1em;
