@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   def index
-  end 
+  end
 
   def create
   end
@@ -20,5 +20,4 @@ class StudentsController < ApplicationController
 
   def destroy
   end
-  
 end

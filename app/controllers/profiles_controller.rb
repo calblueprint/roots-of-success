@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params(user)
-    @profile = @user.profile
+    @profile = user.profile
     params.require(@profile.class_name.to_sym).permit(@profile.to_check)
   end
 

@@ -6,6 +6,7 @@ AllCops:
     - config/initializers/*
     - db/schema.rb
     - db/migrate/**/*devise*.rb
+    - db/migrate/**/*forem*.rb
     - spec/spec_helper.rb
     - Guardfile
 

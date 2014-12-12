@@ -8,12 +8,15 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require forem
- *= require foundation_and_overrides
- *= require dataTables/jquery.dataTables.css
- *= require jquery-ui/core
- *= require jquery-ui/theme
- *= require_tree ./vendor
- *= require static_pages
  */
+
+@import "forem";
+@import "foundation_and_overrides";
+@import "dataTables/jquery.dataTables";
+@import "jquery-ui/core";
+@import "jquery-ui/theme";
+
+@import "vendor/toastr";
+
+@import "static_pages";
+
