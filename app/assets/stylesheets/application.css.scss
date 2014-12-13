@@ -10,11 +10,16 @@
  *
  */
 
-@import "foundation_and_overrides";
-@import "dataTables/jquery.dataTables";
+@import "vendor/normalize";
+@import "bourbon";
+@import "neat";
+@import "base/base";
+@import "vendor/grid";
+
+@import "dataTables/jquery.dataTables.css";
 @import "jquery-ui/core";
 @import "jquery-ui/theme";
 
 @import "vendor/toastr";
 
-@import "static_pages";
+// @import "static_pages";

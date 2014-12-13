@@ -12,12 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
 //= require dataTables/jquery.dataTables
 //= require jquery
 //= require_tree ./vendor
 //= require students
 //= require teachers
-
-$(function(){ $(document).foundation(); });
