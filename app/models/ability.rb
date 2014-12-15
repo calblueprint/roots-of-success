@@ -18,6 +18,3 @@ class Ability
     end
   end
 end
-
-# https://github.com/ryanb/cancan/wiki/defining-abilities
-# ^Defining abilities
