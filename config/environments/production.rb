@@ -22,6 +22,9 @@ RootsOfSuccess::Application.configure do
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
 
+  # Enable deflate / gzip compression of controller-generated responses
+  config.middleware.use Rack::Deflater
+
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
@@ -77,18 +80,4 @@ RootsOfSuccess::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
-  # Set right mailer url
-  config.action_mailer.default_url_options = { :host => 'ros-production.herokuapp.com' }
-
-  # Email config
-  ActionMailer::Base.smtp_settings = {
-    port:           ENV['MAILGUN_SMTP_PORT'],
-    address:        ENV['MAILGUN_SMTP_SERVER'],
-    user_name:      ENV['MAILGUN_SMTP_LOGIN'],
-    password:       ENV['MAILGUN_SMTP_PASSWORD'],
-    domain:         'ros-production.herokuapp.com',
-    authentication: :plain
-  }
-  ActionMailer::Base.delivery_method = :smtp
 end
