@@ -6,9 +6,12 @@ gem "rails", "4.1.8"
 gem "thin"
 gem "pg"
 gem "figaro"
+gem "sucker_punch"
 
 # Components
+gem "cancancan"
 gem "devise"
+gem "ffaker"
 gem "gon"
 gem "kaminari"
 gem "recipient_interceptor"
@@ -25,6 +28,10 @@ gem "uglifier"
 
 gem "flutie"
 gem "title"
+
+gem "bourbon"
+gem "neat"
+gem "bitters"
 
 # Error logging - requires setup with service
 gem "rollbar"
@@ -49,7 +56,6 @@ group :development, :test do
 
   gem "rspec-rails", "~> 3.1.0"
   gem "factory_girl_rails"
-  gem "ffaker"
 end
 
 group :test do
