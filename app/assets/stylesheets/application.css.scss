@@ -4,27 +4,9 @@
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
  */
 
-@import "vendor/normalize";
-@import "bourbon";
-@import "neat";
-@import "base/base";
-@import "vendor/grid";
+@charset 'utf-8';
 
-@import "dataTables/jquery.dataTables.css";
-@import "jquery-ui/core";
-@import "jquery-ui/theme";
-
-@import "vendor/toastr";
-
-@import "shared/general";
-@import "shared/cards";
-
-@import "login";
-
-// @import "static_pages";
+// Add @import lines below to require scss files.
+// @import "vendor/normalize"

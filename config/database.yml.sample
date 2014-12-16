@@ -4,12 +4,12 @@
 development: &default
   adapter:   postgresql
   encoding:  utf8
-  username:  <username>
-  password:  <password>
+  username:  <your username>
+  password:  <your password>
   pool:      2
   timeout:   5000
-  database:  ros_development
+  database: roots-of-success_development
 
 test:
-  <<: *postgres_defaults
-  database: ros_test
+  <<: *default
+  database: roots-of-success_test

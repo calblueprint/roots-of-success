@@ -1,12 +1,11 @@
 AllCops:
   Exclude:
     - app/views/**/*
-    - app/helpers/ApplicationHelper
+    - app/helpers/application_helper.rb
     - bin/*
     - config/initializers/*
     - db/schema.rb
     - db/migrate/**/*devise*.rb
-    - db/migrate/**/*forem*.rb
     - spec/spec_helper.rb
     - Guardfile
 
