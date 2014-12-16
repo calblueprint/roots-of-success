@@ -74,6 +74,7 @@ search:
 ## Consider these keys used
 ignore_unused:
   - '{devise,kaminari}.*'
+  - '{date,time}.*'
   - 'errors.*'
   - 'titles.*'
   - 'simple_form.{yes,no}'
