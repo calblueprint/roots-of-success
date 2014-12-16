@@ -330,50 +330,50 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  autoprefixer-rails
+  autoprefixer-rails (~> 4.0.2)
   awesome_print
   better_errors
   binding_of_caller
-  bitters
-  bourbon
-  cancancan
+  bitters (~> 0.10.1)
+  bourbon (~> 3.2.3)
+  cancancan (~> 1.9.2)
   capybara
   codeclimate-test-reporter
-  coffee-rails
+  coffee-rails (~> 4.1.0)
   database_cleaner
-  devise
+  devise (~> 3.4.1)
   factory_girl_rails
-  ffaker
-  figaro
-  flutie
-  gon
+  ffaker (~> 1.25.0)
+  figaro (~> 1.0.0)
+  flutie (~> 2.0.0)
+  gon (~> 5.2.3)
   guard-livereload
   guard-rspec
   guard-rubocop
   i18n-tasks
-  jquery-rails
-  kaminari
+  jquery-rails (~> 3.1.2)
+  kaminari (~> 0.16.1)
   launchy
-  neat
+  neat (~> 1.5.1)
   newrelic_rpm
-  pg
+  pg (~> 0.17.1)
   pry-byebug
   pry-rails
   quiet_assets
   rails (= 4.1.8)
   rails_12factor
-  recipient_interceptor
+  recipient_interceptor (~> 0.1.2)
   rollbar
   rspec-rails (~> 3.1.0)
   rubocop
   sass-rails (~> 4.0.3)
   shoulda-matchers
-  simple_form
-  slim-rails
+  simple_form (~> 3.1.0)
+  slim-rails (~> 2.1.5)
   spring
   spring-commands-rspec
-  sucker_punch
-  thin
-  title
-  turbolinks
-  uglifier
+  sucker_punch (~> 1.3.1)
+  thin (~> 1.6.3)
+  title (~> 0.0.5)
+  turbolinks (~> 2.5.3)
+  uglifier (~> 2.6.0)
