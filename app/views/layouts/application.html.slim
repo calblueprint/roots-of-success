@@ -8,15 +8,12 @@ html
 
     title = title
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "vendor/custom.modernizr", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   body class="#{body_class}"
-    .row.height-100.white-back
+    .row
       .small-12.small-centered.columns.text-center.height-100.nopad
-        = render 'layouts/header' if current_user
-        = render 'layouts/teacherhead' if teacher?
-        = render 'layouts/adminhead' if admin?
         = yield
 
     = render 'shared/flash', flash: flash
