@@ -28,7 +28,7 @@
 #
 
 class Teacher < User
-  has_one :profile, class_name: 'TeacherProfile'
+  has_one :profile, class_name: "TeacherProfile"
 
   has_many :classrooms
   has_many :responses

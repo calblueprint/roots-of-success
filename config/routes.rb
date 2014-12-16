@@ -16,6 +16,8 @@ RootsOfSuccess::Application.routes.draw do
   end
   devise_for :users, controllers: { registrations: 'students/registrations' }
 
+  resources :profiles, only: [:show, :edit, :update]
+
   scope '/teacher_dashboard' do
     get 'index',         to: 'teacher_dashboard#index', as: :teacher_dashboard
     get '/new_student',  to: 'teacher_dashboard#new_student', as: :new_student
@@ -37,7 +39,6 @@ RootsOfSuccess::Application.routes.draw do
                           as: :create_teacher
   end
 
-  resources :profiles, only: [:show, :edit, :update]
   resources :surveys, only: [:show, :edit, :update]
   resources :learning_module_topics
   resources :learning_modules

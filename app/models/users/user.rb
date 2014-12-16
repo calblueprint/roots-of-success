@@ -41,20 +41,20 @@ class User < ActiveRecord::Base
   alias_method :forum_name, :to_s
 
   def profile
-    false
+    fail "Bad user!"
   end
 
   alias_method :profile_filled_in?, :profile
 
   def admin?
-    type == 'Admin'
+    type == "Admin"
   end
 
   def teacher?
-    type == 'Teacher'
+    type == "Teacher"
   end
 
   def student?
-    type == 'Student'
+    type == "Student"
   end
 end
