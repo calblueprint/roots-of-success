@@ -43,9 +43,9 @@ body {
 }
 
 /* Removes Chrome's default blue outline on focus */
-*:focus {
-  outline: none;
-}
+// *:focus {
+//   outline: none;
+// }
 
 /* Use the banner class for any banners (large screen-wide photography, illustration). Add an additional
    id for more styling. Refer to #home-banner in home.scss for an example id styling. */
@@ -73,6 +73,11 @@ body {
   color: white;
 }
 
+/* Left align your text inside an element */
+.left {
+  text-align: left;
+}
+
 /* Center your text inside an element */
 .center {
   text-align: center;
@@ -90,6 +95,8 @@ body {
 /* If h1 isn't big enough to satisfy your needs, then use h0! Probably use for banners in
    combination with the white class. */
 .h0 {
+  font-family: $header-font-family;
+  font-weight: 700;
   text-align: center;
   font-size: 5em;
 }
