@@ -1,1 +1,27 @@
-DEVISE_SECRET_TOKEN=eb2a21c869d30c1b90cee11c454f40da2dddc3339c36e11cf9872a0cbf6fb3cad1973943c938fc853eb526bd762ff89669a9f0d0f8909d610617f6d5ab6f1a6b
+# Copy this file into application.yml and change env variables as necessary.
+
+SECRET_KEY: 3a57b51f8783caf45631b799d365d1f31b0620d670bec5d9eb0317f9918b7be7985a15b7c1094740d0a804e12608088116b65b2c7348565e0a581284d389846e
+DEVISE_SECRET_KEY: fb2a21c869d30c1b90cee11c454f40da2dddc3339c36e11cf9872a0cbf6fb3cad1973943c938fc853eb526bd762ff89669a9f0d0f8909d610617f6d5ab6f1a6b
+
+# Email config
+SMTP_ADDRESS: smtp.mandrillapp.com
+SMTP_DOMAIN: ros-production.herokuapp.com
+SMTP_USERNAME: <username>
+SMTP_PASSWORD: <api_key>
+
+# Staging will send emails to this address
+EMAIL_RECIPIENTS: ~
+
+# Rollbar access token; change both to match your own rollbar project
+ROLLBAR_ACCESS_TOKEN: <api_key>
+
+# Google analytics key; update once you set it up
+# Disabled in development and test
+GA_KEY: ~
+
+production:
+  ROLLBAR_ACCESS_TOKEN: <production_api_key>
+  GA_KEY: <GA_token>
+
+staging:
+  EMAIL_RECIPIENTS: <your_email>

@@ -1,0 +1,15 @@
+# Change the development/test database, username, and password as necessary
+# and then copy the file into database.yml
+
+development: &default
+  adapter:   postgresql
+  encoding:  utf8
+  username:  <username>
+  password:  <password>
+  pool:      2
+  timeout:   5000
+  database:  ros_development
+
+test:
+  <<: *postgres_defaults
+  database: ros_test
