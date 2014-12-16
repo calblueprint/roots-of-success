@@ -1,0 +1,4 @@
+---
+rules:
+  ignore:
+  - prefer_single_quoted_strings
