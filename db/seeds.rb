@@ -1,6 +1,4 @@
-def seeds
-  YAML.load(File.read(File.expand_path('../seeds.yml', __FILE__)))
-end
+SEEDS = YAML.load(File.read(File.expand_path('../seeds.yml', __FILE__)))
 
 def create_admins_and_teachers
   1.upto(2) do |n|
@@ -35,10 +33,10 @@ def confirm_users
 end
 
 def create_modules
-  seeds[:module_names].each_with_index do |name, i|
+  SEEDS[:module_names].each_with_index do |name, i|
     t = LearningModuleTopic.create! topic: name,
                                     number: i + 1
-    t.learning_modules = seeds[:modules].select { |m| m[:name] == name }
+    t.learning_modules = SEEDS[:modules].select { |m| m[:name] == name }
                                         .map do |m_attributes|
       LearningModule.create! m_attributes
     end
@@ -46,10 +44,10 @@ def create_modules
 end
 
 def create_surveys
-  AllTeachersSurvey.create! seeds[:all_teachers_survey]
-  CorrectionalFacilityTeacherSurvey.create! seeds[:correctional_facility_teacher_survey]
-  HighSchoolTeacherSurvey.create! seeds[:high_school_teacher_survey]
-  HighSchoolStudentSurvey.create! seeds[:high_school_student_survey]
+  AllTeachersSurvey.create! SEEDS[:all_teachers_survey]
+  CorrectionalFacilityTeacherSurvey.create! SEEDS[:correctional_facility_teacher_survey]
+  HighSchoolTeacherSurvey.create! SEEDS[:high_school_teacher_survey]
+  HighSchoolStudentSurvey.create! SEEDS[:high_school_student_survey]
 end
 
 def create_forums
@@ -58,14 +56,14 @@ def create_forums
 
   user = Forem.user_class.first
 
-  seeds[:versions].each do |version|
+  SEEDS[:versions].each do |version|
     category = Forem::Category.create name: version
 
     Forem::Forum.create category_id: category.id,
                         name: 'General',
                         description: 'General discussion'
 
-    seeds[:module_names].each do |name|
+    SEEDS[:module_names].each do |name|
       Forem::Forum.create category_id: category.id,
                           name: 'Module: ' + name,
                           description: name + \
