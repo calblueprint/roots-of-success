@@ -1,20 +1,13 @@
+# https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    alias_action :create, :read, :update, :destroy, :to => :crud
-    user ||= User.new
+    return unless user
 
-    if user.type == 'Admin'
-      can :manage, :all
-    elsif user.type == 'Teacher'
-      can :manage, Classroom, :teacher_id => user.id
-      can [:read, :show], LearningModule
-      can :crud, Student
-      can [:index, :surveys], :teacher_dashboard
-    elsif user.type == 'Student'
-      can :read, :classroom
-      can :read, Response, :id => user.id
+    if user.is_a? Teacher
+      can :manage, :teacher_dashboard
+      can :edit, Teacher, id: user.id
     end
   end
 end

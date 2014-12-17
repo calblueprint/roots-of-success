@@ -1,4 +1,3 @@
-# Settings for SMTP; used in production.rb
 SMTP_SETTINGS = {
   address: ENV.fetch("SMTP_ADDRESS"), # example: "smtp.sendgrid.net"
   authentication: :plain,

@@ -36,10 +36,10 @@ Block Grid: http://foundation.zurb.com/docs/components/block_grid.html
   padding: 0;
 }
 
+/* Website background */
 body {
   @include background-image(linear-gradient($bg-tint 100%, $bg-tint 0),
                             asset-url("bgsmall.png"));
-  padding: em(20px) 0;
 }
 
 /* Removes Chrome's default blue outline on focus */

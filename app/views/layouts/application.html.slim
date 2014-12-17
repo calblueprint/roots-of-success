@@ -1,23 +1,26 @@
 doctype html
-
 html
   head
     meta charset="utf-8"
-    meta http-equiv="X-UA-Compatible" content="IE=edge"
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    title= title
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    meta content="Your description here" name="description"
 
-    = render 'fb_meta_tags'
+    = render "fb_meta_tags"
 
-    title = title
+    = include_gon
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    / = javascript_include_tag "vendor/modernizr", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   body class="#{body_class}"
+    = yield
+
     .row
       .small-12.small-centered.columns
-        = yield
+        = link_to "Log Out", destroy_teacher_session_path, method: :delete
 
-    = render 'shared/flash', flash: flash
-
-  = render 'ga_boiler'
+    = render "flash"
+    = render "ga_boiler"

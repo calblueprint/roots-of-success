@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+# TODO: Make setup script better.
+
+# Set up Rails app. Run this script immediately after cloning the codebase.
+
+# Exit if any subcommand fails
+set -e
+
+# Set up Ruby dependencies via Bundler
+bundle --version &> /dev/null || gem install bundler --no-document
+bundle install
+
+# Setup database
+echo "Running rake db:create ; rake db:migrate"
+database_not_set_up=$(grep "<your username>" config/database.yml)
+if [ database_not_set_up ]; then
+  tput setaf 1; echo "\nDatabase not set up! Change your settings in database.yml\n"; tput sgr0
+else
+  rake db:create
+  rake db:migrate
+fi
+
+# Generate rollbar config
+bin/rails generate rollbar
+# Generate simple_form config
+bin/rails generate simple_form:install
+# Copy i18n-tasks spec over
+cp $(i18n-tasks gem-path)/templates/rspec/i18n_spec.rb spec/

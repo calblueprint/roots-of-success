@@ -13,8 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require dataTables/jquery.dataTables
-//= require jquery
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree ./vendor
-//= require students
-//= require teachers
