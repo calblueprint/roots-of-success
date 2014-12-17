@@ -21,3 +21,6 @@ Style/Documentation:
 
 Style/GuardClause:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
