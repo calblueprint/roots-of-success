@@ -9,6 +9,7 @@ var Header = React.createClass({
   },
 
   render: function() {
+    // TODO: Need the actual header links
     return (
       <header className="navigation">
         <div className="navigation-wrapper">
