@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   end
   devise_for :teachers
 
-  resources :teachers, only: [:edit]
+  namespace :teachers, as: :teacher do
+    resource :dashboard, only: [:show], controller: "dashboard"
+  end
 end
