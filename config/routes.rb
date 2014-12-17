@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :api, defaults: { format: :json } do
+    scope module: :v1 do
+      resources :teachers, only: :update
+    end
+  end
+
   devise_scope :teacher do
     root to: "devise/sessions#new"
   end
