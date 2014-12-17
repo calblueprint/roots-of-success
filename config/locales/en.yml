@@ -15,5 +15,12 @@ en:
       short:
         "%B %d"
 
+  devise:
+    sessions:
+      teacher:
+        new:
+          heading: Log In
+          subtitle: We're ready to get started.
+
   titles:
     application: Community of Practice
