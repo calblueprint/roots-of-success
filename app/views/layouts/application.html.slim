@@ -16,8 +16,9 @@ html
     = csrf_meta_tags
 
   body class="#{body_class}"
+    .row
+      .small-12.small-centered.columns
+        = yield
+
     = render "flash"
-
-    = yield
-
     = render "ga_boiler"
