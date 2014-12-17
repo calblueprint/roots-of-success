@@ -23,13 +23,14 @@ gem "turbolinks", "~> 2.5.3"
 # Frontend
 gem "autoprefixer-rails", "~> 4.0.2"
 gem "coffee-rails", "~> 4.1.0"
+gem "flutie", "~> 2.0.0"
 gem "jquery-rails", "~> 3.1.2"
 gem "sass-rails", "~> 4.0.3"
 gem "slim-rails", "~> 2.1.5"
+gem "title", "~> 0.0.5"
 gem "uglifier", "~> 2.6.0"
 
-gem "flutie", "~> 2.0.0"
-gem "title", "~> 0.0.5"
+gem "react-rails", "~> 1.0.0.pre", github: "reactjs/react-rails"
 
 gem "bourbon", "~> 3.2.3"
 gem "neat", "~> 1.5.1"
