@@ -3,4 +3,6 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
   devise_for :teachers
+
+  resources :teachers, only: [:edit]
 end
