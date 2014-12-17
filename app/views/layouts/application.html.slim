@@ -20,5 +20,7 @@ html
       .small-12.small-centered.columns
         = yield
 
+        = link_to "Log Out", destroy_teacher_session_path, method: :delete
+
     = render "flash"
     = render "ga_boiler"
