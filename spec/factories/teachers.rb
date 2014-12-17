@@ -16,7 +16,9 @@
 
 FactoryGirl.define do
   factory :teacher do
-    
+    first_name "Teacher"
+    sequence(:last_name) { |n| n }
+    sequence(:email) { |n| "teacher#{n}@ros.org" }
+    password "password"
   end
-
 end
