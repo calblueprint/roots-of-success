@@ -14,6 +14,6 @@
           = f.input :password, required: false, label: false, placeholder: "Password"
           = f.input :remember_me, as: :boolean, label: "Remember me" if devise_mapping.rememberable?
         .form-actions
-          = f.button :submit, "Log in", class: "small expand grey-button"
-      .spacer
-      = render "devise/shared/links"
+          = f.button :submit, "Log in"
+      .spacer-small
+      = render "teachers/shared/links"
