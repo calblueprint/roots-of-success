@@ -16,10 +16,10 @@ html
     = csrf_meta_tags
 
   body class="#{body_class}"
+    = yield
+
     .row
       .small-12.small-centered.columns
-        = yield
-
         = link_to "Log Out", destroy_teacher_session_path, method: :delete
 
     = render "flash"
