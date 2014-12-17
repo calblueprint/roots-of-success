@@ -1,4 +1,4 @@
-button,
+button, .button,
 input[type="submit"] {
   @extend %button;
   @include appearance(none);
@@ -7,4 +7,13 @@ input[type="submit"] {
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+}
+
+.button.small {
+  padding: 0.5em .75em;
+  background-color: $secondary-button-color;
+
+  &:hover {
+    background-color: $secondary-hover-button-color;
+  }
 }
