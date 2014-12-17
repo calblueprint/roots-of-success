@@ -7,6 +7,8 @@ gem "thin", "~> 1.6.3"
 gem "pg", "~> 0.17.1"
 gem "figaro", "~> 1.0.0"
 gem "sucker_punch", "~> 1.3.1"
+gem "jbuilder", "~> 2.2.5"
+gem "yajl-ruby", "~> 1.2.1"
 
 # Components
 gem "cancancan", "~> 1.9.2"
