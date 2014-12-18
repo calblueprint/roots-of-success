@@ -18,10 +18,5 @@ html
   body class="#{body_class}"
     = yield
 
-    / Here for now just to log out
-    .row
-      .small-12.small-centered.columns
-        = link_to "Log Out", destroy_teacher_session_path, method: :delete
-
     = render "flash"
     = render "ga_boiler"

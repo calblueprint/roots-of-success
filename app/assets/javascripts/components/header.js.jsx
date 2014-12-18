@@ -20,13 +20,13 @@ var Header = React.createClass({
              onClick={this.slideToggleList}>MENU</a>
           <div className="nav">
             <ul id="js-navigation-menu" className="navigation-menu">
-              <li className="nav-link"><a href="javascript:void(0)">Products</a></li>
-              <li className="nav-link"><a href="javascript:void(0)">About Us</a></li>
-              <li className="nav-link"><a href="javascript:void(0)">Contact</a></li>
+              <li className="nav-link"><a href="javascript:void(0)">Classrooms</a></li>
+              <li className="nav-link"><a href="javascript:void(0)">Modules</a></li>
+              <li className="nav-link"><a href="javascript:void(0)">Surveys</a></li>
             </ul>
           </div>
           <div className="navigation-tools">
-            <a href="javascript:void(0)" className="sign-up">Sign Up</a>
+            <a data-method="delete" href="/teachers/sign_out" className="logout">Log Out</a>
           </div>
         </div>
       </header>
