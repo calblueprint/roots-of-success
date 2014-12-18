@@ -1,7 +1,8 @@
 // http://refills.bourbon.io/#navigation
 header.navigation {
   background-color: $navigation-background;
-  border-bottom: 1px solid darken($navigation-background, 10);
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.23);
+  // border-bottom: 1px solid darken($navigation-background, 10);
   min-height: $navigation-height;
   width: 100%;
   z-index: 999;
@@ -129,7 +130,7 @@ header.navigation {
     padding-right: $navigation-padding;
     padding-left: $navigation-padding/2;
     clear: both;
-    background: #505050;
+    background: $navigation-background;
 
     @include media($large-screen) {
       background: transparent;
@@ -139,7 +140,7 @@ header.navigation {
   }
 
   // TODO: Replace this class name
-  .sign-up {
+  .logout {
     @extend button;
     margin-top: 1.1em;
     float: right;

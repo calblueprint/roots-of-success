@@ -29,6 +29,7 @@ $base-z-index: 0;
 
 // Colors
 $blue: #477DCA;
+$indigo: #383E75;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #DDD;
@@ -74,7 +75,7 @@ $form-font-family: $base-font-family;
 
 // Navigation
 $navigation-padding: 1em;
-$navigation-background: $dark-gray;
+$navigation-background: $indigo;
 $navigation-color: transparentize(white, 0.3);
 $navigation-color-hover: white;
 $navigation-height: 60px;
