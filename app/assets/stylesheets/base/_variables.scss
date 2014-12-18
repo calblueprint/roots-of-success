@@ -73,6 +73,12 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color
 $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;
 
+// Cards
+$card-background-color: white;
+$card-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
+$card-padding: 1.25em 1.25em;
+$card-border-radius: $base-border-radius;
+
 // Navigation
 $navigation-padding: 1em;
 $navigation-background: $indigo;
