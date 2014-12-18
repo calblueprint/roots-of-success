@@ -2,12 +2,13 @@
 .row
   .small-12.small-centered.columns
     .center.card
+      .spacer
       .row
         .medium-8.medium-offset-2.columns.left
           = image_tag "RoSLogo.svg", id: "login-logo"
           .h0.login-header = t "devise.sessions.teacher.new.heading"
           .login-subtitle = t "devise.sessions.teacher.new.subtitle"
-      .spacer
+      .spacer-small
       .row
         .medium-8.medium-offset-2.columns
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
@@ -19,3 +20,5 @@
               = f.button :submit, "Log in"
           .spacer-small
           = render "teachers/shared/links"
+      .spacer-small
+.spacer

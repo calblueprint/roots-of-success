@@ -23,6 +23,7 @@ var Header = React.createClass({
               <li className="nav-link"><a href="javascript:void(0)">Classrooms</a></li>
               <li className="nav-link"><a href="javascript:void(0)">Modules</a></li>
               <li className="nav-link"><a href="javascript:void(0)">Surveys</a></li>
+              <li className="nav-link"><a href="javascript:void(0)">Personal</a></li>
             </ul>
           </div>
           <div className="navigation-tools">
