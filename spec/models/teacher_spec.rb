@@ -16,6 +16,7 @@
 #  position               :string(255)
 #  location               :string(255)
 #  curriculum_version_id  :integer
+#  authentication_token   :string(255)
 #
 
 require 'rails_helper'

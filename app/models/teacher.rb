@@ -16,9 +16,11 @@
 #  position               :string(255)
 #  location               :string(255)
 #  curriculum_version_id  :integer
+#  authentication_token   :string(255)
 #
 
 class Teacher < ActiveRecord::Base
+  acts_as_token_authenticatable
   devise :database_authenticatable, :recoverable, :rememberable, :validatable
 
   validates :first_name, presence: true

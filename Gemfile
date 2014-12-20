@@ -20,6 +20,7 @@ gem "gon", "~> 5.2.3"
 gem "kaminari", "~> 0.16.1"
 gem "recipient_interceptor", "~> 0.1.2"
 gem "simple_form", "~> 3.1.0"
+gem 'simple_token_authentication', '~> 1.7.0'
 gem "turbolinks", "~> 2.5.3"
 
 # Frontend
