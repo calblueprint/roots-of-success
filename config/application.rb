@@ -15,6 +15,9 @@ Bundler.require(*Rails.groups)
 
 module RootsOfSuccess
   class Application < Rails::Application
+    # Enable react addons
+    config.react.addons = true
+
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.i18n.enforce_available_locales = true
     config.active_record.default_timezone = :utc

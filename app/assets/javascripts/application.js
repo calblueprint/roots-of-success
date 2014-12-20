@@ -15,5 +15,7 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require react-async
+//= require react-router-component
 //= require components
 //= require_tree ./vendor
