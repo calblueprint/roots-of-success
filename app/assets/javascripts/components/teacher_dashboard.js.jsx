@@ -1,20 +1,16 @@
+var Locations = ReactRouter.Locations;
+var Location = ReactRouter.Location;
+
 var TeacherDashboard = React.createClass({
   render: function() {
     return (
       <div>
         <Header/>
         <div className="spacer"></div>
-        <div className="row">
-          <div className="small-12 columns">
-            <div className="center card">
-              <div className="row">
-                <div className="medium-8 medium-offset-2 columns">
-                  <h2>Welcome to the dashboard!</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Locations ref="router">
+          <Location path="/teachers/dashboard" handler={TeacherEdit} />
+          <Location path="/teachers/:id/edit" handler={TeacherEdit} />
+        </Locations>
       </div>
     );
   }
