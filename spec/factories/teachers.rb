@@ -12,6 +12,10 @@
 #  reset_password_token   :string(255)
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
+#  phone                  :string(255)
+#  position               :string(255)
+#  location               :string(255)
+#  curriculum_version_id  :integer
 #
 
 FactoryGirl.define do
