@@ -13,9 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require_tree ./vendor
 //= require react
 //= require react_ujs
-//= require react-async
-//= require react-router-component
+//= require react-router
 //= require components
-//= require_tree ./vendor
