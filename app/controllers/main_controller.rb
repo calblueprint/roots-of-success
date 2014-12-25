@@ -1,4 +1,4 @@
 class MainController < ApplicationController
-  def home
+  def app
   end
 end
