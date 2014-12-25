@@ -13,6 +13,10 @@ Metrics/LineLength:
   Description: 'Limit lines to 110 characters.'
   Max: 110
 
+Metrics/MethodLength:
+  Description: 'Limit methods to 15 lines.'
+  Max: 15
+
 Style/StringLiterals:
   Enabled: false
 
