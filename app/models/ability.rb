@@ -7,7 +7,7 @@ class Ability
 
     if user.is_a? Teacher
       can :manage, :teacher_dashboard
-      can :edit, Teacher, id: user.id
+      can :update, Teacher, id: user.id
     end
   end
 end
