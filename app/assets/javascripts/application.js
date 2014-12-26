@@ -17,4 +17,5 @@
 //= require react
 //= require react_ujs
 //= require react-router
-//= require components
+//= require_tree ./components/shared
+//= require_tree ./components/teachers
