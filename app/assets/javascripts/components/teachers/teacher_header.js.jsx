@@ -10,12 +10,13 @@ var TeacherHeader = React.createClass({
 
   render: function() {
     // TODO: Need the actual header links
+    // TODO: Need to get actual user id for edit
     return (
       <header className="navigation">
         <div className="navigation-wrapper">
-          <a href="javascript:void(0)" className="logo">
+          <Link to="teacher_dashboard" className="logo">
             <img src="/assets/RoSLogo.svg" alt="Logo Image"/>
-          </a>
+          </Link>
           <a href="javascript:void(0)" className="navigation-menu-button" id="js-mobile-menu"
              onClick={this.slideToggleList}>MENU</a>
           <div className="nav">
@@ -23,7 +24,6 @@ var TeacherHeader = React.createClass({
               <li className="nav-link"><a href="javascript:void(0)">Classrooms</a></li>
               <li className="nav-link"><a href="javascript:void(0)">Modules</a></li>
               <li className="nav-link"><a href="javascript:void(0)">Surveys</a></li>
-              // TODO: Need to get actual user id
               <li className="nav-link"><Link to="teacher_edit" params={{id: 2}}>Personal</Link></li>
             </ul>
           </div>
