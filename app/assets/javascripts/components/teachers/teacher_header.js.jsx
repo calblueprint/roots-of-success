@@ -23,6 +23,7 @@ var TeacherHeader = React.createClass({
               <li className="nav-link"><a href="javascript:void(0)">Classrooms</a></li>
               <li className="nav-link"><a href="javascript:void(0)">Modules</a></li>
               <li className="nav-link"><a href="javascript:void(0)">Surveys</a></li>
+              // TODO: Need to get actual user id
               <li className="nav-link"><Link to="teacher_edit" params={{id: 2}}>Personal</Link></li>
             </ul>
           </div>

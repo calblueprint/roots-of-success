@@ -1,5 +1,4 @@
 var TeacherEdit = React.createClass({
-
   render: function() {
     return (
       <div className="row">
@@ -11,6 +10,4 @@ var TeacherEdit = React.createClass({
       </div>
     );
   }
-
 });
-
