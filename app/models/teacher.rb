@@ -20,7 +20,6 @@
 #
 
 class Teacher < ActiveRecord::Base
-  acts_as_token_authenticatable
   devise :database_authenticatable, :recoverable, :rememberable, :validatable
 
   validates :first_name, presence: true
