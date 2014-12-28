@@ -83,6 +83,11 @@ body {
   text-align: center;
 }
 
+/* Right align your text inside an element */
+.right {
+  text-align: right;
+}
+
 /* An inner div as a dark overlay to make banners darker. You have to put this inside the banner as
    if the banner was a wrapper. */
 .darken {
@@ -99,4 +104,11 @@ body {
   font-weight: 700;
   text-align: center;
   font-size: 5em;
+}
+
+/* In a two column form the label should be right aligned on medium screens and up */
+.two-col-form-label {
+  @include media($medium-screen-up) {
+    text-align: right;
+  }
 }
