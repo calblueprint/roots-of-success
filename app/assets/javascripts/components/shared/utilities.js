@@ -1,7 +1,7 @@
 // The humanize function takes in a camel case string and outputs
 // a human-readable version.
-var humanize = function humanize(str) {
-  return str.replace(/_/g, ' ')
+String.prototype.humanize = function humanize() {
+  return this.replace(/_/g, ' ');
 }
 
 // Makes a new object with only the pairs where the key is
