@@ -9,7 +9,7 @@ var TeacherEdit = React.createClass({
   },
 
   getInitialState: function getInitialState() {
-    return {};
+    return { updatable_attrs: [] };
   },
   componentDidMount: function componentDidMount() {
     $.ajax({
@@ -29,6 +29,7 @@ var TeacherEdit = React.createClass({
       url: this.updateUrl(),
       type: "PUT",
       dataType: "json",
+      data: pick(this.state, this.state.updatable_attrs),
       success: function updateSuccess(response) {
         console.log(response);
       }.bind(this),
@@ -39,7 +40,7 @@ var TeacherEdit = React.createClass({
     })
   },
 
-  createValueSetter: function createValueSetter(value) {
+  valueSetter: function valueSetter(value) {
     return function(event) {
       var newState = {};
       newState[value] = event.target.value;
@@ -52,20 +53,16 @@ var TeacherEdit = React.createClass({
         <div className="small-12 columns">
           <Card>
             <h2>Tell us about yourself.</h2>
-            <pre className="left">{JSON.stringify(this.state, undefined, 2)}</pre>
+            <pre className="left">
+              {/* JSON.stringify(this.state, undefined, 2) */}
+            </pre>
             <div className="spacer"></div>
-            <TwoColInput label="My first name" value={this.state.first_name}
-              setValue={this.createValueSetter("first_name")}/>
-            <TwoColInput label="My last name" value={this.state.last_name}
-              setValue={this.createValueSetter("last_name")}/>
-            <TwoColInput label="My email" value={this.state.email}
-              setValue={this.createValueSetter("email")}/>
-            <TwoColInput label="My phone number" value={this.state.phone}
-              setValue={this.createValueSetter("phone")}/>
-            <TwoColInput label="My position" value={this.state.position}
-              setValue={this.createValueSetter("position")}/>
-            <TwoColInput label="My location" value={this.state.location}
-              setValue={this.createValueSetter("location")}/>
+            {this.state.updatable_attrs.map(function attrToInput(attr, index) {
+              return <TwoColInput value={this.state[attr]}
+                                  label={"My " + humanize(attr)}
+                                  key={index}
+                                  valueSetter={this.valueSetter(attr)} />
+            }.bind(this))}
             <a href="javascript:void(0)" onClick={this.updateAttributes} className="button">
               Update My Info!
             </a>
