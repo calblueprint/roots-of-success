@@ -9,7 +9,17 @@ module Api::V1
       end
 
       def update
-        render json: { hello: :world }
+        if @teacher.update teacher_params
+          render json: @teacher, status: :ok
+        else
+          render json: @teacher.errors, status: :unprocessable_entity
+        end
+      end
+
+      private
+
+      def teacher_params
+        params.require(:teacher).permit(TeacherSerializer::UPDATABLE_ATTRS)
       end
     end
   end
