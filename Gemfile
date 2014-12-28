@@ -33,7 +33,8 @@ gem "title", "~> 0.0.5"
 gem "uglifier", "~> 2.6.0"
 
 gem "react-rails", "~> 1.0.0.pre", github: "reactjs/react-rails"
-gem "rails-assets-react-router"
+gem "rails-assets-react-router", "~> 0.11.6"
+gem "rails-assets-react-forms", "~> 0.6.1"
 
 gem "bourbon", "~> 3.2.3"
 gem "neat", "~> 1.5.1"
