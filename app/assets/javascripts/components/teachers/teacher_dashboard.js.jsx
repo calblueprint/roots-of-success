@@ -3,7 +3,7 @@ var TeacherDashboard = React.createClass({
     return (
       <div>
         <TeacherHeader/>
-        <div className="spacer"></div>
+        <div className="spacer-small"></div>
         <RouteHandler/>
       </div>
     );
