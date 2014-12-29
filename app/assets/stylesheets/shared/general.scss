@@ -106,9 +106,5 @@ body {
   font-size: 5em;
 }
 
-/* In a two column form the label should be right aligned on medium screens and up */
-.two-col-form-label {
-  @include media($medium-screen-up) {
-    text-align: right;
-  }
-}
+/* Class to hide things */
+.hidden { display: none !important; }
