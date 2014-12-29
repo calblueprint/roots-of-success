@@ -1,5 +1,5 @@
 var TeacherEdit = React.createClass({
-  mixins: [Router.State],
+  mixins: [Router.State, Router.Navigation],
 
   editUrl: function editUrl() {
     return "/api/teachers/" + this.getParams().id + "/edit";
@@ -9,7 +9,7 @@ var TeacherEdit = React.createClass({
   },
 
   getInitialState: function getInitialState() {
-    return { updatable_attrs: [] };
+    return { errors: [], updatable_attrs: [] };
   },
   componentDidMount: function componentDidMount() {
     $.ajax({
@@ -29,13 +29,20 @@ var TeacherEdit = React.createClass({
       url: this.updateUrl(),
       type: "PUT",
       dataType: "json",
-      data: pick(this.state, this.state.updatable_attrs),
+      data: { teacher: pick(this.state, this.state.updatable_attrs) },
       success: function updateSuccess(response) {
         console.log(response);
+        this.transitionTo("teacher_dashboard");
+        toastr.success("Info updated!");
       }.bind(this),
       error: function updateError(xhr, status, err) {
-        console.error(this.updateUrl(), status, err.toString());
-        toastr.error("There was an error connecting to the server. Please refresh and try again.");
+        if (xhr.status === 422) {
+          console.error(xhr.responseJSON, status, err.toString());
+          this.setState({ errors: xhr.responseJSON })
+        } else {
+          console.error(this.updateUrl(), status, err.toString());
+          toastr.error("There was an error connecting to the server. Please refresh and try again.");
+        }
       }.bind(this)
     })
   },
@@ -54,12 +61,13 @@ var TeacherEdit = React.createClass({
           <Card>
             <h2>Tell us about yourself.</h2>
             <pre className="left">
-              {/* JSON.stringify(this.state, undefined, 2) */}
+              { JSON.stringify(this.state, undefined, 2) }
             </pre>
             <div className="spacer"></div>
+            <FormErrors errors={this.state.errors}/>
             {this.state.updatable_attrs.map(function attrToInput(attr, index) {
               return <TwoColInput value={this.state[attr]}
-                                  label={"My " + humanize(attr)}
+                                  label={"My " + attr.humanize()}
                                   key={index}
                                   valueSetter={this.valueSetter(attr)} />
             }.bind(this))}

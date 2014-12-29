@@ -1,5 +1,4 @@
 var Card = React.createClass({
-
   render: function() {
     return (
       <div className="center card">
@@ -11,5 +10,4 @@ var Card = React.createClass({
       </div>
     );
   }
-
 });
