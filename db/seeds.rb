@@ -12,3 +12,16 @@
                   email: "teacher#{n}@ros.org",
                   password: "password"
 end
+
+["Standard Version for Adults", "Prisons, Jails, and Juvenile Facilities", "Social Entrepreneurs",
+ "en Espanol", "United Kingdom", "High Schools and Youth Programs"].each do |program_name|
+  Program.create! name: program_name,
+                  slug: program_name.underscore.gsub(" ", "_")
+end
+
+program = Program.first
+
+Teacher.all.each do |t|
+  t.classrooms.create! name: "#{t.first_name} Classroom",
+                       program: program
+end
