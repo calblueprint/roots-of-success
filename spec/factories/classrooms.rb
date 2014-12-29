@@ -12,7 +12,7 @@
 
 FactoryGirl.define do
   factory :classroom do
-    
+    sequence(:name) { |n| "Classroom #{n}" }
+    teacher
   end
-
 end
