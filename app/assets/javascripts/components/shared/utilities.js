@@ -20,3 +20,13 @@ var pick = function pick(obj, keys) {
   }
   return result;
 }
+
+// Handles server errors for forms
+var serverError = function serverError(xhr, status, err) {
+  if (xhr.status === 422) {
+    console.error(xhr.responseJSON, status, err.toString());
+    this.setState({ errors: xhr.responseJSON })
+  } else {
+    toastr.error("There was an error connecting to the server. Please refresh and try again.");
+  }
+}

@@ -18,13 +18,11 @@ var TeacherEdit = React.createClass({
       success: function editSuccess(teacherData) {
         this.setState(teacherData);
       }.bind(this),
-      error: function editError(xhr, status, err) {
-        console.error(this.editUrl(), status, err.toString());
-        toastr.error("There was an error connecting to the server. Please refresh and try again.");
-      }.bind(this)
+      error: serverError
     });
   },
-  updateAttributes: function updateAttributes() {
+  updateAttributes: function updateAttributes(e) {
+    e.preventDefault();
     $.ajax({
       url: this.updateUrl(),
       type: "PUT",
@@ -33,17 +31,9 @@ var TeacherEdit = React.createClass({
       success: function updateSuccess(response) {
         console.log(response);
         this.transitionTo("teacher_dashboard");
-        toastr.success("Info updated!");
+        toastr.success("We got your info down. Thanks!");
       }.bind(this),
-      error: function updateError(xhr, status, err) {
-        if (xhr.status === 422) {
-          console.error(xhr.responseJSON, status, err.toString());
-          this.setState({ errors: xhr.responseJSON })
-        } else {
-          console.error(this.updateUrl(), status, err.toString());
-          toastr.error("There was an error connecting to the server. Please refresh and try again.");
-        }
-      }.bind(this)
+      error: serverError.bind(this)
     })
   },
 
@@ -60,20 +50,19 @@ var TeacherEdit = React.createClass({
         <div className="small-12 columns">
           <Card>
             <h2>Tell us about yourself.</h2>
-            <pre className="left">
-              { JSON.stringify(this.state, undefined, 2) }
-            </pre>
             <div className="spacer"></div>
-            <FormErrors errors={this.state.errors}/>
-            {this.state.updatable_attrs.map(function attrToInput(attr, index) {
-              return <TwoColInput value={this.state[attr]}
-                                  label={"My " + attr.humanize()}
-                                  key={index}
-                                  valueSetter={this.valueSetter(attr)} />
-            }.bind(this))}
-            <a href="javascript:void(0)" onClick={this.updateAttributes} className="button">
-              Update My Info!
-            </a>
+            <form action="#" onSubmit={this.updateAttributes}>
+              <FormErrors errors={this.state.errors}/>
+              {this.state.updatable_attrs.map(function attrToInput(attr, index) {
+                return <TwoColInput value={this.state[attr]}
+                                    label={"My " + attr.humanize()}
+                                    key={index}
+                                    valueSetter={this.valueSetter(attr)} />
+              }.bind(this))}
+              <button type="submit" href="javascript:void(0)" className="button">
+                Update My Info!
+              </button>
+            </form>
           </Card>
         </div>
       </div>
