@@ -9,7 +9,7 @@ var TeacherEdit = React.createClass({
   },
 
   getInitialState: function getInitialState() {
-    return { errors: [], updatable_attrs: [] };
+    return { errors: {}, updatable_attrs: [] };
   },
   componentDidMount: function componentDidMount() {
     $.ajax({
