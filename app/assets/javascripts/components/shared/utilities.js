@@ -4,6 +4,11 @@ String.prototype.humanize = function humanize() {
   return this.replace(/_/g, ' ');
 }
 
+// Capitalizes first letter in string
+String.prototype.capitalize = function capitalize() {
+  return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
 // Makes a new object with only the pairs where the key is
 // in keys from the original object
 var pick = function pick(obj, keys) {
