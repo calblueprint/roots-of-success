@@ -8,8 +8,11 @@ var FormErrors = React.createClass({
     return (
       <div className={classes}>
         { $.map(this.props.errors, function errIterate(errArray, fieldName) {
-            return errArray.map(function errDiv(err) {
-              return <div>{ fieldName.humanize().capitalize() + " " + err}</div>
+            return errArray.map(function errDiv(err, index) {
+              return (
+                <div key={fieldName + index}>
+                  { fieldName.humanize().capitalize() + " " + err}
+                </div>)
             });
           }) }
       </div>
