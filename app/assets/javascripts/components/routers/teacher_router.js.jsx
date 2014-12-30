@@ -6,5 +6,7 @@ var routes = (
 );
 
 Router.run(routes, function (Handler) {
-  React.render(<Handler currentTeacherId={gon.currentTeacherId}/>, document.getElementById("teacher-router"));
+  React.render(<Handler currentTeacherId={gon.currentTeacherId}
+                        currentTeacher={gon.currentTeacher}/>,
+               document.getElementById("teacher-router"));
 });
