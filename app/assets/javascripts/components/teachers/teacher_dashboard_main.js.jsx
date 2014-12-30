@@ -18,9 +18,16 @@ var TeacherDashboardMain = React.createClass({
     return (
       <div className="row">
         <div className="small-12 columns">
-          <Card>
-            <h2>Welcome to the dashboard!</h2>
-          </Card>
+          <Paper>
+            <h2>Hey {this.props.currentTeacher.first_name}!</h2>
+            <div class="subtitle">These are your active classrooms. Teach away!</div>
+          </Paper>
+          <div className="spacer-small"></div>
+          <Paper>
+            {this.state.classrooms.map(function renderClassroom(classroom) {
+              return <Classroom classroom={classroom}/>
+            })}
+          </Paper>
         </div>
       </div>
     );

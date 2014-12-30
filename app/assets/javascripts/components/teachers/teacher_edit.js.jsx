@@ -45,7 +45,7 @@ var TeacherEdit = React.createClass({
     return (
       <div className="row">
         <div className="small-12 columns">
-          <Card>
+          <Paper>
             <h2>Tell us about yourself.</h2>
             <div className="spacer"></div>
             <form action="#" onSubmit={this.updateAttributes}>
@@ -60,7 +60,7 @@ var TeacherEdit = React.createClass({
                 Update My Info!
               </button>
             </form>
-          </Card>
+          </Paper>
         </div>
       </div>
     );
