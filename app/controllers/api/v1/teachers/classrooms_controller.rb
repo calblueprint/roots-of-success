@@ -5,7 +5,7 @@ module Api::V1
       respond_to :json
 
       def index
-        respond_with @classrooms
+        respond_with @classrooms.active
       end
 
       def edit
