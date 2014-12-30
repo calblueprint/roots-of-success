@@ -2,9 +2,9 @@ var TeacherDashboard = React.createClass({
   render: function() {
     return (
       <div>
-        <TeacherHeader/>
+        <TeacherHeader currentTeacherId={this.props.currentTeacherId}/>
         <div className="spacer-small"></div>
-        <RouteHandler/>
+        <RouteHandler currentTeacherId={this.props.currentTeacherId}/>
       </div>
     );
   }

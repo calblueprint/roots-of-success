@@ -10,7 +10,6 @@ var TeacherHeader = React.createClass({
 
   render: function() {
     // TODO: Need the actual header links
-    // TODO: Need to get actual user id for edit
     return (
       <header className="navigation">
         <div className="navigation-wrapper">
@@ -24,7 +23,7 @@ var TeacherHeader = React.createClass({
               <li className="nav-link"><a href="javascript:void(0)">Classrooms</a></li>
               <li className="nav-link"><a href="javascript:void(0)">Modules</a></li>
               <li className="nav-link"><a href="javascript:void(0)">Surveys</a></li>
-              <li className="nav-link"><Link to="teacher_edit" params={{id: 2}}>Personal</Link></li>
+              <li className="nav-link"><Link to="teacher_edit" params={{id: this.props.currentTeacherId}}>Personal</Link></li>
             </ul>
           </div>
           <div className="navigation-tools">
