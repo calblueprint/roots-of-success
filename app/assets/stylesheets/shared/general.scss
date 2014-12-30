@@ -106,5 +106,8 @@ body {
   font-size: 5em;
 }
 
+/* Subtitle styling */
+.subtitle { font-size: $h4-font-size; }
+
 /* Class to hide things */
 .hidden { display: none !important; }
