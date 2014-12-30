@@ -8,6 +8,7 @@
 #  name       :string(255)
 #  teacher_id :integer
 #  program_id :integer
+#  active     :boolean          default(TRUE)
 #
 
 FactoryGirl.define do
