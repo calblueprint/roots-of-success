@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
       scope module: :teachers do
-        resources :teachers, only: [:edit, :update]
+        resources :teachers, only: [:edit, :update] do
+          resources :classrooms, only: [:index, :show, :create, :update, :destroy]
+        end
       end
     end
   end
