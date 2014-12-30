@@ -8,6 +8,10 @@ module Api::V1
         respond_with @classrooms.active
       end
 
+      def inactive
+        respond_with @classrooms.inactive
+      end
+
       def edit
         respond_with @classroom
       end

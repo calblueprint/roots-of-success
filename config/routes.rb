@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     scope module: :v1 do
       scope module: :teachers do
         resources :teachers, only: [:edit, :update] do
-          resources :classrooms, only: [:index, :show, :create, :update, :destroy]
+          resources :classrooms, only: [:index, :show, :create, :update, :destroy] do
+            collection { get :inactive }
+          end
         end
       end
     end
