@@ -1,8 +1,12 @@
 module Api::V1
   module Teachers
     class TeachersController < BaseController
-      load_and_authorize_resource # loads @teacher
+      load_and_authorize_resource except: :current # loads @teacher
       respond_to :json
+
+      def current
+        respond_with current_teacher
+      end
 
       def edit
         respond_with @teacher
