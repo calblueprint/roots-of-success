@@ -21,12 +21,23 @@ var pick = function pick(obj, keys) {
   return result;
 }
 
-// Handles server errors for forms
-var serverError = function serverError(xhr, status, err) {
-  if (xhr.status === 422) {
-    console.error(xhr.responseJSON, status, err.toString());
-    this.setState({ errors: xhr.responseJSON })
-  } else {
-    toastr.error("There was an error connecting to the server. Please refresh and try again.");
-  }
+// Takes in a context and returns an error handler for forms
+var serverError = function genServerError(context) {
+  return function serverError(xhr, status, err) {
+    if (xhr.status === 422) {
+      console.error(xhr.responseJSON, status, err.toString());
+      this.setState({ errors: xhr.responseJSON })
+    } else {
+      toastr.error("There was an error connecting to the server. Please refresh and try again.");
+    }
+  }.bind(context);
+}
+
+// Takes in a context and a key and returns a function to be passed into .done() that
+// runs the equivalent of this.setState({key: data})
+var setStateForKey = function setStateForKey(context, key) {
+  return function stateSetter(data) {
+    newState = {} ; newState[key] = data;
+    this.setState(newState);
+  }.bind(context);
 }
