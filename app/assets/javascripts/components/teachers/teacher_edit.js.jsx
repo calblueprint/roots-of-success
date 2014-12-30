@@ -12,14 +12,11 @@ var TeacherEdit = React.createClass({
     return { errors: {}, updatable_attrs: [] };
   },
   componentDidMount: function componentDidMount() {
-    $.ajax({
-      url: this.editUrl(),
-      dataType: "json",
-      success: function editSuccess(teacherData) {
+    $.get(this.editUrl())
+     .done(function editSuccess(teacherData) {
         this.setState(teacherData);
-      }.bind(this),
-      error: serverError
-    });
+      }.bind(this))
+     .fail(serverError(this));
   },
   updateAttributes: function updateAttributes(e) {
     e.preventDefault();
@@ -33,7 +30,7 @@ var TeacherEdit = React.createClass({
         this.transitionTo("teacher_dashboard");
         toastr.success("We got your info down. Thanks!");
       }.bind(this),
-      error: serverError.bind(this)
+      error: serverError(this)
     })
   },
 
