@@ -20,10 +20,26 @@ var TeacherHeader = React.createClass({
              onClick={this.slideToggleList}>MENU</a>
           <div className="nav">
             <ul id="js-navigation-menu" className="navigation-menu">
-              <li className="nav-link"><a href="javascript:void(0)">Classrooms</a></li>
-              <li className="nav-link"><a href="javascript:void(0)">Modules</a></li>
-              <li className="nav-link"><a href="javascript:void(0)">Surveys</a></li>
-              <li className="nav-link"><Link to="teacher_edit" params={{id: this.props.currentTeacherId}}>Personal</Link></li>
+              <li className="nav-link">
+                <Link to="teacher_dashboard">
+                  Classrooms
+                </Link>
+              </li>
+              <li className="nav-link">
+                <a href="javascript:void(0)">
+                  Modules
+                </a>
+              </li>
+              <li className="nav-link">
+                <a href="javascript:void(0)">
+                  Surveys
+                </a>
+              </li>
+              <li className="nav-link">
+                <Link to="teacher_edit" params={{id: this.props.currentTeacherId}}>
+                  Personal
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="navigation-tools">
