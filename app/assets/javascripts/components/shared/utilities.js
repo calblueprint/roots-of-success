@@ -33,11 +33,10 @@ var serverError = function genServerError(context) {
   }.bind(context);
 }
 
-// Takes in a context and a key and returns a function to be passed into .done() that
-// runs the equivalent of this.setState({key: data})
-var setStateForKey = function setStateForKey(context, key) {
+// Takes in a context and and returns a function to be passed into .done() that
+// runs this.setState(data)
+var stateSetter = function (context) {
   return function stateSetter(data) {
-    newState = {} ; newState[key] = data;
-    this.setState(newState);
+    this.setState(data);
   }.bind(context);
 }

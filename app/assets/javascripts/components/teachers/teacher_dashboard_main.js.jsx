@@ -9,14 +9,9 @@ var TeacherDashboardMain = React.createClass({
     return { classrooms: [] };
   },
   componentDidMount: function componentDidMount() {
-    $.ajax({
-      url: this.classroomsUrl(),
-      dataType: "json",
-      success: function getSuccess(classroomsData) {
-        this.setState(classroomsData);
-      }.bind(this),
-      error: serverError
-    });
+    $.get(this.classroomsUrl())
+     .done(stateSetter(this))
+     .fail(serverError(this));
   },
 
   render: function() {
