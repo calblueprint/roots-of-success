@@ -6,7 +6,7 @@
   border: $card-border;
   margin-bottom: $base-spacing;
   cursor: pointer;
-  box-shadow: 0 2px 4px darken($base-background-color, 10);
+  box-shadow: $card-box-shadow;
   position: relative;
 
   @include media($large-screen) {
@@ -69,6 +69,14 @@
         font-size: .7em;
         display: block;
         font-weight: normal;
+
+        &.label {
+          display: inline;
+          color: $card-stats-color;
+          font-weight: 800;
+          font-size: 1.2em;
+          line-height: 1.1em;
+        }
       }
     }
   }

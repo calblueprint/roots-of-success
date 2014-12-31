@@ -38,8 +38,8 @@ $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
 
 // Background Color
-$base-background-color: white;
 $bg-tint: rgba(28, 50, 80, 0.90);
+$base-background-color: $bg-tint;
 
 // Font Colors
 $base-font-color: $dark-gray;
@@ -81,8 +81,9 @@ $paper-border-radius: $base-border-radius;
 
 // Cards
 $card-border-color: $base-border-color;
-$card-border: 1px solid $card-border-color;
+$card-border: 0;
 $card-background: lighten($card-border-color, 10);
+$card-box-shadow: $paper-box-shadow;
 $card-header-background: $card-background;
 $card-hover-background: lighten($card-background, 5);
 $card-image-background: #DBD199;

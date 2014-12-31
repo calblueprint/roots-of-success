@@ -2,7 +2,7 @@ var Classroom = React.createClass({
   render: function() {
     return (
       <Card>
-        <div className="card-picture">
+        <div className="card-image">
           <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt=""/>
         </div>
         <div className="card-header">
@@ -13,8 +13,14 @@ var Classroom = React.createClass({
         </div>
         <div className="card-stats">
           <ul>
-            <li>2 <span>Modules Presented</span></li>
-            <li>No <span>Quiz Given</span></li>
+            <li>
+              <span className="label">2</span>
+              <span>Modules Presented</span>
+            </li>
+            <li>
+              <span className="label">No</span>
+              <span>Quiz Given</span>
+            </li>
           </ul>
         </div>
       </Card>
