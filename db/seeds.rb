@@ -22,6 +22,7 @@ end
 program = Program.first
 
 Teacher.all.each do |t|
-  t.classrooms.create! name: "#{t.first_name} Classroom",
+  t.classrooms.create! name: "#{t.first_name}'s Classroom",
+                       description: Faker::Lorem.paragraph(3),
                        program: program
 end

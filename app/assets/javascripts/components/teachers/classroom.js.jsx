@@ -2,11 +2,14 @@ var Classroom = React.createClass({
   render: function() {
     return (
       <Card>
+        <div className="card-picture">
+          <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png" alt=""/>
+        </div>
         <div className="card-header">
-          {this.props.name}
+          {this.props.classroom.name}
         </div>
         <div className="card-copy">
-          {this.props.description}
+          {this.props.classroom.description}
         </div>
         <div className="card-stats">
           <ul>
