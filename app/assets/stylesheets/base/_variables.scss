@@ -79,6 +79,16 @@ $paper-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16
 $paper-padding: 1.25em 1.25em;
 $paper-border-radius: $base-border-radius;
 
+// Cards
+$card-border-color: $base-border-color;
+$card-border: 1px solid $card-border-color;
+$card-background: lighten($card-border-color, 10);
+$card-header-background: $card-background;
+$card-hover-background: lighten($card-background, 5);
+$card-image-background: #DBD199;
+$card-image-hover-background: lighten($card-image-background, 5);
+$card-stats-color: lighten($base-accent-color, 10);
+
 // Navigation
 $navigation-padding: 1em;
 $navigation-background: $dark-gray;
