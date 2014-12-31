@@ -43,26 +43,22 @@ var TeacherEdit = React.createClass({
   },
   render: function() {
     return (
-      <div className="row">
-        <div className="small-12 columns">
-          <Paper>
-            <h2>Tell us about yourself.</h2>
-            <div className="spacer"></div>
-            <form action="#" onSubmit={this.updateAttributes}>
-              <FormErrors errors={this.state.errors}/>
-              {this.state.updatable_attrs.map(function attrToInput(attr, index) {
-                return <TwoColInput value={this.state[attr]}
-                                    label={"My " + attr.humanize()}
-                                    key={index}
-                                    valueSetter={this.valueSetter(attr)} />
-              }.bind(this))}
-              <button type="submit" href="javascript:void(0)" className="button">
-                Update My Info!
-              </button>
-            </form>
-          </Paper>
-        </div>
-      </div>
+      <Paper>
+        <h2>Tell us about yourself.</h2>
+        <div className="spacer"></div>
+        <form action="#" onSubmit={this.updateAttributes}>
+          <FormErrors errors={this.state.errors}/>
+          {this.state.updatable_attrs.map(function attrToInput(attr, index) {
+            return <TwoColInput value={this.state[attr]}
+                                label={"My " + attr.humanize()}
+                                key={index}
+                                valueSetter={this.valueSetter(attr)} />
+          }.bind(this))}
+          <button type="submit" href="javascript:void(0)" className="button">
+            Update My Info!
+          </button>
+        </form>
+      </Paper>
     );
   }
 });

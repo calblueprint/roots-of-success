@@ -16,17 +16,16 @@ var TeacherDashboardMain = React.createClass({
 
   render: function() {
     return (
-      <div className="row">
-        <div className="small-12 columns">
-          <Paper>
-            <h2>Hey {this.props.currentTeacher.first_name}!</h2>
-            <div class="subtitle">These are your active classrooms. Teach away!</div>
-          </Paper>
-          <div className="spacer-small"></div>
-          {this.state.classrooms.map(function renderClassroom(classroom) {
-            return <Classroom classroom={classroom}/>
-          })}
-        </div>
+      <div>
+        <Paper>
+          <h2>Hey {this.props.currentTeacher.first_name}!</h2>
+          <div className="subtitle">These are your active classrooms. Teach away!</div>
+        </Paper>
+        <div className="spacer-small"></div>
+        {this.state.classrooms.map(function renderClassroom(classroom) {
+          return <Classroom classroom={classroom}
+                            currentTeacherId={this.props.currentTeacherId}/>
+        }.bind(this))}
       </div>
     );
   }
