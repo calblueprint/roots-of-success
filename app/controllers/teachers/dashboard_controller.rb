@@ -3,8 +3,8 @@ module Teachers
     before_filter :authenticate_teacher!
 
     def show
-      gon.push currentTeacherId: current_teacher.id,
-               currentTeacher: current_teacher
+      @teacher = current_teacher
+      @classrooms = @teacher.classrooms.active
     end
   end
 end
