@@ -16,6 +16,9 @@ html
     = csrf_meta_tags
 
   body class="#{body_class}"
+    = render "teacher_header"
+    .spacer-small
+
     = yield
 
     = render "flash"

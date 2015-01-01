@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree ./vendor
+//= require_tree ./shared
 //= require react
 //= require react_ujs
 //= require react-router
