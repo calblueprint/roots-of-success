@@ -19,4 +19,10 @@ Rails.application.routes.draw do
   namespace :teachers, as: :teacher do
     resource :dashboard, only: [:show], controller: "dashboard"
   end
+
+  scope module: :teachers do
+    resources :teachers, only: [:edit, :update] do
+      resources :classrooms
+    end
+  end
 end
