@@ -40,3 +40,10 @@ var stateSetter = function (context) {
     this.setState(data);
   }.bind(context);
 }
+
+// Makes a get request to url and sets context's state to the result
+var getState = function getState(context, url) {
+  $.get(url)
+   .done(stateSetter(context))
+   .fail(serverError(context));
+}
