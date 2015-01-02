@@ -8,6 +8,7 @@
   cursor: pointer;
   box-shadow: $card-box-shadow;
   position: relative;
+  color: $base-font-color;
 
   @include media($large-screen) {
     @include span-columns(4);
