@@ -1,5 +1,5 @@
 module Teachers
-  class DashboardController < ApplicationController
+  class DashboardController < BaseController
     before_filter :authenticate_teacher!
 
     def show

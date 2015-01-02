@@ -1,5 +1,5 @@
 module Teachers
-  class TeachersController < ApplicationController
+  class TeachersController < BaseController
     UPDATABLE_ATTRS = [:first_name, :last_name, :email, :phone, :position, :location]
     load_and_authorize_resource # loads @teacher
 
