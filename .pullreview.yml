@@ -1,0 +1,5 @@
+---
+rules:
+  ignore:
+  - prefer_single_quoted_strings
+  - missing_class_documentation
