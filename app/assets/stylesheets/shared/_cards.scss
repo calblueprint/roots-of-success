@@ -7,6 +7,7 @@
   margin-bottom: $base-spacing;
   cursor: pointer;
   box-shadow: $card-box-shadow;
+  display: block;
   position: relative;
   color: $base-font-color;
 
@@ -38,12 +39,16 @@
   }
 
   .card-copy {
+    background-color: $card-background;
     padding: $base-spacing/2 $gutter/2;
     font-size: .9em;
     line-height: 1.5em;
+    // Add height for consistent height
+    height: em(85px);
   }
 
   .card-stats {
+    background-color: $card-background;
     padding: $base-spacing/2 $gutter/2;
     overflow: auto;
 
