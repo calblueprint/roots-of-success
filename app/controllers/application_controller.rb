@@ -4,4 +4,10 @@ class ApplicationController < ActionController::Base
 
   include DeviseSettings
   include AuthorizationHelpers
+
+  before_filter :set_header
+
+  def set_header
+    @header = "no_header"
+  end
 end

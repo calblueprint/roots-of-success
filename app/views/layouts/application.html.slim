@@ -16,7 +16,7 @@ html
     = csrf_meta_tags
 
   body class="#{body_class}"
-    = render "teacher_header"
+    = render @header
     .spacer-small
 
     = yield

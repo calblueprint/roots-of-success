@@ -4,6 +4,10 @@ module Teachers
 
     private
 
+    def set_header
+      @header = "teacher_header"
+    end
+
     def authorize_access!
       authorize! :manage, :teacher_dashboard
     end
