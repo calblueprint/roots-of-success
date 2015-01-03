@@ -85,6 +85,8 @@ $card-border: 0;
 $card-background: lighten($card-border-color, 10);
 $card-box-shadow: $paper-box-shadow;
 $card-header-background: $card-background;
+$card-height: em(380px);
+$card-placeholder-tint: $base-background-color;
 $card-hover-background: lighten($card-background, 5);
 $card-image-background: #DBD199;
 $card-image-hover-background: lighten($card-image-background, 5);

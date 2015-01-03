@@ -4,8 +4,8 @@
   .card-image
     img src="#{img_url}" alt=""
   .card-header = classroom.name
-  .card-copy = classroom.description.truncate 100, separator: " "
-  / TODO: Placeholder stats
+  .card-copy = classroom.description.truncate 150, separator: " "
+  / TODO: Get actual stats
   .card-stats
     ul
       li
