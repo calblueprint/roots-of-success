@@ -1,8 +1,0 @@
-.small-12.columns.text-center
-  h1 Welcome to your student profile.
-
-  .small-12.large-9.large-push-2.center.nopad
-    = simple_form_for @profile, url: profile_path do |f|
-      - @profile.to_check.each do |attribute|
-        = f.input attribute
-      = f.button :submit, class: "small grey-button"

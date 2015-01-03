@@ -1,8 +1,130 @@
-/* Styling for cards.
-   https://github.com/FezVrasta/bootstrap-material-design/blob/master/less/_cards.less */
+/* http://refills.bourbon.io/#cards */
 .card {
-  background-color: white;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
-  padding: 3.25em 1.25em;
+  @include transition (all 0.2s ease-in-out);
+  background-color: $card-background;
   border-radius: $base-border-radius;
+  border: $card-border;
+  margin-bottom: $base-spacing;
+  cursor: pointer;
+  box-shadow: $card-box-shadow;
+  display: block;
+  position: relative;
+  color: $base-font-color;
+  height: $card-height;
+
+  @include media($large-screen) {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+
+  .card-image {
+    overflow: hidden;
+    max-height: 150px;
+
+    img {
+      width: 100%;
+      @include transition (all 0.2s ease-in-out);
+      background: $card-image-background;
+      border-top-left-radius: $base-border-radius;
+      border-top-right-radius: $base-border-radius;
+    }
+  }
+
+  .card-header {
+    @include transition (all 0.2s ease-in-out);
+    background-color: $card-header-background;
+    border-bottom: $card-border;
+    border-radius: $base-border-radius $base-border-radius 0 0;
+    font-weight: bold;
+    padding: $base-spacing/3 $gutter/2;
+  }
+
+  .card-copy {
+    background-color: $card-background;
+    padding: $base-spacing/2 $gutter/2;
+    font-size: .9em;
+    line-height: 1.5em;
+    // Add height for consistent height
+    height: em(130px);
+  }
+
+  .card-stats {
+    background-color: $card-background;
+    padding: $base-spacing/2 $gutter/2;
+    overflow: auto;
+
+    ul li {
+      display: inline;
+      color: $card-stats-color;
+      font-weight: 800;
+      font-size: 1.2em;
+      float: left;
+      border-right: 1px solid transparentize($base-font-color, .8);
+      line-height: 1.1em;
+      padding: 0 .7em 0 .7em;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      span {
+        color: $base-font-color;
+        font-size: .7em;
+        display: block;
+        font-weight: normal;
+
+        &.label {
+          display: inline;
+          color: $card-stats-color;
+          font-weight: 800;
+          font-size: 1.2em;
+          line-height: 1.1em;
+        }
+      }
+    }
+  }
+
+  span.new-card-overlay {
+    font-family: $header-font-family;
+    font-size: 10em;
+    font-weight: bold;
+    text-align: center;
+    line-height: 2.2em;
+    color: $card-background;
+
+    background-color: $card-placeholder-tint;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    @include transition (all 0.2s ease-in-out);
+    &:hover { background-color: darken($card-placeholder-tint, 10); }
+  }
+
+  &:hover {
+    background-color: $card-hover-background;
+
+    .card-image img {
+      background: $card-image-hover-background;
+    }
+
+    .card-header {
+      background-color: $card-hover-background;
+    }
+  }
+
+  &:active {
+    background-color: $card-background;
+
+    .card-header {
+      background-color: $card-background;
+    }
+  }
 }

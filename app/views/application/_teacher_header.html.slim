@@ -1,0 +1,17 @@
+header.navigation
+  .navigation-wrapper
+    = link_to teacher_dashboard_path, class: "logo" do
+      img src="/assets/RoSLogo.svg" alt="Logo Image"
+    = link_to "MENU", "#", class: "navigation-menu-button", id: "js-mobile-menu"
+    .nav
+      ul.navigation-menu#js-navigation-menu
+        li.nav-link
+          = link_to "Classrooms", teacher_dashboard_path
+        li.nav-link
+          = link_to "Modules", "#"
+        li.nav-link
+          = link_to "Surveys", "#"
+        li.nav-link
+          = link_to "Personal", edit_teacher_path(current_teacher)
+    .navigation-tools
+      = link_to "Log Out", destroy_teacher_session_path, method: :delete, class: "logout"

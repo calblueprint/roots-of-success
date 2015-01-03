@@ -3,11 +3,11 @@
  * Copyright 2013–2014 thoughtbot, inc.
  * MIT License */
 
+// Neat Settings -- uncomment if using Neat -- must be imported before Neat
+@import "grid-settings";
+
 // Variables
 @import "variables";
-
-// Neat Settings -- uncomment if using Neat -- must be imported before Neat
-// @import "grid-settings";
 
 // Extends
 @import "extends/button";

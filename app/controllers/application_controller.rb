@@ -1,16 +1,13 @@
 class ApplicationController < ActionController::Base
-  [HighSchoolTeacherSurvey, HighSchoolStudentSurvey,
-    CorrectionalFacilityTeacherSurvey, AllTeachersSurvey] if Rails.env.development?
-
-  def forem_user
-    current_user
-  end
-  helper_method :forem_user
-
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  # Prevent CSRF attacks by returning a null session
+  protect_from_forgery with: :exception, unless: proc { |c| c.request.format == "application/json" }
 
   include DeviseSettings
   include AuthorizationHelpers
+
+  before_filter :set_header
+
+  def set_header
+    @header = "no_header"
+  end
 end

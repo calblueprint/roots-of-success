@@ -76,3 +76,29 @@ select {
   max-width: 100%;
   width: auto;
 }
+
+/* In a two column form the label should be right aligned on medium screens and up */
+.two-col-form-label {
+  @include media($medium-screen-up) {
+    text-align: right;
+  }
+}
+
+/* Errors styling */
+.errors {
+  display: block;
+  font-weight: bold;
+  margin-bottom: $base-spacing / 2;
+  padding: $base-spacing / 2;
+  background: $error-color;
+  color: darken($error-color, 60);
+
+  a {
+    color: darken($error-color, 70);
+    border-bottom: 1px solid transparentize(darken($error-color, 70), .7);
+
+    &:hover {
+      color: darken($error-color, 90);
+    }
+  }
+}

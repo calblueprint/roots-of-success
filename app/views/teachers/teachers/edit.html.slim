@@ -1,0 +1,17 @@
+.row
+  .small-12.columns
+    .center.paper
+      .row
+        .small-12.columns
+          h2 Tell us about yourself.
+          .spacer
+
+          = render "form_errors", obj: @teacher
+          = simple_form_for @teacher do |f|
+            - Teachers::TeachersController::UPDATABLE_ATTRS.each do |attribute|
+              .row
+                .medium-6.columns.two-col-form-label
+                  h5 = f.label attribute, required: false
+                .medium-6.columns.two-col-form-input
+                  = f.input_field attribute
+            = f.button :submit, "Update my info!"

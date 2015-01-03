@@ -1,0 +1,11 @@
+.row
+  .small-12.columns
+    .center.paper
+      .row
+        .small-12.columns
+          h2 Hey #{@teacher.first_name}!
+          .subtitle These are your active classrooms. Teach away!
+    .spacer-small
+    .classrooms
+      = render @classrooms
+      = render "teachers/classrooms/new_classroom_placeholder"

@@ -1,10 +1,12 @@
 module DeviseSettings
   extend ActiveSupport::Concern
 
+  def current_user
+    current_teacher
+  end
+
   def after_sign_in_path_for(user)
-    return edit_profile_path user unless user.profile_filled_in?
-    return admin_dashboard_path if user.type == 'Admin'
-    return teacher_dashboard_path if user.type == 'Teacher'
-    return profile_path user if user.type == 'Student'
+    return teacher_dashboard_path if user.is_a? Teacher
+    fail "Bad user!"
   end
 end

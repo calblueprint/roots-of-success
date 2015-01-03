@@ -36,10 +36,10 @@ Block Grid: http://foundation.zurb.com/docs/components/block_grid.html
   padding: 0;
 }
 
+/* Website background */
 body {
   @include background-image(linear-gradient($bg-tint 100%, $bg-tint 0),
                             asset-url("bgsmall.png"));
-  padding: em(20px) 0;
 }
 
 /* Removes Chrome's default blue outline on focus */
@@ -83,6 +83,11 @@ body {
   text-align: center;
 }
 
+/* Right align your text inside an element */
+.right {
+  text-align: right;
+}
+
 /* An inner div as a dark overlay to make banners darker. You have to put this inside the banner as
    if the banner was a wrapper. */
 .darken {
@@ -100,3 +105,9 @@ body {
   text-align: center;
   font-size: 5em;
 }
+
+/* Subtitle styling */
+.subtitle { font-size: $h4-font-size; }
+
+/* Class to hide things */
+.hidden { display: none !important; }

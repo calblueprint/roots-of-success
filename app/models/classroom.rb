@@ -2,40 +2,24 @@
 #
 # Table name: classrooms
 #
-#  id              :integer          not null, primary key
-#  created_at      :datetime
-#  updated_at      :datetime
-#  teacher_id      :integer
-#  name            :text
-#  module_progress :text
-#  program         :string(255)
+#  id          :integer          not null, primary key
+#  created_at  :datetime
+#  updated_at  :datetime
+#  name        :string(255)
+#  teacher_id  :integer
+#  program_id  :integer
+#  active      :boolean          default(TRUE)
+#  description :text
 #
 
 class Classroom < ActiveRecord::Base
-  validates :name, :teacher_id, :program, presence: true
-
-  serialize :module_progress, Hash
-  before_create :set_module_progress
-
   belongs_to :teacher
-  has_many :students
+  belongs_to :program
 
-  delegate :email, to: :teacher, prefix: true
+  validates :name, presence: true
+  validates :teacher_id, presence: true
+  validates :program_id, presence: true
 
-  def to_s
-    name
-  end
-
-  def toggle_module!(module_name)
-    module_progress[module_name] = !module_progress[module_name]
-    save!
-  end
-
-  def set_module_progress
-    self.module_progress = Hash[LearningModule.names.map { |l| [l, false] }]
-  end
-
-  def survey_titles
-    Survey.for(Student, self).map { |s| s.title }
-  end
+  scope :active, -> { where active: true }
+  scope :inactive, -> { where active: false }
 end
