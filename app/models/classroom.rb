@@ -17,6 +17,7 @@ class Classroom < ActiveRecord::Base
   belongs_to :program
 
   validates :name, presence: true
+  validates :description, presence: true
   validates :teacher_id, presence: true
   validates :program_id, presence: true
 
