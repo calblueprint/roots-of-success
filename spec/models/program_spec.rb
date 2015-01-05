@@ -18,4 +18,15 @@ RSpec.describe Program, type: :model do
   it { should validate_uniqueness_of :slug }
 
   it { should have_many :classrooms }
+
+  let!(:program1) { create :program }
+  let!(:program2) { create :program }
+
+  describe ".name_id_pairs" do
+    it "returns an array of pairs with each program's name and id" do
+      name_id_pairs = Program.name_id_pairs
+      expect(name_id_pairs).to include [program1.name, program1.id]
+      expect(name_id_pairs).to include [program2.name, program2.id]
+    end
+  end
 end

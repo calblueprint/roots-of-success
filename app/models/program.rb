@@ -14,4 +14,8 @@ class Program < ActiveRecord::Base
   validates :slug, presence: true, uniqueness: true
 
   has_many :classrooms
+
+  def self.name_id_pairs
+    select("id, name").collect { |program| [program.name, program.id] }
+  end
 end
