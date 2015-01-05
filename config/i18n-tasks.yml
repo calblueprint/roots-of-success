@@ -52,8 +52,9 @@ search:
     - spec/
 
   ## Root for resolving relative keys (default)
-  # relative_roots:
-  #   - app/views
+  relative_roots:
+    - app/views
+    - app/controllers
 
   ## File.fnmatch patterns to exclude from search (default)
   # exclude: ["*.jpg", "*.png", "*.gif", "*.svg", "*.ico", "*.eot", "*.ttf", "*.woff", "*.pdf"]
@@ -80,6 +81,8 @@ ignore_unused:
   - 'simple_form.{yes,no}'
   - 'simple_form.{placeholders,hints,labels}.*'
   - 'simple_form.{error_notification,required}.:'
+  # Why can't i18n just recognize I'm using this? :(
+  - 'teachers.classrooms.create.success'
 # - 'activerecord.attributes.*'
 
 ## Exclude these keys from `i18n-tasks eq-base' report
