@@ -10,11 +10,17 @@
 
           = render "form_errors", obj: @classroom
           = simple_form_for [@teacher, @classroom] do |f|
-            - Teachers::ClassroomsController::UPDATABLE_ATTRS.each do |attribute|
+            - [:name, :description].each do |attribute|
               .row
                 .medium-5.columns.two-col-form-label
                   h5 = f.label attribute, required: false
                 .medium-7.columns.two-col-form-input
                   = f.input_field attribute
+            .row
+              .medium-5.columns.two-col-form-label
+                h5 = f.label :program
+              .medium-7.columns.two-col-form-input
+                = f.input_field :program, collection: @program_collection
+
             = f.button :submit, "Create my classroom!"
 
