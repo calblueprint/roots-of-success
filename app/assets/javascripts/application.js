@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require_tree ./vendor
 //= require select2
+//= require utilities
 //= require_tree ./shared
