@@ -32,6 +32,9 @@ en:
       new:
         heading: Create a Classroom
         subtitle: The beginning of something great.
+        submit: Create my classroom!
+      create:
+        success: Created classroom!
 
     dashboard:
       show:

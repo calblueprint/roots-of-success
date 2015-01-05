@@ -13,7 +13,7 @@ module Teachers
     def create
       @classroom = @teacher.classrooms.build classroom_params
       if @classroom.save
-        redirect_to [@teacher, @classroom], success: "Created classroom!"
+        redirect_to [@teacher, @classroom], flash: { success: t(".success") }
       else
         render "new"
       end
