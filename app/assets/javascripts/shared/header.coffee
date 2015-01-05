@@ -1,4 +1,4 @@
-ready = ->
+headerSlideToggle = ->
   $("#js-navigation-menu").removeClass("show");
 
   $("#js-mobile-menu").on "click", (e) ->
@@ -7,5 +7,4 @@ ready = ->
       if $("#js-navigation-menu").is(":hidden")
         $("#js-navigation-menu").removeAttr("style")
 
-$(document).ready ready
-$(document).on "page:load", ready
+ready headerSlideToggle

@@ -3,8 +3,8 @@
     .center.paper
       .row
         .small-12.columns
-          h2 Hey #{@teacher.first_name}!
-          .subtitle These are your active classrooms. Teach away!
+          h2 = t ".heading", name: @teacher.first_name
+          .subtitle = t ".subtitle"
     .spacer-small
     .classrooms
       = render @classrooms

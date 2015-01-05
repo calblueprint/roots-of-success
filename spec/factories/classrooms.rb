@@ -15,6 +15,7 @@
 FactoryGirl.define do
   factory :classroom do
     sequence(:name) { |n| "Classroom #{n}" }
+    sequence(:description) { |n| "Lorem ipsum #{n}" }
     teacher
     program
   end

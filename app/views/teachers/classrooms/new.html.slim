@@ -1,0 +1,27 @@
+.row
+  .small-12.columns
+    .center.paper
+      .row
+        .small-12.columns
+          h2 = t ".heading"
+          .subtitle = t ".subtitle"
+
+          .spacer-small
+
+          = render "form_errors", obj: @classroom
+          = simple_form_for [@teacher, @classroom] do |f|
+            - [:name, :description].each do |attribute|
+              .row
+                .medium-5.columns.two-col-form-label
+                  h5 = f.label attribute, required: false
+                .medium-7.columns.two-col-form-input
+                  = f.input_field attribute
+            .row
+              .medium-5.columns.two-col-form-label
+                h5 = f.label :program_id, required: false
+              .medium-7.columns.two-col-form-input
+                = f.input_field :program_id, collection: @program_collection
+
+            .spacer-small
+            = f.button :submit, t(".submit")
+

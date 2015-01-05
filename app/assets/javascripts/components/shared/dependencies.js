@@ -1,3 +1,5 @@
+// Left here in case I decide to use react later for something
+
 // react-router
 var Router = ReactRouter;
 var Route = Router.Route;
