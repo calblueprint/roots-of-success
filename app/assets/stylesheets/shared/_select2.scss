@@ -1,4 +1,10 @@
-// Fixes narrow select2 input
 .select2-container {
+  // Fixes narrow select2 input
   width: 100%;
+
+  // Make select2 slightly taller
+  .select2-choice {
+    height: 2.5em;
+    line-height: 2.5em;
+  }
 }
