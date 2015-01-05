@@ -16,6 +16,6 @@ class Program < ActiveRecord::Base
   has_many :classrooms
 
   def self.name_id_pairs
-    select("id, name").collect { |program| [program.name, program.id] }
+    select("id, name").map { |program| [program.name, program.id] }
   end
 end
