@@ -19,7 +19,7 @@ class Classroom < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true
   validates :teacher_id, presence: true
-  validates :program_id, presence: { message: I18n.t("classrooms.errors.program.missing") }
+  validates :program_id, presence: true
 
   scope :active, -> { where active: true }
   scope :inactive, -> { where active: false }
