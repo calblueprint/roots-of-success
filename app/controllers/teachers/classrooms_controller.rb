@@ -4,13 +4,19 @@ module Teachers
     load_and_authorize_resource # loads @classroom
 
     before_filter :set_teacher
-    before_filter :set_program_collection, only: [:new, :edit]
+    before_filter :set_program_collection, only: [:new, :create, :edit, :update]
 
     def new
       @classroom = @teacher.classrooms.build
     end
 
     def create
+      @classroom = @teacher.classrooms.build classroom_params
+      if @classroom.save
+        redirect_to [@teacher, @classroom], success: "Created classroom!"
+      else
+        render "new"
+      end
     end
 
     def show
