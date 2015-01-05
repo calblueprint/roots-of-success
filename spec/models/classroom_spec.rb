@@ -18,7 +18,7 @@ RSpec.describe Classroom, type: :model do
   it { should validate_presence_of :name }
   it { should validate_presence_of :description }
   it { should validate_presence_of :teacher_id }
-  it { should validate_presence_of :program_id }
+  it { should validate_presence_of(:program_id).with_message t("classrooms.errors.program.missing") }
 
   it { should belong_to :teacher }
   it { should belong_to :program }

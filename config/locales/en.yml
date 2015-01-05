@@ -22,6 +22,11 @@ en:
           heading: Log In
           subtitle: We're ready to get started.
 
+  classrooms:
+    errors:
+      program:
+        missing: must be selected
+
   teachers:
     classrooms:
       new:
