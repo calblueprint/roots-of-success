@@ -16,6 +16,3 @@
 //= require_tree ./vendor
 //= require select2
 //= require_tree ./shared
-//= require react
-//= require react_ujs
-//= require react-router
