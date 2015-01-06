@@ -26,9 +26,16 @@ module Teachers
     end
 
     def update
+      if @classroom.update classroom_params
+        redirect_to @classroom, flash: { success: t(".success") }
+      else
+        render "edit"
+      end
     end
 
     def destroy
+      @classroom.destroy
+      redirect_to teacher_dashboard_path
     end
 
     private
