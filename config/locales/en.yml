@@ -47,3 +47,12 @@ en:
 
   titles:
     application: Community of Practice
+    teachers:
+      classrooms:
+        new: New Classroom
+        edit: Edit Classroom
+        show: '%{classroom}'
+      dashboard:
+        show: Dashboard
+      teachers:
+        edit: Edit Personal Info
