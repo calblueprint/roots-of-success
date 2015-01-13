@@ -92,6 +92,15 @@ $card-image-background: #DBD199;
 $card-image-hover-background: lighten($card-image-background, 5);
 $card-stats-color: lighten($base-accent-color, 10);
 
+// Button groups
+$button-group-background: white;
+$button-group-color: lighten($base-font-color, 30);
+$button-group-border: 1px solid silver;
+$button-group-inner-border: 1px solid lighten(silver, 18);
+$button-group-background-checked: $base-accent-color;
+$button-group-color-checked: white;
+$button-group-border-checked: darken($button-group-background-checked, 15);
+
 // Navigation
 $navigation-padding: 1em;
 $navigation-background: $dark-gray;
