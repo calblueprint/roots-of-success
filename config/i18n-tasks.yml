@@ -83,6 +83,7 @@ ignore_unused:
   - 'simple_form.{error_notification,required}.:'
   # Why can't i18n just recognize I'm using this? :(
   - 'teachers.classrooms.create.success'
+  - 'teachers.classrooms.update.success'
 # - 'activerecord.attributes.*'
 
 ## Exclude these keys from `i18n-tasks eq-base' report
