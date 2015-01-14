@@ -15,6 +15,7 @@ gem "yajl-ruby", "~> 1.2.1"
 # Components
 gem "cancancan", "~> 1.9.2"
 gem "devise", "~> 3.4.1"
+gem "email_validator", "~> 1.5.0"
 gem "ffaker", "~> 1.25.0"
 gem "gon", "~> 5.2.3"
 gem "kaminari", "~> 0.16.1"
