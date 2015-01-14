@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   scope module: :teachers do
     resources :teachers, only: [:edit, :update] do
       resources :classrooms, shallow: true
+      resources :students, shallow: true
     end
   end
 end
