@@ -3,7 +3,7 @@ module Teachers
     UPDATABLE_ATTRS = [:name, :description, :program_id]
     load_and_authorize_resource # loads @classroom
 
-    before_filter :set_teacher, only: [:index, :new, :create]
+    before_filter :set_teacher, only: [:new, :create, :index]
     before_filter :set_program_collection, only: [:new, :create, :edit, :update]
 
     def new
@@ -22,10 +22,19 @@ module Teachers
     def show
     end
 
+    def index
+      # TODO: Classroom index page shows active and inactive classrooms
+      # https://github.com/calblueprint/roots-of-success/issues/145
+    end
+
     def edit
+      # TODO: Replace with classroom settings tab on classroom show
+      # https://github.com/calblueprint/roots-of-success/issues/147
     end
 
     def update
+      # TODO: Replace with classroom settings tab on classroom show
+      # https://github.com/calblueprint/roots-of-success/issues/147
       if @classroom.update classroom_params
         redirect_to @classroom, flash: { success: t(".success") }
       else
@@ -34,6 +43,8 @@ module Teachers
     end
 
     def destroy
+      # TODO: Replace with classroom settings tab on classroom show
+      # https://github.com/calblueprint/roots-of-success/issues/147
       @classroom.destroy
       redirect_to teacher_dashboard_path
     end
