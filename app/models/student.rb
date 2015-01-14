@@ -22,6 +22,10 @@ class Student < ActiveRecord::Base
   scope :confirmed, -> { where confirmed: true }
   scope :unconfirmed, -> { where confirmed: false }
 
+  def to_s
+    email
+  end
+
   private
 
   def set_confirmation_token

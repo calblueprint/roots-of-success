@@ -18,4 +18,11 @@ RSpec.describe Student, type: :model do
   it { should allow_value("sam@sam.com").for :email }
   it { should_not allow_value("sam.com").for :email }
   it { should validate_presence_of :classroom_id }
+
+  let(:student) { create :student }
+  describe "#to_s" do
+    it "returns the student's email" do
+      expect(student.to_s).to eql student.email
+    end
+  end
 end
