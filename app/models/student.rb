@@ -8,10 +8,14 @@
 #  email              :string(255)
 #  confirmation_token :string(255)
 #  confirmed          :boolean          default(FALSE)
+#  classroom_id       :integer
 #
 
 class Student < ActiveRecord::Base
+  belongs_to :classroom
+
   validates :email, presence: true, email: true
+  validates :classroom_id, presence: true
 
   before_save :set_confirmation_token
 

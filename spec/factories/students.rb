@@ -8,6 +8,7 @@
 #  email              :string(255)
 #  confirmation_token :string(255)
 #  confirmed          :boolean          default(FALSE)
+#  classroom_id       :integer
 #
 
 FactoryGirl.define do
@@ -15,5 +16,6 @@ FactoryGirl.define do
     sequence(:email) { |n| "student#{n}@gmail.com" }
     confirmation_token "token"
     confirmed false
+    classroom
   end
 end
