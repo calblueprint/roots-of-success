@@ -7,6 +7,7 @@ coffee_script:
 
 java_script:
   enabled: true
+  ignore_file: ./.jshint_ignore
 
 # Show cop names by default; can commment out if needed
 ShowCopNames: true
