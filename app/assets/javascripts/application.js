@@ -17,3 +17,4 @@
 //= require select2
 //= require utilities
 //= require_tree ./shared
+//= require_tree ./pages

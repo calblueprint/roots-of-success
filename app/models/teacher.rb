@@ -24,4 +24,8 @@ class Teacher < ActiveRecord::Base
   validates :last_name, presence: true
 
   has_many :classrooms
+
+  def to_s
+    "#{first_name} #{last_name}"
+  end
 end

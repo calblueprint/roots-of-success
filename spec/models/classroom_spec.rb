@@ -22,4 +22,11 @@ RSpec.describe Classroom, type: :model do
 
   it { should belong_to :teacher }
   it { should belong_to :program }
+
+  let(:classroom) { create :classroom }
+  describe "#to_s" do
+    it "returns the classroom's name" do
+      expect(classroom.to_s).to eql classroom.name
+    end
+  end
 end

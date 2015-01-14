@@ -24,4 +24,11 @@ RSpec.describe Teacher, type: :model do
   it { should validate_presence_of :last_name }
 
   it { should have_many :classrooms }
+
+  let(:teacher) { create :teacher }
+  describe "#to_s" do
+    it "returns the teacher's full name" do
+      expect(teacher.to_s).to eql "#{teacher.first_name} #{teacher.last_name}"
+    end
+  end
 end

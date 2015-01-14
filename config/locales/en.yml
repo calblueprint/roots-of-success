@@ -32,9 +32,13 @@ en:
       new:
         heading: Create a Classroom
         subtitle: The beginning of something great.
-        submit: Create my classroom!
       create:
         success: Created classroom!
+      edit:
+        heading: Edit Classroom
+        subtitle: Make it better.
+      update:
+        success: Updated classroom!
 
     dashboard:
       show:
@@ -43,3 +47,12 @@ en:
 
   titles:
     application: Community of Practice
+    teachers:
+      classrooms:
+        new: New Classroom
+        edit: Edit Classroom
+        show: '%{classroom}'
+      dashboard:
+        show: Dashboard
+      teachers:
+        edit: Edit Personal Info

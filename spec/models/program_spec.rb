@@ -22,6 +22,12 @@ RSpec.describe Program, type: :model do
   let!(:program1) { create :program }
   let!(:program2) { create :program }
 
+  describe "#to_s" do
+    it "returns the program name" do
+      expect(program1.to_s).to eql program1.name
+    end
+  end
+
   describe ".name_id_pairs" do
     it "returns an array of pairs with each program's name and id" do
       name_id_pairs = Program.name_id_pairs

@@ -15,6 +15,10 @@ class Program < ActiveRecord::Base
 
   has_many :classrooms
 
+  def to_s
+    name
+  end
+
   def self.name_id_pairs
     select("id, name").map { |program| [program.name, program.id] }
   end

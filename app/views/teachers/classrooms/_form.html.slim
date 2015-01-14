@@ -1,0 +1,17 @@
+- error_obj ||= obj
+= render "form_errors", obj: error_obj
+= simple_form_for obj do |f|
+  - [:name, :description].each do |attribute|
+    .row
+      .medium-5.columns.two-col-form-label
+        h5 = f.label attribute, required: false
+      .medium-7.columns.two-col-form-input
+        = f.input_field attribute
+  .row
+    .medium-5.columns.two-col-form-label
+      h5 = f.label :program_id, required: false
+    .medium-7.columns.two-col-form-input
+      = f.input_field :program_id, collection: @program_collection
+
+  .spacer-small
+  = f.button :submit
