@@ -36,6 +36,7 @@ $light-gray: #DDD;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
+$green: #609D18;
 
 // Background Color
 $bg-tint: rgba(28, 50, 80, 0.90);
@@ -52,6 +53,8 @@ $base-button-color: $base-link-color;
 $hover-button-color: $hover-link-color;
 $small-button-color: $medium-gray;
 $small-hover-button-color: darken($medium-gray, 15);
+$success-button-color: $green;
+$success-hover-button-color: darken($green, 15);
 
 // Flash Colors
 $alert-color: $light-yellow;

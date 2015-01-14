@@ -17,3 +17,10 @@ input[type="submit"] {
     background-color: $small-hover-button-color;
   }
 }
+
+.button.success {
+  background-color: $success-button-color;
+  &:hover {
+    background-color: $success-hover-button-color;
+  }
+}
