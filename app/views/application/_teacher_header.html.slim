@@ -1,7 +1,7 @@
 header.navigation
   .navigation-wrapper
     = link_to teacher_dashboard_path, class: "logo" do
-      img src="/assets/RoSLogo.svg" alt="Logo Image"
+      img src="#{asset_path "RoSLogo.svg"}" alt="Logo Image"
     = link_to "MENU", "#", class: "navigation-menu-button", id: "js-mobile-menu"
     .nav
       ul.navigation-menu#js-navigation-menu
