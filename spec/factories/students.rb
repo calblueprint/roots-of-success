@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: students
+#
+#  id                 :integer          not null, primary key
+#  created_at         :datetime
+#  updated_at         :datetime
+#  email              :string(255)
+#  confirmation_token :string(255)
+#  confirmed          :boolean          default(FALSE)
+#
+
+FactoryGirl.define do
+  factory :student do
+    sequence(:email) { |n| "student#{n}@gmail.com" }
+    confirmation_token "token"
+    confirmed false
+  end
+end
