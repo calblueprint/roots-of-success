@@ -9,6 +9,7 @@ class Ability
       can :manage, :teacher_dashboard
       can [:edit, :update], Teacher, id: user.id
       can :manage, Classroom, teacher_id: user.id
+      can :manage, Student
     end
   end
 end
