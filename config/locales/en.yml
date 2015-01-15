@@ -27,6 +27,12 @@ en:
       program_id:
         blank: must be selected
 
+  students:
+    confirm:
+      heading: Hey %{student_email}!
+      subtitle: You have confirmed your enrollment in %{classroom_name}.
+      subtitle-2: Go you.
+
   teachers:
     classrooms:
       new:
