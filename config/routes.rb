@@ -14,12 +14,14 @@ Rails.application.routes.draw do
     resource :dashboard, only: :show, controller: "dashboard"
   end
 
+  resources :students, only: [] do
+    member { get :confirm }
+  end
+
   scope module: :teachers do
     resources :teachers, only: [:edit, :update] do
       resources :classrooms, shallow: true do
-        resources :students, shallow: true do
-          member { get :confirm }
-        end
+        resources :students, shallow: true
       end
     end
   end
