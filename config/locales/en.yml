@@ -32,6 +32,9 @@ en:
       heading: Hey %{student_email}!
       subtitle: You have confirmed your enrollment in %{classroom_name}.
       subtitle-2: Go you.
+    confirm_failed:
+      heading: Something went wrong with your request.
+      subtitle: Double check your address and try again.
 
   teachers:
     classrooms:
