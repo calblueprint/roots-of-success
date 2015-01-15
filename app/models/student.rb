@@ -26,6 +26,11 @@ class Student < ActiveRecord::Base
     email
   end
 
+  def confirm!
+    self.confirmed = true
+    save
+  end
+
   private
 
   def set_confirmation_token
