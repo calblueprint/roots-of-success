@@ -10,7 +10,7 @@ module Teachers
 
     def create
       email_validator = ValidateEmails.new(params[:students][:emails])
-      CreateStudents.execute email_validator.valid_emails
+      CreateStudents.execute email_validator.valid_emails, classroom: @classroom
       if email_validator.all_valid?
         redirect_to @classroom, flash: { success: "Invited students!" }
       else
