@@ -1,3 +1,3 @@
 module Exceptions
-  class MissingClassroom < StandardError ; end
+  class MissingClassroom < StandardError; end
 end
