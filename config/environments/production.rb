@@ -82,7 +82,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'please-change-me.com' }
+  # Set host to production heroku app
+  config.action_mailer.default_url_options = { host: "ros-production.herokuapp.com" }
 
   # Use production version of react
   config.react.variant = :production
