@@ -27,6 +27,12 @@ en:
       program_id:
         blank: must be selected
 
+  students:
+    confirm:
+      heading: Hey %{student_email}!
+      subtitle: You have confirmed your enrollment in %{classroom_name}.
+      subtitle-2: Go you.
+
   teachers:
     classrooms:
       new:
@@ -44,6 +50,13 @@ en:
       show:
         heading: Hey %{name}!
         subtitle: These are your active classrooms. Teach away!
+
+    students:
+      new:
+        heading: Add Students To %{classroom_name}
+        subtitle: They'll get an email with a confirmation link.
+        label: Enter one email per line.
+        submit: Invite Students!
 
   titles:
     application: Community of Practice

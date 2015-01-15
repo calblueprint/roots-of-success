@@ -14,9 +14,15 @@ Rails.application.routes.draw do
     resource :dashboard, only: :show, controller: "dashboard"
   end
 
+  resources :students, only: [] do
+    member { get :confirm }
+  end
+
   scope module: :teachers do
     resources :teachers, only: [:edit, :update] do
-      resources :classrooms, shallow: true
+      resources :classrooms, shallow: true do
+        resources :students, shallow: true, only: [:new, :create] # Other actions to come
+      end
     end
   end
 end

@@ -15,13 +15,14 @@
 require 'rails_helper'
 
 RSpec.describe Classroom, type: :model do
+  it { should have_many :students }
+  it { should belong_to :teacher }
+  it { should belong_to :program }
+
   it { should validate_presence_of :name }
   it { should validate_presence_of :description }
   it { should validate_presence_of :teacher_id }
-  it { should validate_presence_of(:program_id) }
-
-  it { should belong_to :teacher }
-  it { should belong_to :program }
+  it { should validate_presence_of :program_id }
 
   let(:classroom) { create :classroom }
   describe "#to_s" do

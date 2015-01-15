@@ -11,7 +11,7 @@
     .medium-5.columns.two-col-form-label
       h5 = f.label :program_id, required: false
     .medium-7.columns.two-col-form-input
-      = f.input_field :program_id, collection: @program_collection
+      = f.input_field :program_id, collection: program_collection
 
   .spacer-small
   = f.button :submit

@@ -15,6 +15,9 @@ Bundler.require(*Rails.groups)
 
 module RootsOfSuccess
   class Application < Rails::Application
+    # Load lib/ files
+    config.autoload_paths << Rails.root.join("lib")
+
     # Enable react addons
     config.react.addons = true
 
