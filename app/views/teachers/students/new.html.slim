@@ -1,0 +1,22 @@
+.row
+  .small-12.columns
+    .center.paper
+      .row
+        .small-12.columns
+          h2 = t ".heading", classroom_name: @classroom.name
+          .subtitle = t ".subtitle"
+
+          .spacer-small
+
+          - if @invalid_emails
+            .errors
+              .row The following #{pluralize(@invalid_emails.count, "emails")} were malformed:
+              - @invalid_emails.each do |email|
+                .row #{email}
+              .row The remaining emails were sent an invitation.
+              .row Please correct the invalid emails and resubmit.
+
+          = simple_form_for :students, url: classroom_students_path do |f|
+            = f.input :emails, as: :text, label: t(".label"), required: false,\
+                               input_html: { value: @value, rows: "5" }
+            = f.submit t(".submit")

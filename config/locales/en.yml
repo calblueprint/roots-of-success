@@ -45,6 +45,13 @@ en:
         heading: Hey %{name}!
         subtitle: These are your active classrooms. Teach away!
 
+    students:
+      new:
+        heading: Add Students To %{classroom_name}
+        subtitle: They'll get an email with a confirmation link.
+        label: Enter one email per line.
+        submit: Invite Students!
+
   titles:
     application: Community of Practice
     teachers:
