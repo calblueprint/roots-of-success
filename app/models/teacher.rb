@@ -25,7 +25,11 @@ class Teacher < ActiveRecord::Base
 
   has_many :classrooms
 
-  def to_s
+  def name
     "#{first_name} #{last_name}"
+  end
+
+  def to_s
+    name
   end
 end

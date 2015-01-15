@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   scope module: :teachers do
     resources :teachers, only: [:edit, :update] do
       resources :classrooms, shallow: true do
-        resources :students, shallow: true
+        resources :students, shallow: true do
+          member { get :confirm }
+        end
       end
     end
   end
