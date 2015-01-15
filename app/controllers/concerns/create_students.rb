@@ -3,7 +3,7 @@ class CreateStudents
     classroom = options[:classroom]
     fail Exceptions::MissingClassroom unless classroom
 
-    emails.each { |email| classroom.students.create email: email }
-    StudentConfirmationsMailerJob.new.async.perform emails, classroom: classroom
+    students = emails.map { |email| classroom.students.create email: email }
+    StudentConfirmationsMailerJob.new.async.perform students, classroom: classroom
   end
 end

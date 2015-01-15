@@ -1,10 +1,12 @@
 class StudentConfirmationsMailerJob
   include SuckerPunch::Job
 
-  def perform(emails, options = {})
+  def perform(students, options = {})
     classroom = options[:classroom]
     fail Exceptions::MissingClassroom unless classroom
 
-    emails.each { |email| StudentConfirmationMailer.email(email, classroom).deliver }
+    students.each do |student|
+      StudentConfirmationMailer.confirmation_email(student, classroom).deliver
+    end
   end
 end
