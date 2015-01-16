@@ -26,8 +26,8 @@ RSpec.describe "The create student page", uses_jobs: true do
   it { should show_new_student_heading }
 
   context "with valid emails filled in" do
-    let(:emails) { %w(sam@sam.com rob@rob.com) }
-    before { fill_in_emails emails }
+    let(:valid_emails) { %w(sam@sam.com rob@rob.com) }
+    before { fill_in_emails valid_emails }
 
     it "redirects to classroom show" do
       submit_form
@@ -35,17 +35,20 @@ RSpec.describe "The create student page", uses_jobs: true do
     end
 
     it "creates students" do
-      expect { submit_form }.to change { Student.count }.by(2)
+      expect { submit_form }.to change { Student.count }.by(valid_emails.count)
     end
 
     it "sends emails" do
-      expect { submit_form }.to change { ActionMailer::Base.deliveries.count }.by(2)
+      expect { submit_form }
+        .to change { ActionMailer::Base.deliveries.count }.by(valid_emails.count)
     end
   end
 
   context "with invalid emails" do
     let(:invalid_emails) { %w(sam.com bob) }
-    let(:emails) { invalid_emails + ["rob@rob.com"] }
+    let(:valid_emails) { %w(sam@sam.com rob@rob.com) }
+    let(:emails) { invalid_emails + valid_emails }
+
     before { fill_in_emails emails }
 
     it "rerenders page" do
@@ -63,11 +66,12 @@ RSpec.describe "The create student page", uses_jobs: true do
     end
 
     it "only creates students with valid emails" do
-      expect { submit_form }.to change { Student.count }.by(1)
+      expect { submit_form }.to change { Student.count }.by(valid_emails.count)
     end
 
     it "only sends emails to valid emails" do
-      expect { submit_form }.to change { ActionMailer::Base.deliveries.count }.by(1)
+      expect { submit_form }
+        .to change { ActionMailer::Base.deliveries.count }.by(valid_emails.count)
     end
   end
 end
