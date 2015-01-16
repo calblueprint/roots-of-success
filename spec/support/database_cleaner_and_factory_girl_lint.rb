@@ -16,11 +16,12 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :truncation
   end
 
+  # This was causing issues with not having persisted models while emailing :(
   config.before(:each) do
-    DatabaseCleaner.start
+    # DatabaseCleaner.start
   end
 
   config.after(:each) do
-    DatabaseCleaner.clean
+    # DatabaseCleaner.clean
   end
 end
