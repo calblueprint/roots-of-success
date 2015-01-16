@@ -1,0 +1,6 @@
+- content_for :classroom_show_content do
+  .row
+    .small-12.columns
+      = link_to "Add students", new_classroom_student_path(@classroom), class: "button success"
+
+- parent_layout "classroom_show"
