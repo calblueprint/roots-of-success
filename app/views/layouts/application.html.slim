@@ -19,7 +19,7 @@ html
     = render @header
     .spacer-small
 
-    = yield
+    = content_for(:content) || yield
 
     = render "flash"
     = render "ga_boiler"

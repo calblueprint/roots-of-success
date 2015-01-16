@@ -31,7 +31,7 @@ RSpec.describe "The create student page", uses_jobs: true do
 
     it "redirects to classroom show" do
       submit_form
-      expect(current_path).to eql classroom_path(classroom)
+      expect(current_path).to eql classroom_students_path(classroom)
     end
 
     it "creates students" do
