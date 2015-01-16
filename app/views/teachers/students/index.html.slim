@@ -1,6 +1,11 @@
 - content_for :classroom_show_content do
   .row
     .small-12.columns
-      = link_to "Add students", new_classroom_student_path(@classroom), class: "button success"
+      .row
+        = link_to "Add students", new_classroom_student_path(@classroom), class: "button success"
+      / TODO: Replace with datatable
+      - @students.each do |student|
+        .row
+          = student.email
 
 - parent_layout "classroom_show"
