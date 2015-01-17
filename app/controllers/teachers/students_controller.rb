@@ -24,6 +24,7 @@ module Teachers
 
     def index
       @students = @classroom.students
+      gon.addStudentsUrl = new_classroom_student_path(@classroom)
     end
 
     private

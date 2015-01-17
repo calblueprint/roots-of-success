@@ -1,0 +1,18 @@
+#students-table_wrapper {
+  // Make add students button inline
+  #add-students-button {
+    width: 50%;
+    text-align: left;
+    float: left;
+  }
+
+  // Make search box a little nicer
+  #students-table_filter {
+    width: 50%;
+
+    input {
+      display: inline;
+      width: 70%;
+    }
+  }
+}
