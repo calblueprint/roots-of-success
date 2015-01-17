@@ -4,6 +4,7 @@ ruby:
 
 coffee_script:
   enabled: true
+  config_file: ./.coffeelint.json
 
 java_script:
   enabled: true
