@@ -26,6 +26,7 @@
             var toastr = {
                 // Alias these for rails
                 alert: error,
+                notice: success,
 
                 clear: clear,
                 remove: remove,

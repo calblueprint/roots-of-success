@@ -1,4 +1,6 @@
 studentDatatable = ->
+  return unless $("#students-table").length
+
   $("#students-table").DataTable
     paging: false
     info: false
