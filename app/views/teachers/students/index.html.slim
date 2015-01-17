@@ -4,7 +4,7 @@
       .spacer-small
 
       .row
-        .small-12.columns
+        .medium-10.medium-push-1.columns
           table#students-table.display
             thead
               tr
@@ -15,7 +15,7 @@
               - @students.each do |student|
                 tr
                   td = student.email
-                  td = student.confirmed?
+                  td = yes_no student.confirmed?
                   td Hello
 
 - parent_layout "classroom_show"

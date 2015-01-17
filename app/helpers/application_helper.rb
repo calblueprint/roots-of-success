@@ -7,6 +7,10 @@ module ApplicationHelper
     "active" if pred
   end
 
+  def yes_no(pred)
+    pred ? "Yes" : "No"
+  end
+
   def parent_layout(layout)
     render template: "layouts/#{layout}"
   end
