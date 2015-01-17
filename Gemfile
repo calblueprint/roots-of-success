@@ -11,6 +11,8 @@ gem "figaro", "~> 1.0.0"
 gem "sucker_punch", "~> 1.3.1"
 gem "active_model_serializers", "~> 0.9.2"
 gem "yajl-ruby", "~> 1.2.1"
+gem "awesome_print"
+gem "pry-rails"
 
 # Components
 gem "cancancan", "~> 1.9.2"
@@ -59,10 +61,8 @@ group :development do
 end
 
 group :development, :test do
-  gem "awesome_print"
-  gem "pry-rails"
+  gem "poltergeist"
   gem "pry-byebug"
-
   gem "rspec-rails", "~> 3.1.0"
   gem "factory_girl_rails"
 end
