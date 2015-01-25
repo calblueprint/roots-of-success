@@ -21,9 +21,12 @@ Rails.application.routes.draw do
   scope module: :teachers do
     resources :teachers, only: [:edit, :update] do
       resources :classrooms, shallow: true do
-        resources :students, shallow: true, only: [:new, :create, :index, :destroy] do # Other actions to come
+        resources :students, only: [:new, :create, :index, :destroy] do # Other actions to come
           member { post :resend_confirmation }
         end
+
+        resources :modules, only: [:index]
+        member { post "/modules/:module_id", to: "modules#present", as: :present_module_to }
       end
     end
   end
