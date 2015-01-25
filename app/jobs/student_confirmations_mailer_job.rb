@@ -6,6 +6,7 @@ class StudentConfirmationsMailerJob
       classroom = options[:classroom]
       fail Exceptions::MissingClassroom unless classroom
 
+      students = [students] unless students.is_a? Array
       students.each do |student|
         StudentConfirmationMailer.confirmation_email(student, classroom).deliver
       end

@@ -27,6 +27,17 @@ module Teachers
       gon.push addStudentsUrl: new_classroom_student_path(@classroom)
     end
 
+    def destroy
+      @student.destroy
+      redirect_to classroom_students_path @student.classroom
+    end
+
+    def resend_confirmation
+      ResendStudentConfirmation.execute @student
+      redirect_to classroom_students_path(@student.classroom),
+                  flash: { success: "Confirmation email resent." }
+    end
+
     private
 
     def set_classroom

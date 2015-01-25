@@ -30,5 +30,6 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.include AbstractController::Translation
+  config.include ActionView::RecordIdentifier
   config.infer_spec_type_from_file_location!
 end

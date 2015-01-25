@@ -1,21 +1,11 @@
 # Keep .keep files
 !.keep
 
-# Ignore DS_STORE
 *.DS_Store
-
-# Ignore bundler config.
 /.bundle
-
-# Ignore the database config
 config/database.yml
-
-# Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-# Ignore application env variables
 config/application.yml
-
-# Ignore code coverage reports
 coverage/
+sftp-config.json

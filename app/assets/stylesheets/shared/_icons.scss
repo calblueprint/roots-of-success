@@ -1,0 +1,31 @@
+.actions {
+  a {
+    margin-right: 8px;
+    &:last-child { margin-right: 0; }
+  }
+}
+
+a.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  border-radius: $base-border-radius;
+
+  &.delete-icon {
+    background-color: $delete-icon-bg;
+    color: $delete-icon-color;
+    &:hover {
+      background-color: darken($delete-icon-bg, 10);
+      color: $delete-icon-color;
+    }
+  }
+
+  &.email-icon {
+    background-color: $email-icon-bg;
+    color: $email-icon-color;
+    &:hover {
+      background-color: darken($email-icon-bg, 10);
+      color: $email-icon-color;
+    }
+  }
+}
