@@ -18,6 +18,7 @@ RSpec.describe Program, type: :model do
   it { should validate_uniqueness_of :slug }
 
   it { should have_many :classrooms }
+  it { should have_many :learning_modules }
 
   let!(:program1) { create :program }
   let!(:program2) { create :program }

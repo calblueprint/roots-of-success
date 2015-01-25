@@ -8,6 +8,7 @@
 #  name                    :string(255)
 #  number                  :integer
 #  presentation_embed_code :text
+#  program_id              :integer
 #
 
 require "rails_helper"
@@ -16,4 +17,6 @@ RSpec.describe LearningModule, type: :model do
   it { should validate_presence_of :name }
   it { should validate_presence_of :number }
   it { should validate_presence_of :presentation_embed_code }
+
+  it { should belong_to :program }
 end

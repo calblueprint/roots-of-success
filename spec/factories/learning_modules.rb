@@ -8,6 +8,7 @@
 #  name                    :string(255)
 #  number                  :integer
 #  presentation_embed_code :text
+#  program_id              :integer
 #
 
 FactoryGirl.define do
