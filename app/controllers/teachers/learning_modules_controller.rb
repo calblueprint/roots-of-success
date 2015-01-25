@@ -1,6 +1,9 @@
 module Teachers
-  class LModulesController < BaseController
+  class LearningModulesController < BaseController
     def index
+    end
+
+    def show
     end
 
     def present

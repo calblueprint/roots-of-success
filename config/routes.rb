@@ -25,8 +25,11 @@ Rails.application.routes.draw do
           member { post :resend_confirmation }
         end
 
-        resources :modules, only: [:index]
-        member { post "/modules/:module_id", to: "modules#present", as: :present_module_to }
+        resources :learning_modules, only: [:index, :show]
+        member do
+          post "/learning_modules/:learning_module_id",
+               to: "learning_modules#present", as: :present_learning_module_to
+        end
       end
     end
   end
