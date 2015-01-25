@@ -28,3 +28,6 @@ Style/GuardClause:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Style/DotPosition:
+  Enabled: false
