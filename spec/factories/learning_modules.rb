@@ -16,5 +16,6 @@ FactoryGirl.define do
     sequence(:name) { |n| "Learning Module #{n}" }
     sequence(:number) { |n| n }
     presentation_embed_code "embed"
+    program
   end
 end

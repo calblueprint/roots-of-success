@@ -29,7 +29,7 @@ LEARNING_MODULES.each_with_index do |module_name, index|
   Program.all.each do |program|
     LearningModule.create name: module_name,
                           number: number,
-                          presentation_embed_code: "embed"
+                          presentation_embed_code: "embed",
                           program: program
   end
 end

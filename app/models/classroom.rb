@@ -25,6 +25,8 @@ class Classroom < ActiveRecord::Base
   scope :active, -> { where active: true }
   scope :inactive, -> { where active: false }
 
+  delegate :learning_modules, to: :program
+
   def to_s
     name
   end
