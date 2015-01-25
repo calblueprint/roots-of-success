@@ -15,6 +15,7 @@ class LearningModule < ActiveRecord::Base
   validates :name, presence: true
   validates :number, presence: true
   validates :presentation_embed_code, presence: true
+  validates :program_id, presence: true
 
   belongs_to :program
 end

@@ -17,6 +17,7 @@ RSpec.describe LearningModule, type: :model do
   it { should validate_presence_of :name }
   it { should validate_presence_of :number }
   it { should validate_presence_of :presentation_embed_code }
+  it { should validate_presence_of :program_id }
 
   it { should belong_to :program }
 end
