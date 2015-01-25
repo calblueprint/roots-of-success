@@ -3,7 +3,6 @@ module Teachers
     load_and_authorize_resource # loads @student{s}
 
     before_filter :set_classroom, only: [:new, :create, :index]
-    before_filter :set_active_tab, only: [:index]
 
     # new and create actions are modified to create many students at a time.
     def new
@@ -42,10 +41,6 @@ module Teachers
 
     def set_classroom
       @classroom = Classroom.find params[:classroom_id]
-    end
-
-    def set_active_tab
-      @active_tab = "students"
     end
   end
 end
