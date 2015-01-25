@@ -14,7 +14,8 @@
                   = link_to "Manage Students", classroom_students_path(@classroom),\
                             class: ["button-group-item", active_if?(@active_tab == "students")]
                 label
-                  span.button-group-item Present Modules
+                  = link_to "Present Modules", classroom_learning_modules_path(@classroom),\
+                            class: ["button-group-item", active_if?(@active_tab == "learning_modules")]
                 label
                   span.button-group-item Administer Surveys
                 label
