@@ -18,8 +18,9 @@
                   td = yes_no student.confirmed?
                   td
                     .actions
-                      a.icon.email-icon data-method="post" href="#" rel="nofollow"
-                        i.fa.fa-inbox
+                      - unless student.confirmed?
+                        a.icon.email-icon data-method="post" href="#{resend_confirmation_student_path student}" rel="nofollow"
+                          i.fa.fa-inbox
                       a.icon.delete-icon data-method="delete" href="#{student_path student}" rel="nofollow"
                         i.fa.fa-close
 
