@@ -14,6 +14,8 @@
 @import "base/base";
 @import "vendor/grid";
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "vendor/toastr";
 @import "dataTables/jquery.dataTables.css";
 @import "select2";
@@ -24,6 +26,7 @@
 @import "shared/cards";
 @import "shared/button_groups";
 @import "shared/select2";
+@import "shared/icons";
 
 @import "login";
 @import "student_confirm";

@@ -60,6 +60,8 @@ en:
         subtitle: They'll get an email with a confirmation link.
         label: Enter one email per line.
         submit: Invite Students!
+      index:
+        confirm_delete: Are you sure you want to delete %{student_email}?
 
   titles:
     application: Community of Practice

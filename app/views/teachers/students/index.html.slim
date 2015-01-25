@@ -13,9 +13,16 @@
                 th Actions
             tbody
               - @students.each do |student|
-                tr
+                tr id="#{dom_id student}"
                   td = student.email
                   td = yes_no student.confirmed?
-                  td Hello
+                  td
+                    .actions
+                      - unless student.confirmed?
+                        a.icon.email-icon data-method="post" href="#{resend_confirmation_student_path student}" rel="nofollow"
+                          i.fa.fa-inbox
+                      a.icon.delete-icon [data-method="delete" href="#{student_path student}" rel="nofollow"
+                                          data-confirm="#{t ".confirm_delete", student_email: student.email}"]
+                        i.fa.fa-close
 
 - parent_layout "classroom_show"
