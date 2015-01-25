@@ -10,3 +10,8 @@ end
 def null_object
   double("null_object").as_null_object
 end
+
+# Returns id selector for object
+def id_of(obj)
+  "##{dom_id obj}"
+end
