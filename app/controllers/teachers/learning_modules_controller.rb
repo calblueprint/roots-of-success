@@ -1,8 +1,8 @@
 module Teachers
   class LearningModulesController < BaseController
-    load_and_authorize_resource # loads @module{s}
+    load_and_authorize_resource # loads @learning_module{s}
 
-    before_filter :set_classroom, only: [:index]
+    before_filter :set_classroom
 
     def index
       @learning_modules = @classroom.learning_modules
