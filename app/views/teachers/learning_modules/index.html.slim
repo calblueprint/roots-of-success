@@ -3,9 +3,11 @@
     .small-12.columns
       .spacer-small
 
-      .row
-        .medium-10.medium-push-1.columns
-          h1 Hello World
-
+      .grid-items
+        - @learning_modules.each do |learning_module|
+          a.grid-item href="javascript:void(0)"
+            = image_tag "Modules/Mod#{learning_module.number}.png", alt: ""
+            h1 Module #{learning_module.number}
+            p = learning_module.name
 
 - parent_layout "classroom_show"
