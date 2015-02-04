@@ -6,10 +6,6 @@
 .grid-items {
 
 ///////////////////////////////////////////////////////////////////////////////////
-  $base-accent-color: #477DCA !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
-
   p {
     line-height: 1.5em;
   }
@@ -29,7 +25,10 @@
     #98C79A,
     #A7A891,
     #BDCC97,
-    #979EA0;
+    #979EA0,
+    desaturate($base-accent-color, 30%),
+    #3581A5,
+    #5FBEBE;
   $grid-item-border-size: 9px;
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
@@ -50,7 +49,7 @@
     height: $grid-item-height;
     overflow: hidden;
     outline: none;
-    padding: 2em;
+    padding: 4em 2em 2em;
     text-align: center;
     width: 100%;
 
@@ -85,7 +84,7 @@
 
   .grid-item h1 {
       color: $grid-item-color;
-      font-size: 1.3em;
+      font-size: 2em;
       margin-bottom: 0.4em;
     }
 
@@ -94,7 +93,7 @@
       color: transparentize($grid-item-color, 0.3);
 
       @include media($medium-screen) {
-        max-width: 70%;
+        max-width: 80%;
       }
     }
 
@@ -117,4 +116,14 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  // @for $i from 1 through length($grid-item-colors) {
+  //   .module-#{$i} {
+  //     background-image: asset-url("Modules/Mod#{$i}.png");
+  //     background-color: $grid-item-background;
+  //     background-position: top;
+  //     background-repeat: no-repeat;
+  //     background-size: cover;
+  //   }
+  // }
 }

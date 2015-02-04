@@ -5,8 +5,7 @@
 
       .grid-items
         - @learning_modules.each do |learning_module|
-          a.grid-item href="javascript:void(0)"
-            = image_tag "Modules/Mod#{learning_module.number}.png", alt: ""
+          = link_to learning_module, class: "grid-item module-#{learning_module.number}" do
             h1 Module #{learning_module.number}
             p = learning_module.name
 
