@@ -25,7 +25,7 @@ LEARNING_MODULES = ["Fundamentals", "Water", "Waste", "Transportation", "Energy"
                     "Application and Practice", "Financial Literacy and Social Entrepreneurship"]
 
 LEARNING_MODULES.each_with_index do |module_name, index|
-  number = index
+  number = index + 1
   Program.all.each do |program|
     LearningModule.create name: module_name,
                           number: number,
