@@ -25,6 +25,14 @@ RSpec.describe Classroom, type: :model do
   it { should validate_presence_of :program_id }
 
   let(:classroom) { create :classroom }
+
+  describe "#learning_modules" do
+    it "delegates to program" do
+      expect(classroom.program).to receive(:learning_modules)
+      classroom.learning_modules
+    end
+  end
+
   describe "#to_s" do
     it "returns the classroom's name" do
       expect(classroom.to_s).to eql classroom.name

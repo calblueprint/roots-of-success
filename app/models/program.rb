@@ -14,6 +14,7 @@ class Program < ActiveRecord::Base
   validates :slug, presence: true, uniqueness: true
 
   has_many :classrooms
+  has_many :learning_modules
 
   def to_s
     name

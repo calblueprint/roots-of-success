@@ -1,0 +1,12 @@
+- content_for :classroom_show_content do
+  .row
+    .small-12.columns
+      .spacer-small
+
+      .grid-items
+        - @learning_modules.each do |learning_module|
+          = link_to [@classroom, learning_module], class: "grid-item module-#{learning_module.number}" do
+            h1 Module #{learning_module.number}
+            p = learning_module.name
+
+- parent_layout "classroom_show"
