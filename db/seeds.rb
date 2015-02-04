@@ -19,10 +19,10 @@ LEARNING_MODULES = ["Fundamentals", "Water", "Waste", "Transportation", "Energy"
 LEARNING_MODULES.each_with_index do |module_name, index|
   number = index + 1
   Program.all.each do |program|
-    LearningModule.create name: module_name,
-                          number: number,
-                          presentation_embed_code: "embed",
-                          program: program
+    LearningModule.create! name: module_name,
+                           number: number,
+                           presentation_embed_code: "embed",
+                           program: program
   end
 end
 
