@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-# TODO: Make setup script better.
 
 # Set up Rails app. Run this script immediately after cloning the codebase.
 
@@ -7,22 +6,43 @@
 set -e
 
 # Set up Ruby dependencies via Bundler
-bundle --version &> /dev/null || gem install bundler --no-document
 bundle install
 
 # Setup database
-echo "Running rake db:create ; rake db:migrate"
-database_not_set_up=$(grep "<your username>" config/database.yml)
-if [ database_not_set_up ]; then
-  tput setaf 1; echo "\nDatabase not set up! Change your settings in database.yml\n"; tput sgr0
+echo "Checking db config..."
+if [ ! -f config/database.yml ]; then
+  tput setaf 3
+  echo "config/database.yml doesn't exist."
+  echo "Copying database.yml.sample into database.yml."
+  echo "You must edit config/database.yml with your postgres username and password."
+  cp config/database.yml.sample config/database.yml
+  tput sgr0
 else
-  rake db:create
-  rake db:migrate
+  bundle exec rake db:setup
 fi
+echo
 
-# Generate rollbar config
-bin/rails generate rollbar
-# Generate simple_form config
-bin/rails generate simple_form:install
-# Copy i18n-tasks spec over
-cp $(i18n-tasks gem-path)/templates/rspec/i18n_spec.rb spec/
+# Add application.yml
+echo "Checking application.yml"
+tput setaf 2
+if [ -f config/application.yml ]; then
+  echo "application.yml exists, no changes made"
+else
+  echo "Copying over application.yml.sample into application.yml"
+  cp config/application.yml.sample config/application.yml
+fi
+tput sgr0
+echo
+
+# Check phantomjs
+echo "Checking for phantomjs"
+hash phantomjs 2>/dev/null || {
+  echo >&2 "[Error] phantomjs not installed."
+}
+echo
+
+tput setaf 2
+echo "Done! Fix any issues in setup. Make sure to have guard running :)"
+echo "Sam recommends installing the LiveReload chrome extension to make developing"
+echo "awesome (it only works when guard is running)."
+tput sgr0
