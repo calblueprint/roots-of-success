@@ -23,6 +23,10 @@ class LearningModule < ActiveRecord::Base
   validates :presentation_embed_code, presence: true
   validates :program_id, presence: true
 
+  def present_to!(classroom)
+    classrooms_presented_to << classroom
+  end
+
   def presented_to?(classroom)
     classrooms_presented_to.include? classroom
   end
