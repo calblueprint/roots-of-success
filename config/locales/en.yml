@@ -54,6 +54,11 @@ en:
         heading: Hey %{name}!
         subtitle: These are your active classrooms. Teach away!
 
+    learning_modules:
+      show:
+        present: Mark as presented
+        unpresent: Unmark as presented
+
     students:
       new:
         heading: Add Students To %{classroom_name}

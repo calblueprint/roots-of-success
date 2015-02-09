@@ -24,5 +24,25 @@ RSpec.describe "Learning modules" do
     before { visit classroom_learning_module_path classroom, learning_module1 }
 
     it { should have_content learning_module1.name }
+    it { should have_content t("teachers.learning_modules.show.present") }
+
+    describe "clicking present button" do
+      it "marks module as presented" do
+        expect { click_link t("teachers.learning_modules.show.present") }
+          .to change { learning_module1.classrooms_presented_to.count }.by 1
+      end
+    end
+
+    describe "clicking unpresent button" do
+      before do
+        learning_module1.present_to! classroom
+        visit classroom_learning_module_path classroom, learning_module1
+      end
+
+      it "marks module as unpresented" do
+        expect { click_link t("teachers.learning_modules.show.unpresent") }
+          .to change { learning_module1.classrooms_presented_to.count }.by(-1)
+      end
+    end
   end
 end

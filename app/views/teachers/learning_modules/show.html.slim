@@ -2,5 +2,13 @@
   .row
     .small-12.columns
       h2 = @learning_module.name
+      .spacer-small
+      = link_to classroom_learning_module_toggle_present_path(@classroom, @learning_module),\
+        class: ["button", class_if(@presented, "warning", "success")], method: :post do
+        | #{@presented ? t(".unpresent") : t(".present")} &nbsp;
+        i.fa.fa-check
+      .spacer-small
+      .fluid-media
+        = @learning_module.presentation_embed_code.html_safe
 
 - parent_layout "classroom_show"
