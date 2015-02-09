@@ -7,20 +7,27 @@ input[type="submit"] {
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
-}
 
-.button.small {
-  padding: 0.5em .75em;
-  background-color: $small-button-color;
+  &.small {
+    padding: 0.5em .75em;
+    background-color: $small-button-color;
 
-  &:hover {
-    background-color: $small-hover-button-color;
+    &:hover {
+      background-color: $small-hover-button-color;
+    }
   }
-}
 
-.button.success {
-  background-color: $success-button-color;
-  &:hover {
-    background-color: $success-hover-button-color;
+  &.success {
+    background-color: $success-button-color;
+    &:hover {
+      background-color: $success-hover-button-color;
+    }
+  }
+
+  &.warning {
+    background-color: $warning-button-color;
+    &:hover {
+      background-color: $warning-hover-button-color;
+    }
   }
 }
