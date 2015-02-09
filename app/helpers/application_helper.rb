@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def class_if(pred, yes, no=nil)
+  def class_if(pred, yes, no = nil)
     pred ? yes : no
   end
 

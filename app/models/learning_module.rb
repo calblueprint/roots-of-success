@@ -12,7 +12,7 @@
 #
 
 class LearningModule < ActiveRecord::Base
-  default_scope -> { order :number }
+  default_scope { order :number }
 
   has_many :classroom_module_presents
   has_many :classrooms_presented_to, through: :classroom_module_presents, source: :classroom
