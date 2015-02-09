@@ -1,6 +1,9 @@
 Roots-of-success
 ================
+[![Code Climate](https://codeclimate.com/github/calblueprint/roots-of-success/badges/gpa.svg)](https://codeclimate.com/github/calblueprint/roots-of-success)
+[![Test Coverage](https://codeclimate.com/github/calblueprint/roots-of-success/badges/coverage.svg)](https://codeclimate.com/github/calblueprint/roots-of-success)
 
+[ ![Codeship Status for calblueprint/roots-of-success](https://codeship.com/projects/ca323880-672e-0132-5533-0ec4c97b952f/status?branch=master)](https://codeship.com/projects/53018)
 Getting Started
 ---------------
 
