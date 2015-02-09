@@ -16,7 +16,7 @@ module Teachers
       if @learning_module.presented_to? @classroom
         @learning_module.classrooms_presented_to.delete @classroom
       else
-        @learning_module.classrooms_presented_to << @classroom
+        @learning_module.present_to! @classroom
       end
       redirect_to classroom_learning_module_path(@classroom, @learning_module)
     end
