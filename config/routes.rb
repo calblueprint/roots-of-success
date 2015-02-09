@@ -27,9 +27,9 @@ Rails.application.routes.draw do
 
         resources :learning_modules, only: :index
         get "/learning_modules/:id",
-            to: "learning_modules#show", as: "learning_module"
-        post "/learning_modules/:id/present",
-             to: "learning_modules#present", as: :learning_module_present
+            to: "learning_modules#show", as: :learning_module
+        post "/learning_modules/:id/toggle_present",
+             to: "learning_modules#toggle_present", as: :learning_module_toggle_present
       end
     end
   end

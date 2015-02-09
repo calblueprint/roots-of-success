@@ -11,7 +11,7 @@ module Teachers
     def show
     end
 
-    def present
+    def toggle_present
     end
 
     private
