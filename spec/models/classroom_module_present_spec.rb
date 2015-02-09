@@ -11,6 +11,9 @@
 
 require 'rails_helper'
 
-RSpec.describe ClassroomModulePresent, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe ClassroomModulePresent, type: :model do
+  it { should belong_to :classroom }
+  it { should belong_to :learning_module }
+  it { should validate_presence_of :classroom_id }
+  it { should validate_presence_of :learning_module_id }
 end

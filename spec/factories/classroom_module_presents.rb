@@ -11,7 +11,7 @@
 
 FactoryGirl.define do
   factory :classroom_module_present do
-    
+    classroom
+    learning_module
   end
-
 end
