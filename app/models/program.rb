@@ -10,11 +10,11 @@
 #
 
 class Program < ActiveRecord::Base
-  validates :name, presence: true, uniqueness: true
-  validates :slug, presence: true, uniqueness: true
-
   has_many :classrooms
   has_many :learning_modules
+
+  validates :name, presence: true, uniqueness: true
+  validates :slug, presence: true, uniqueness: true
 
   def to_s
     name

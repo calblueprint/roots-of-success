@@ -10,4 +10,9 @@
 #
 
 class ClassroomModulePresent < ActiveRecord::Base
+  belongs_to :classroom
+  belongs_to :learning_module
+
+  validates :classroom_id, presence: true
+  validates :learning_module_id, presence: true
 end

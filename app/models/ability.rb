@@ -10,7 +10,7 @@ class Ability
       can [:edit, :update], Teacher, id: user.id
       can :manage, Classroom, teacher_id: user.id
       can :manage, Student
-      can [:index, :show, :present], LearningModule
+      can [:index, :show, :toggle_present], LearningModule
     end
   end
 end
