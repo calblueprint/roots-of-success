@@ -35,3 +35,6 @@ Teacher.all.each do |t|
                          program: program
   end
 end
+
+ParticipantSurvey.create! name: "Survey for Participants", form_embed_code: "html embed"
+TeacherSurvey.create! name: "Survey for Teachers", form_embed_code: "html embed"
