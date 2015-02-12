@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209053053) do
+ActiveRecord::Schema.define(version: 20150212093910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20150209053053) do
 
   add_index "classroom_module_presents", ["classroom_id"], name: "index_classroom_module_presents_on_classroom_id", using: :btree
   add_index "classroom_module_presents", ["learning_module_id"], name: "index_classroom_module_presents_on_learning_module_id", using: :btree
+
+  create_table "classroom_surveys", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "classroom_id"
+    t.integer  "survey_id"
+  end
+
+  add_index "classroom_surveys", ["classroom_id"], name: "index_classroom_surveys_on_classroom_id", using: :btree
+  add_index "classroom_surveys", ["survey_id"], name: "index_classroom_surveys_on_survey_id", using: :btree
 
   create_table "classrooms", force: true do |t|
     t.datetime "created_at"
@@ -70,6 +80,13 @@ ActiveRecord::Schema.define(version: 20150209053053) do
   end
 
   add_index "students", ["classroom_id"], name: "index_students_on_classroom_id", using: :btree
+
+  create_table "surveys", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.text     "form_embed_code"
+  end
 
   create_table "teachers", force: true do |t|
     t.datetime "created_at"
