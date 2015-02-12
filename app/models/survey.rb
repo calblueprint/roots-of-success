@@ -16,4 +16,8 @@ class Survey < ActiveRecord::Base
   validates :type, presence: true
 
   has_paper_trail
+
+  def instance
+    false
+  end
 end

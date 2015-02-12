@@ -11,4 +11,7 @@
 #
 
 class ParticipantSurvey < Survey
+  def self.instance
+    first
+  end
 end

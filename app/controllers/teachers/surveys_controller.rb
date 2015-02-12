@@ -1,8 +1,8 @@
 module Teachers
   class SurveysController < ApplicationController
-    load_and_authorize_resource
-
     def index
+      @participant_survey = ParticipantSurvey.instance
+      @teacher_survey = TeacherSurvey.instance
     end
   end
 end
