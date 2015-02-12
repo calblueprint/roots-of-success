@@ -10,9 +10,11 @@
 #  type            :string(255)
 #
 
+
 require 'rails_helper'
 
 RSpec.describe Survey, type: :model do
   it { should validate_presence_of :name }
   it { should validate_presence_of :form_embed_code }
+  it { should validate_presence_of :type }
 end

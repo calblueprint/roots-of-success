@@ -26,16 +26,6 @@ ActiveRecord::Schema.define(version: 20150212101143) do
   add_index "classroom_module_presents", ["classroom_id"], name: "index_classroom_module_presents_on_classroom_id", using: :btree
   add_index "classroom_module_presents", ["learning_module_id"], name: "index_classroom_module_presents_on_learning_module_id", using: :btree
 
-  create_table "classroom_surveys", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "classroom_id"
-    t.integer  "survey_id"
-  end
-
-  add_index "classroom_surveys", ["classroom_id"], name: "index_classroom_surveys_on_classroom_id", using: :btree
-  add_index "classroom_surveys", ["survey_id"], name: "index_classroom_surveys_on_survey_id", using: :btree
-
   create_table "classrooms", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"

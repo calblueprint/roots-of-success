@@ -10,9 +10,14 @@
 #  type            :string(255)
 #
 
+
 FactoryGirl.define do
   factory :survey do
     sequence(:name) { |n| "Survey #{n}" }
     form_embed_code "Some html"
+    type "InvalidSurvey"
+
+    factory(:participant_survey) { type "ParticipantSurvey" }
+    factory(:teacher_survey)     { type "TeacherSurvey" }
   end
 end
