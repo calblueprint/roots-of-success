@@ -14,4 +14,6 @@ class Survey < ActiveRecord::Base
   validates :name, presence: true
   validates :form_embed_code, presence: true
   validates :type, presence: true
+
+  has_paper_trail
 end
