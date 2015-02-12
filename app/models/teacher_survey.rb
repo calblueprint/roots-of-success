@@ -10,7 +10,5 @@
 #  type            :string(255)
 #
 
-class Survey < ActiveRecord::Base
-  validates :name, presence: true
-  validates :form_embed_code, presence: true
+class TeacherSurvey < Survey
 end

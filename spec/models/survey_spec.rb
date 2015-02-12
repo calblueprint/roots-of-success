@@ -7,6 +7,7 @@
 #  updated_at      :datetime
 #  name            :string(255)
 #  form_embed_code :text
+#  type            :string(255)
 #
 
 require 'rails_helper'
