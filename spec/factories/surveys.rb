@@ -11,7 +11,7 @@
 
 FactoryGirl.define do
   factory :survey do
-    
+    sequence(:name) { |n| "Survey #{n}" }
+    form_embed_code "Some html"
   end
-
 end
