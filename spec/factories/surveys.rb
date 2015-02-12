@@ -10,7 +10,6 @@
 #  type            :string(255)
 #
 
-
 FactoryGirl.define do
   factory :survey do
     sequence(:name) { |n| "Survey #{n}" }

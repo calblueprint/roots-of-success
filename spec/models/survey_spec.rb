@@ -10,7 +10,6 @@
 #  type            :string(255)
 #
 
-
 require 'rails_helper'
 
 RSpec.describe Survey, type: :model do
