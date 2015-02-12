@@ -1,5 +1,5 @@
 module Teachers
-  class SurveysController < ApplicationController
+  class SurveysController < BaseController
     before_filter :set_classroom
 
     def index
