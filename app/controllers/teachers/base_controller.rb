@@ -16,5 +16,9 @@ module Teachers
     def set_active_tab
       @active_tab = controller_name
     end
+
+    def set_classroom
+      @classroom = Classroom.find params[:classroom_id]
+    end
   end
 end
