@@ -21,7 +21,7 @@ LEARNING_MODULES.each_with_index do |module_name, index|
   Program.all.each do |program|
     LearningModule.create! name: module_name,
                            number: number,
-                           presentation_embed_code: "embed",
+                           presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1Uqs0xTXJMdoSVCoR-wzlc2U_0BeBJf4VMrUcCu0lDK4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
                            program: program
   end
 end
