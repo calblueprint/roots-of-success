@@ -1,14 +1,17 @@
+- pretest_url = "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/2-participant-pre-test.pdf"
+- placeholder_img_url = "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png"
+
 - content_for :classroom_show_content do
   .row
     .small-12.medium-6.columns
       h3 = t ".student_surveys_heading"
       .spacer-small
-      a.survey-red-box href="https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/2-participant-pre-test.pdf" target="_blank"
-        img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt=""
+      a.survey-red-box href="#{pretest_url}" target="_blank"
+        img src="#{placeholder_img_url}" alt=""
         h1.survey-title = t ".pre_post_test_name"
         p = t ".pre_post_test_desc"
       a.survey-teal-box href="javascript:void(0)"
-        img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt=""
+        img src="#{placeholder_img_url}" alt=""
         h1.survey-title = @participant_survey.name
         p Click to send an email with the participant survey to all confirmed students in the classroom.
     .small-12.medium-6.columns
@@ -16,7 +19,7 @@
       .spacer-small
       - @teacher_surveys.each do |survey|
         a.survey-blue-box href="javascript:void(0)"
-          img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png" alt=""
+          img src="#{placeholder_img_url}" alt=""
           h1.survey-title = survey.name
           p This is the survey you take once the class is finished.
 
