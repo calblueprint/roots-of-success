@@ -115,15 +115,14 @@ body {
 /* Fluid media (iframes) */
 .fluid-media {
   position: relative;
-  padding-bottom: 78%;
+  padding-bottom: 75%;
   height: 0;
   overflow: hidden;
 
+  embed,
+  object,
   iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @include position(absolute, 0px null null 0px);
+    @include size(100%);
   }
 }
