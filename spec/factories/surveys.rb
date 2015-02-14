@@ -8,11 +8,13 @@
 #  name            :string(255)
 #  form_embed_code :text
 #  type            :string(255)
+#  description     :text
 #
 
 FactoryGirl.define do
   factory :survey do
     sequence(:name) { |n| "Survey #{n}" }
+    description "Some description"
     form_embed_code "Some html"
     type "InvalidSurvey"
 

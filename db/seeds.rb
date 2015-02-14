@@ -36,5 +36,9 @@ Teacher.all.each do |t|
   end
 end
 
-ParticipantSurvey.create! name: "Survey for Participants", form_embed_code: "html embed"
-TeacherSurvey.create! name: "Survey for Teachers", form_embed_code: "html embed"
+ParticipantSurvey.create! name: "Survey for Participants",
+                          description: "Once the class is finished, click to email this required survey to all verified students.",
+                          form_embed_code: "html embed"
+TeacherSurvey.create! name: "Survey for Teachers",
+                      description: "Once this class is finished, fill this survey out.",
+                      form_embed_code: "html embed"

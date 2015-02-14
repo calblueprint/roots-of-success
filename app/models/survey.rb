@@ -8,6 +8,7 @@
 #  name            :string(255)
 #  form_embed_code :text
 #  type            :string(255)
+#  description     :text
 #
 
 class Survey < ActiveRecord::Base
