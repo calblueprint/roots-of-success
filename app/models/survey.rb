@@ -15,8 +15,6 @@ class Survey < ActiveRecord::Base
   validates :form_embed_code, presence: true
   validates :type, presence: true
 
-  has_paper_trail
-
   def instance
     false
   end
