@@ -1,6 +1,6 @@
 source "https://rubygems.org"
-source "https://rails-assets.org"
 
+gem "bundler", ">= 1.7.0"
 ruby "2.2.0"
 
 # Core gems
@@ -40,7 +40,9 @@ gem "title", "~> 0.0.5"
 gem "uglifier", "~> 2.6.0"
 
 gem "react-rails", "~> 1.0.0.pre", github: "reactjs/react-rails"
-gem "rails-assets-react-router", "~> 0.11.6"
+source "https://rails-assets.org" do
+  gem "rails-assets-react-router", "~> 0.11.6"
+end
 
 gem "bourbon", "~> 3.2.3"
 gem "neat", "~> 1.5.1"
