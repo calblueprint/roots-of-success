@@ -11,7 +11,4 @@
 #
 
 class TeacherSurvey < Survey
-  def self.instance
-    first
-  end
 end

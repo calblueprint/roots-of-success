@@ -4,7 +4,7 @@ module Teachers
 
     def index
       @participant_survey = ParticipantSurvey.instance
-      @teacher_survey = TeacherSurvey.instance
+      @teacher_surveys = TeacherSurvey.all
     end
   end
 end
