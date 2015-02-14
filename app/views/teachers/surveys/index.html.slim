@@ -10,10 +10,12 @@
         img src="#{placeholder_img_url}" alt=""
         h1.survey-title = t ".pre_post_test_name"
         p = t ".pre_post_test_desc"
+
       a.survey-teal-box href="javascript:void(0)"
         img src="#{placeholder_img_url}" alt=""
         h1.survey-title = @participant_survey.name
-        p Click to send an email with the participant survey to all confirmed students in the classroom.
+        p = @participant_survey.description
+
     .small-12.medium-6.columns
       h3 = t ".teacher_surveys_heading"
       .spacer-small
@@ -21,6 +23,6 @@
         a.survey-blue-box href="javascript:void(0)"
           img src="#{placeholder_img_url}" alt=""
           h1.survey-title = survey.name
-          p This is the survey you take once the class is finished.
+          p = survey.description
 
 - parent_layout "classroom_show"
