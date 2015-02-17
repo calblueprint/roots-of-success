@@ -1,8 +1,8 @@
 .survey {
   $base-border-radius: 3px;
-  $base-background-color: white;
+  $base-background-color: #ffffff;
   $dark-gray: #333;
-  $light-gray: #DDD;
+  $light-gray: #ddd;
   $base-font-color: $dark-gray;
 
   a {
@@ -48,6 +48,7 @@
 
 @mixin survey-box($color) {
   border-top: 6px solid $color;
+
   &:focus,
   &:hover {
     background-color: transparentize($color, 0.9);
@@ -55,17 +56,19 @@
 }
 
 .survey-red-box {
-  $color: tomato;
+  $color: #ff6347;
   @extend .survey;
   @include survey-box($color);
 }
+
 .survey-teal-box {
-  $color: #72BFBF;
+  $color: #72bfbd;
   @extend .survey;
   @include survey-box($color);
 }
+
 .survey-blue-box {
-  $color: #92B1E3;
+  $color: #92b1e3;
   @extend .survey;
   @include survey-box($color);
 }
