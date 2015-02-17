@@ -12,13 +12,12 @@
 #
 
 FactoryGirl.define do
-  factory :survey do
+  trait :survey do
     sequence(:name) { |n| "Survey #{n}" }
     description "Some description"
     form_embed_code "Some html"
-    type "InvalidSurvey"
-
-    factory(:participant_survey) { type "ParticipantSurvey" }
-    factory(:teacher_survey)     { type "TeacherSurvey" }
   end
+
+  factory :participant_survey, traits: [:survey]
+  factory :teacher_survey, traits: [:survey]
 end
