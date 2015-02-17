@@ -10,6 +10,7 @@ class StudentsController < ApplicationController
   end
 
   def confirm_survey
+    @student.survey_administered!
   end
 
   private
