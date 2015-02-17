@@ -32,6 +32,8 @@ Rails.application.routes.draw do
              to: "learning_modules#toggle_present", as: :learning_module_toggle_present
 
         resources :surveys, only: :index
+        post "/surveys/:id/administer",
+             to: "surveys#administer", as: :survey_administer
       end
     end
   end

@@ -11,7 +11,7 @@
         h1.survey-title = t ".pre_post_test_name"
         p = t ".pre_post_test_desc"
 
-      a.survey-teal-box href="javascript:void(0)"
+      a.survey-teal-box href="#{classroom_survey_administer_path @classroom, @participant_survey}" data-method="post" rel="nofollow"
         img src="#{placeholder_img_url}" alt=""
         h1.survey-title = @participant_survey.name
         p = @participant_survey.description

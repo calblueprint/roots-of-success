@@ -11,6 +11,7 @@ class Ability
       can :manage, Classroom, teacher_id: user.id
       can :manage, Student
       can [:index, :show, :toggle_present], LearningModule
+      can [:index, :administer], Survey
     end
   end
 end
