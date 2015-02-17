@@ -23,7 +23,7 @@ class Student < ActiveRecord::Base
   scope :confirmed,               -> { where confirmed: true }
   scope :unconfirmed,             -> { where confirmed: false }
   scope :survey_administered,     -> { where survey_administered: true }
-  scope :survey_not_administered, -> { where survey_administered: true }
+  scope :survey_not_administered, -> { where survey_administered: false }
 
   def to_s
     email

@@ -38,7 +38,7 @@ end
 
 ParticipantSurvey.create! name: "Survey for Participants",
                           description: "Once the class is finished, click to email this required survey to all verified students.",
-                          form_embed_code: "html embed"
+                          form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
 TeacherSurvey.create! name: "Survey for Teachers",
                       description: "Once this class is finished, fill this survey out.",
                       form_embed_code: "html embed"
