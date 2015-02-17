@@ -1,6 +1,6 @@
 source "https://rubygems.org"
-source "https://rails-assets.org"
 
+gem "bundler", ">= 1.7.0"
 ruby "2.2.0"
 
 # Core gems
@@ -11,16 +11,16 @@ gem "figaro", "~> 1.0.0"
 gem "sucker_punch", "~> 1.3.1"
 gem "active_model_serializers", "~> 0.9.2"
 gem "yajl-ruby", "~> 1.2.1"
-gem "awesome_print"
-gem "pry-rails"
 
 # Components
+gem "awesome_print"
 gem "cancancan", "~> 1.9.2"
 gem "devise", "~> 3.4.1"
 gem "email_validator", "~> 1.5.0"
 gem "ffaker", "~> 1.25.0"
 gem "gon", "~> 5.2.3"
 gem "kaminari", "~> 0.16.1"
+gem "pry-rails"
 gem "recipient_interceptor", "~> 0.1.2"
 gem "simple_form", "~> 3.1.0"
 gem "turbolinks", "~> 2.5.3"
@@ -39,7 +39,9 @@ gem "title", "~> 0.0.5"
 gem "uglifier", "~> 2.6.0"
 
 gem "react-rails", "~> 1.0.0.pre", github: "reactjs/react-rails"
-gem "rails-assets-react-router", "~> 0.11.6"
+source "https://rails-assets.org" do
+  gem "rails-assets-react-router", "~> 0.11.6"
+end
 
 gem "bourbon", "~> 3.2.3"
 gem "neat", "~> 1.5.1"

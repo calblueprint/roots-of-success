@@ -36,11 +36,5 @@ module Teachers
       redirect_to classroom_students_path(@student.classroom),
                   flash: { success: "Confirmation email resent." }
     end
-
-    private
-
-    def set_classroom
-      @classroom = Classroom.find params[:classroom_id]
-    end
   end
 end

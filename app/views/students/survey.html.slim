@@ -1,0 +1,16 @@
+.spacer
+.row
+  .small-12.columns
+    .center.paper.content
+      .spacer-small
+      .row
+        .small-12.medium-8.medium-push-2.columns
+          h3 = t ".heading", student_email: @student.email
+          .subtitle = t ".subtitle", classroom_name: @classroom.name
+          .spacer-small
+          = link_to t(".confirm_button"), confirm_survey_student_path(@student, confirmation_token: @confirmation_token), method: :post, class: "button success"
+      .spacer-small
+      .row
+        .small-12.columns
+          .fluid-media
+            = @survey.form_embed_code.html_safe

@@ -2,13 +2,14 @@
 #
 # Table name: students
 #
-#  id                 :integer          not null, primary key
-#  created_at         :datetime
-#  updated_at         :datetime
-#  email              :string(255)
-#  confirmation_token :string(255)
-#  confirmed          :boolean          default(FALSE)
-#  classroom_id       :integer
+#  id                  :integer          not null, primary key
+#  created_at          :datetime
+#  updated_at          :datetime
+#  email               :string(255)
+#  confirmation_token  :string(255)
+#  confirmed           :boolean          default(FALSE)
+#  classroom_id        :integer
+#  survey_administered :boolean          default(FALSE)
 #
 
 class Student < ActiveRecord::Base
@@ -19,8 +20,10 @@ class Student < ActiveRecord::Base
 
   before_save :set_confirmation_token
 
-  scope :confirmed, -> { where confirmed: true }
-  scope :unconfirmed, -> { where confirmed: false }
+  scope :confirmed,               -> { where confirmed: true }
+  scope :unconfirmed,             -> { where confirmed: false }
+  scope :survey_administered,     -> { where survey_administered: true }
+  scope :survey_not_administered, -> { where survey_administered: false }
 
   def to_s
     email
@@ -28,6 +31,11 @@ class Student < ActiveRecord::Base
 
   def confirm!
     self.confirmed = true
+    save
+  end
+
+  def survey_administered!
+    self.survey_administered = true
     save
   end
 

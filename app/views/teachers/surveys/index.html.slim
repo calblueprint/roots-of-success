@@ -1,0 +1,28 @@
+- pretest_url = "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/2-participant-pre-test.pdf"
+- placeholder_img_url = "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png"
+
+- content_for :classroom_show_content do
+  .row
+    .small-12.medium-6.columns
+      h3 = t ".student_surveys_heading"
+      .spacer-small
+      a.survey-red-box href="#{pretest_url}" target="_blank"
+        img src="#{placeholder_img_url}" alt=""
+        h1.survey-title = t ".pre_post_test_name"
+        p = t ".pre_post_test_desc"
+
+      a.survey-teal-box#participant-survey href="#{classroom_survey_administer_path @classroom, @participant_survey}" data-method="post" rel="nofollow"
+        img src="#{placeholder_img_url}" alt=""
+        h1.survey-title = @participant_survey.name
+        p = @participant_survey.description
+
+    .small-12.medium-6.columns
+      h3 = t ".teacher_surveys_heading"
+      .spacer-small
+      - @teacher_surveys.each do |survey|
+        a.survey-blue-box href="javascript:void(0)"
+          img src="#{placeholder_img_url}" alt=""
+          h1.survey-title = survey.name
+          p = survey.description
+
+- parent_layout "classroom_show"

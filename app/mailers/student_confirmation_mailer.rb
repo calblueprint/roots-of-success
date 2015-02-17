@@ -1,6 +1,4 @@
 class StudentConfirmationMailer < ActionMailer::Base
-  default from: "admin@ros.org"
-
   def confirmation_email(student, classroom)
     @student = student
     @classroom = classroom

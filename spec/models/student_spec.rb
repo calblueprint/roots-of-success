@@ -2,13 +2,14 @@
 #
 # Table name: students
 #
-#  id                 :integer          not null, primary key
-#  created_at         :datetime
-#  updated_at         :datetime
-#  email              :string(255)
-#  confirmation_token :string(255)
-#  confirmed          :boolean          default(FALSE)
-#  classroom_id       :integer
+#  id                  :integer          not null, primary key
+#  created_at          :datetime
+#  updated_at          :datetime
+#  email               :string(255)
+#  confirmation_token  :string(255)
+#  confirmed           :boolean          default(FALSE)
+#  classroom_id        :integer
+#  survey_administered :boolean          default(FALSE)
 #
 
 require 'rails_helper'

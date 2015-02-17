@@ -20,11 +20,5 @@ module Teachers
       end
       redirect_to classroom_learning_module_path(@classroom, @learning_module)
     end
-
-    private
-
-    def set_classroom
-      @classroom = Classroom.find params[:classroom_id]
-    end
   end
 end

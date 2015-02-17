@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   end
 
   resources :students, only: [] do
-    member { get :confirm }
+    member do
+      get :confirm
+      get :survey
+      post :confirm_survey
+    end
   end
 
   scope module: :teachers do
@@ -30,6 +34,10 @@ Rails.application.routes.draw do
             to: "learning_modules#show", as: :learning_module
         post "/learning_modules/:id/toggle_present",
              to: "learning_modules#toggle_present", as: :learning_module_toggle_present
+
+        resources :surveys, only: :index
+        post "/surveys/:id/administer",
+             to: "surveys#administer", as: :survey_administer
       end
     end
   end
