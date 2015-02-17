@@ -17,6 +17,7 @@ class StudentsController < ApplicationController
   def load_and_confirm_token
     @student = Student.find params[:id]
     @classroom = @student.classroom
-    render "confirm_failed" unless @student.confirmation_token == params[:confirmation_token]
+    @confirmation_token = params[:confirmation_token]
+    render "confirm_failed" unless @confirmation_token == params[:confirmation_token]
   end
 end
