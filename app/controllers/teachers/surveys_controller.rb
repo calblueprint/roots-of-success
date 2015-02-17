@@ -9,7 +9,7 @@ module Teachers
     end
 
     def administer
-      AdministerSurveyToClassroom.execute @participant_survey, classroom: @classroom
+      AdministerSurveyToClassroom.execute @classroom
       redirect_to classroom_surveys_path(@classroom), flash: { success: "Survey emailed!" }
     end
 

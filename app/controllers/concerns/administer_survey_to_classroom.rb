@@ -1,11 +1,7 @@
 class AdministerSurveyToClassroom
-  def self.execute(survey, options = {})
-    fail Exceptions::MissingSurvey unless survey
-    classroom = options[:classroom]
-    fail Exceptions::MissingClassroom unless classroom
-
+  def self.execute(classroom)
     students = classroom.students.confirmed.survey_not_administered
 
-    StudentSurveyMailerJob.new.async.perform students, survey: survey, classroom: classroom
+    StudentSurveyMailerJob.new.async.perform students, classroom: classroom
   end
 end
