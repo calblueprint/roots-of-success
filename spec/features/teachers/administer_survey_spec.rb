@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "The administer surveys page" do
-  before { ParticipantSurvey.destroy_all }
+  before { Survey.destroy_all }
   let(:teacher) { create :teacher }
   let!(:participant_survey) { create :participant_survey }
   let!(:teacher_surveys) { create_pair :teacher_survey }

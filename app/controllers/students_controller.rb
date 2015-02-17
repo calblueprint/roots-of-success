@@ -19,6 +19,6 @@ class StudentsController < ApplicationController
     @student = Student.find params[:id]
     @classroom = @student.classroom
     @confirmation_token = params[:confirmation_token]
-    render "confirm_failed" unless @confirmation_token == params[:confirmation_token]
+    render "confirm_failed" unless @student.confirmation_token == @confirmation_token
   end
 end
