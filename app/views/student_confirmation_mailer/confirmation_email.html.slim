@@ -2,8 +2,8 @@ html lang="en"
 head
   meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
 body
-  h3 Hey #{@student.email}!
-  h5 #{@teacher.name} has added you to his/her classroom, #{@classroom.name}.
+  h1 Hey #{@student.email}!
+  h3 #{@teacher.name} has added you to his/her classroom, #{@classroom.name}.
   = link_to "To confirm your enrollment in the class, please click this link.",\
             confirm_student_url(@student, confirmation_token: @student.confirmation_token)
 
