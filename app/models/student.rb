@@ -34,6 +34,11 @@ class Student < ActiveRecord::Base
     save
   end
 
+  def survey_administered!
+    self.survey_administered = true
+    save
+  end
+
   private
 
   def set_confirmation_token

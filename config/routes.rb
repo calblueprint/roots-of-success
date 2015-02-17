@@ -17,7 +17,8 @@ Rails.application.routes.draw do
   resources :students, only: [] do
     member do
       get :confirm
-      get :confirm_survey
+      get :survey
+      post :confirm_survey
     end
   end
 

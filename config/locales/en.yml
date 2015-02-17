@@ -35,6 +35,10 @@ en:
     confirm_failed:
       heading: Something went wrong with your request.
       subtitle: Double check your address and try again.
+    survey:
+      heading: You're done!
+      subtitle: Please fill out the following survey to provide us feedback about %{classroom_name}.
+      confirm_button: Click this button once you've hit submit.
 
   teachers:
     classrooms:
