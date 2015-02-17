@@ -1,3 +1,4 @@
 module Exceptions
-  class MissingClassroom < StandardError; end
+  class MissingClassroom < ArgumentError; end
+  class MissingSurvey < ArgumentError; end
 end

@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :students, only: [] do
-    member { get :confirm }
+    member do
+      get :confirm
+      get :confirm_survey
+    end
   end
 
   scope module: :teachers do
