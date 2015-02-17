@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214113534) do
+ActiveRecord::Schema.define(version: 20150217071947) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,8 +65,9 @@ ActiveRecord::Schema.define(version: 20150214113534) do
     t.datetime "updated_at"
     t.string   "email"
     t.string   "confirmation_token"
-    t.boolean  "confirmed",          default: false
+    t.boolean  "confirmed",           default: false
     t.integer  "classroom_id"
+    t.boolean  "survey_administered", default: false
   end
 
   add_index "students", ["classroom_id"], name: "index_students_on_classroom_id", using: :btree
