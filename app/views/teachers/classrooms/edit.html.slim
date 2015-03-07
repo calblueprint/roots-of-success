@@ -1,11 +1,26 @@
-.row
-  .small-12.columns
-    .center.paper
-      .row
-        .small-12.columns
-          h2 = t ".heading"
-          .subtitle = t ".subtitle"
+- content_for :classroom_show_content do
+  .row
+    .small-12.columns
+      = render "form_errors", obj: @classroom
+      = simple_form_for [@teacher, @classroom] do |f|
+        - [:name, :description].each do |attribute|
+          .row
+            .medium-4.columns.two-col-form-label
+              h5 = f.label attribute, required: false
+            .medium-7.end.columns.two-col-form-input
+              = f.input_field attribute
+        .row
+          .medium-4.columns.two-col-form-label
+            h5 = f.label :program_id, required: false
+          .medium-7.end.columns.two-col-form-input
+            = f.input_field :program_id, collection: @program_collection
 
-          .spacer-small
+        .spacer-small
+        = f.button :submit
 
-          = render "form", obj: @classroom, program_collection: @program_collection
+      .spacer-small
+
+      h3 Potentially Destructive Actions
+
+
+- parent_layout "classroom_show"
