@@ -20,7 +20,8 @@
                   = link_to "Administer Surveys", classroom_surveys_path(@classroom),\
                             class: ["button-group-item", active_if?(@active_tab == "surveys")]
                 label
-                  span.button-group-item Classroom Settings
+                  = link_to "Classroom Settings", edit_classroom_path(@classroom),\
+                            class: ["button-group-item", active_if?(@active_tab == "classroom_edit")]
 
         .spacer-small
 
