@@ -40,4 +40,12 @@ RSpec.describe Classroom, type: :model do
       expect(classroom.to_s).to eql classroom.name
     end
   end
+
+  describe "#transfer_to!" do
+    let(:other_teacher) { create :teacher }
+    it "changes the classroom's teacher" do
+      classroom.transfer_to! other_teacher
+      expect(classroom.teacher).to eql other_teacher
+    end
+  end
 end
