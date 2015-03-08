@@ -1,26 +1,44 @@
 - content_for :classroom_show_content do
   .row
     .small-12.columns
-      = render "form_errors", obj: @classroom
-      = simple_form_for [@teacher, @classroom] do |f|
-        - [:name, :description].each do |attribute|
-          .row
-            .medium-4.columns.two-col-form-label
-              h5 = f.label attribute, required: false
-            .medium-7.end.columns.two-col-form-input
-              = f.input_field attribute
-        .row
-          .medium-4.columns.two-col-form-label
-            h5 = f.label :program_id, required: false
-          .medium-7.end.columns.two-col-form-input
-            = f.input_field :program_id, collection: @program_collection
+      .boxed-group
+        h3 Update Classroom Info
+        .boxed-group-inner
+          = render "form_errors", obj: @classroom
+          = simple_form_for [@teacher, @classroom] do |f|
+            - [:name, :description].each do |attribute|
+              .row
+                .medium-4.columns.two-col-form-label
+                  h5 = f.label attribute, required: false
+                .medium-7.end.columns.two-col-form-input
+                  = f.input_field attribute
+            .row
+              .medium-4.columns.two-col-form-label
+                h5 = f.label :program_id, required: false
+              .medium-7.end.columns.two-col-form-input
+                = f.input_field :program_id, collection: @program_collection
 
-        .spacer-small
-        = f.button :submit
+            .spacer-small
+            = f.button :submit
 
       .spacer-small
 
-      h3 Potentially Destructive Actions
+      .boxed-group.dangerzone
+        h3 Destructive Actions
+        .boxed-group-inner
+          h5 Transfer Ownership
+          p Transfer ownership to another teacher. Enter the other teacher's email.
+          .row
+            = simple_form_for :transfer do |f|
+              .medium-6.medium-offset-2.columns
+                = f.input_field :teacher_email
+              .medium-4.columns.left
+                = f.button :submit, value: "Change owner"
+          hr
+          h5 Delete Classroom
+          p This is irreversible. Students in other classrooms will remain enrolled.
+          = link_to "Delete", "#", class: "button danger"
+
 
 
 - parent_layout "classroom_show"
