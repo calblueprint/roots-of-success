@@ -2,7 +2,7 @@
   .row
     .small-12.columns
       .boxed-group
-        h3 Update Classroom Info
+        h3 = t ".info.heading"
         .boxed-group-inner
           = render "form_errors", obj: @classroom
           = simple_form_for [@teacher, @classroom] do |f|
@@ -24,20 +24,20 @@
       .spacer-small
 
       .boxed-group.dangerzone
-        h3 Destructive Actions
+        h3 = t ".danger.heading"
         .boxed-group-inner
-          h5 Transfer Ownership
-          p Transfer ownership to another teacher. Enter the other teacher's email.
+          h5 = t ".danger.transfer.heading"
+          p = t ".danger.transfer.subtitle"
           .row
             = simple_form_for :teacher_transfer, url: transfer_classroom_path do |f|
               .medium-6.medium-offset-2.columns
                 = f.input_field :email, placeholder: "Email"
               .medium-4.columns.two-col-form-input
-                = f.button :submit, value: "Change Owner", class: "button warning"
+                = f.button :submit, value: "Change Owner", "data-confirm": t(".danger.transfer.confirm"), class: "button warning"
           hr
           h5 Delete Classroom
           p This is irreversible. Students in other classrooms will remain enrolled.
-          = link_to "Delete", "#", class: "button danger"
+          = link_to "Delete", classroom_path, method: :delete, "data-confirm": t(".danger.delete.confirm"), class: "button danger"
 
 
 
