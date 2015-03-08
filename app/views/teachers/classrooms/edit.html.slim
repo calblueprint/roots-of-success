@@ -33,12 +33,10 @@
               .medium-6.medium-offset-2.columns
                 = f.input_field :email, placeholder: "Email"
               .medium-4.columns.two-col-form-input
-                = f.button :submit, value: "Change Owner", "data-confirm": t(".danger.transfer.confirm"), class: "button warning"
+                = f.button :submit, value: "Change Owner", "data-confirm": t(".danger.transfer.confirm"), class: "button warning", id: "submit_teacher_transfer"
           hr
           h5 Delete Classroom
           p This is irreversible. Students in other classrooms will remain enrolled.
-          = link_to "Delete", classroom_path, method: :delete, "data-confirm": t(".danger.delete.confirm"), class: "button danger"
-
-
+          = link_to "Delete", classroom_path, method: :delete, "data-confirm": t(".danger.delete.confirm"), class: "button danger", id: "delete_classroom"
 
 - parent_layout "classroom_show"
