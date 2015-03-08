@@ -30,4 +30,11 @@ input[type="submit"] {
       background-color: $warning-hover-button-color;
     }
   }
+
+  &.danger {
+    background-color: $danger-button-color;
+    &:hover {
+      background-color: $danger-hover-button-color;
+    }
+  }
 }
