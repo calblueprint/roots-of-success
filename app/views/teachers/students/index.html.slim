@@ -10,7 +10,7 @@
               tr
                 th Email
                 th Confirmed
-                th Survey Done
+                th Survey Taken
                 th Actions
             tbody
               - @students.each do |student|
@@ -21,10 +21,9 @@
                   td
                     .actions
                       - unless student.confirmed?
-                        a.icon.email-icon data-method="post" href="#{resend_confirmation_student_path student}" rel="nofollow"
+                        a.icon.email-icon.hint--top data-method="post" data-hint="Resend confirmation email" href="#{resend_confirmation_student_path student}" rel="nofollow"
                           i.fa.fa-inbox
-                      a.icon.delete-icon [data-method="delete" href="#{student_path student}" rel="nofollow"
-                                          data-confirm="#{t ".confirm_delete", student_email: student.email}"]
+                      a.icon.delete-icon.hint--top data-method="delete" data-hint="Delete" href="#{student_path student}" rel="nofollow"data-confirm="#{t ".confirm_delete", student_email: student.email}"
                         i.fa.fa-close
 
 - parent_layout "classroom_show"
