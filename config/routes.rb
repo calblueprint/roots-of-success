@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   scope module: :teachers do
     resources :teachers, only: [:edit, :update] do
       resources :classrooms, shallow: true do
+        member { post :transfer }
+
         resources :students, only: [:new, :create, :index, :destroy] do # Other actions to come
           member { post :resend_confirmation }
         end

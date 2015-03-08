@@ -29,11 +29,11 @@
           h5 Transfer Ownership
           p Transfer ownership to another teacher. Enter the other teacher's email.
           .row
-            = simple_form_for :transfer do |f|
+            = simple_form_for :teacher_transfer, url: transfer_classroom_path do |f|
               .medium-6.medium-offset-2.columns
-                = f.input_field :teacher_email
-              .medium-4.columns.left
-                = f.button :submit, value: "Change owner"
+                = f.input_field :email, placeholder: "Email"
+              .medium-4.columns.two-col-form-input
+                = f.button :submit, value: "Change Owner", class: "button warning"
           hr
           h5 Delete Classroom
           p This is irreversible. Students in other classrooms will remain enrolled.
