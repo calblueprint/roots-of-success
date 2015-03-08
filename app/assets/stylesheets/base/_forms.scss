@@ -84,6 +84,13 @@ select {
   }
 }
 
+/* In a two column form the input should be left aligned on medium screens and up */
+.two-col-form-input {
+  @include media($medium-screen-up) {
+    text-align: left;
+  }
+}
+
 /* Errors styling */
 .errors {
   display: block;

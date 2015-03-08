@@ -51,8 +51,16 @@ en:
       create:
         success: Created classroom!
       edit:
-        heading: Edit Classroom
-        subtitle: Make it better.
+        info:
+          heading: Update Classroom Info
+        danger:
+          heading: Destructive Actions
+          transfer:
+            heading: Transfer Ownership
+            subtitle: Transfer ownership of this classroom to another teacher. Enter the other teacher's email.
+            confirm: Are you sure you want to transfer owners?
+          delete:
+            confirm: This classroom will be permanently destroyed. Are you sure?
       update:
         success: Updated classroom!
 

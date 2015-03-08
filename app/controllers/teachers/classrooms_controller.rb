@@ -3,6 +3,7 @@ module Teachers
     UPDATABLE_ATTRS = [:name, :description, :program_id]
     load_and_authorize_resource # loads @classroom
 
+    before_filter :set_active_tab, only: [:edit, :update]
     before_filter :set_teacher, only: [:new, :create, :index]
     before_filter :set_program_collection, only: [:new, :create, :edit, :update]
 
@@ -28,23 +29,27 @@ module Teachers
     end
 
     def edit
-      # TODO: Replace with classroom settings tab on classroom show
-      # https://github.com/calblueprint/roots-of-success/issues/147
     end
 
     def update
-      # TODO: Replace with classroom settings tab on classroom show
-      # https://github.com/calblueprint/roots-of-success/issues/147
       if @classroom.update classroom_params
-        redirect_to @classroom, flash: { success: t(".success") }
+        redirect_to edit_classroom_path(@classroom), flash: { success: t(".success") }
       else
         render "edit"
       end
     end
 
+    def transfer
+      other_teacher = Teacher.find_by email: params[:teacher_transfer][:email]
+      if other_teacher
+        @classroom.transfer_to! other_teacher
+        redirect_to teacher_dashboard_path, flash: { success: "#{@classroom} transfered!" }
+      else
+        redirect_to edit_classroom_path(@classroom), flash: { error: "No teacher found with that email." }
+      end
+    end
+
     def destroy
-      # TODO: Replace with classroom settings tab on classroom show
-      # https://github.com/calblueprint/roots-of-success/issues/147
       @classroom.destroy
       redirect_to teacher_dashboard_path
     end
@@ -53,6 +58,10 @@ module Teachers
 
     def classroom_params
       params.require(:classroom).permit(UPDATABLE_ATTRS)
+    end
+
+    def set_active_tab
+      @active_tab = "classroom_edit"
     end
 
     def set_teacher

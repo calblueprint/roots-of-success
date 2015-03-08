@@ -32,4 +32,9 @@ class Classroom < ActiveRecord::Base
   def to_s
     name
   end
+
+  def transfer_to!(other_teacher)
+    self.teacher = other_teacher
+    save!
+  end
 end

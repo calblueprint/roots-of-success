@@ -12,14 +12,15 @@
 @import "dataTables/jquery.dataTables.css";
 @import "select2";
 
-@import "shared/general";
-@import "shared/header";
-@import "shared/paper";
-@import "shared/cards";
+@import "shared/boxed_group";
 @import "shared/button_groups";
+@import "shared/cards";
+@import "shared/general";
 @import "shared/grid_items";
-@import "shared/select2";
+@import "shared/header";
 @import "shared/icons";
+@import "shared/paper";
+@import "shared/select2";
 @import "shared/surveys";
 
 @import "login";
