@@ -4,18 +4,20 @@
       .spacer-small
 
       .row
-        .medium-10.medium-push-1.columns
+        .large-10.large-push-1.columns
           table#students-table.display
             thead
               tr
                 th Email
                 th Confirmed
+                th Survey Done
                 th Actions
             tbody
               - @students.each do |student|
                 tr id="#{dom_id student}"
                   td = student.email
                   td = yes_no student.confirmed?
+                  td = yes_no student.survey_administered?
                   td
                     .actions
                       - unless student.confirmed?

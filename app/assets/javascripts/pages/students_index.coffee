@@ -6,7 +6,8 @@ studentDatatable = ->
     info: false
     dom: '<"#add-students-button">frtip'
     columns: [
-      { className: "dt-left", width: "60%"},
+      { className: "dt-left", width: "50%"},
+      { className: "dt-center" },
       { className: "dt-center" },
       { className: "dt-center", bSortable: false }
     ]
