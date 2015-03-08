@@ -39,6 +39,16 @@ module Teachers
       end
     end
 
+    def transfer
+      other_teacher = Teacher.find_by email: params[:teacher_transfer][:email]
+      if other_teacher
+        @classroom.transfer_to! other_teacher
+        redirect_to teacher_dashboard_path, flash: { success: "#{@classroom} transfered!" }
+      else
+        redirect_to edit_classroom_path(@classroom), flash: { error: "No teacher found with that email." }
+      end
+    end
+
     def destroy
       @classroom.destroy
       redirect_to teacher_dashboard_path
