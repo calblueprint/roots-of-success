@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
       # Future API routes here
     end
   end
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 
   devise_scope :teacher do
     root to: "devise/sessions#new"

@@ -17,4 +17,11 @@ class AdminUser < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable,
          :rememberable, :validatable
+
+  # Send email to set password on creation
+  after_create :send_reset_password_instructions
+
+  def password_required?
+    new_record? ? false : super
+  end
 end
