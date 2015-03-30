@@ -42,3 +42,5 @@ ParticipantSurvey.create! name: "Survey for Participants",
 TeacherSurvey.create! name: "Survey for Teachers",
                       description: "Once this class is finished, fill this survey out.",
                       form_embed_code: "html embed"
+
+AdminUser.create! email: "admin@ros.org", password: "password"

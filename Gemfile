@@ -11,6 +11,7 @@ gem "figaro", "~> 1.0.0"
 gem "sucker_punch", "~> 1.3.1"
 gem "active_model_serializers", "~> 0.9.2"
 gem "yajl-ruby", "~> 1.2.1"
+gem "activeadmin", "~> 1.0.0.pre1"
 
 # Components
 gem "awesome_print"
