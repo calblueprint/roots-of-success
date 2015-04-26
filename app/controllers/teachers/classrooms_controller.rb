@@ -21,6 +21,8 @@ module Teachers
     end
 
     def show
+      # Default view is students index.
+      redirect_to classroom_students_path @classroom
     end
 
     def index
