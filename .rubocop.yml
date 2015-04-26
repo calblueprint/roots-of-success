@@ -8,6 +8,7 @@ AllCops:
     - db/seeds.rb
     - db/migrate/**/*devise*.rb
     - db/migrate/**/*versions*.rb
+    - db/migrate/**/*active_admin*.rb
     - spec/spec_helper.rb
     - Guardfile
 
