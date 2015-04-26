@@ -6,11 +6,6 @@ en:
       classroom:
         program: Curriculum Version
 
-  simple_form:
-    labels:
-      defaults:
-        program_id: Curriculum Version
-
   date:
     formats:
       default:
