@@ -1,4 +1,11 @@
 en:
+  activerecord:
+    models:
+      program: Curriculum Version
+    attributes:
+      classroom:
+        program: Curriculum Version
+
   date:
     formats:
       default:

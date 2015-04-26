@@ -54,13 +54,14 @@ group :development do
   gem "annotate"
   gem "better_errors"
   gem "binding_of_caller"
+  gem "guard-livereload"
+  gem "guard-rubocop"
+  gem "i18n-tasks"
+  gem "letter_opener"
   gem "quiet_assets"
+  gem "rubocop"
   gem "spring"
   gem "spring-commands-rspec"
-  gem "rubocop"
-  gem "guard-rubocop"
-  gem "guard-livereload"
-  gem "i18n-tasks"
 end
 
 group :development, :test do
