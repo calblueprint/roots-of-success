@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   end
 
   scope module: :teachers do
+    resources :changelog_items, only: [:index]
+
     resources :teachers, only: [:edit, :update] do
       resources :classrooms, shallow: true do
         member { post :transfer }
