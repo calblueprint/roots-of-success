@@ -30,19 +30,17 @@ Rails.application.routes.draw do
       resources :classrooms, shallow: true do
         member { post :transfer }
 
-        resources :students, only: [:new, :create, :index, :destroy] do # Other actions to come
+        resources :students, only: [:new, :create, :index, :destroy] do
           member { post :resend_confirmation }
         end
 
         resources :learning_modules, only: :index
-        get "/learning_modules/:id",
-            to: "learning_modules#show", as: :learning_module
+        get "/learning_modules/:id", to: "learning_modules#show", as: :learning_module
         post "/learning_modules/:id/toggle_present",
              to: "learning_modules#toggle_present", as: :learning_module_toggle_present
 
         resources :surveys, only: :index
-        post "/surveys/:id/administer",
-             to: "surveys#administer", as: :survey_administer
+        post "/surveys/:id/administer", to: "surveys#administer", as: :survey_administer
       end
     end
   end
