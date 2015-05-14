@@ -51,6 +51,11 @@ en:
       confirm_button: Click this button once you've hit submit.
 
   teachers:
+    changelog_items:
+      index:
+        heading: Changelog and Updates
+        subtitle: Keep up to date!
+
     classrooms:
       new:
         heading: Create a Classroom
