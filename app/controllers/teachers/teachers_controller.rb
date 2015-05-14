@@ -8,7 +8,7 @@ module Teachers
 
     def update
       if @teacher.update teacher_params
-        redirect_to teacher_dashboard_path
+        redirect_to teacher_dashboard_path, flash: { success: "Thanks for updating your info!" }
       else
         render "edit"
       end

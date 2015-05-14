@@ -77,15 +77,15 @@ select {
   width: auto;
 }
 
-/* In a two column form the label should be right aligned on medium screens and up */
-.two-col-form-label {
+/* Right-align left col text on medium screens */
+.two-col-left {
   @include media($medium-screen-up) {
     text-align: right;
   }
 }
 
-/* In a two column form the input should be left aligned on medium screens and up */
-.two-col-form-input {
+/* Left-align right col text on medium screens */
+.two-col-right {
   @include media($medium-screen-up) {
     text-align: left;
   }

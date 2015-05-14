@@ -10,8 +10,8 @@
           = simple_form_for @teacher do |f|
             - Teachers::TeachersController::UPDATABLE_ATTRS.each do |attribute|
               .row
-                .medium-6.columns.two-col-form-label
+                .medium-5.columns.two-col-left
                   h5 = f.label attribute, required: false
-                .medium-6.columns.two-col-form-input
+                .medium-6.columns.end.two-col-right
                   = f.input_field attribute
             = f.button :submit, "Update my info!"
