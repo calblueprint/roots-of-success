@@ -12,14 +12,14 @@
           = simple_form_for [@teacher, @classroom] do |f|
             - [:name, :description].each do |attribute|
               .row
-                .medium-4.columns.two-col-form-label
+                .medium-4.columns.two-col-left
                   h5 = f.label attribute, required: false
-                .medium-7.end.columns.two-col-form-input
+                .medium-7.end.columns.two-col-right
                   = f.input_field attribute
             .row
-              .medium-4.columns.two-col-form-label
+              .medium-4.columns.two-col-left
                 h5 = f.label :program_id, required: false
-              .medium-7.end.columns.two-col-form-input
+              .medium-7.end.columns.two-col-right
                 = f.input_field :program_id, collection: @program_collection
 
             .spacer-small
