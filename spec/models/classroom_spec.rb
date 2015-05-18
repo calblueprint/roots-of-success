@@ -10,6 +10,7 @@
 #  program_id  :integer
 #  active      :boolean          default(TRUE)
 #  description :text
+#  card_image  :string(255)
 #
 
 require 'rails_helper'

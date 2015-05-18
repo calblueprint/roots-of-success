@@ -10,6 +10,7 @@
 #  program_id  :integer
 #  active      :boolean          default(TRUE)
 #  description :text
+#  card_image  :string(255)
 #
 
 class Classroom < ActiveRecord::Base
@@ -30,6 +31,8 @@ class Classroom < ActiveRecord::Base
   scope :inactive, -> { where active: false }
 
   delegate :learning_modules, to: :program
+
+  attachment :card_image
 
   def to_s
     name
