@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree ./vendor
 //= require select2
+//= require refile
 //= require utilities
 //= require_tree ./shared
 //= require_tree ./pages
