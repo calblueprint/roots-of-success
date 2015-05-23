@@ -2,7 +2,7 @@
 - img_url = "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png"
 = link_to classroom, class: "card" do
   .card-image
-    img src="#{img_url}" alt=""
+    = attachment_image_tag(classroom, :card_image, fallback: "classroom_placeholder.png")
   .card-header = classroom.name
   .card-copy = classroom.description.truncate 150, separator: " "
   / TODO: Get actual stats
