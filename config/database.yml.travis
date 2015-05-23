@@ -1,4 +1,0 @@
-test:
-  adapter: postgresql
-  database: roots-of-success_test
-  username: postgres
