@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/refile/refile-s3
+  revision: d0a1b48b4103decc5d3533420c271297a5230dba
+  specs:
+    refile-s3 (0.0.1)
+      aws-sdk (~> 2.0)
+      refile (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -62,6 +70,14 @@ GEM
     autoprefixer-rails (4.0.2.2)
       execjs
     awesome_print (1.6.1)
+    aws-sdk (2.0.45)
+      aws-sdk-resources (= 2.0.45)
+    aws-sdk-core (2.0.45)
+      builder (~> 3.0)
+      jmespath (~> 1.0)
+      multi_json (~> 1.0)
+    aws-sdk-resources (2.0.45)
+      aws-sdk-core (= 2.0.45)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -192,6 +208,8 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
+    jmespath (1.0.2)
+      multi_json (~> 1.0)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -480,6 +498,7 @@ DEPENDENCIES
   recipient_interceptor (~> 0.1.2)
   refile
   refile-mini_magick
+  refile-s3!
   rollbar
   rspec-rails (~> 3.1.0)
   rubocop
