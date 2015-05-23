@@ -14,6 +14,8 @@ en:
     labels:
       defaults:
         program_id: Curriculum Version
+        card_image: Card Image
+        remove_card_image: Revert back to default image
     # Examples
     # labels:
     #   defaults:

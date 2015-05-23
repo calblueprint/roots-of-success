@@ -1,6 +1,6 @@
 module Teachers
   class ClassroomsController < BaseController
-    UPDATABLE_ATTRS = [:name, :description, :program_id, :card_image]
+    UPDATABLE_ATTRS = [:name, :description, :program_id, :card_image, :remove_card_image]
     load_and_authorize_resource # loads @classroom
 
     before_action :set_active_tab, only: [:edit, :update]
