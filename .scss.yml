@@ -1,5 +1,0 @@
-exclude: "app/assets/stylesheets/vendor/**"
-
-linters:
-  HexNotation:
-    enabled: false
