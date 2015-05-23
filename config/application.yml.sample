@@ -3,24 +3,25 @@
 SECRET_KEY_BASE: 8e168503f7ee66234f1dc6cb00a7f3ccba5b8cf47bb0e7c274420b84a2e05651b5e8fb05e26c95b6938366b164fc62095b17c733ce0af4164aca087f3d11503f
 DEVISE_SECRET_KEY: 4ac6fd9e803620137698c9723ed0c403169eaaeaa2de9872d13cb4ec6a1cad5a23c6da5bb21b016466cfd51b5628a95335a97a1003ca2e03ecb4030c5c82ecf7
 
-# Email config
-SMTP_ADDRESS: <your smtp address>
-SMTP_DOMAIN: <your domain>
-SMTP_PASSWORD: <api_key>
-SMTP_USERNAME: <user_name>
-
-# Staging will send emails to this address
-EMAIL_RECIPIENTS: ~
-staging:
-  EMAIL_RECIPIENTS: <email>
-
-# Rollbar access token; change both to match your own rollbar project
-ROLLBAR_ACCESS_TOKEN: <your rollbar client access token>
-production:
-  ROLLBAR_ACCESS_TOKEN: <your rollbar server access token>
-
 # Google analytics key; update once you set it up
-GA_KEY: UA-XXXXXXXX-X
-# Disabled in testing
-test:
-  GA_KEY: ~
+# Disabled in development and test
+GA_KEY: ~
+
+production:
+  AWS_ACCESS_KEY_ID: <fill_me_in>
+  AWS_SECRET_KEY: <fill_me_in>
+  # Email config
+  SMTP_ADDRESS: smtp.mandrillapp.com
+  SMTP_DOMAIN: ros-production.herokuapp.com
+  SMTP_USERNAME: <fill_me_in>
+  SMTP_PASSWORD: <fill_me_in>
+
+  ROLLBAR_ACCESS_TOKEN: <fill_me_in>
+  GA_KEY: <fill_me_in>
+
+staging:
+  AWS_ACCESS_KEY_ID: <fill_me_in>
+  AWS_SECRET_KEY: <fill_me_in>
+  # Staging will send emails to this address
+  EMAIL_RECIPIENTS: sam@calblueprint.org
+  ROLLBAR_ACCESS_TOKEN: <fill_me_in>

@@ -2,14 +2,15 @@
 #
 # Table name: classrooms
 #
-#  id          :integer          not null, primary key
-#  created_at  :datetime
-#  updated_at  :datetime
-#  name        :string(255)
-#  teacher_id  :integer
-#  program_id  :integer
-#  active      :boolean          default(TRUE)
-#  description :text
+#  id            :integer          not null, primary key
+#  created_at    :datetime
+#  updated_at    :datetime
+#  name          :string(255)
+#  teacher_id    :integer
+#  program_id    :integer
+#  active        :boolean          default(TRUE)
+#  description   :text
+#  card_image_id :string(255)
 #
 
 class Classroom < ActiveRecord::Base
@@ -30,6 +31,8 @@ class Classroom < ActiveRecord::Base
   scope :inactive, -> { where active: false }
 
   delegate :learning_modules, to: :program
+
+  attachment :card_image, type: :image
 
   def to_s
     name

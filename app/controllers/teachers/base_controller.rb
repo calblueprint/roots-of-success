@@ -1,7 +1,7 @@
 module Teachers
   class BaseController < ApplicationController
-    before_filter :authorize_access!
-    before_filter :set_active_tab
+    before_action :authorize_access!
+    before_action :set_active_tab
 
     private
 

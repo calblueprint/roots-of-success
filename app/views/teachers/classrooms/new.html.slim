@@ -12,15 +12,23 @@
           = simple_form_for [@teacher, @classroom] do |f|
             - [:name, :description].each do |attribute|
               .row
-                .medium-4.columns.two-col-form-label
-                  h5 = f.label attribute, required: false
-                .medium-7.end.columns.two-col-form-input
+                .medium-4.columns.two-col-left
+                  h5 = f.label attribute
+                .medium-7.end.columns.two-col-right
                   = f.input_field attribute
             .row
-              .medium-4.columns.two-col-form-label
-                h5 = f.label :program_id, required: false
-              .medium-7.end.columns.two-col-form-input
+              .medium-4.columns.two-col-left
+                h5 = f.label :program_id
+              .medium-7.end.columns.two-col-right
                 = f.input_field :program_id, collection: @program_collection
+
+            .spacer-small
+            .row
+              .medium-4.columns.two-col-left
+                h5 = f.label :card_image
+              .medium-7.end.columns.two-col-right
+                = f.attachment_field :card_image, direct: true
+                p Leave blank to use a default image.
 
             .spacer-small
             = f.button :submit

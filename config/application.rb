@@ -18,9 +18,6 @@ module RootsOfSuccess
     # Load lib/ files
     config.autoload_paths << Rails.root.join("lib")
 
-    # Enable react addons
-    config.react.addons = true
-
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.i18n.enforce_available_locales = true
     config.active_record.default_timezone = :utc
@@ -37,6 +34,12 @@ module RootsOfSuccess
     end
 
     config.action_mailer.default_options = { from: "Roots of Success Admin <admin@ros.org>" }
+
+    # Use sidekiq for active job
+    config.active_job.queue_adapter = :sidekiq
+
+    # Raise error when callbacks error
+    config.active_record.raise_in_transactional_callbacks = true
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

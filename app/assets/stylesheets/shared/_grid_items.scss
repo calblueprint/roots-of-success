@@ -1,23 +1,13 @@
-/* http://refills.bourbon.io/#grid-items */
+// http://refills.bourbon.io/#grid-items
 @mixin grid-item-columns($columns) {
   width: (100% / 12) * $columns;
 }
 
+// Used for the learning module squares
 .grid-items {
-
-///////////////////////////////////////////////////////////////////////////////////
-  p {
-    line-height: 1.5em;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-//////////////////////////////////////////////////////////////////////////////////
-
-  $grid-items-background: white;
+  $grid-items-background: $white;
   $grid-item-background: desaturate($base-accent-color, 30%);
+  // scss-lint:disable ColorVariable
   $grid-item-colors:
     desaturate($base-accent-color, 30%),
     #3581A5,
@@ -29,13 +19,22 @@
     desaturate($base-accent-color, 30%),
     #3581A5,
     #5FBEBE;
+  // scss-lint:enable ColorVariable
   $grid-item-border-size: 9px;
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
-  $grid-item-color: white;
+  $grid-item-color: $white;
   $grid-item-height: 14em;
 
   @include clearfix;
+
+  p {
+    line-height: 1.5em;
+  }
+
+  a {
+    text-decoration: none;
+  }
 
   .grid-item {
     @include transition (all 0.2s ease-in-out);
@@ -47,8 +46,8 @@
     cursor: pointer;
     float: left;
     height: $grid-item-height;
-    overflow: hidden;
     outline: none;
+    overflow: hidden;
     padding: 4em 2em 2em;
     text-align: center;
     width: 100%;
@@ -58,63 +57,55 @@
     }
 
     @for $i from 1 through length($grid-item-colors) {
-// assign colors from $grid-item-colors list
+      // assign colors from $grid-item-colors list
       &:nth-child(#{$i}) {
         $background-from-list: nth($grid-item-colors, $i);
         background-color: $background-from-list;
-        box-shadow: inset 0px 0px 1px 2px darken($background-from-list, 10%);
+        box-shadow: inset 0 0 1px 2px darken($background-from-list, 10%);
 
         &:focus,
         &:hover {
           background-color: darken($background-from-list, 10%);
-          background-repeat: no-repeat;
           background-position: top;
+          background-repeat: no-repeat;
           background-size: cover;
         }
       }
     }
-  }
 
-  .grid-item img {
+    img {
       display: block;
       height: 3em;
-      margin-bottom: 1em;
       margin: auto;
+      margin-bottom: 1em;
     }
 
-  .grid-item h1 {
+    h1 {
       color: $grid-item-color;
       font-size: 2em;
       margin-bottom: 0.4em;
     }
 
-  .grid-item p {
-      margin: auto;
+    p {
       color: transparentize($grid-item-color, 0.3);
+      margin: auto;
 
       @include media($medium-screen) {
         max-width: 80%;
       }
     }
+  }
 
   .grid-item-big {
     @include media($large-screen) {
       @include grid-item-columns($grid-item-big-columns);
     }
+
     p {
       @include media($medium-screen) {
         max-width: 60%;
       }
     }
-  }
-
-  .grid-item-image {
-    background: url("https:
-//raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");
-    background-color: $grid-item-background;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   // @for $i from 1 through length($grid-item-colors) {

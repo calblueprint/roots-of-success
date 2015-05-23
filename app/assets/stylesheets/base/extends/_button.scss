@@ -1,8 +1,8 @@
 %button {
-  -webkit-font-smoothing: antialiased;
+  // -webkit-font-smoothing: antialiased;
   background-color: $base-button-color;
   border-radius: $base-border-radius;
-  color: white;
+  color: $white;
   display: inline-block;
   font-size: $base-font-size;
   font-weight: bold;
@@ -10,9 +10,11 @@
   padding: 0.75em 1em;
   text-decoration: none;
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: $hover-button-color;
-    color: white;
+    color: $white;
   }
 
   &:disabled {

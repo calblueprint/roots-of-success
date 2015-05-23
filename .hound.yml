@@ -12,7 +12,7 @@ java_script:
 
 scss:
   enabled: true
-  config_file: ./.scss.yml
+  config_file: ./.scss-lint.yml
 
 # Show cop names by default; can commment out if needed
 ShowCopNames: true

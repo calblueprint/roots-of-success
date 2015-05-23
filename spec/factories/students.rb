@@ -17,6 +17,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "student#{n}@gmail.com" }
     confirmation_token "token"
     confirmed false
+    survey_administered false
     classroom
   end
 end

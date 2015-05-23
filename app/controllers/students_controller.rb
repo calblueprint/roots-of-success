@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_filter :load_and_confirm_token
+  before_action :load_and_confirm_token
 
   def confirm
     @student.confirm!

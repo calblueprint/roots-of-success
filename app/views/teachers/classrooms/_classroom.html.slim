@@ -2,15 +2,15 @@
 - img_url = "https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png"
 = link_to classroom, class: "card" do
   .card-image
-    img src="#{img_url}" alt=""
+    = attachment_image_tag(classroom, :card_image, fallback: "classroom_placeholder.png")
   .card-header = classroom.name
   .card-copy = classroom.description.truncate 150, separator: " "
   / TODO: Get actual stats
   .card-stats
     ul
       li
-        span.label 2
-        span Modules presented
+        span.label = classroom.presented_modules_count
+        span = classroom.presented_modules_label
       li
-        span.label No
-        span Surveys Given
+        span.label = classroom.survey_stats
+        span = classroom.survey_stats_label

@@ -1,8 +1,8 @@
-/* Styling for paper.
-   https://github.com/FezVrasta/bootstrap-material-design/blob/master/less/_cards.less */
+// Styling for paper.
+// https://github.com/FezVrasta/bootstrap-material-design/blob/master/less/_cards.less
 .paper {
   background-color: $paper-background-color;
+  border-radius: $paper-border-radius;
   box-shadow: $paper-box-shadow;
   padding: $paper-padding;
-  border-radius: $paper-border-radius;
 }

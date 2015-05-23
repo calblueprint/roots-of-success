@@ -46,7 +46,7 @@ Rails.application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -58,7 +58,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = "https://d1vocrwm8gokzm.cloudfront.net/"
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -84,7 +84,4 @@ Rails.application.configure do
 
   # Set host to production heroku app
   config.action_mailer.default_url_options = { host: "ros-production.herokuapp.com" }
-
-  # Use production version of react
-  config.react.variant = :production
 end

@@ -1,16 +1,16 @@
-/* http://refills.bourbon.io/#cards */
+// http://refills.bourbon.io/#cards
 .card {
   @include transition (all 0.2s ease-in-out);
   background-color: $card-background;
-  border-radius: $base-border-radius;
   border: $card-border;
-  margin-bottom: $base-spacing;
-  cursor: pointer;
+  border-radius: $base-border-radius;
   box-shadow: $card-box-shadow;
-  display: block;
-  position: relative;
   color: $base-font-color;
+  cursor: pointer;
+  display: block;
   height: $card-height;
+  margin-bottom: $base-spacing;
+  position: relative;
 
   @include media($large-screen) {
     @include span-columns(4);
@@ -18,15 +18,15 @@
   }
 
   .card-image {
-    overflow: hidden;
     max-height: 150px;
+    overflow: hidden;
 
     img {
-      width: 100%;
       @include transition (all 0.2s ease-in-out);
       background: $card-image-background;
       border-top-left-radius: $base-border-radius;
       border-top-right-radius: $base-border-radius;
+      width: 100%;
     }
   }
 
@@ -41,27 +41,27 @@
 
   .card-copy {
     background-color: $card-background;
-    padding: $base-spacing/2 $gutter/2;
-    font-size: .9em;
-    line-height: 1.5em;
+    font-size: 0.9em;
     // Add height for consistent height
     height: em(130px);
+    line-height: 1.5em;
+    padding: $base-spacing/2 $gutter/2;
   }
 
   .card-stats {
     background-color: $card-background;
-    padding: $base-spacing/2 $gutter/2;
     overflow: auto;
+    padding: $base-spacing/2 $gutter/2;
 
     ul li {
-      display: inline;
+      border-right: 1px solid transparentize($base-font-color, 0.8);
       color: $card-stats-color;
-      font-weight: 800;
-      font-size: 1.2em;
+      display: inline;
       float: left;
-      border-right: 1px solid transparentize($base-font-color, .8);
+      font-size: 1.2em;
+      font-weight: 800;
       line-height: 1.1em;
-      padding: 0 .7em 0 .7em;
+      padding: 0 0.7em;
 
       &:first-child {
         padding-left: 0;
@@ -73,15 +73,15 @@
 
       span {
         color: $base-font-color;
-        font-size: .7em;
         display: block;
+        font-size: 0.7em;
         font-weight: normal;
 
         &.label {
-          display: inline;
           color: $card-stats-color;
-          font-weight: 800;
+          display: inline;
           font-size: 1.2em;
+          font-weight: 800;
           line-height: 1.1em;
         }
       }
@@ -89,22 +89,21 @@
   }
 
   span.new-card-overlay {
+    @include transition(all 0.2s ease-in-out);
+    background-color: $card-placeholder-tint;
+    color: $card-background;
     font-family: $header-font-family;
     font-size: 10em;
     font-weight: bold;
-    text-align: center;
-    line-height: 2.2em;
-    color: $card-background;
-
-    background-color: $card-placeholder-tint;
-    position: absolute;
-    width: 100%;
     height: 100%;
-    top: 0;
     left: 0;
+    line-height: 2.2em;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
     z-index: 1;
 
-    @include transition (all 0.2s ease-in-out);
     &:hover { background-color: darken($card-placeholder-tint, 10); }
   }
 

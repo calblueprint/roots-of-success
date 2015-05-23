@@ -1,33 +1,39 @@
-/* Blatently taken from Github's settings page */
+// Blatently taken from Github's settings page
 .boxed-group {
-  position: relative;
+  $border-color: #d8d8d8;
+  $heading-bg-color: #f5f5f5;
+  $danger-heading-bg-color: #df3e3e;
+  $danger-heading-border-color: #a00;
+  $danger-heading-text-shadow: #900;
+
   border-radius: 3px;
   margin-bottom: 30px;
+  position: relative;
 
   h3 {
-    background-color: #f5f5f5;
-    margin: 0;
-    border-radius: 3px 3px 0 0;
-    border: 1px solid #d8d8d8;
+    background-color: $heading-bg-color;
+    border: 1px solid $border-color;
     border-bottom: 0;
-    padding: 9px 10px 10px;
-    font-size: 1.5em;
+    border-radius: 3px 3px 0 0;
     display: block;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 9px 10px 10px;
   }
 
   &.dangerzone > h3 {
-    background-color: #df3e3e;
-    border: 1px solid #a00;
-    color: #fff;
-    text-shadow: 0 -1px 0 #900;
+    background-color: $danger-heading-bg-color;
+    border: 1px solid $danger-heading-border-color;
+    color: $white;
+    text-shadow: 0 -1px 0 $danger-heading-text-shadow;
   }
 
   .boxed-group-inner {
-    padding: 30px 10px;
-    background: #fff;
-    border: 1px solid #d8d8d8;
+    background: $white;
+    border: 1px solid $border-color;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    padding: 30px 10px;
 
     p { margin: 0.5em 0; }
   }
