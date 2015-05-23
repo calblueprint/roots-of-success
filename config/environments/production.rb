@@ -84,7 +84,4 @@ Rails.application.configure do
 
   # Set host to production heroku app
   config.action_mailer.default_url_options = { host: "ros-production.herokuapp.com" }
-
-  # Use production version of react
-  config.react.variant = :production
 end
