@@ -36,7 +36,7 @@ module RootsOfSuccess
     config.action_mailer.default_options = { from: "Roots of Success Admin <admin@ros.org>" }
 
     # Use sidekiq for active job
-    config.active_job.queue_adapter = :sidekiq
+    config.active_job.queue_adapter = :sucker_punch
 
     # Raise error when callbacks error
     config.active_record.raise_in_transactional_callbacks = true
