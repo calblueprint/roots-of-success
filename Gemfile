@@ -23,6 +23,7 @@ gem "mini_magick"
 gem "pry-rails"
 gem "recipient_interceptor", "~> 0.1.2"
 gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 gem "simple_form", "~> 3.1.0"
 gem "turbolinks", "~> 2.5.3"
 
