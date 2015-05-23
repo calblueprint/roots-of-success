@@ -28,6 +28,10 @@ $base-spacing: $base-line-height * 1em;
 $base-z-index: 0;
 
 // Colors
+$white: #FFF;
+$black: #000;
+$silver: #C0C0C0;
+
 $blue: #477DCA;
 $indigo: #2F399C;
 $dark-gray: #333;
@@ -60,7 +64,7 @@ $success-hover-button-color: darken($green, 15);
 $warning-button-color: $yellow;
 $warning-hover-button-color: darken($yellow, 15);
 $danger-button-color: #df3e3e;
-$danger-hover-button-color: darken(#df3e3e, 15);
+$danger-hover-button-color: darken($danger-button-color, 15);
 
 // Flash Colors
 $alert-color: $light-yellow;
@@ -77,13 +81,13 @@ $form-border-color: $base-border-color;
 $form-border-color-hover: darken($base-border-color, 10);
 $form-border-color-focus: $base-accent-color;
 $form-border-radius: $base-border-radius;
-$form-box-shadow: inset 0 1px 3px rgba(black,0.06);
+$form-box-shadow: inset 0 1px 3px rgba($black, 0.06);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
 $form-font-size: $base-font-size;
 $form-font-family: $base-font-family;
 
 // Paper
-$paper-background-color: white;
+$paper-background-color: $white;
 $paper-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23), 0 3px 10px rgba(0, 0, 0, 0.16);
 $paper-padding: 1.25em 1.25em;
 $paper-border-radius: $base-border-radius;
@@ -102,32 +106,32 @@ $card-image-hover-background: lighten($card-image-background, 5);
 $card-stats-color: lighten($base-accent-color, 10);
 
 // Button groups
-$button-group-background: white;
+$button-group-background: $white;
 $button-group-color: lighten($base-font-color, 30);
-$button-group-border: 1px solid silver;
-$button-group-inner-border: 1px solid lighten(silver, 18);
+$button-group-border: 1px solid $silver;
+$button-group-inner-border: 1px solid lighten($silver, 18);
 $button-group-background-checked: $base-accent-color;
-$button-group-color-checked: white;
+$button-group-color-checked: $white;
 $button-group-border-checked: darken($button-group-background-checked, 15);
 
 // Navigation
 $navigation-padding: 1em;
 $navigation-background: $dark-gray;
-$navigation-color: transparentize(white, 0.3);
-$navigation-color-hover: white;
+$navigation-color: transparentize($white, 0.3);
+$navigation-color-hover: $white;
 $navigation-height: 60px;
 $navigation-nav-button-background: $base-accent-color;
 $navigation-nav-button-background-hover: lighten($navigation-background, 10);
 $navigation-nav-button-border: 1px solid lighten($navigation-nav-button-background, 20);
 $navigation-search-background: lighten($navigation-background, 5);
 $navigation-search-border: 1px solid darken($navigation-background, 5);
-$navigation-active-link-color: transparentize(white, 0.5);
+$navigation-active-link-color: transparentize($white, 0.5);
 $navigation-submenu-padding: 1em;
 $navigation-submenu-width: 12em;
 $horizontal-bar-mode: $large-screen;
 
 // Icons
 $delete-icon-bg: $red;
-$delete-icon-color: white;
+$delete-icon-color: $white;
 $email-icon-bg: $medium-gray;
-$email-icon-color: white;
+$email-icon-color: $white;
