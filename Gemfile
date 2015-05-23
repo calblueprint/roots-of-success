@@ -4,7 +4,7 @@ gem "bundler", ">= 1.7.0"
 ruby "2.2.0"
 
 # Core gems
-gem "rails", "4.1.8"
+gem "rails", "4.2.0"
 gem "thin", "~> 1.6.3"
 gem "pg", "~> 0.17.1"
 gem "figaro", "~> 1.0.0"
@@ -55,9 +55,10 @@ group :development do
   gem "letter_opener"
   gem "quiet_assets"
   gem "rubocop"
-  gem "scss_lint"
+  gem "scss_lint", require: false
   gem "spring"
   gem "spring-commands-rspec"
+  gem "web-console"
 end
 
 group :development, :test do

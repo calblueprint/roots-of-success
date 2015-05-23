@@ -39,4 +39,7 @@ Rails.application.configure do
 
   # Set default host
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
+  # Random test order
+  config.active_support.test_order = :sorted
 end

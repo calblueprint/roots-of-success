@@ -8,7 +8,7 @@ class StudentConfirmationsMailerJob
 
       students = [students] unless students.is_a? Array
       students.each do |student|
-        StudentConfirmationMailer.confirmation_email(student, classroom).deliver
+        StudentConfirmationMailer.confirmation_email(student, classroom).deliver_now
       end
     end
   end
