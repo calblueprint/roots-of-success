@@ -32,7 +32,7 @@ class Classroom < ActiveRecord::Base
 
   delegate :learning_modules, to: :program
 
-  attachment :card_image
+  attachment :card_image, type: :image
 
   def to_s
     name
