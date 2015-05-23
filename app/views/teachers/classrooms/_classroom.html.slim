@@ -9,8 +9,8 @@
   .card-stats
     ul
       li
-        span.label 2
-        span Modules presented
+        span.label = classroom.presented_modules_count
+        span = classroom.presented_modules_label
       li
-        span.label No
-        span Surveys Given
+        span.label = classroom.survey_stats
+        span = classroom.survey_stats_label
