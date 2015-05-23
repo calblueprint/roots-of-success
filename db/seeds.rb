@@ -36,7 +36,7 @@ def seed_classrooms
   Teacher.all.each do |t|
     5.times do |n|
       t.classrooms.create! name: "#{t.first_name}'s Classroom #{n}",
-                           description: Faker::Lorem.paragraph(3),
+                           description: FFaker::Lorem.paragraph(3),
                            program: program
     end
   end
