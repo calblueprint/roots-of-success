@@ -24,7 +24,7 @@ linters:
   ColorVariable:
     enabled: true
   Comment:
-    enabled: false
+    enabled: true
   DebugStatement:
     enabled: true
   DeclarationOrder:

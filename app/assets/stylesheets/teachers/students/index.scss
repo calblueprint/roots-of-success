@@ -1,9 +1,12 @@
+// These styles apply to the jQuery datatable on the students index.
+
+// scss-lint:disable SelectorFormat
 #students-table_wrapper {
   // Make add students button inline
   #add-students-button {
-    width: 50%;
-    text-align: left;
     float: left;
+    text-align: left;
+    width: 50%;
   }
 
   // Make search box a little nicer
