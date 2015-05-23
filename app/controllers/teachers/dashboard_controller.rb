@@ -1,6 +1,6 @@
 module Teachers
   class DashboardController < BaseController
-    before_filter :authenticate_teacher!
+    before_action :authenticate_teacher!
 
     def show
       @teacher = current_teacher

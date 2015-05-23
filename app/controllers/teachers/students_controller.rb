@@ -2,7 +2,7 @@ module Teachers
   class StudentsController < BaseController
     load_and_authorize_resource # loads @student{s}
 
-    before_filter :set_classroom, only: [:new, :create, :index]
+    before_action :set_classroom, only: [:new, :create, :index]
 
     # new and create actions are modified to create many students at a time.
     def new

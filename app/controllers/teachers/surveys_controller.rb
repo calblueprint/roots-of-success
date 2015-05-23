@@ -1,8 +1,8 @@
 module Teachers
   class SurveysController < BaseController
     load_and_authorize_resource
-    before_filter :set_classroom
-    before_filter :set_participant_survey
+    before_action :set_classroom
+    before_action :set_participant_survey
 
     def index
       @teacher_surveys = TeacherSurvey.all

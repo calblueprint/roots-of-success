@@ -2,7 +2,7 @@ module Teachers
   class LearningModulesController < BaseController
     load_and_authorize_resource # loads @learning_module{s}
 
-    before_filter :set_classroom
+    before_action :set_classroom
 
     def index
       @learning_modules = @classroom.learning_modules

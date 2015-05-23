@@ -3,9 +3,9 @@ module Teachers
     UPDATABLE_ATTRS = [:name, :description, :program_id, :card_image]
     load_and_authorize_resource # loads @classroom
 
-    before_filter :set_active_tab, only: [:edit, :update]
-    before_filter :set_teacher, only: [:new, :create, :index]
-    before_filter :set_program_collection, only: [:new, :create, :edit, :update]
+    before_action :set_active_tab, only: [:edit, :update]
+    before_action :set_teacher, only: [:new, :create, :index]
+    before_action :set_program_collection, only: [:new, :create, :edit, :update]
 
     def new
       @classroom = @teacher.classrooms.build
