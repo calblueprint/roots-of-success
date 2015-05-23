@@ -6,14 +6,15 @@
 }
 
 a.icon {
-  width: 24px;
-  height: 24px;
-  display: inline-block;
   border-radius: $base-border-radius;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
 
   &.delete-icon {
     background-color: $delete-icon-bg;
     color: $delete-icon-color;
+
     &:hover {
       background-color: darken($delete-icon-bg, 10);
       color: $delete-icon-color;
@@ -23,6 +24,7 @@ a.icon {
   &.email-icon {
     background-color: $email-icon-bg;
     color: $email-icon-color;
+
     &:hover {
       background-color: darken($email-icon-bg, 10);
       color: $email-icon-color;
