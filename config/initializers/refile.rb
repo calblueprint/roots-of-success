@@ -5,7 +5,7 @@ unless Rails.env.test?
     access_key_id: ENV["AWS_ACCESS_KEY_ID"],
     secret_access_key: ENV["AWS_SECRET_KEY"],
     region: "us-west-1",
-    bucket: "ros-#{Rails.env}"
+    bucket: "roots-#{Rails.env}"
   }
 
   Refile.cache = Refile::S3.new(max_size: 500.kilobytes, prefix: "cache", **aws_config)
