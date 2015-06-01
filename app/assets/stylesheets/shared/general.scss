@@ -110,7 +110,7 @@ body {
   embed,
   object,
   iframe {
-    @include position(relative, 0 null null 0);
+    @include position(absolute, 0 null null 0);
     @include size(100%);
   }
 }

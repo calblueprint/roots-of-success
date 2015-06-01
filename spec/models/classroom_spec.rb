@@ -5,12 +5,12 @@
 #  id            :integer          not null, primary key
 #  created_at    :datetime
 #  updated_at    :datetime
-#  name          :string(255)
+#  name          :string
 #  teacher_id    :integer
 #  program_id    :integer
 #  active        :boolean          default(TRUE)
 #  description   :text
-#  card_image_id :string(255)
+#  card_image_id :string
 #
 
 require 'rails_helper'
