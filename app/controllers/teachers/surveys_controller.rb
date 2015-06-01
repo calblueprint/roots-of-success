@@ -2,11 +2,11 @@ module Teachers
   class SurveysController < BaseController
     include ActionView::Helpers::TextHelper
 
-    load_and_authorize_resource
+    before_action :authorize_access!
     before_action :set_classroom
-    before_action :set_participant_survey
 
     def index
+      @participant_survey = ParticipantSurvey.instance
       @teacher_surveys = TeacherSurvey.all
     end
 
@@ -14,12 +14,6 @@ module Teachers
       AdministerSurveyToClassroom.execute @classroom
       redirect_to classroom_surveys_path(@classroom),
                   flash: { success: "Survey emailed to #{pluralize @classroom.students.count, 'student'}!" }
-    end
-
-    private
-
-    def set_participant_survey
-      @participant_survey = ParticipantSurvey.instance
     end
   end
 end
