@@ -4,14 +4,20 @@
       .row
         .small-12.columns
           h2 Tell us about yourself.
-          .spacer
+          .spacer-small
 
           = render "form_errors", obj: @teacher
           = simple_form_for @teacher do |f|
             - Teachers::TeachersController::UPDATABLE_ATTRS.each do |attribute|
               .row
-                .medium-5.columns.two-col-left
-                  h5 = f.label attribute, required: false
-                .medium-6.columns.end.two-col-right
-                  = f.input_field attribute
+                .medium-8.medium-centered.columns
+                  = f.input attribute, label_html: { class: "left" }
+              / .row
+              /   .medium-5.columns.two-col-left
+              /     h5 = f.label attribute, required: false
+              /   .medium-6.columns.end.two-col-right
+              /     = f.input_field attribute
+            .spacer-small
             = f.button :submit, "Update my info!"
+            .spacer-small
+.spacer

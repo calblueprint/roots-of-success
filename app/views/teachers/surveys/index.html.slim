@@ -20,7 +20,7 @@
       h3 = t ".teacher_surveys_heading"
       .spacer-small
       - @teacher_surveys.each do |survey|
-        a.survey-blue-box href="javascript:void(0)"
+        a.survey-blue-box href="#{survey.url}" target="_blank"
           img src="#{placeholder_img_url}" alt=""
           h1.survey-title = survey.name
           p = survey.description

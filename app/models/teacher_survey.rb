@@ -1,15 +1,19 @@
 # == Schema Information
 #
-# Table name: surveys
+# Table name: teacher_surveys
 #
-#  id              :integer          not null, primary key
-#  created_at      :datetime
-#  updated_at      :datetime
-#  name            :string(255)
-#  form_embed_code :text
-#  type            :string(255)
-#  description     :text
+#  id          :integer          not null, primary key
+#  created_at  :datetime
+#  updated_at  :datetime
+#  name        :string
+#  url         :text
+#  description :text
 #
 
-class TeacherSurvey < Survey
+# TODO: This is pretty unnecessary, since we just use a hardcoded URL
+# in the view anyway.
+class TeacherSurvey < ActiveRecord::Base
+  validates :name, presence: true
+  validates :url, presence: true
+  validates :description, presence: true
 end

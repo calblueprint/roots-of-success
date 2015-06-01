@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150523002700) do
+ActiveRecord::Schema.define(version: 20150601055437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_admin_comments", force: true do |t|
+  create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
     t.text     "body"
     t.string   "resource_id",   null: false
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20150523002700) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
 
-  create_table "admin_users", force: true do |t|
+  create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(version: 20150523002700) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "changelog_items", force: true do |t|
+  create_table "changelog_items", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "text"
   end
 
-  create_table "classroom_module_presents", force: true do |t|
+  create_table "classroom_module_presents", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "classroom_id"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20150523002700) do
   add_index "classroom_module_presents", ["classroom_id"], name: "index_classroom_module_presents_on_classroom_id", using: :btree
   add_index "classroom_module_presents", ["learning_module_id"], name: "index_classroom_module_presents_on_learning_module_id", using: :btree
 
-  create_table "classrooms", force: true do |t|
+  create_table "classrooms", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20150523002700) do
   add_index "classrooms", ["program_id"], name: "index_classrooms_on_program_id", using: :btree
   add_index "classrooms", ["teacher_id"], name: "index_classrooms_on_teacher_id", using: :btree
 
-  create_table "learning_modules", force: true do |t|
+  create_table "learning_modules", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
@@ -85,7 +85,15 @@ ActiveRecord::Schema.define(version: 20150523002700) do
 
   add_index "learning_modules", ["program_id"], name: "index_learning_modules_on_program_id", using: :btree
 
-  create_table "programs", force: true do |t|
+  create_table "participant_surveys", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.text     "form_embed_code"
+    t.text     "description"
+  end
+
+  create_table "programs", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
@@ -95,7 +103,7 @@ ActiveRecord::Schema.define(version: 20150523002700) do
   add_index "programs", ["name"], name: "index_programs_on_name", unique: true, using: :btree
   add_index "programs", ["slug"], name: "index_programs_on_slug", unique: true, using: :btree
 
-  create_table "students", force: true do |t|
+  create_table "students", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
@@ -107,16 +115,15 @@ ActiveRecord::Schema.define(version: 20150523002700) do
 
   add_index "students", ["classroom_id"], name: "index_students_on_classroom_id", using: :btree
 
-  create_table "surveys", force: true do |t|
+  create_table "teacher_surveys", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.text     "form_embed_code"
-    t.string   "type"
+    t.text     "url"
     t.text     "description"
   end
 
-  create_table "teachers", force: true do |t|
+  create_table "teachers", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "first_name"
@@ -134,7 +141,7 @@ ActiveRecord::Schema.define(version: 20150523002700) do
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true, using: :btree
   add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true, using: :btree
 
-  create_table "versions", force: true do |t|
+  create_table "versions", force: :cascade do |t|
     t.string   "item_type",  null: false
     t.integer  "item_id",    null: false
     t.string   "event",      null: false

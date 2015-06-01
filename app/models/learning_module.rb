@@ -5,7 +5,7 @@
 #  id                      :integer          not null, primary key
 #  created_at              :datetime
 #  updated_at              :datetime
-#  name                    :string(255)
+#  name                    :string
 #  number                  :integer
 #  presentation_embed_code :text
 #  program_id              :integer
