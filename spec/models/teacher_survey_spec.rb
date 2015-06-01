@@ -10,8 +10,11 @@
 #  description :text
 #
 
-class TeacherSurvey < ActiveRecord::Base
-  validates :name, presence: true
-  validates :url, presence: true
-  validates :description, presence: true
+
+require 'rails_helper'
+
+RSpec.describe TeacherSurvey, type: :model do
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :url }
+  it { should validate_presence_of :description }
 end

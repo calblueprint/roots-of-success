@@ -10,8 +10,10 @@
 #  description :text
 #
 
-class TeacherSurvey < ActiveRecord::Base
-  validates :name, presence: true
-  validates :url, presence: true
-  validates :description, presence: true
+FactoryGirl.define do
+  factory :teacher_survey do
+    sequence(:name) { |n| "Teacher Survey #{n}" }
+    url "hello.pdf"
+    description "Some description"
+  end
 end
