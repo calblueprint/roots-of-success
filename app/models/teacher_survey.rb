@@ -10,6 +10,8 @@
 #  description :text
 #
 
+# TODO: This is pretty unnecessary, since we just use a hardcoded URL
+# in the view anyway.
 class TeacherSurvey < ActiveRecord::Base
   validates :name, presence: true
   validates :url, presence: true
