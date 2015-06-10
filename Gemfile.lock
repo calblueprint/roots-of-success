@@ -522,3 +522,6 @@ DEPENDENCIES
   turbolinks (~> 2.5.3)
   uglifier
   web-console
+
+BUNDLED WITH
+   1.10.3
