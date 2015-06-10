@@ -8,5 +8,5 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: "ros-staging.herokuapp.com" }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = "https://df2ujuujap3d1.cloudfront.net/"
+  config.action_controller.asset_host = "df2ujuujap3d1.cloudfront.net/"
 end
