@@ -20,9 +20,6 @@
     "EMAIL_RECIPIENTS":{
       "required":true
     },
-    "GA_KEY":{
-      "required":true
-    },
     "RAILS_ENV":{
       "required":true
     },
