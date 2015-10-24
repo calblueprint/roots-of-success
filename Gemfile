@@ -54,11 +54,8 @@ group :development do
   gem "binding_of_caller"
   gem "guard-livereload"
   gem "guard-rubocop"
-  gem "i18n-tasks"
   gem "letter_opener"
   gem "quiet_assets"
-  gem "rubocop"
-  gem "scss_lint", require: false
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
@@ -66,9 +63,12 @@ end
 
 group :development, :test do
   gem "factory_girl_rails"
+  gem "i18n-tasks"
   gem "poltergeist"
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.1.0"
+  gem "rubocop"
+  gem "scss_lint", require: false
 end
 
 group :test do
