@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+# Set up Rails app for Heroku . Run this script immediately after cloning the codebase.
+
+# Setup database
+rake db:setup
