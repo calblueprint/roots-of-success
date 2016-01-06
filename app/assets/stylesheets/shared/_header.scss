@@ -132,7 +132,7 @@ header.navigation {
     padding-left: $navigation-padding/2;
     padding-right: $navigation-padding;
 
-    @include media($large-screen) {
+    @include media($horizontal-bar-mode) {
       background: transparent;
       clear: none;
       float: right;
