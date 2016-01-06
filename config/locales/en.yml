@@ -45,7 +45,7 @@ en:
     confirm_survey:
       heading: Thanks %{student_email}!
       subtitle: We hope you enjoyed your time in %{classroom_name}.
-    survey:
+    show_survey:
       heading: You're done!
       subtitle: Please fill out the following survey to provide us feedback about %{classroom_name}.
       confirm_button: Click this button once you've hit submit.
