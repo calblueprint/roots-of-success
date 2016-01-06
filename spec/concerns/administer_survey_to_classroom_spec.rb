@@ -2,6 +2,8 @@ require "rails_helper"
 
 RSpec.describe AdministerSurveyToClassroom do
   let(:classroom) { create :classroom }
+  let(:survey) { create :participant_survey }
+
   let(:unconfirmed_students) { create_pair :student, classroom: classroom, confirmed: false }
   let(:confirmed_students) do
     create_pair :student, classroom: classroom, confirmed: true, survey_administered: false
@@ -17,14 +19,14 @@ RSpec.describe AdministerSurveyToClassroom do
   def job_mock
     mock = double("StudentSurveyMailerJob")
     expect(mock).to receive(:async).once.and_return(mock)
-    expect(mock).to receive(:perform).with(confirmed_as_relation, classroom: classroom).once
+    expect(mock).to receive(:perform).with(students: confirmed_as_relation, survey: survey).once
     mock
   end
 
   describe ".execute" do
     it "only sends emails to confirmed students that have not taken surveys" do
       expect(StudentSurveyMailerJob).to receive(:new).and_return job_mock
-      AdministerSurveyToClassroom.execute classroom
+      AdministerSurveyToClassroom.execute classroom: classroom, survey: survey
     end
   end
 end

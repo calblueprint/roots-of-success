@@ -11,9 +11,15 @@ module Teachers
     end
 
     def administer
-      AdministerSurveyToClassroom.execute @classroom
+      survey = ParticipantSurvey.find params[:survey_id]
+
+      AdministerSurveyToClassroom.execute(
+        classroom: @classroom,
+        survey: survey,
+      )
+
       redirect_to classroom_surveys_path(@classroom),
-                  flash: { success: "Survey emailed to #{pluralize @classroom.students.count, 'student'}!" }
+                  flash: { success: "Survey emailed to students!" }
     end
   end
 end
