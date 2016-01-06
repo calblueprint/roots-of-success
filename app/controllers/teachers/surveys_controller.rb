@@ -6,7 +6,7 @@ module Teachers
     before_action :set_classroom
 
     def index
-      @participant_survey = ParticipantSurvey.instance
+      @participant_surveys = ParticipantSurvey.all
       @teacher_surveys = TeacherSurvey.all
     end
 

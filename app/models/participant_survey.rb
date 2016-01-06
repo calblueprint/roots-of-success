@@ -13,8 +13,4 @@
 class ParticipantSurvey < ActiveRecord::Base
   validates :name, presence: true
   validates :form_embed_code, presence: true
-
-  def self.instance
-    first
-  end
 end

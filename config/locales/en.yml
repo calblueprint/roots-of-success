@@ -99,7 +99,7 @@ en:
       index:
         pre_post_test_name: Pre/Post Test
         pre_post_test_desc: This is the survey you give to students before and after each class.
-        student_surveys_heading: Surveys For Them
+        student_surveys_heading: Surveys For Students
         teacher_surveys_heading: Surveys For You
 
   titles:

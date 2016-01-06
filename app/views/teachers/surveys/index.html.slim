@@ -6,23 +6,21 @@
     .small-12.medium-6.columns
       h3 = t ".student_surveys_heading"
       .spacer-small
-      a.survey-red-box href="#{pretest_url}" target="_blank"
-        img src="#{placeholder_img_url}" alt=""
-        h1.survey-title = t ".pre_post_test_name"
-        p = t ".pre_post_test_desc"
+      a.survey--red-box href="#{pretest_url}" target="_blank"
+        h1.survey__title = t ".pre_post_test_name"
+        p.survey__description = t ".pre_post_test_desc"
 
-      a.survey-teal-box#participant-survey href="#{classroom_survey_administer_path @classroom, @participant_survey}" data-method="post" rel="nofollow"
-        img src="#{placeholder_img_url}" alt=""
-        h1.survey-title = @participant_survey.name
-        p = @participant_survey.description
+      - @participant_surveys.each do |participant_survey|
+        a.survey--teal-box#participant-survey href="#{classroom_survey_administer_path @classroom, participant_survey}" data-method="post" rel="nofollow"
+          h1.survey__title = participant_survey.name
+          p.survey__description = participant_survey.description
 
     .small-12.medium-6.columns
       h3 = t ".teacher_surveys_heading"
       .spacer-small
       - @teacher_surveys.each do |survey|
-        a.survey-blue-box href="#{survey.url}" target="_blank"
-          img src="#{placeholder_img_url}" alt=""
-          h1.survey-title = survey.name
-          p = survey.description
+        a.survey--blue-box href="#{survey.url}" target="_blank"
+          h1.survey__title = survey.name
+          p.survey__description = survey.description
 
 - parent_layout "classroom_show"
