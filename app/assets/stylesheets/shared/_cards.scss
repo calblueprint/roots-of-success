@@ -1,4 +1,18 @@
 // http://refills.bourbon.io/#cards
+
+.card-image {
+  max-height: 150px;
+  overflow: hidden;
+
+  img {
+    @include transition (all 0.2s ease-in-out);
+    background: $card-image-background;
+    border-top-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
+    width: 100%;
+  }
+}
+
 .card {
   @include transition (all 0.2s ease-in-out);
   background-color: $card-background;
@@ -15,19 +29,6 @@
   @include media($large-screen) {
     @include span-columns(4);
     @include omega(3n);
-  }
-
-  .card-image {
-    max-height: 150px;
-    overflow: hidden;
-
-    img {
-      @include transition (all 0.2s ease-in-out);
-      background: $card-image-background;
-      border-top-left-radius: $base-border-radius;
-      border-top-right-radius: $base-border-radius;
-      width: 100%;
-    }
   }
 
   .card-header {

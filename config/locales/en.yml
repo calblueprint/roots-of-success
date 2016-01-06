@@ -45,7 +45,7 @@ en:
     confirm_survey:
       heading: Thanks %{student_email}!
       subtitle: We hope you enjoyed your time in %{classroom_name}.
-    survey:
+    show_survey:
       heading: You're done!
       subtitle: Please fill out the following survey to provide us feedback about %{classroom_name}.
       confirm_button: Click this button once you've hit submit.
@@ -99,7 +99,7 @@ en:
       index:
         pre_post_test_name: Pre/Post Test
         pre_post_test_desc: This is the survey you give to students before and after each class.
-        student_surveys_heading: Surveys For Them
+        student_surveys_heading: Surveys For Students
         teacher_surveys_heading: Surveys For You
 
   titles:

@@ -24,7 +24,9 @@ RSpec.describe "The administer surveys page" do
 
   describe "participant survey link" do
     it "calls AdministerSurvey service object" do
-      expect(AdministerSurveyToClassroom).to receive(:execute).with(classroom).and_return(true)
+      expect(AdministerSurveyToClassroom).to(
+        receive(:execute).with(classroom: classroom, survey: participant_survey).and_return(true)
+      )
       find("#participant-survey").click
     end
   end

@@ -34,3 +34,6 @@ Style/ClassAndModuleChildren:
 
 Style/DotPosition:
   Enabled: false
+
+Style/TrailingComma:
+  Enabled: false

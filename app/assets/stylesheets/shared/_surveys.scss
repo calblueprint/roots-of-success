@@ -1,3 +1,5 @@
+// http://refills.bourbon.io/#flex-boxes
+
 .survey {
   $base-border-radius: 3px;
   $base-background-color: #ffffff;
@@ -21,26 +23,14 @@
   margin: $survey-box-gutter;
   padding: 2em 2em 3em;
 
-  a {
-    text-decoration: none;
-  }
-
-  img {
-    display: block;
-    height: 3em;
-    margin: auto;
-    margin-bottom: 2em;
-    opacity: 0.4;
-  }
-
-  .survey-title {
+  .survey__title {
     color: $survey-box-color;
     font-size: 1.2em;
     font-weight: 800;
     margin-bottom: 0.5em;
   }
 
-  p {
+  .survey__description {
     color: transparentize($survey-box-color, 0.1);
     line-height: 1.5em;
     margin: auto;
@@ -56,19 +46,19 @@
   }
 }
 
-.survey-red-box {
+.survey--red-box {
   $color: #ff6347;
   @extend .survey;
   @include survey-box($color);
 }
 
-.survey-teal-box {
+.survey--teal-box {
   $color: #72bfbd;
   @extend .survey;
   @include survey-box($color);
 }
 
-.survey-blue-box {
+.survey--blue-box {
   $color: #92b1e3;
   @extend .survey;
   @include survey-box($color);

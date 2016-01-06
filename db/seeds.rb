@@ -1,9 +1,11 @@
 def seed_teachers
   10.times do |n|
-    Teacher.create! first_name: "Teacher",
-                    last_name: "#{n}",
-                    email: "teacher#{n}@ros.org",
-                    password: "password"
+    Teacher.create!(
+      first_name: "Teacher",
+      last_name: "#{n}",
+      email: "teacher#{n}@ros.org",
+      password: "password"
+    )
   end
 end
 
@@ -11,8 +13,10 @@ PROGRAMS = ["Standard Version for Adults", "Prisons, Jails, and Juvenile Facilit
             "en Espanol", "United Kingdom", "High Schools and Youth Programs"]
 def seed_programs
   PROGRAMS.each do |program_name|
-    Program.create! name: program_name,
-                    slug: program_name.underscore.gsub(" ", "_")
+    Program.create!(
+      name: program_name,
+      slug: program_name.underscore.gsub(" ", "_")
+    )
   end
 end
 
@@ -23,10 +27,12 @@ def seed_learning_modules
   LEARNING_MODULES.each_with_index do |module_name, index|
     number = index + 1
     Program.all.each do |program|
-      LearningModule.create! name: module_name,
-                             number: number,
-                             presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1Uqs0xTXJMdoSVCoR-wzlc2U_0BeBJf4VMrUcCu0lDK4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
-                             program: program
+      LearningModule.create!(
+        name: module_name,
+        number: number,
+        presentation_embed_code: '<iframe src="https://docs.google.com/presentation/d/1Uqs0xTXJMdoSVCoR-wzlc2U_0BeBJf4VMrUcCu0lDK4/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',
+        program: program
+      )
     end
   end
 end
@@ -35,20 +41,46 @@ def seed_classrooms
   program = Program.first
   Teacher.all.each do |t|
     5.times do |n|
-      t.classrooms.create! name: "#{t.first_name}'s Classroom #{n}",
-                           description: FFaker::Lorem.paragraph(3),
-                           program: program
+      t.classrooms.create!(
+        name: "#{t.first_name}'s Classroom #{n}",
+        description: FFaker::Lorem.paragraph(3),
+        program: program
+      )
     end
   end
 end
 
 def seed_surveys
-  ParticipantSurvey.create! name: "Survey for Participants",
-                            description: "Once the class is finished, click to email this required survey to all verified students.",
-                            form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
-  TeacherSurvey.create! name: "Survey for Teachers",
-                        url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
-                        description: "Once this class is finished, fill this survey out."
+  ParticipantSurvey.create!(
+    name: "For High School Students",
+    description: "Once the class is finished, click to email this required survey to all verified students.",
+    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
+  )
+  ParticipantSurvey.create!(
+    name: "For Job Training, Workforce Development and Re-entry Programs",
+    description: "Once the class is finished, click to email this required survey to all verified students.",
+    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
+  )
+  ParticipantSurvey.create!(
+    name: "For Correctional Institutions",
+    description: "Once the class is finished, click to email this required survey to all verified students.",
+    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
+  )
+  TeacherSurvey.create!(
+    name: "For High School Teachers",
+    url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
+    description: "Once this class is finished, fill this survey out."
+  )
+  TeacherSurvey.create!(
+    name: "For Job Training, Workforce Development and Re-entry Programs",
+    url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
+    description: "Once this class is finished, fill this survey out."
+  )
+  TeacherSurvey.create!(
+    name: "For Correctional Facilities",
+    url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
+    description: "Once this class is finished, fill this survey out."
+  )
 end
 
 def seed_admin_user

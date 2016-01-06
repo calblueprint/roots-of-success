@@ -6,14 +6,20 @@ module Teachers
     before_action :set_classroom
 
     def index
-      @participant_survey = ParticipantSurvey.instance
+      @participant_surveys = ParticipantSurvey.all
       @teacher_surveys = TeacherSurvey.all
     end
 
     def administer
-      AdministerSurveyToClassroom.execute @classroom
+      survey = ParticipantSurvey.find params[:survey_id]
+
+      AdministerSurveyToClassroom.execute(
+        classroom: @classroom,
+        survey: survey,
+      )
+
       redirect_to classroom_surveys_path(@classroom),
-                  flash: { success: "Survey emailed to #{pluralize @classroom.students.count, 'student'}!" }
+                  flash: { success: "Survey emailed to students!" }
     end
   end
 end

@@ -4,6 +4,6 @@ head
 body
   h1 Congratulations for being a Roots of Success graduate, #{@student.email}!
   h3 = link_to "Please fill out this participant survey to give us feedback about the class.",\
-       survey_student_url(@student, confirmation_token: @student.confirmation_token)
+       student_show_survey_url(@student, @survey, confirmation_token: @student.confirmation_token)
 
   p If you have received this email in error, do not take any action.
