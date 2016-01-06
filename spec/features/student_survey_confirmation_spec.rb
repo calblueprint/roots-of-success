@@ -9,19 +9,19 @@ RSpec.describe "The student survey confirmation page" do
 
   context "when the wrong token is given" do
     it "shows the confirm failed page" do
-      visit survey_student_path student, confirmation_token: "some_other_token"
+      visit student_show_survey_path student, survey, confirmation_token: "some_other_token"
       expect(page).to have_content t("students.confirm_failed.heading")
     end
   end
 
   context "when right token is given" do
-    before { visit survey_student_path student, confirmation_token: student.confirmation_token }
+    before { visit student_show_survey_path student, survey, confirmation_token: student.confirmation_token }
 
-    it { should have_content t("students.survey.heading") }
+    it { should have_content t("students.show_survey.heading") }
     it { should have_content survey.form_embed_code }
 
     describe "clicking confirm button" do
-      before { click_link t("students.survey.confirm_button") }
+      before { click_link t("students.show_survey.confirm_button") }
       it "sets survey_administered to true" do
         expect(student.reload.survey_administered).to be true
       end

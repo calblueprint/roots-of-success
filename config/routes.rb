@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   resources :students, only: [] do
     member do
       get :confirm
-      get :survey
-      post :confirm_survey
     end
+
+    get "/surveys/:survey_id", to: "students#show_survey", as: :show_survey
+    post "/surveys/:survey_id/confirm", to: "students#confirm_survey", as: :confirm_survey
   end
 
   scope module: :teachers do
@@ -41,8 +42,9 @@ Rails.application.routes.draw do
         post "/learning_modules/:id/toggle_present",
              to: "learning_modules#toggle_present", as: :learning_module_toggle_present
 
-        resources :surveys, only: :index
-        post "/surveys/:id/administer", to: "surveys#administer", as: :survey_administer
+        resources :surveys, only: [:index]
+        # Unfortunately we can't undo a shallow: true so we need to be verbose here.
+        post "/surveys/:survey_id/administer", to: "surveys#administer", as: :survey_administer
       end
     end
   end
