@@ -20,6 +20,7 @@ advance for your help!
 
 ## Cal Blueprint
 ![bp](https://cloud.githubusercontent.com/assets/2468904/11998649/8a12f970-aa5d-11e5-8dab-7eef0766c793.png "BP Banner")
+
 **[Cal Blueprint](http://www.calblueprint.org/)** is a student-run UC Berkeley
 organization devoted to matching the skills of its members to our desire to see
 social good enacted in our community. Each semester, teams of 4-5 students work
