@@ -12,7 +12,7 @@ module Teachers
                     .includes(:students)
                     .includes(:presented_learning_modules)
                     .decorate
-      @latest_changelog_item = ChangelogItem.first.decorate
+      @latest_changelog_item = ChangelogItem.first.try(:decorate)
     end
   end
 end
