@@ -1,6 +1,16 @@
 .row
   .small-12.columns
-    .center.paper
+    - if @latest_changelog_item
+      .paper.center
+        .row
+          .small-12.columns
+            h3 = t ".latest_update_heading"
+            = render 'teachers/changelog_items/changelog_item',
+                     changelog_item: @latest_changelog_item
+            = link_to "See all updates", changelog_items_path,
+                      class: 'button small'
+    .spacer-small
+    .paper.center
       .row
         .small-12.columns
           h2 = t ".heading", name: @teacher.first_name

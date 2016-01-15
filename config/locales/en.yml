@@ -1,7 +1,9 @@
 en:
   activerecord:
     models:
-      program: Curriculum Version
+      program:
+        one: Curriculum Version
+        other: Curriculum Versions
     attributes:
       classroom:
         program: Curriculum Version
@@ -78,6 +80,7 @@ en:
 
     dashboard:
       show:
+        latest_update_heading: Latest update from Roots
         heading: Hey %{name}!
         subtitle: These are your active classrooms. Teach away!
 
