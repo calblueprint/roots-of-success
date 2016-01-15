@@ -11,5 +11,5 @@ unless Rails.env.test?
   Refile.cache = Refile::S3.new(max_size: 500.kilobytes, prefix: "cache", **aws_config)
   Refile.store = Refile::S3.new(prefix: "store", **aws_config)
 
-  Refile.host = "//da1avfhquctvk.cloudfront.net" unless Rails.env.development?
+  Refile.host = ENV["CDN_URL"]
 end

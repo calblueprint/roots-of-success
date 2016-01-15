@@ -7,6 +7,10 @@ DEVISE_SECRET_KEY: 4ac6fd9e803620137698c9723ed0c403169eaaeaa2de9872d13cb4ec6a1ca
 # Disabled in development and test
 GA_KEY: ~
 
+# Points to the CDN url for this environment. Use a protocol-relative URL.
+# Eg. //mycdn.cloudfront.net
+CDN_URL: ~
+
 production:
   AWS_ACCESS_KEY_ID: <fill_me_in>
   AWS_SECRET_KEY: <fill_me_in>
@@ -16,12 +20,18 @@ production:
   SMTP_USERNAME: <fill_me_in>
   SMTP_PASSWORD: <fill_me_in>
 
+  CDN_URL: <fill_me_in>
+
   ROLLBAR_ACCESS_TOKEN: <fill_me_in>
   GA_KEY: <fill_me_in>
 
 staging:
   AWS_ACCESS_KEY_ID: <fill_me_in>
   AWS_SECRET_KEY: <fill_me_in>
+
   # Staging will send emails to this address
   EMAIL_RECIPIENTS: sam@calblueprint.org
+
+  CDN_URL: <fill_me_in>
+
   ROLLBAR_ACCESS_TOKEN: <fill_me_in>
