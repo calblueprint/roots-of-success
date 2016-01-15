@@ -6,6 +6,7 @@ module Teachers
     before_action :set_classroom
 
     def index
+      @pre_post_tests = PrePostTest.all
       @participant_surveys = ParticipantSurvey.all
       @teacher_surveys = TeacherSurvey.all
     end

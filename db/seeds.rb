@@ -50,6 +50,13 @@ def seed_classrooms
   end
 end
 
+def seed_pre_post_test
+  PrePostTest.create!(
+    description: "This is the survey you give to students before and after each class.",
+    link: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/2-participant-pre-test.pdf",
+  )
+end
+
 def seed_surveys
   ParticipantSurvey.create!(
     name: "For High School Students",
@@ -96,6 +103,7 @@ seed_teachers unless Teacher.any?
 seed_programs unless Program.any?
 seed_learning_modules unless LearningModule.any?
 seed_classrooms unless Classroom.any?
+seed_pre_post_test unless PrePostTest.any?
 seed_surveys unless TeacherSurvey.any?
 seed_admin_user unless AdminUser.any?
 seed_change_log_items unless ChangelogItem.any?

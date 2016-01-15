@@ -6,9 +6,8 @@
     .small-12.medium-6.columns
       h3 = t ".student_surveys_heading"
       .spacer-small
-      a.survey--red-box href="#{pretest_url}" target="_blank"
-        h1.survey__title = t ".pre_post_test_name"
-        p.survey__description = t ".pre_post_test_desc"
+
+      = render @pre_post_tests
 
       = render @participant_surveys, classroom: @classroom
 

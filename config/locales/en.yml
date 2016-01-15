@@ -4,6 +4,9 @@ en:
       program:
         one: Curriculum Version
         other: Curriculum Versions
+      pre_post_test:
+        one: Pre/Post Test
+        other: Pre/Post Tests
     attributes:
       classroom:
         program: Curriculum Version
