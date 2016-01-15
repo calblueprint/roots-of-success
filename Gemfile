@@ -23,11 +23,12 @@ gem "kaminari", "~> 0.16.1"
 gem "mini_magick"
 gem "pry-rails"
 gem "recipient_interceptor", "~> 0.1.2"
-gem "refile", require: "refile/rails"
+gem "refile", "~> 0.5.5", require: "refile/rails"
 gem "refile-mini_magick"
 gem "refile-s3", git: "https://github.com/refile/refile-s3"
 gem "simple_form", "~> 3.1.0"
 gem "turbolinks", "~> 2.5.3"
+gem "redcarpet", "~> 3.3.4"
 
 # Frontend
 gem "autoprefixer-rails", "~> 4.0.2"

@@ -8,6 +8,8 @@
 #  text       :text
 #
 
+# Each object represents an global notification to the teachers in the system.
+# The text attribute is formatted as markdown.
 class ChangelogItem < ActiveRecord::Base
   default_scope { order "created_at DESC" }
 

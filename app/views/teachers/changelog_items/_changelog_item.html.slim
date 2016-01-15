@@ -2,4 +2,4 @@
   .medium-4.columns.two-col-left
     h4 #{time_ago_in_words changelog_item.created_at} ago
   .medium-8.columns.two-col-right
-    p = changelog_item.text
+    = raw changelog_item.markdown_text
