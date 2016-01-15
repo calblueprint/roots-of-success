@@ -5,8 +5,7 @@
         .row
           .small-12.columns
             h3 = t ".latest_update_heading"
-            = render 'teachers/changelog_items/changelog_item',
-                     changelog_item: @latest_changelog_item
+            = render @latest_changelog_item
             = link_to "See all updates", changelog_items_path,
                       class: 'button small'
     .spacer-small
