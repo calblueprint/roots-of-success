@@ -1,0 +1,10 @@
+/ Local vars:
+/   participant_survey
+/   classroom
+a.survey--teal-box#participant-survey [
+    href="#{classroom_survey_administer_path classroom, participant_survey}"
+    data-method="post"
+    rel="nofollow"
+    ]
+  h1.survey__title = participant_survey.name
+  p.survey__description = participant_survey.description
