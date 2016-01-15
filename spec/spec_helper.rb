@@ -1,5 +1,7 @@
 # Start CodeClimate
+require "simplecov"
 require "codeclimate-test-reporter"
+SimpleCov.add_filter "app/admin"
 CodeClimate::TestReporter.start
 
 # http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
