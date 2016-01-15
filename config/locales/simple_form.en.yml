@@ -16,6 +16,12 @@ en:
         program_id: Curriculum Version
         card_image: Card Image
         remove_card_image: Revert back to default image
+    hints:
+      defaults:
+        card_image: |
+          This image is only displayed on your dashboard.
+          The max size of the image is 500 kilobytes.
+          Only the top 150px of the image will be shown.
     # Examples
     # labels:
     #   defaults:

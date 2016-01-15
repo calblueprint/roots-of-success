@@ -26,6 +26,7 @@
             .row
               .medium-4.columns.two-col-left
                 h5 = f.label :card_image
+                p = simple_format f.hint :card_image
               .medium-7.end.columns.two-col-right
                 = f.attachment_field :card_image, direct: true, presigned: true, content_type: "image/jpeg"
                 p Leave blank to use a default image.
