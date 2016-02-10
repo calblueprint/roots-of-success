@@ -13,6 +13,8 @@ After you've initialized the app, run
 
 to set up dependencies and set up the app.
 
+Ping Sam for the `application.yml` file which contains the API keys.
+
 ## Contributing
 
 Feel free to open issues or send pull requests with improvements. Thanks in
