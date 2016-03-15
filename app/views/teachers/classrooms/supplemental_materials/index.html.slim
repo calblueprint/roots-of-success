@@ -5,4 +5,7 @@
 
       = render @supplemental_materials
 
+      - if @supplemental_materials.empty?
+        h3 No supplemental materials yet!
+
 - parent_layout "classroom_show"
