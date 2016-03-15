@@ -12,7 +12,7 @@
 
 FactoryGirl.define do
   factory :supplemental_material do
-    name "I am a supplemental material"
+    sequence(:name) { |n| "Supplemental material #{n}" }
     content "Some markdown content"
     classroom
   end
