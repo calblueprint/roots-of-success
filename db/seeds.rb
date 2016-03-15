@@ -99,6 +99,19 @@ def seed_change_log_items
   ChangelogItem.create! text: "This is the second update."
 end
 
+def seed_supplemental_materials
+  SupplementalMaterial.create!(
+    name: "Helpful video",
+    content: "[Click here](https://youtu.be/6lutNECOZFw)",
+    classroom: Classroom.first,
+  )
+  SupplementalMaterial.create!(
+    name: "Helpful video 2",
+    content: "[Click me](https://youtu.be/o8E-2jeQ8M0)",
+    classroom: Classroom.first,
+  )
+end
+
 seed_teachers unless Teacher.any?
 seed_programs unless Program.any?
 seed_learning_modules unless LearningModule.any?
