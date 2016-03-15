@@ -14,7 +14,6 @@ class Ability
       can :manage, Student
       can [:index, :show, :toggle_present], LearningModule
       can [:index, :administer], ParticipantSurvey
-      can :manage, SupplementalMaterial
     end
   end
 end

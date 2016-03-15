@@ -19,6 +19,7 @@ RSpec.describe Classroom, type: :model do
   it { should have_many :students }
   it { should have_many :classroom_module_presents }
   it { should have_many :presented_learning_modules }
+  it { should have_many :supplemental_materials }
   it { should belong_to :teacher }
   it { should belong_to :program }
 
