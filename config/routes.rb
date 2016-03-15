@@ -45,7 +45,15 @@ Rails.application.routes.draw do
         resources :surveys, only: [:index]
         # Unfortunately we can't undo a shallow: true so we need to be verbose here.
         post "/surveys/:survey_id/administer", to: "surveys#administer", as: :survey_administer
+
+        # TODO(sam): Move rest of controllers into this namespace
+        scope module: :classrooms do
+          resources :supplemental_materials, only: [:index]
+        end
       end
+
+      # namespace :classrooms do
+      # end
     end
   end
 end

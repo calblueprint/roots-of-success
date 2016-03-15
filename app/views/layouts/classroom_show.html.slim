@@ -17,6 +17,10 @@
                   = link_to "Present Modules", classroom_learning_modules_path(@classroom),\
                             class: ["button-group-item", active_if?(@active_tab == "learning_modules")]
                 label
+                  = link_to "Supplemental Materials", \
+                      classroom_supplemental_materials_path(@classroom), \
+                      class: ["button-group-item", active_if?(@active_tab == "supplemental_materials")]
+                label
                   = link_to "Administer Surveys", classroom_surveys_path(@classroom),\
                             class: ["button-group-item", active_if?(@active_tab == "surveys")]
                 label
