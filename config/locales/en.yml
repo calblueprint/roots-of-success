@@ -81,6 +81,15 @@ en:
       update:
         success: Updated classroom!
 
+      students:
+        new:
+          heading: Add Students To %{classroom_name}
+          label: Enter one email per line.
+          submit: Invite Students!
+          subtitle: They'll get an email with a confirmation link.
+        index:
+          confirm_delete: Are you sure you want to delete %{student_email}?
+
     dashboard:
       show:
         latest_update_heading: Latest update from Roots
@@ -91,15 +100,6 @@ en:
       show:
         present: Mark as presented
         unpresent: Unmark as presented
-
-    students:
-      new:
-        heading: Add Students To %{classroom_name}
-        label: Enter one email per line.
-        submit: Invite Students!
-        subtitle: They'll get an email with a confirmation link.
-      index:
-        confirm_delete: Are you sure you want to delete %{student_email}?
 
     surveys:
       index:
