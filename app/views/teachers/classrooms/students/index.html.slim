@@ -21,9 +21,23 @@
                   td
                     .actions
                       - unless student.confirmed?
-                        a.icon.email-icon.hint--top data-method="post" data-hint="Resend confirmation email" href="#{resend_confirmation_student_path student}" rel="nofollow"
+                        a.icon.email-icon.hint--top [
+                            data-method="post"
+                            data-hint="Resend confirmation email"
+                            href="#{resend_confirmation_student_path student}"
+                        ]
                           i.fa.fa-inbox
-                      a.icon.delete-icon.hint--top data-method="delete" data-hint="Delete" href="#{student_path student}" rel="nofollow"data-confirm="#{t ".confirm_delete", student_email: student.email}"
+                      a.icon.pencil-icon.hint--top [
+                          data-hint="Edit email"
+                          href="#{edit_student_path student}"
+                      ]
+                        i.fa.fa-pencil
+                      a.icon.delete-icon.hint--top [
+                          data-method="delete"
+                          data-hint="Delete"
+                          href="#{student_path student}"
+                          data-confirm="#{t ".confirm_delete", student_email: student.email}"
+                      ]
                         i.fa.fa-close
 
 - parent_layout "classroom_show"

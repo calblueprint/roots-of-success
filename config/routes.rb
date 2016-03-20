@@ -36,7 +36,7 @@ Rails.application.routes.draw do
         # TODO(sam): Move rest of controllers into this namespace
         scope module: :classrooms do
           resources :supplemental_materials, only: [:index]
-          resources :students, only: [:new, :create, :index, :destroy] do
+          resources :students, except: [:show] do
             member { post :resend_confirmation }
           end
         end
