@@ -1,0 +1,19 @@
+.row
+  .small-12.columns
+    .center.paper
+      .row
+        .small-12.columns
+          h2 = t ".heading", student_email: @student.email
+          .subtitle = t ".subtitle"
+
+          .spacer-small
+
+          = render "form_errors", obj: @student
+          = simple_form_for @student do |f|
+            .row
+              .medium-8.medium-centered.columns
+                = f.input :email, label_html: { class: "left" }
+            .spacer-small
+            = f.button :submit
+
+          .spacer-small

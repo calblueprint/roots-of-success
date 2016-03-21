@@ -27,6 +27,27 @@ module Teachers
         gon.push addStudentsUrl: new_classroom_student_path(@classroom)
       end
 
+      def edit
+      end
+
+      def update
+        @classroom = @student.classroom
+
+        email_unchanged = @student.email != student_params[:email]
+        redirect_to classroom_students_path(@classroom),
+                    flash: { success: t(".unchanged") } if email_unchanged
+
+        if @student.update student_params
+          ResendStudentConfirmation.execute @student
+          @student.unconfirm!
+          redirect_to classroom_students_path(@classroom),
+                      flash: { success: t(".success"), email: @student.email }
+        else
+          @student.reload
+          render "edit"
+        end
+      end
+
       def destroy
         @student.destroy
         redirect_to classroom_students_path @student.classroom
@@ -36,6 +57,12 @@ module Teachers
         ResendStudentConfirmation.execute @student
         redirect_to classroom_students_path(@student.classroom),
                     flash: { success: "Confirmation email resent." }
+      end
+
+      private
+
+      def student_params
+        params.require(:student).permit(:email)
       end
     end
   end
