@@ -33,11 +33,11 @@ module Teachers
       def update
         @classroom = @student.classroom
 
-        email_unchanged = @student.email != student_params[:email]
-        redirect_to classroom_students_path(@classroom),
-                    flash: { success: t(".unchanged") } if email_unchanged
-
-        if @student.update student_params
+        email_unchanged = @student.email == student_params[:email]
+        if email_unchanged
+          redirect_to classroom_students_path(@classroom),
+                      flash: { success: t(".unchanged") }
+        elsif @student.update student_params
           ResendStudentConfirmation.execute @student
           @student.unconfirm!
           redirect_to classroom_students_path(@classroom),
