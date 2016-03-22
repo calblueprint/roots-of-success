@@ -1,10 +1,10 @@
 require "rails_helper"
 
-def submit_form
-  click_button "Update Student"
-end
-
 RSpec.describe "The edit student page", uses_jobs: true do
+  def submit_form
+    click_button "Update Student"
+  end
+
   let(:teacher) { create :teacher }
   let!(:classroom) { create :classroom }
   let!(:student) { create :student, classroom: classroom }

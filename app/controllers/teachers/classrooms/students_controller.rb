@@ -33,11 +33,11 @@ module Teachers
       def update
         @classroom = @student.classroom
 
-        email_unchanged = @student.email == student_params[:email]
+        email_unchanged = @student.email == update_params[:email]
         if email_unchanged
           redirect_to classroom_students_path(@classroom),
                       flash: { success: t(".unchanged") }
-        elsif @student.update student_params
+        elsif @student.update update_params
           ResendStudentConfirmation.execute @student
           @student.unconfirm!
           redirect_to classroom_students_path(@classroom),
@@ -61,7 +61,7 @@ module Teachers
 
       private
 
-      def student_params
+      def update_params
         params.require(:student).permit(:email)
       end
     end
