@@ -20,6 +20,9 @@ Metrics/MethodLength:
   Description: 'Limit methods to 15 lines.'
   Max: 15
 
+Metrics/AbcSize:
+  Max: 20
+
 Style/StringLiterals:
   Enabled: false
 

@@ -34,6 +34,11 @@ class Student < ActiveRecord::Base
     save
   end
 
+  def unconfirm!
+    self.confirmed = false
+    save
+  end
+
   def survey_administered!
     self.survey_administered = true
     save

@@ -1,18 +1,18 @@
 require "rails_helper"
 
-def show_new_student_heading
-  have_content t("teachers.students.new.heading", classroom_name: classroom.name)
-end
-
-def fill_in_emails(emails)
-  fill_in "students_emails", with: emails.join("\n")
-end
-
-def submit_form
-  click_button t("teachers.students.new.submit")
-end
-
 RSpec.describe "The create student page", uses_jobs: true do
+  def show_new_student_heading
+    have_content t("teachers.classrooms.students.new.heading", classroom_name: classroom.name)
+  end
+
+  def fill_in_emails(emails)
+    fill_in "students_emails", with: emails.join("\n")
+  end
+
+  def submit_form
+    click_button t("teachers.classrooms.students.new.submit")
+  end
+
   let(:teacher) { create :teacher }
   let!(:classroom) { create :classroom, teacher: teacher }
 

@@ -81,6 +81,23 @@ en:
       update:
         success: Updated classroom!
 
+      students:
+        new:
+          heading: Add Students To %{classroom_name}
+          label: Enter one email per line.
+          submit: Invite Students!
+          subtitle: They'll get an email with a confirmation link.
+        index:
+          confirm_delete: Are you sure you want to delete %{student_email}?
+        edit:
+          heading: Edit email of %{student_email}
+          subtitle: |
+            If this student's email is changed, he/she will have to verify the
+            email address again.
+        update:
+          success: Email updated. Verification email sent to %{email}.
+          unchanged: Email not updated. No verification email sent.
+
     dashboard:
       show:
         latest_update_heading: Latest update from Roots
@@ -91,15 +108,6 @@ en:
       show:
         present: Mark as presented
         unpresent: Unmark as presented
-
-    students:
-      new:
-        heading: Add Students To %{classroom_name}
-        label: Enter one email per line.
-        submit: Invite Students!
-        subtitle: They'll get an email with a confirmation link.
-      index:
-        confirm_delete: Are you sure you want to delete %{student_email}?
 
     surveys:
       index:

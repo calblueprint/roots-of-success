@@ -5,29 +5,31 @@
   }
 }
 
-a.icon {
+@mixin icon-colors($icon-bg, $icon-color) {
+  background-color: $icon-bg;
+  color: $icon-color;
+
+  &:hover {
+    background-color: darken($icon-bg, 10);
+    color: $icon-color;
+  }
+}
+
+.icon {
   border-radius: $base-border-radius;
   display: inline-block;
   height: 24px;
   width: 24px;
 
-  &.delete-icon {
-    background-color: $delete-icon-bg;
-    color: $delete-icon-color;
+  &.pencil-icon {
+    @include icon-colors($pencil-icon-bg, $pencil-icon-color);
+  }
 
-    &:hover {
-      background-color: darken($delete-icon-bg, 10);
-      color: $delete-icon-color;
-    }
+  &.delete-icon {
+    @include icon-colors($delete-icon-bg, $delete-icon-color);
   }
 
   &.email-icon {
-    background-color: $email-icon-bg;
-    color: $email-icon-color;
-
-    &:hover {
-      background-color: darken($email-icon-bg, 10);
-      color: $email-icon-color;
-    }
+    @include icon-colors($email-icon-bg, $email-icon-color);
   }
 }
