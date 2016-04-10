@@ -3,6 +3,10 @@
     .small-12.columns
       .spacer-small
 
+      = link_to "Add Supplemental Material", new_classroom_supplemental_material_path, class: "button success"
+
+      .spacer-small
+
       = render @supplemental_materials
 
       - if @supplemental_materials.empty?
