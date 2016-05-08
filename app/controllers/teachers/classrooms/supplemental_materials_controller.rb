@@ -1,7 +1,7 @@
 module Teachers
   module Classrooms
     class SupplementalMaterialsController < BaseController
-      before_action :set_classroom, only: [:index, :new, :create] # @classroom
+      before_action :set_classroom, only: [:index, :new, :create, :manage] # @classroom
 
       UPDATABLE_ATTRS = [:name, :content].freeze
 
@@ -37,6 +37,10 @@ module Teachers
         else
           render "edit"
         end
+      end
+
+      def manage
+        @supplemental_materials = @classroom.supplemental_materials
       end
 
       private

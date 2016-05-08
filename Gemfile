@@ -12,6 +12,7 @@ gem "sucker_punch", "~> 1.3.1"
 gem "activeadmin", "~> 1.0.0.pre1"
 
 # Components
+gem "acts_as_list"
 gem "awesome_print"
 gem "cancancan", "~> 1.9.2"
 gem "devise", "~> 3.4.1"

@@ -1,0 +1,9 @@
+- content_for :classroom_show_content do
+  h1 Manage Supplemental Materials
+
+  ul
+    - @supplemental_materials.each do |supplemental_material|
+      li
+        h3 = supplemental_material.name
+
+- parent_layout "classroom_show"
