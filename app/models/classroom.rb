@@ -19,7 +19,7 @@ class Classroom < ActiveRecord::Base
   has_many :students
   has_many :classroom_module_presents
   has_many :presented_learning_modules, through: :classroom_module_presents, source: :learning_module
-  has_many :supplemental_materials
+  has_many :supplemental_materials, -> { order(position: :asc) }
   belongs_to :teacher
   belongs_to :program
 

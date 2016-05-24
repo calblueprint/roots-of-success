@@ -1,7 +1,7 @@
 module Teachers
   module Classrooms
     class SupplementalMaterialsController < BaseController
-      before_action :set_classroom, only: [:index, :new, :create] # @classroom
+      before_action :set_classroom, only: [:index, :new, :create, :manage] # @classroom
 
       UPDATABLE_ATTRS = [:name, :content].freeze
 
@@ -16,6 +16,7 @@ module Teachers
       def create
         @supplemental_material = @classroom.supplemental_materials.build supplemental_material_params
         if @supplemental_material.save
+          @supplemental_material.move_to_top
           redirect_to classroom_supplemental_materials_path,
                       flash: { success: "Successfully created supplemental material" }
         else
@@ -37,6 +38,21 @@ module Teachers
         else
           render "edit"
         end
+      end
+
+      def manage
+        @supplemental_materials = @classroom.supplemental_materials.decorate
+      end
+
+      # An API method that is used to change a position of a material. It's
+      # called from sortable-table.coffee.
+      #
+      # @param id - The id of the material
+      # @param newPos - The new position of the material
+      def change_position
+        supplemental_material = SupplementalMaterial.find params[:id]
+        supplemental_material.insert_at params[:newPos].to_i
+        render json: { status: :ok }
       end
 
       private

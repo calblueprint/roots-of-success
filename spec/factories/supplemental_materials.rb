@@ -8,6 +8,7 @@
 #  content      :text
 #  classroom_id :integer          not null
 #  name         :string
+#  position     :integer
 #
 
 FactoryGirl.define do

@@ -8,6 +8,7 @@
 #  content      :text
 #  classroom_id :integer          not null
 #  name         :string
+#  position     :integer
 #
 
 class SupplementalMaterial < ActiveRecord::Base
@@ -16,4 +17,6 @@ class SupplementalMaterial < ActiveRecord::Base
   validates :name, presence: true
   validates :content, presence: true
   validates :classroom_id, presence: true
+
+  acts_as_list scope: :classroom
 end
