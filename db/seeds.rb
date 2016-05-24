@@ -120,3 +120,4 @@ seed_pre_post_test unless PrePostTest.any?
 seed_surveys unless TeacherSurvey.any?
 seed_admin_user unless AdminUser.any?
 seed_change_log_items unless ChangelogItem.any?
+seed_supplemental_materials unless SupplementalMaterial.any?
