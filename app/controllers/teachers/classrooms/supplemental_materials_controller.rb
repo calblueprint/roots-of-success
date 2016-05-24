@@ -16,6 +16,7 @@ module Teachers
       def create
         @supplemental_material = @classroom.supplemental_materials.build supplemental_material_params
         if @supplemental_material.save
+          @supplemental_material.move_to_top
           redirect_to classroom_supplemental_materials_path,
                       flash: { success: "Successfully created supplemental material" }
         else
