@@ -40,7 +40,18 @@ module Teachers
       end
 
       def manage
-        @supplemental_materials = @classroom.supplemental_materials
+        @supplemental_materials = @classroom.supplemental_materials.decorate
+      end
+
+      # An API method that is used to change a position of a material. It's
+      # called from sortable-table.coffee.
+      #
+      # @param id - The id of the material
+      # @param newPos - The new position of the material
+      def change_position
+        supplemental_material = SupplementalMaterial.find params[:id]
+        supplemental_material.insert_at params[:newPos].to_i
+        render json: { status: :ok }
       end
 
       private

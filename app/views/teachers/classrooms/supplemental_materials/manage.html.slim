@@ -1,9 +1,22 @@
 - content_for :classroom_show_content do
   h1 Manage Supplemental Materials
 
-  ul
-    - @supplemental_materials.each do |supplemental_material|
-      li
-        h3 = supplemental_material.name
+  .spacer-small
+
+  - if @supplemental_materials.empty?
+    h3 No supplemental materials yet!
+  - else
+    table.sup-materials-table
+      thead
+        tr
+          th.sup-materials-table--handle
+          th.sup-materials-table--title Title
+      tbody.js-sortable data={ endpoint: change_position_classroom_supplemental_materials_path(@classroom) }
+        - @supplemental_materials.each do |supplemental_material|
+          tr data={ id: supplemental_material.id }
+            td
+              i.fa.fa-arrows.js-sortable-handle
+            td
+              h3 = supplemental_material.name
 
 - parent_layout "classroom_show"

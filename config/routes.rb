@@ -38,6 +38,7 @@ Rails.application.routes.draw do
           resources :supplemental_materials, only: [:index, :new, :create, :edit, :update] do
             collection do
               get :manage
+              post :change_position
             end
           end
 
