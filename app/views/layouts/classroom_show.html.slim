@@ -24,6 +24,9 @@
                   = link_to "Administer Surveys", classroom_surveys_path(@classroom),\
                             class: ["button-group-item", active_if?(@active_tab == "surveys")]
                 label
+                  = link_to "Quizzes", classroom_quizzes_path(@classroom),\
+                            class: ["button-group-item", active_if?(@active_tab == "quizzes")]
+                label
                   = link_to "Classroom Settings", edit_classroom_path(@classroom),\
                             class: ["button-group-item", active_if?(@active_tab == "classroom_edit")]
 

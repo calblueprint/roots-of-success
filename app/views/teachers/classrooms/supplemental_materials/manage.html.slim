@@ -3,6 +3,8 @@
 
   .spacer-small
 
+  = link_to "Done", classroom_supplemental_materials_path, class: "button"
+
   - if @supplemental_materials.empty?
     h3 No supplemental materials yet!
   - else

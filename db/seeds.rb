@@ -112,6 +112,30 @@ def seed_supplemental_materials
   )
 end
 
+# TODO add all quizzes 
+def seed_quizzes
+  Quiz.create!(
+    program: Program.find_by(name: "Social Entrepreneurs"),
+    name: "Fundamentals Module Quiz",
+    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dG1INDJIY205Zzg2NXVudXliWVVmQlE6MA" frameborder="0" width="551" height="655" marginheight="0" marginwidth="0"></iframe>',
+  )
+  Quiz.create!(
+    program: Program.find_by(name: "High Schools and Youth Programs"),
+    name: "Fundamentals Module Quiz",
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/18gwcfUX3b7Sybl5CAYgFVDYjiLYdpIRIZz-z0rXcr_w/viewform?embedded=true" frameborder="0" width="551" height="500" marginheight="0" marginwidth="0"></iframe>',
+  )
+  Quiz.create!(
+    program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
+    name: "Fundamentals Module Quiz",
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1HuAqZnkjNJsJTRMIErui1Ilk9KL_eIdeTqSEAZiW9go/viewform?embedded=true" frameborder="0" width="551" height="500" marginheight="0" marginwidth="0"></iframe>',
+  )
+  Quiz.create!(
+    program: Program.find_by(name: "Standard Version for Adults"),
+    name: "Fundamentals Module Quiz",
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1HuAqZnkjNJsJTRMIErui1Ilk9KL_eIdeTqSEAZiW9go/viewform?embedded=true" frameborder="0" width="551" height="500" marginheight="0" marginwidth="0"></iframe>',
+  )
+end
+
 seed_teachers unless Teacher.any?
 seed_programs unless Program.any?
 seed_learning_modules unless LearningModule.any?
@@ -121,3 +145,4 @@ seed_surveys unless TeacherSurvey.any?
 seed_admin_user unless AdminUser.any?
 seed_change_log_items unless ChangelogItem.any?
 seed_supplemental_materials unless SupplementalMaterial.any?
+seed_quizzes unless Quiz.any?
