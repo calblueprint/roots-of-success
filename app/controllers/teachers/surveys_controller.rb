@@ -7,8 +7,8 @@ module Teachers
 
     def index
       @pre_post_tests = PrePostTest.all
-      @participant_surveys = ParticipantSurvey.all
-      @teacher_surveys = TeacherSurvey.all
+      @participant_survey = @classroom.participant_survey
+      @teacher_survey = @classroom.teacher_survey
     end
 
     def administer

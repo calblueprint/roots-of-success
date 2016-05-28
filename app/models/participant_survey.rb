@@ -8,9 +8,14 @@
 #  name            :string
 #  form_embed_code :text
 #  description     :text
+#  program_id      :integer
 #
 
 class ParticipantSurvey < ActiveRecord::Base
+  belongs_to :program
+
   validates :name, presence: true
   validates :form_embed_code, presence: true
+  validates :description, presence: true
+  validates :program_id, presence: true
 end

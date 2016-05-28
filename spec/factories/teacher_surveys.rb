@@ -8,6 +8,7 @@
 #  name        :string
 #  url         :text
 #  description :text
+#  program_id  :integer
 #
 
 FactoryGirl.define do
@@ -15,5 +16,6 @@ FactoryGirl.define do
     sequence(:name) { |n| "Teacher Survey #{n}" }
     url "hello.pdf"
     description "Some description"
+    program
   end
 end

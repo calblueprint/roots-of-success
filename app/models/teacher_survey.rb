@@ -8,12 +8,14 @@
 #  name        :string
 #  url         :text
 #  description :text
+#  program_id  :integer
 #
 
-# TODO: This is pretty unnecessary, since we just use a hardcoded URL
-# in the view anyway.
 class TeacherSurvey < ActiveRecord::Base
+  belongs_to :program
+
   validates :name, presence: true
   validates :url, presence: true
   validates :description, presence: true
+  validates :program_id, presence: true
 end

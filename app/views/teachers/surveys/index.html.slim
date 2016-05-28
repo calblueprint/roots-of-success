@@ -9,11 +9,11 @@
 
       = render @pre_post_tests
 
-      = render @participant_surveys, classroom: @classroom
+      = render @participant_survey, classroom: @classroom
 
     .small-12.medium-6.columns
       h3 = t ".teacher_surveys_heading"
       .spacer-small
-      = render @teacher_surveys
+      = render @teacher_survey
 
 - parent_layout "classroom_show"

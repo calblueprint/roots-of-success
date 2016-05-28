@@ -37,6 +37,20 @@ RSpec.describe Classroom, type: :model do
     end
   end
 
+  describe "#participant_survey" do
+    it "delegates to program" do
+      expect(classroom.program).to receive(:participant_survey)
+      classroom.participant_survey
+    end
+  end
+
+  describe "#teacher_survey" do
+    it "delegates to program" do
+      expect(classroom.program).to receive(:teacher_survey)
+      classroom.teacher_survey
+    end
+  end
+
   describe "#to_s" do
     it "returns the classroom's name" do
       expect(classroom.to_s).to eql classroom.name
