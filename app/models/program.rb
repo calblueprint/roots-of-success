@@ -12,6 +12,8 @@
 class Program < ActiveRecord::Base
   has_many :classrooms
   has_many :learning_modules
+  has_one :participant_survey
+  has_one :teacher_survey
 
   validates :name, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true

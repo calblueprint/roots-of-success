@@ -8,6 +8,7 @@
 #  name            :string
 #  form_embed_code :text
 #  description     :text
+#  program_id      :integer
 #
 
 FactoryGirl.define do
@@ -15,5 +16,6 @@ FactoryGirl.define do
     sequence(:name) { |n| "Participant Survey #{n}" }
     description "Some description"
     form_embed_code "Some html"
+    program
   end
 end
