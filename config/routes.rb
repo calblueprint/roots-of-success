@@ -33,7 +33,6 @@ Rails.application.routes.draw do
       resources :classrooms, shallow: true do
         member { post :transfer }
 
-        # TODO(sam): Move rest of controllers into this namespace
         scope module: :classrooms do
           resources :supplemental_materials, only: [:index, :new, :create, :edit, :update] do
             collection do
@@ -61,9 +60,6 @@ Rails.application.routes.draw do
              to: "surveys#administer",
              as: :survey_administer
       end
-
-      # namespace :classrooms do
-      # end
     end
   end
 end
