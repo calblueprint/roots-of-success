@@ -4,7 +4,11 @@
       .center.paper
         .row
           .small-12.columns
-            h2 #{@classroom.name}
+            h2
+              | #{@classroom.name}
+              | &nbsp;&nbsp;&nbsp;
+              = link_to edit_classroom_path(@classroom), class: "gear-link" do
+                i.fa.fa-gear
 
             .spacer-small
 
@@ -26,9 +30,6 @@
                 label
                   = link_to "Quizzes", classroom_quizzes_path(@classroom),\
                             class: ["button-group-item", active_if?(@active_tab == "quizzes")]
-                label
-                  = link_to "Classroom Settings", edit_classroom_path(@classroom),\
-                            class: ["button-group-item", active_if?(@active_tab == "classroom_edit")]
 
         .spacer-small
 

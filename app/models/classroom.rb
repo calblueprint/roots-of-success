@@ -32,6 +32,8 @@ class Classroom < ActiveRecord::Base
   scope :inactive, -> { where active: false }
 
   delegate :learning_modules, to: :program
+  delegate :participant_survey, to: :program
+  delegate :teacher_survey, to: :program
 
   attachment :card_image, type: :image
 
