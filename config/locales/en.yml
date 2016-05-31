@@ -103,16 +103,16 @@ en:
           present: Mark as presented
           unpresent: Unmark as presented
 
+      surveys:
+        index:
+          student_surveys_heading: Surveys For Students
+          teacher_surveys_heading: Surveys For You
+
     dashboard:
       show:
         latest_update_heading: Latest update from Roots
         heading: Hey %{name}!
         subtitle: These are your active classrooms. Teach away!
-
-    surveys:
-      index:
-        student_surveys_heading: Surveys For Students
-        teacher_surveys_heading: Surveys For You
 
   titles:
     application: Community of Practice

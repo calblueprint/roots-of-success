@@ -52,15 +52,18 @@ Rails.application.routes.draw do
           post "/learning_modules/:id/toggle_present",
                to: "learning_modules#toggle_present",
                as: :learning_module_toggle_present
+
+          resources :surveys, only: [:index]
+          # Unfortunately we can't undo a shallow: true so we need to be verbose here.
+          post "/surveys/:survey_id/administer",
+               to: "surveys#administer",
+               as: :survey_administer
+ 
+          resources :quizzes, only: [:index]
+          post "/quizzes/:quizzes_id/administer",
+               to: "quizzes#administer",
+               as: :quizzes_administer
         end
-
-        resources :surveys, only: [:index]
-        # Unfortunately we can't undo a shallow: true so we need to be verbose here.
-        post "/surveys/:survey_id/administer",
-             to: "surveys#administer",
-             as: :survey_administer
-
-        resources :quizzes, only: [:index]
       end
     end
   end
