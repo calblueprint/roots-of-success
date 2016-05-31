@@ -1,10 +1,10 @@
 require "rails_helper"
 
-def i(key)
-  t("teachers.classrooms.edit#{key}")
-end
-
 RSpec.describe "Classroom edit page" do
+  def i(key)
+    t("teachers.classrooms.edit#{key}")
+  end
+
   let(:teacher) { create :teacher }
   let!(:program) { create :program }
   let!(:classroom) { create :classroom, teacher: teacher }

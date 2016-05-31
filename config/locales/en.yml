@@ -98,16 +98,16 @@ en:
           success: Email updated. Verification email sent to %{email}.
           unchanged: Email not updated. No verification email sent.
 
+      learning_modules:
+        show:
+          present: Mark as presented
+          unpresent: Unmark as presented
+
     dashboard:
       show:
         latest_update_heading: Latest update from Roots
         heading: Hey %{name}!
         subtitle: These are your active classrooms. Teach away!
-
-    learning_modules:
-      show:
-        present: Mark as presented
-        unpresent: Unmark as presented
 
     surveys:
       index:
