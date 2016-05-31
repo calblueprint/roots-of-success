@@ -33,7 +33,6 @@ Rails.application.routes.draw do
       resources :classrooms, shallow: true do
         member { post :transfer }
 
-        # TODO(sam): Move rest of controllers into this namespace
         scope module: :classrooms do
           resources :supplemental_materials, only: [:index, :new, :create, :edit, :update] do
             collection do
@@ -45,15 +44,15 @@ Rails.application.routes.draw do
           resources :students, except: [:show] do
             member { post :resend_confirmation }
           end
-        end
 
-        resources :learning_modules, only: :index
-        get "/learning_modules/:id",
-            to: "learning_modules#show",
-            as: :learning_module
-        post "/learning_modules/:id/toggle_present",
-             to: "learning_modules#toggle_present",
-             as: :learning_module_toggle_present
+          resources :learning_modules, only: :index
+          get "/learning_modules/:id",
+              to: "learning_modules#show",
+              as: :learning_module
+          post "/learning_modules/:id/toggle_present",
+               to: "learning_modules#toggle_present",
+               as: :learning_module_toggle_present
+        end
 
         resources :surveys, only: [:index]
         # Unfortunately we can't undo a shallow: true so we need to be verbose here.
@@ -61,9 +60,6 @@ Rails.application.routes.draw do
              to: "surveys#administer",
              as: :survey_administer
       end
-
-      # namespace :classrooms do
-      # end
     end
   end
 end
