@@ -1,6 +1,11 @@
 require "rails_helper"
 
+
 RSpec.describe "Learning modules" do
+  def i(key)
+    t "teachers.classrooms.learning_modules#{key}"
+  end
+
   let(:teacher) { create :teacher }
   let(:classroom) { create :classroom, teacher: teacher }
   let(:learning_module1) { create :learning_module, program: classroom.program }
@@ -24,11 +29,11 @@ RSpec.describe "Learning modules" do
     before { visit classroom_learning_module_path classroom, learning_module1 }
 
     it { should have_content learning_module1.name }
-    it { should have_content t("teachers.learning_modules.show.present") }
+    it { should have_content i(".show.present") }
 
     describe "clicking present button" do
       it "marks module as presented" do
-        expect { click_link t("teachers.learning_modules.show.present") }
+        expect { click_link i(".show.present") }
           .to change { learning_module1.classrooms_presented_to.count }.by 1
       end
     end
@@ -40,7 +45,7 @@ RSpec.describe "Learning modules" do
       end
 
       it "marks module as unpresented" do
-        expect { click_link t("teachers.learning_modules.show.unpresent") }
+        expect { click_link i(".show.unpresent") }
           .to change { learning_module1.classrooms_presented_to.count }.by(-1)
       end
     end
