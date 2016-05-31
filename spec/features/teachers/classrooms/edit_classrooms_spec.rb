@@ -1,6 +1,5 @@
 require "rails_helper"
 
-
 RSpec.describe "Classroom edit page" do
   def i(key)
     t("teachers.classrooms.edit#{key}")

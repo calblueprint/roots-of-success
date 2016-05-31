@@ -1,6 +1,5 @@
 require "rails_helper"
 
-
 RSpec.describe "Learning modules" do
   def i(key)
     t "teachers.classrooms.learning_modules#{key}"
