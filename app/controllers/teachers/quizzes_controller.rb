@@ -5,6 +5,6 @@ module Teachers
       @quizzes = @classroom.program.quizzes
     end
 
-    # TODO administer quizzes
+    # TODO: administer quizzes
   end
 end

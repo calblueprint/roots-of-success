@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160527192032) do
+ActiveRecord::Schema.define(version: 20160528053650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,7 +91,10 @@ ActiveRecord::Schema.define(version: 20160527192032) do
     t.string   "name"
     t.text     "form_embed_code"
     t.text     "description"
+    t.integer  "program_id",      null: false
   end
+
+  add_index "participant_surveys", ["program_id"], name: "index_participant_surveys_on_program_id", using: :btree
 
   create_table "pre_post_tests", force: :cascade do |t|
     t.datetime "created_at",  null: false
@@ -150,7 +153,10 @@ ActiveRecord::Schema.define(version: 20160527192032) do
     t.string   "name"
     t.text     "url"
     t.text     "description"
+    t.integer  "program_id",  null: false
   end
+
+  add_index "teacher_surveys", ["program_id"], name: "index_teacher_surveys_on_program_id", using: :btree
 
   create_table "teachers", force: :cascade do |t|
     t.datetime "created_at"
