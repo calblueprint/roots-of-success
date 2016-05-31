@@ -66,17 +66,17 @@ def seed_surveys
   prog(0).create_participant_survey!(
     name: "For Job Training, Workforce Development and Re-entry Programs",
     description: "Once the class is finished, click to email this required survey to all verified students.",
-    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1LksTZoVGU40wLXLTbwr06WaCKZO6Fko1_6-dsva25b4/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
   )
   prog(1).create_participant_survey!(
     name: "For Correctional Institutions",
     description: "Once the class is finished, click to email this required survey to all verified students.",
-    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1ccnL5EbuDwDBQxa9ATprtzyQYAva6Kpth8L4X8HxUGE/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
   )
   prog(2).create_participant_survey!(
     name: "For Job Training, Workforce Development and Re-entry Programs",
     description: "Once the class is finished, click to email this required survey to all verified students.",
-    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1LksTZoVGU40wLXLTbwr06WaCKZO6Fko1_6-dsva25b4/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
   )
   # No survey for Spanish program yet.
   # prog(3).create_participant_survey!(
@@ -87,42 +87,42 @@ def seed_surveys
   prog(4).create_participant_survey!(
     name: "For Job Training, Workforce Development and Re-entry Programs",
     description: "Once the class is finished, click to email this required survey to all verified students.",
-    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1LksTZoVGU40wLXLTbwr06WaCKZO6Fko1_6-dsva25b4/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
   )
   prog(5).create_participant_survey!(
     name: "For High School Students",
     description: "Once the class is finished, click to email this required survey to all verified students.",
-    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dFlPaWhjbjhsQWZzX25RSnFqdm5zVVE6MQ" frameborder="0" width="551" height="640" marginheight="0" marginwidth="0"></iframe>'
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1OobIDBKY6VMhbK9Wi2kwBiYtvbIF3lHxNccrfOmOMus/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
   )
 
   prog(0).create_teacher_survey!(
     name: "For Job Training, Workforce Development and Re-entry Programs",
     description: "Once the class is finished, fill this survey out.",
-    url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
+    url: "http://goo.gl/forms/v9fZRjrvMq2IrLK82",
   )
 
   prog(1).create_teacher_survey!(
     name: "For Correctional Institutions",
     description: "Once the class is finished, fill this survey out.",
-    url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
+    url: "http://goo.gl/forms/ppXgfF4sudpuqd412",
   )
 
   prog(2).create_teacher_survey!(
     name: "For Job Training, Workforce Development and Re-entry Programs",
     description: "Once the class is finished, fill this survey out.",
-    url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
+    url: "http://goo.gl/forms/v9fZRjrvMq2IrLK82",
   )
 
   prog(4).create_teacher_survey!(
     name: "For Job Training, Workforce Development and Re-entry Programs",
     description: "Once the class is finished, fill this survey out.",
-    url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
+    url: "http://goo.gl/forms/v9fZRjrvMq2IrLK82",
   )
 
   prog(5).create_teacher_survey!(
     name: "For High School Students",
     description: "Once the class is finished, fill this survey out.",
-    url: "https://rootsofsuccesscurriculum.files.wordpress.com/2012/02/4-instructor-survey.pdf",
+    url: "http://goo.gl/forms/n4rlB1l6WtfGug6J3",
   )
 end
 
