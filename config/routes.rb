@@ -58,7 +58,7 @@ Rails.application.routes.draw do
           post "/surveys/:survey_id/administer",
                to: "surveys#administer",
                as: :survey_administer
- 
+
           resources :quizzes, only: [:index]
           post "/quizzes/:quizzes_id/administer",
                to: "quizzes#administer",

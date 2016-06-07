@@ -148,7 +148,6 @@ def seed_supplemental_materials
   )
 end
 
-# TODO add all quizzes
 def seed_quizzes
   Quiz.create!( # sample
     program: Program.find_by(name: "Standard Version for Adults"),

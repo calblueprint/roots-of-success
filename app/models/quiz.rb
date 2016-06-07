@@ -13,4 +13,8 @@
 
 class Quiz < ActiveRecord::Base
   belongs_to :program
+
+  validates :name, presence: true
+  validates :form_embed_code, presence: true
+  validates :program_id, presence: true
 end
