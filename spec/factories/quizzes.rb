@@ -13,5 +13,8 @@
 
 FactoryGirl.define do
   factory :quiz do
+    sequence(:name) { |n| "Quiz #{n}" }
+    form_embed_code "Some html"
+    program
   end
 end
