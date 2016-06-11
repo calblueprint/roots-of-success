@@ -8,8 +8,15 @@ module Teachers
       end
 
       def administer
+        quiz = Quiz.find params[:quiz_id]
+
+        AdministerQuizToClassroom.execute(
+          classroom: @classroom,
+          quiz: quiz,
+        )
+
         redirect_to classroom_quizzes_path(@classroom),
-                    flash: { success: "Quiz emailed to students!" }
+                    flash: { success: "Quiz emailed to students" }
       end
     end
   end

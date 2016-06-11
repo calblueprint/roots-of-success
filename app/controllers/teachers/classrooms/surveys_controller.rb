@@ -21,7 +21,7 @@ module Teachers
         )
 
         redirect_to classroom_surveys_path(@classroom),
-                    flash: { success: "Survey emailed to students!" }
+                    flash: { success: "Survey emailed to students" }
       end
     end
   end

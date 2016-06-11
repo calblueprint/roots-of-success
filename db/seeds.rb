@@ -154,6 +154,11 @@ def seed_quizzes
     name: "Fundamentals Module Quiz",
     form_embed_code: '<iframe src="https://docs.google.com/forms/d/1HuAqZnkjNJsJTRMIErui1Ilk9KL_eIdeTqSEAZiW9go/viewform?embedded=true" frameborder="0" width="551" height="500" marginheight="0" marginwidth="0"></iframe>',
   )
+  Quiz.create!( # sample2
+    program: Program.find_by(name: "Standard Version for Adults"),
+    name: "Water Module Quiz",
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1HuAqZnkjNJsJTRMIErui1Ilk9KL_eIdeTqSEAZiW9go/viewform?embedded=true" frameborder="0" width="551" height="500" marginheight="0" marginwidth="0"></iframe>',
+  )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Fundamentals Module Quiz",

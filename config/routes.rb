@@ -60,7 +60,7 @@ Rails.application.routes.draw do
                as: :survey_administer
 
           resources :quizzes, only: [:index]
-          post "/quizzes/:quizzes_id/administer",
+          post "/quizzes/:quiz_id/administer",
                to: "quizzes#administer",
                as: :quizzes_administer
         end
