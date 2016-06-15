@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
     get "/surveys/:survey_id", to: "students#show_survey", as: :show_survey
     post "/surveys/:survey_id/confirm", to: "students#confirm_survey", as: :confirm_survey
+
+    get "/quizzes/:quiz_id", to: "students#show_quiz", as: :show_quiz
   end
 
   scope module: :teachers do

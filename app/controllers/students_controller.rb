@@ -16,6 +16,10 @@ class StudentsController < ApplicationController
     @student.survey_administered!
   end
 
+  def show_quiz
+    @quiz = Quiz.find params[:quiz_id]
+  end
+
   private
 
   def verify_token
