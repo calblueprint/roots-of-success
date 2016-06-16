@@ -113,6 +113,17 @@ ActiveRecord::Schema.define(version: 20160528053650) do
   add_index "programs", ["name"], name: "index_programs_on_name", unique: true, using: :btree
   add_index "programs", ["slug"], name: "index_programs_on_slug", unique: true, using: :btree
 
+  create_table "quizzes", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.text     "form_embed_code"
+    t.text     "description"
+    t.integer  "program_id"
+  end
+
+  add_index "quizzes", ["program_id"], name: "index_quizzes_on_program_id", using: :btree
+
   create_table "students", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"

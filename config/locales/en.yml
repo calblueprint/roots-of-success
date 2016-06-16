@@ -54,6 +54,9 @@ en:
       heading: You're done!
       subtitle: Please fill out the following survey to provide us feedback about %{classroom_name}.
       confirm_button: Click this button once you've hit submit.
+    show_quiz:
+      heading: "Invidiosum nomen est, infame, suspectum."
+      subtitle: "Neutrum vero, inquit ille. Sed fortuna fortis; Quid censes in Latino fore? Tibi hoc incredibile, quod beatissimum."
 
   teachers:
     changelog_items:
@@ -103,16 +106,16 @@ en:
           present: Mark as presented
           unpresent: Unmark as presented
 
+      surveys:
+        index:
+          student_surveys_heading: Surveys For Students
+          teacher_surveys_heading: Surveys For You
+
     dashboard:
       show:
         latest_update_heading: Latest update from Roots
         heading: Hey %{name}!
         subtitle: These are your active classrooms. Teach away!
-
-    surveys:
-      index:
-        student_surveys_heading: Surveys For Students
-        teacher_surveys_heading: Surveys For You
 
   titles:
     application: Community of Practice

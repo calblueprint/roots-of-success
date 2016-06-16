@@ -1,0 +1,14 @@
+.spacer
+.row
+  .small-12.columns
+    .center.paper.content
+      .spacer-small
+      .row
+        .small-12.medium-8.medium-push-2.columns
+          h3 = t ".heading"
+          .subtitle = t ".subtitle"
+      .spacer-small
+      .row
+        .small-12.columns
+          .fluid-media
+            = @quiz.form_embed_code.html_safe

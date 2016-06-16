@@ -12,6 +12,7 @@
 class Program < ActiveRecord::Base
   has_many :classrooms
   has_many :learning_modules
+  has_many :quizzes
   has_one :participant_survey
   has_one :teacher_survey
 
