@@ -1,8 +1,6 @@
 module Teachers
   module Classrooms
     class SurveysController < BaseController
-      include ActionView::Helpers::TextHelper
-
       before_action :authorize_access!
       before_action :set_classroom
 

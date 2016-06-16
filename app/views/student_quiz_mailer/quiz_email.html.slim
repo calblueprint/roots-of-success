@@ -2,7 +2,9 @@ html lang="en"
 head
   meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
 body
-  h3 = link_to "Please complete the #{@quiz.name}.", \
+  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse rhoncus iaculis orci, non accumsan nulla eleifend in. Duis sed quam sed felis feugiat efficitur. Praesent rutrum nibh orci, a commodo lacus condimentum nec.
+
+  h4 = link_to "Please complete the #{@quiz.name}.", \
         student_show_quiz_url(@student, @quiz, confirmation_token: @student.confirmation_token)
 
   p If you have received this email in error, do not take any action.
