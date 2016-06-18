@@ -18,6 +18,10 @@ module Teachers
         redirect_to classroom_quizzes_path(@classroom),
                     flash: { success: "Quiz emailed to students" }
       end
+
+      def manage_students
+        @quiz = Quiz.find params[:quiz_id]
+      end
     end
   end
 end

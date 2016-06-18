@@ -1,0 +1,33 @@
+- content_for :classroom_show_content do
+  h1 = @quiz.name
+  .spacer-small
+
+  .row
+    .large-10.large-push-1.columns
+      table#students-table.display
+        thead
+          tr
+            th Email
+            th Quiz Completed
+            th Actions
+        tbody
+          - @classroom.students.each do |student|
+            tr id="#{dom_id student}"
+              td = student.email
+              td = "No"
+              td
+                .actions
+                  - unless student.confirmed?
+                    a.icon.email-icon.hint--top [
+                        data-method="post"
+                        data-hint="Resend confirmation email"
+                        href="#{resend_confirmation_student_path student}"
+                    ]
+                      i.fa.fa-inbox
+                  a.icon.pencil-icon.hint--top [
+                      data-hint="Edit"
+                      href="#{}"
+                  ]
+                    i.fa.fa-pencil
+
+- parent_layout "classroom_show"
