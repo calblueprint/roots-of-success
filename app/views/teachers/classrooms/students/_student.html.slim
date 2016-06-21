@@ -1,0 +1,42 @@
+tr id="#{dom_id student}"
+  td = student.email
+  td = yes_no student.confirmed?
+  td = yes_no student.survey_administered?
+  td
+    .actions
+      - if student.confirmed?
+        - if student.survey_administered?
+          a.icon.survey-not-taken-icon.hint--top.js-survey-taken [
+              data-hint="Mark survey not taken"
+              data-method="post"
+              href="#{toggle_confirm_survey_student_path student}"
+          ]
+            i.fa.fa-minus-square-o
+        - else
+          a.icon.survey-taken-icon.hint--top.js-survey-taken [
+              data-hint="Mark survey taken"
+              data-method="post"
+              href="#{toggle_confirm_survey_student_path student}"
+          ]
+            i.fa.fa-check-square-o
+      - else
+        a.icon.email-icon.hint--top.js-resend-confirmation [
+            data-hint="Resend confirmation email"
+            data-remote="true"
+            data-method="post"
+            href="#{resend_confirmation_student_path student}"
+        ]
+          i.fa.fa-inbox
+
+      a.icon.pencil-icon.hint--top [
+          data-hint="Edit email"
+          href="#{edit_student_path student}"
+      ]
+        i.fa.fa-pencil
+      a.icon.delete-icon.hint--top [
+          data-method="delete"
+          data-hint="Delete"
+          href="#{student_path student}"
+          data-confirm="#{t ".confirm_delete", student_email: student.email}"
+      ]
+        i.fa.fa-close
