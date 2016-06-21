@@ -56,8 +56,13 @@ module Teachers
       def resend_confirmation
         ResendStudentConfirmation.execute @student
         render json: {
-          message: "Confirmation email resent to #{@student.email}."
+          message: "Confirmation email resent to #{@student.email}.",
         }
+      end
+
+      def toggle_confirm_survey
+        @student.toggle_survey_administered!
+        redirect_to classroom_students_path @student.classroom
       end
 
       private
