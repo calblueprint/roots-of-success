@@ -55,8 +55,9 @@ module Teachers
 
       def resend_confirmation
         ResendStudentConfirmation.execute @student
-        redirect_to classroom_students_path(@student.classroom),
-                    flash: { success: "Confirmation email resent." }
+        render json: {
+          message: "Confirmation email resent to #{@student.email}."
+        }
       end
 
       private

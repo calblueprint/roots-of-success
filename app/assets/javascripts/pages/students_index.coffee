@@ -1,3 +1,7 @@
+# Javascript for the teachers/students/index page.
+
+# This function initializes the jQuery DataTable for this page. See
+# https://datatables.net/examples/basic_init/dom.html
 studentDatatable = ->
   return unless $("#students-table").length
 
