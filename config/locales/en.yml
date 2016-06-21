@@ -90,7 +90,7 @@ en:
           label: Enter one email per line.
           submit: Invite Students!
           subtitle: They'll get an email with a confirmation link.
-        index:
+        student:
           confirm_delete: Are you sure you want to delete %{student_email}?
         edit:
           heading: Edit email of %{student_email}
