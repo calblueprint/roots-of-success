@@ -3,9 +3,10 @@
 # This function initializes the jQuery DataTable for this page. See
 # https://datatables.net/examples/basic_init/dom.html
 studentDatatable = ->
-  return unless $("#students-table").length
+  $table = $("#students-table")
+  return unless $table.length
 
-  $("#students-table").DataTable
+  $table.DataTable
     paging: false
     info: false
     dom: '<"#add-students-button">frtip'
@@ -20,4 +21,18 @@ studentDatatable = ->
     '<a href="' + gon.addStudentsUrl + '" class="button success">Add Students</a>'
   )
 
-ready studentDatatable
+# Shows a toastr message when the resend confirmation link is clicked
+confirmationResent = ->
+  $(".js-resend-confirmation").on "ajax:success", (e, data) ->
+    toastr.success data.message
+
+# Re-renders the student row when the survey adminstered link is clicked
+# TODO(sam): I gave up on this cause it was just too much trouble :(
+# surveyStateToggled = ->
+#   $(".js-survey-taken").on "ajax:success", (e, data) =>
+#     toastr.success data.message
+
+#     $table.dataTable().fnAddData(data.rowData)
+
+
+ready studentDatatable, confirmationResent
