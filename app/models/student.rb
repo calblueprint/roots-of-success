@@ -39,8 +39,8 @@ class Student < ActiveRecord::Base
     save
   end
 
-  def survey_administered!
-    self.survey_administered = true
+  def toggle_survey_administered!
+    self.survey_administered = !survey_administered
     save
   end
 

@@ -53,7 +53,6 @@ en:
     show_survey:
       heading: You're done!
       subtitle: Please fill out the following survey to provide us feedback about %{classroom_name}.
-      confirm_button: Click this button once you've hit submit.
     show_quiz:
       heading: "Invidiosum nomen est, infame, suspectum."
       subtitle: "Neutrum vero, inquit ille. Sed fortuna fortis; Quid censes in Latino fore? Tibi hoc incredibile, quod beatissimum."
@@ -90,7 +89,7 @@ en:
           label: Enter one email per line.
           submit: Invite Students!
           subtitle: They'll get an email with a confirmation link.
-        index:
+        student:
           confirm_delete: Are you sure you want to delete %{student_email}?
         edit:
           heading: Edit email of %{student_email}

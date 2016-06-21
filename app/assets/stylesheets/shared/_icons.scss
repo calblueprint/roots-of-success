@@ -1,3 +1,9 @@
+$pencil-icon-bg: $blue;
+$survey-not-taken-icon-bg: #D6944D;
+$survey-taken-icon-bg: $green;
+$delete-icon-bg: $red;
+$email-icon-bg: $medium-gray;
+
 .actions {
   a {
     margin-right: 8px;
@@ -5,7 +11,7 @@
   }
 }
 
-@mixin icon-colors($icon-bg, $icon-color) {
+@mixin icon-colors($icon-bg, $icon-color: $white) {
   background-color: $icon-bg;
   color: $icon-color;
 
@@ -22,14 +28,22 @@
   width: 24px;
 
   &.pencil-icon {
-    @include icon-colors($pencil-icon-bg, $pencil-icon-color);
+    @include icon-colors($pencil-icon-bg);
+  }
+
+  &.survey-not-taken-icon {
+    @include icon-colors($survey-not-taken-icon-bg);
+  }
+
+  &.survey-taken-icon {
+    @include icon-colors($survey-taken-icon-bg);
   }
 
   &.delete-icon {
-    @include icon-colors($delete-icon-bg, $delete-icon-color);
+    @include icon-colors($delete-icon-bg);
   }
 
   &.email-icon {
-    @include icon-colors($email-icon-bg, $email-icon-color);
+    @include icon-colors($email-icon-bg);
   }
 }
