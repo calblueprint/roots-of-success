@@ -23,8 +23,6 @@ Rails.application.routes.draw do
     end
 
     get "/surveys/:survey_id", to: "students#show_survey", as: :show_survey
-    post "/surveys/:survey_id/confirm", to: "students#confirm_survey", as: :confirm_survey
-
     get "/quizzes/:quiz_id", to: "students#show_quiz", as: :show_quiz
   end
 
@@ -44,7 +42,10 @@ Rails.application.routes.draw do
           end
 
           resources :students, except: [:show] do
-            member { post :resend_confirmation }
+            member do
+              post :resend_confirmation
+              post :toggle_confirm_survey
+            end
           end
 
           resources :learning_modules, only: :index

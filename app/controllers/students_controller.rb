@@ -11,11 +11,6 @@ class StudentsController < ApplicationController
     @survey = ParticipantSurvey.find params[:survey_id]
   end
 
-  def confirm_survey
-    @classroom = @student.classroom
-    @student.survey_administered!
-  end
-
   def show_quiz
     @quiz = Quiz.find params[:quiz_id]
   end

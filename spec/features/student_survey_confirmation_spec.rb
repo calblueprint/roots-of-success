@@ -19,12 +19,5 @@ RSpec.describe "The student survey confirmation page" do
 
     it { should have_content t("students.show_survey.heading") }
     it { should have_content survey.form_embed_code }
-
-    describe "clicking confirm button" do
-      before { click_link t("students.show_survey.confirm_button") }
-      it "sets survey_administered to true" do
-        expect(student.reload.survey_administered).to be true
-      end
-    end
   end
 end
