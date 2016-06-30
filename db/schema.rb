@@ -129,9 +129,19 @@ ActiveRecord::Schema.define(version: 20160618045600) do
     t.datetime "updated_at"
     t.string   "email"
     t.string   "confirmation_token"
-    t.boolean  "confirmed",           default: false
+    t.boolean  "confirmed",                     default: false
     t.integer  "classroom_id"
-    t.boolean  "survey_administered", default: false
+    t.boolean  "survey_administered",           default: false
+    t.float    "Fundamentals_quiz_completed",   default: -1.0
+    t.float    "Water_quiz_completed",          default: -1.0
+    t.float    "Waste_quiz_completed",          default: -1.0
+    t.float    "Transportation_quiz_completed", default: -1.0
+    t.float    "Energy_quiz_completed",         default: -1.0
+    t.float    "Building_quiz_completed",       default: -1.0
+    t.float    "Health_quiz_completed",         default: -1.0
+    t.float    "Community_quiz_completed",      default: -1.0
+    t.float    "Application_quiz_completed",    default: -1.0
+    t.float    "Financial_quiz_completed",      default: -1.0
   end
 
   add_index "students", ["classroom_id"], name: "index_students_on_classroom_id", using: :btree

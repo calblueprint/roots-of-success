@@ -66,7 +66,7 @@ Rails.application.routes.draw do
           post "/quizzes/:quiz_id/administer",
                to: "quizzes#administer",
                as: :quizzes_administer
-          get "/quizzes/:quiz_id/manage_students", # ???
+          get "/quizzes/:quiz_id/manage_students",
               to: "quizzes#manage_students",
               as: :quizzes_manage_students
         end

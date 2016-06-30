@@ -17,13 +17,6 @@
               td = "No"
               td
                 .actions
-                  - unless student.confirmed?
-                    a.icon.email-icon.hint--top [
-                        data-method="post"
-                        data-hint="Resend confirmation email"
-                        href="#{resend_confirmation_student_path student}"
-                    ]
-                      i.fa.fa-inbox
                   a.icon.pencil-icon.hint--top [
                       data-hint="Edit"
                       href="#{}"

@@ -8,7 +8,7 @@
 #  name            :string
 #  form_embed_code :text
 #  description     :text
-#  program_id      :integer
+#  program_id      :integer          not null
 #
 
 FactoryGirl.define do
