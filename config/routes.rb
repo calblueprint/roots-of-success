@@ -49,8 +49,8 @@ Rails.application.routes.draw do
                   to: "students#edit_quiz_score",
                   as: :edit_quiz_score
               patch "/edit_quiz_score/:quiz_id",
-                  to: "students#update_quiz_score",
-                  as: :quiz_score
+                    to: "students#update_quiz_score",
+                    as: :quiz_score
             end
           end
 
