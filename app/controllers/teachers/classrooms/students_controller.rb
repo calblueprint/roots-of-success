@@ -30,14 +30,30 @@ module Teachers
       def edit
       end
 
+      def edit_quiz_score
+        @student = Student.find params[:student_id]
+        @quiz = Quiz.find params[:quiz_id]
+        @quiz_completed = @quiz.name.split.first.downcase + '_quiz_completed'
+      end
+
       def update
+        if @student.update update_params
+          if update_params[:email]
+            update_email
+          else
+            update_quiz_score
+          end
+        end
+      end
+
+      def update_email
         @classroom = @student.classroom
 
         email_unchanged = @student.email == update_params[:email]
         if email_unchanged
           redirect_to classroom_students_path(@classroom),
                       flash: { success: t(".unchanged") }
-        elsif @student.update update_params
+        elsif @student.update update_email_params
           ResendStudentConfirmation.execute @student
           @student.unconfirm!
           redirect_to classroom_students_path(@classroom),
@@ -45,6 +61,18 @@ module Teachers
         else
           @student.reload
           render "edit"
+        end
+      end
+
+      def update_quiz_score
+        @classroom = @student.classroom
+        
+        if @student.update update_params
+          redirect_to classroom_quizzes_manage_students_path(@classroom, @quiz),
+                      flash: { success: "Yes!" }
+        else
+          redirect_to classroom_quizzes_manage_students_path(@classroom, @quiz),
+                      flash: { error: "Nooo" }
         end
       end
 
@@ -68,7 +96,17 @@ module Teachers
       private
 
       def update_params
-        params.require(:student).permit(:email)
+        params.require(:student).permit(:email,
+                                        :fundamentals_quiz_completed,
+                                        :water_quiz_completed,
+                                        :waste_quiz_completed,
+                                        :transportation_quiz_completed,
+                                        :energy_quiz_completed,
+                                        :building_quiz_completed,
+                                        :health_quiz_completed,
+                                        :community_quiz_completed,
+                                        :application_quiz_completed,
+                                        :financial_quiz_completed)
       end
     end
   end

@@ -46,7 +46,11 @@ Rails.application.routes.draw do
               post :resend_confirmation
               post :toggle_confirm_survey
             end
+            get "/edit_quiz_score/:quiz_id",
+                to: "students#edit_quiz_score",
+                as: :edit_quiz_score
           end
+
 
           resources :learning_modules, only: :index
           get "/learning_modules/:id",
@@ -69,6 +73,9 @@ Rails.application.routes.draw do
           get "/quizzes/:quiz_id/manage_students",
               to: "quizzes#manage_students",
               as: :quizzes_manage_students
+          get "/quizzes/:quiz_id/manage_students/:student_id",
+              to: "quizzes#edit_student",
+              as: :quizzes_edit_student
         end
       end
     end

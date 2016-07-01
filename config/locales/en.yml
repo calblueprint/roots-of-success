@@ -98,6 +98,9 @@ en:
           subtitle: |
             If this student's email is changed, he/she will have to verify the
             email address again.
+        edit_quiz_score:
+          heading: "Edit the quiz score of %{student_email}"
+          subtitle: ""
         update:
           success: Email updated. Verification email sent to %{email}.
           unchanged: Email not updated. No verification email sent.

@@ -14,12 +14,16 @@
           - @classroom.students.each do |student|
             tr id="#{dom_id student}"
               td = student.email
-              td = "No"
+              td
+                - if student.send(@quiz.name.split.first.downcase + '_quiz_completed') < 0
+                  = "No"
+                - else
+                  = student.send(@quiz.name.split.first.downcase + '_quiz_completed')
               td
                 .actions
                   a.icon.pencil-icon.hint--top [
-                      data-hint="Edit"
-                      href="#{}"
+                      data-hint="Edit student's score"
+                      href="#{student_edit_quiz_score_path(student, @quiz)}"
                   ]
                     i.fa.fa-pencil
 
