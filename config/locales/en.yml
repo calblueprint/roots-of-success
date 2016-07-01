@@ -103,7 +103,6 @@ en:
           unchanged: Email not updated. No verification email sent.
         edit_quiz_score:
           heading: "Edit the quiz score of %{student_email}"
-          subtitle: ""
         update_quiz_score:
           success: Quiz score updated.
 

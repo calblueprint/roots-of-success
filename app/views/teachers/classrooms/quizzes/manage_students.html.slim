@@ -4,7 +4,7 @@
 
   .row
     .large-10.large-push-1.columns
-      table#students-table.display
+      table.display
         thead
           tr
             th Email
@@ -15,10 +15,10 @@
             tr id="#{dom_id student}"
               td = student.email
               td
-                - if student.send(@quiz.name.split.first.downcase + '_quiz_completed') < 0
+                - if student.quiz_completed?(@quiz)
                   = "No"
                 - else
-                  = student.send(@quiz.name.split.first.downcase + '_quiz_completed')
+                  = student.send(@quiz.student_column_name)
               td
                 .actions
                   a.icon.pencil-icon.hint--top [
