@@ -31,29 +31,19 @@ module Teachers
       end
 
       def edit_quiz_score
-        @student = Student.find params[:student_id]
+        @student = Student.find params[:id]
         @quiz = Quiz.find params[:quiz_id]
         @quiz_completed = @quiz.name.split.first.downcase + '_quiz_completed'
       end
 
       def update
-        if @student.update update_params
-          if update_params[:email]
-            update_email
-          else
-            update_quiz_score
-          end
-        end
-      end
-
-      def update_email
         @classroom = @student.classroom
 
         email_unchanged = @student.email == update_params[:email]
         if email_unchanged
           redirect_to classroom_students_path(@classroom),
                       flash: { success: t(".unchanged") }
-        elsif @student.update update_email_params
+        elsif @student.update update_params
           ResendStudentConfirmation.execute @student
           @student.unconfirm!
           redirect_to classroom_students_path(@classroom),
@@ -66,13 +56,14 @@ module Teachers
 
       def update_quiz_score
         @classroom = @student.classroom
-        
+        @quiz = Quiz.find params[:quiz_id]
+
         if @student.update update_params
           redirect_to classroom_quizzes_manage_students_path(@classroom, @quiz),
-                      flash: { success: "Yes!" }
+                      flash: { success: t(".success") }
         else
-          redirect_to classroom_quizzes_manage_students_path(@classroom, @quiz),
-                      flash: { error: "Nooo" }
+          @student.reload
+          render "edit_quiz_score"
         end
       end
 

@@ -9,7 +9,8 @@
           .spacer-small
 
           = render "form_errors", obj: @student
-          = simple_form_for @student do |f|
+          = simple_form_for @student,
+            :url => "/students/#{@student.id}/edit_quiz_score/#{@quiz.id}" do |f|
             .row
                 .medium-8.medium-centered.columns
                 = f.input @quiz_completed
