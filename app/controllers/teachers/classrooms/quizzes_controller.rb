@@ -20,7 +20,7 @@ module Teachers
       end
 
       def manage_students
-        @quiz = Quiz.find(params[:quiz_id]).decorate
+        @quiz = Quiz.find params[:quiz_id]
       end
     end
   end

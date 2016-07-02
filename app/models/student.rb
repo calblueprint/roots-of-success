@@ -27,16 +27,26 @@ class Student < ActiveRecord::Base
 
   validates :email, presence: true, email: true
   validates :classroom_id, presence: true
-  validates :fundamentals_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :water_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :waste_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :transportation_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :energy_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :building_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :health_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :community_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :application_quiz_completed, numericality: { less_than_or_equal_to: 100 }
-  validates :financial_quiz_completed, numericality: { less_than_or_equal_to: 100 }
+  validates :fundamentals_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                          greater_than_or_equal_to: -1 }
+  validates :water_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                   greater_than_or_equal_to: -1 }
+  validates :waste_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                   greater_than_or_equal_to: -1 }
+  validates :transportation_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                            greater_than_or_equal_to: -1 }
+  validates :energy_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                    greater_than_or_equal_to: -1 }
+  validates :building_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                      greater_than_or_equal_to: -1 }
+  validates :health_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                    greater_than_or_equal_to: -1 }
+  validates :community_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                       greater_than_or_equal_to: -1 }
+  validates :application_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                         greater_than_or_equal_to: -1 }
+  validates :financial_quiz_completed, numericality: { less_than_or_equal_to: 100,
+                                                       greater_than_or_equal_to: -1 }
 
   before_save :set_confirmation_token
 

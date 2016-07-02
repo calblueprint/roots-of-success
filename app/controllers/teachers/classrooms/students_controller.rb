@@ -50,12 +50,12 @@ module Teachers
 
       def edit_quiz_score
         @student = Student.find params[:id]
-        @quiz = Quiz.find(params[:quiz_id]).decorate
+        @quiz = Quiz.find params[:quiz_id]
       end
 
       def update_quiz_score
         @classroom = @student.classroom
-        @quiz = Quiz.find(params[:quiz_id]).decorate
+        @quiz = Quiz.find params[:quiz_id]
 
         if @student.update update_params
           redirect_to classroom_quizzes_manage_students_path(@classroom, @quiz),

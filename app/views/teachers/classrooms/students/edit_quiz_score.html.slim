@@ -12,7 +12,7 @@
             url: edit_quiz_score_student_path(@student, @quiz) do |f|
             .row
                 .medium-8.medium-centered.columns
-                = f.input @quiz.student_column_name
+                  = f.input @quiz.student_column_name
             .spacer-small
             = f.button :submit, "Update quiz score"
 
