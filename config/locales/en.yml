@@ -54,8 +54,10 @@ en:
       heading: You're done!
       subtitle: Please fill out the following survey to provide us feedback about %{classroom_name}.
     show_quiz:
-      heading: "Invidiosum nomen est, infame, suspectum."
-      subtitle: "Neutrum vero, inquit ille. Sed fortuna fortis; Quid censes in Latino fore? Tibi hoc incredibile, quod beatissimum."
+      heading: Congratulations on completing the %{module_name}.
+      subtitle: Let your instructor know when you have completed the quiz online.
+
+
 
   teachers:
     changelog_items:
@@ -99,6 +101,10 @@ en:
         update:
           success: Email updated. Verification email sent to %{email}.
           unchanged: Email not updated. No verification email sent.
+        edit_quiz_score:
+          heading: "Edit the quiz score of %{student_email}"
+        update_quiz_score:
+          success: Quiz score updated.
 
       learning_modules:
         show:

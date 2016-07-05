@@ -48,6 +48,24 @@ module Teachers
         end
       end
 
+      def edit_quiz_score
+        @student = Student.find params[:id]
+        @quiz = Quiz.find params[:quiz_id]
+      end
+
+      def update_quiz_score
+        @classroom = @student.classroom
+        @quiz = Quiz.find params[:quiz_id]
+
+        if @student.update update_params
+          redirect_to classroom_quizzes_manage_students_path(@classroom, @quiz),
+                      flash: { success: t(".success") }
+        else
+          @student.reload
+          render "edit_quiz_score"
+        end
+      end
+
       def destroy
         @student.destroy
         redirect_to classroom_students_path @student.classroom
@@ -68,7 +86,17 @@ module Teachers
       private
 
       def update_params
-        params.require(:student).permit(:email)
+        params.require(:student).permit(:email,
+                                        :fundamentals_quiz_completed,
+                                        :water_quiz_completed,
+                                        :waste_quiz_completed,
+                                        :transportation_quiz_completed,
+                                        :energy_quiz_completed,
+                                        :building_quiz_completed,
+                                        :health_quiz_completed,
+                                        :community_quiz_completed,
+                                        :application_quiz_completed,
+                                        :financial_quiz_completed)
       end
     end
   end

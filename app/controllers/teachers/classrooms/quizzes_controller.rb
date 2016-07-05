@@ -8,15 +8,19 @@ module Teachers
       end
 
       def administer
-        quiz = Quiz.find params[:quiz_id]
+        @quiz = Quiz.find(params[:quiz_id]).decorate
 
         AdministerQuizToClassroom.execute(
           classroom: @classroom,
-          quiz: quiz,
+          quiz: @quiz,
         )
 
         redirect_to classroom_quizzes_path(@classroom),
                     flash: { success: "Quiz emailed to students" }
+      end
+
+      def manage_students
+        @quiz = Quiz.find params[:quiz_id]
       end
     end
   end

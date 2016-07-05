@@ -1,0 +1,30 @@
+- content_for :classroom_show_content do
+  h1 = @quiz.name
+  .spacer-small
+
+  .row
+    .large-10.large-push-1.columns
+      table.display
+        thead
+          tr
+            th Email
+            th Quiz Completed
+            th Actions
+        tbody
+          - @classroom.students.each do |student|
+            tr id="#{dom_id student}"
+              td = student.email
+              td
+                - if student.quiz_completed?(@quiz)
+                  = "No"
+                - else
+                  = student.send(@quiz.student_column_name)
+              td
+                .actions
+                  a.icon.pencil-icon.hint--top [
+                      data-hint="Edit student's score"
+                      href="#{edit_quiz_score_student_path(student, @quiz)}"
+                  ]
+                    i.fa.fa-pencil
+
+- parent_layout "classroom_show"

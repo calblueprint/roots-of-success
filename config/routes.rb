@@ -45,6 +45,12 @@ Rails.application.routes.draw do
             member do
               post :resend_confirmation
               post :toggle_confirm_survey
+              get "/edit_quiz_score/:quiz_id",
+                  to: "students#edit_quiz_score",
+                  as: :edit_quiz_score
+              patch "/edit_quiz_score/:quiz_id",
+                    to: "students#update_quiz_score",
+                    as: :quiz_score
             end
           end
 
@@ -66,6 +72,9 @@ Rails.application.routes.draw do
           post "/quizzes/:quiz_id/administer",
                to: "quizzes#administer",
                as: :quizzes_administer
+          get "/quizzes/:quiz_id/manage_students",
+              to: "quizzes#manage_students",
+              as: :quizzes_manage_students
         end
       end
     end

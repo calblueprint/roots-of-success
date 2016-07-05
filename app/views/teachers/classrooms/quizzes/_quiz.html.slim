@@ -1,9 +1,10 @@
 / Local vars:
 /   quiz
 /   classroom
-a.survey--blue-box [
-    href="#{classroom_quizzes_administer_path classroom, quiz}"
-    data-method="post"
-    ]
-  h1.survey__title = quiz.name
-  p.survey__description = quiz.description
+.row
+  .small-12
+    h3 = quiz.name
+    = link_to "Administer Quiz", classroom_quizzes_administer_path(classroom, quiz), method: "post", class: "button"
+    | &nbsp;
+    = link_to "Manage Students", classroom_quizzes_manage_students_path(classroom, quiz), class: "button"
+hr
