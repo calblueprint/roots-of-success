@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
   end
 
   def show_quiz
-    @quiz = Quiz.find params[:quiz_id]
+    @quiz = Quiz.find(params[:quiz_id]).decorate
   end
 
   private
