@@ -122,6 +122,16 @@ header.navigation {
     padding-bottom: 3px;
   }
 
+  .nav-link.more {
+    &:hover > .submenu {
+      display: block;
+    }
+  }
+
+  .submenu {
+    display: none;
+  }
+
   // Elements on the far right
 
   .navigation-tools {
@@ -137,13 +147,6 @@ header.navigation {
       clear: none;
       float: right;
     }
-  }
-
-  .guide {
-    color: $navigation-color;
-    font-weight: 400;
-    line-height: $navigation-height;
-    padding-right: 1em;
   }
 
   .logout {
