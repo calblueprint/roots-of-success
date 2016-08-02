@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   scope module: :teachers do
     resources :changelog_items, only: [:index]
+    resources :guide, only: [:index]
 
     resources :teachers, only: [:edit, :update] do
       resources :classrooms, shallow: true do

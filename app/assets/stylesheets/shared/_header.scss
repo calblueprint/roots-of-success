@@ -139,6 +139,13 @@ header.navigation {
     }
   }
 
+  .guide {
+    color: $navigation-color;
+    font-weight: 400;
+    line-height: $navigation-height;
+    padding-right: 1em;
+  }
+
   .logout {
     @extend button;
     display: inline;

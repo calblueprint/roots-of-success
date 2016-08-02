@@ -12,4 +12,5 @@ header.navigation
         li.nav-link
           = link_to "Personal", edit_teacher_path(current_teacher)
     .navigation-tools
+      = link_to "Guide", guide_index_path, class: "guide"
       = link_to "Log Out", destroy_teacher_session_path, method: :delete, class: "logout"
