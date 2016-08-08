@@ -11,8 +11,8 @@ header.navigation
           = link_to "Updates", changelog_items_path
         li.nav-link
           = link_to "Personal", edit_teacher_path(current_teacher)
-        li.nav-link.more
-          = link_to "Guides"
+        li.nav-link.more#js-navigation-more
+          = link_to "Guides", "#"
           ul.submenu
             li
               = link_to "Getting Started", getting_started_path
