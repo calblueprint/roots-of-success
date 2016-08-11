@@ -28,6 +28,9 @@ Rails.application.routes.draw do
 
   scope module: :teachers do
     resources :changelog_items, only: [:index]
+    resources :guides, only: []
+    get "/getting_started", to: "guides#getting_started", as: :getting_started
+    get "/surveys_and_quizzes", to: "guides#surveys_and_quizzes", as: :surveys_and_quizzes
 
     resources :teachers, only: [:edit, :update] do
       resources :classrooms, shallow: true do

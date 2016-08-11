@@ -64,6 +64,13 @@ en:
       index:
         heading: Changelog and Updates
         subtitle: Keep up to date!
+    guides:
+      getting_started:
+        heading: Welcome!
+        subtitle: This is your How-To guide for getting started.
+      surveys_and_quizzes:
+        heading: Welcome!
+        subtitle: This is your How-To guide for surveys and quizzes.
 
     classrooms:
       new:
