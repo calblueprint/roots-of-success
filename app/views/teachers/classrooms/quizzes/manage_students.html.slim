@@ -4,14 +4,14 @@
 
   .row
     .large-10.large-push-1.columns
-      table.display
+      table.students-quiz-table.display
         thead
           tr
             th Email
             th Quiz Completed
             th Actions
         tbody
-          - @classroom.students.each do |student|
+          - @students.each do |student|
             tr id="#{dom_id student}"
               td = student.email
               td
