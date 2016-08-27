@@ -4,11 +4,13 @@
 // handle.
 
 .sup-materials-table {
-  .sup-materials-table--handle {
+  .sup-materials-table--handle,
+  .sup-materials-table--space {
     width: 8%;
   }
 
   .sup-materials-table--title {
     text-align: center;
+    padding-top: 2em;
   }
 }
