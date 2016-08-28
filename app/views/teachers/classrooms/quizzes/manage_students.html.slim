@@ -1,17 +1,17 @@
 - content_for :classroom_show_content do
-  h1 = @quiz.name
+  h2 = @quiz.name
   .spacer-small
 
   .row
     .large-10.large-push-1.columns
-      table.display
+      table.students-quiz-table.display
         thead
           tr
             th Email
             th Quiz Completed
             th Actions
         tbody
-          - @classroom.students.each do |student|
+          - @students.each do |student|
             tr id="#{dom_id student}"
               td = student.email
               td

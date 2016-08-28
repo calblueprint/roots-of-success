@@ -1,18 +1,23 @@
 - content_for :classroom_show_content do
-  h1 Manage Supplemental Materials
+  h2 Manage Supplemental Materials
 
   .spacer-small
 
   = link_to "Done", classroom_supplemental_materials_path, class: "button"
 
   - if @supplemental_materials.empty?
+    hr
+    .spacer-small
     h3 No supplemental materials yet!
+    .spacer-small
+    hr
   - else
     table.sup-materials-table
       thead
         tr
           th.sup-materials-table--handle
           th.sup-materials-table--title Title
+          th.sup-materials-table--space
       tbody.js-sortable data={ endpoint: change_position_classroom_supplemental_materials_path(@classroom) }
         - @supplemental_materials.each do |supplemental_material|
           tr data={ id: supplemental_material.id }
@@ -20,5 +25,6 @@
               i.fa.fa-arrows.js-sortable-handle
             td
               h3 = supplemental_material.name
+            td.sup-materials-table--space
 
 - parent_layout "classroom_show"

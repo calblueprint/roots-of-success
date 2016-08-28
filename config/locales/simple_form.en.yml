@@ -22,6 +22,7 @@ en:
           This image is only displayed on your dashboard.
           The max size of the image is 500 kilobytes.
           Only the top 150px of the image will be shown.
+        supp_mat_content: Input should be markdown.
     # Examples
     # labels:
     #   defaults:

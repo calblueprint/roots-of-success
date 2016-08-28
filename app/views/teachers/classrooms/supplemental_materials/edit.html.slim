@@ -6,8 +6,9 @@
       = render "form_errors", obj: @supplemental_material
       = simple_form_for @supplemental_material do |f|
         = f.input :name
-        / TODO(michelle): Add message stating that this input is markdown.
-        = f.input :content
+        h6 = 'Content'
+        = f.hint :supp_mat_content
+        = f.input :content, label: ''
         = f.button :submit
 
 - parent_layout "classroom_show"

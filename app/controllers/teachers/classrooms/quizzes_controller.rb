@@ -21,6 +21,7 @@ module Teachers
 
       def manage_students
         @quiz = Quiz.find params[:quiz_id]
+        @students = @classroom.students.order(:email)
       end
     end
   end
