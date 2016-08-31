@@ -162,137 +162,137 @@ def seed_quizzes
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Fundamentals Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dG1INDJIY205Zzg2NXVudXliWVVmQlE6MA" frameborder="0" width="551" height="655" marginheight="0" marginwidth="0"></iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSewaUTqOl5-P9KQhOvz2iH80K3Nl9C_hJO7_siMcglQJRVjkA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Water Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dGhSSk1hQzA1WHNDUjk2SWxsNU5HbVE6MA" frameborder="0" width="551" height="655" marginheight="0" marginwidth="0"></iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScl7Oaon0Jz69Q7_dHmjo1fJ7pQQSj6XtqkeVtgFBBF9djRwg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Waste Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/spreadsheet/embeddedform?formkey=dEV5aU8tR1hRZXJrbzRGMDA0YS1DcXc6MA" frameborder="0" width="551" height="655" marginheight="0" marginwidth="0"></iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdDF2S9w_A9zDd81jWZ6FjqDVst2fvkSn4a5B8QaB9de6CHyA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Transportation Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1_zN3Afy_ez-y5yx3iVDjRFif-MTbaSEmys_PCsbGPU8/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSee1dR4KCIZ6byNiv5vT1SxPUH_y5-po_dJkPij3l4SYM2PdA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Energy Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1AeFTswRp2v-X9-7wo8fGNuNK1yxYEHkHRGa58W_SNZY/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpeqnQbZ-t1jGg35x2J5OLnY45sI9VUNERXH5Te_0I32s7iw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Building Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1WXFapJCAYlMLOnuGslATjt4BapoL5lgpc5IQVosFIo8/viewform?embedded=true" frameborder="0" width="551" height="500" marginheight="0" marginwidth="0"></iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeIYVs_NLEjD0Ke021Y5Zon5gQsWlXjGVprPl_hGlv9ltTKUA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Health, Food, & Agriculture Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1QQ0265IS7K6F8uBicF0bCn-XG-pZCRuHU2OTOicp84Q/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQnPquIzRjqmTgRAPEFjWK05OxPRlD6GGhx4lwAJ5LEr0lMw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Community Organizing & Leadership Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1aVJnjFipew5vfxEaqRHTOalktFNhihlhfYUdK0PAEe8/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeeGRiujwILcncqR5iMU_FkdiaYdv48b73GSd2t3bsfQbc-pw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Social Entrepreneurs"),
     name: "Financial Literacy & Social Entrepreneurship Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1W0zo-kCtQef56AeqV7QZBOFxOoDnzQZCXKYpL8anDCA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeek01C5pXJoHHHO0TBPiOTcOzTxseWZCWnmp5Hhbf_Fn70rA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Fundamentals Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/18gwcfUX3b7Sybl5CAYgFVDYjiLYdpIRIZz-z0rXcr_w/viewform?embedded=true" frameborder="0" width="551" height="500" marginheight="0" marginwidth="0"></iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeuwLMdMpgA9xi6IjmaPydDIaEVpJkR7v6FS12lhiYLciQYWQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Water Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1YhqNB-BQHRk0GIB7S3KtXJxOiZIa67EHUerZWiBWDSo/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdVPsZU6gHz4ylLRpgoY7OJw18gFAo4RsH2ueDRCk3-kGU0dw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Waste Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1qQcmoctkyoftE5hF3DGopf981IJe6AjYu4Hy1rhUDKI/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpHy3S2CUIMWKOZ2FEfJWpmsUE3YYtQcqHNJlC6wsTfqcz8Q/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Transportation Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1qO53z3Nab5u_3S1_V4uAwAO4qEy2FbLBB-ACVLotp-s/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBzy4SmU3qfgCHq3qjxo1Tt-4r4EqFb6og4_SmSyhA6ZH1sg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>'
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Energy Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1bCN5RBAyN5RMsOZTBHazXiOHNdqI18Y8ej9Va6G_pNQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScXRfTmn1z9CC_oA8lVQAF6Wn2DTy_wmK8NR0VAvC4dHLUN3g/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Building Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1eIvOjEo_Ioz3WIntJjHtjCzLdfzP-ygzRQPlpcylDkk/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfhljFVpBb3SelbzmvgfvXG-3n0KYWsLhFZcrpNs6rd3l6R0Q/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Health, Food, & Agriculture Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1kaoJZixRVTdP5q6ZXuhZsm7XoPPXvSMqob81St31eR8/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkK_3JAbWSKcC3Md64M4jta1O3iDS8GWGRJb6UbazOScORoA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Community Organizing & Leadership Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1VV7PDI9H9iDn6c3BM9lmJQkQAkfELcahHKRpozLQGVc/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScOUCgV3VALwls_eFHzEwG_gJ1wSzxPNT_byrkb0UJ7hQMUbg/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "High Schools and Youth Programs"),
     name: "Financial Literacy & Social Entrepreneurship Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1DDz1MZR7rp3UwePrUyMymZojDpMoc5WVFnOUm1t9D3E/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdq2L8i1bSXVqptYXfTRij3EM6qQ5W-XpsUDgIH0SJoXlAC6g/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Fundamentals Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1HuAqZnkjNJsJTRMIErui1Ilk9KL_eIdeTqSEAZiW9go/viewform?embedded=true" frameborder="0" width="551" height="500" marginheight="0" marginwidth="0"></iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd_Bg9F0XKKm337pmO9yMhfWePBYS2jox_qqQ786Z1qeJ3F7A/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Water Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1tCiKLSDtULD046eXaPmvJu_u-lHsD8b9PFH6zeSg3hk/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdR8_IziK-8ZgUuDqJSHWBL72zh7VGsH_MeesWwqPD4g2MjUw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Waste Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1qBV0CLHduQD8LmDKUx6TK7C6YeeRo2SIdXSuJ9Lynr8/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfbyVJu7mWUfPS5mLDmfayMOmetWmz85b9bUGdq0e5Cr1XfJw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Transportation Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1EFJBPqNTuUVXs8bAGdGtMJ5cQC0YtDSBP2vaH3EAzWw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeOZAC_XNyiQ9sPMxAp3ZbzDDp3L_iroXDZINATluTcD5nVpw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Energy Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/14Mk0-Xt4ESrZrDjGMr2U0xuGpRWR9zDHmeyG9exMURQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScuQ3LOhga0Ju281E4kvs7vuLQVWkJxFVBiJxM7RDlxwJPuDA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Building Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1Tk173V0_juhOgZHoCBWY9WPLzldTqiqWY3OFh9Y2T9U/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScJuOyweRu1cLc58G_3YFJKWePOXSVj5aQjsyxGNhyOlMlZrw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Health, Food, & Agriculture Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1FFs8qXRL0V2Jg8xIyEfsyJxyusUv44dN445YARQ9JmE/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfTAFY2tE0vXGssDZmQAgZgUgwssPWETZRzHXobtr5g9Z61ag/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Community Organizing & Leadership Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1hGazJhEWmlSRUoe2OwAeCH_JFgU7L96MXwK5E_4ZfM0/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeFR1XeYC2jnvIT4lijaBDuY0Vn7sjw2ky9fYMdKQviKi79iw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
   Quiz.create!(
     program: Program.find_by(name: "Prisons, Jails, and Juvenile Facilities"),
     name: "Financial Literacy & Social Entrepreneurship Module Quiz",
-    form_embed_code: '<iframe src="https://docs.google.com/forms/d/1evJo3weYpMyAYobWjavqVXehSyiwdTAnxuvTZJiIGWk/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
+    form_embed_code: '<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhrcm8h8w1fuecByNB1HPiZvc-Josr6h7sTGAQvVMyHDX-lw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>',
   )
 
 end
