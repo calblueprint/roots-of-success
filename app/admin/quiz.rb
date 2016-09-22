@@ -1,5 +1,5 @@
 ActiveAdmin.register Quiz do
- permit_params :name, :form_embed_code, :program_id
+  permit_params :name, :form_embed_code, :program_id
 
   index do
     selectable_column
