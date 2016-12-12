@@ -49,9 +49,6 @@ gem "bitters", "~> 0.10.1"
 # Error logging - requires setup with service
 gem "rollbar"
 
-# Certificates
-gem 'letsencrypt_plugin'
-
 group :development do
   gem "annotate"
   gem "better_errors"
