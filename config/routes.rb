@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  mount LetsencryptPlugin::Engine, at: '/'  # It must be at root level
-
   namespace :api, defaults: { format: :json } do
     scope module: :v1 do
       # Future API routes here
