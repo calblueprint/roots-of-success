@@ -1,10 +1,10 @@
 default: &default
   endpoint: 'https://acme-v01.api.letsencrypt.org/'
   email: 'samlau95@gmail.com'
-  domain: "instructor.rootsofsuccess.org"
+  domain: "instructor.rootsofsuccess.org ros.calblueprint.org"
 
   # in Rails.root, path to private key
-  # private_key: 'key/keyfile.pem'
+  private_key: 'key/keyfile.pem'
 
   # Private key stored in the database
   # private_key_in_db: true
