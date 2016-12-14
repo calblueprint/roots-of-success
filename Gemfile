@@ -31,9 +31,6 @@ gem "simple_form", "~> 3.1.0"
 gem "turbolinks", "~> 2.5.3"
 gem "redcarpet", "~> 3.3.4"
 
-# SSL
-gem "letsencrypt_plugin"
-
 # Frontend
 gem "autoprefixer-rails", "~> 4.0.2"
 gem "coffee-rails", "~> 4.1.0"
@@ -88,4 +85,8 @@ end
 group :staging, :production do
   gem "newrelic_rpm"
   gem "rails_12factor"
+
+  # SSL
+  gem 'platform-api', github: 'jalada/platform-api', branch: 'master'
+  gem 'letsencrypt-rails-heroku', group: 'production'
 end
