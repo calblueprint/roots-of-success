@@ -42,6 +42,9 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
+  # Before forcing SSL, insert Letsencrypt middleware
+  config.middleware.insert_before ActionDispatch::SSL, Letsencrypt::Middleware
+
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   config.force_ssl = true
 
