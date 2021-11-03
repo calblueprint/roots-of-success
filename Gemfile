@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "bundler", "~> 1.12.0"
-ruby "2.7.0"
+ruby "2.7.4"
 
 # Core gems
 gem "rails", "4.2.11.3"
