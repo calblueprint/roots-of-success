@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 
-gem "bundler", ">= 1.7.0"
-ruby "2.2.0"
+gem "bundler", "~> 1.12.0"
+ruby "2.7.0"
 
 # Core gems
-gem "rails", "4.2.0"
+gem "rails", "4.2.11.3"
 gem "thin", "~> 1.6.3"
 gem "pg", "~> 0.17.1"
 gem "figaro", "~> 1.0.0"
@@ -26,7 +26,7 @@ gem "pry-rails"
 gem "recipient_interceptor", "~> 0.1.2"
 gem "refile", "~> 0.5.5", require: "refile/rails"
 gem "refile-mini_magick"
-gem "refile-s3", git: "https://github.com/refile/refile-s3"
+gem "refile-s3"
 gem "simple_form", "~> 3.1.0"
 gem "turbolinks", "~> 2.5.3"
 gem "redcarpet", "~> 3.3.4"
