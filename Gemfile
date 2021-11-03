@@ -87,6 +87,5 @@ group :staging, :production do
   gem "rails_12factor"
 
   # SSL
-  gem 'platform-api', github: 'jalada/platform-api', branch: 'master'
   gem 'letsencrypt-rails-heroku', group: 'production'
 end
